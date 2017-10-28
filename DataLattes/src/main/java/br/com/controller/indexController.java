@@ -1,13 +1,23 @@
 package br.com.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import br.com.DAO.OntologyDAO;
 
 @Controller
 public class indexController{
+	
+	
+	
 	@RequestMapping("/")
 	public String home() {
+		return "index";
+	}
+	@RequestMapping("/teste")
+	public String teste() {
+		OntologyDAO ont = new OntologyDAO();
+		ont.imprimir();
 		return "index";
 	}
 	@RequestMapping("/index")

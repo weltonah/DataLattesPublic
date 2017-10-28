@@ -859,6 +859,9 @@
         <Class IRI="#CursoExtencao"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#welton"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Carta"/>
     </Declaration>
     <Declaration>
@@ -2120,6 +2123,15 @@
         <Class IRI="#ArtigoPublicado"/>
         <Class IRI="#TrabalhosEventos"/>
     </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Pessoa"/>
+        <NamedIndividual IRI="#welton"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#NomeCompleto"/>
+        <NamedIndividual IRI="#welton"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Welton de Abreu Henriques</Literal>
+    </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#FormadoNaEpoca"/>
         <ObjectProperty IRI="#EpocaConclusao"/>

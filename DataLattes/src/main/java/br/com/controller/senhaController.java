@@ -17,9 +17,5 @@ public class senhaController {
 	public String chaveGerada() {
 		return "senha/chaveGerada";
 	}
-	@RequestMapping("/teste")
-	public String teste() {
-		return "teste/conteudo";
-	}
 	
 }
