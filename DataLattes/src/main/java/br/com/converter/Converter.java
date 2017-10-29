@@ -20,7 +20,6 @@ public class Converter {
 	private SearchXML searchXML;
 	
 	public Converter(File file) throws Exception{
-		this.searchXML = new SearchXML();
 		String nome = file.getName();
         InputStream stream;
         ZipFile zf = null;
@@ -42,6 +41,7 @@ public class Converter {
             this.xmlfile = docBuilder.parse(stream);
         }
         stream.close();
+        this.searchXML = new SearchXML(xmlfile);
 	}
 		
 	public void ConstruirCriterios(String Key) {

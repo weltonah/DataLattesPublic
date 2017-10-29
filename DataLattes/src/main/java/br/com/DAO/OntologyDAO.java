@@ -28,19 +28,20 @@ public class OntologyDAO {
 		
 		for (OWLClass cls : ontology.getClassesInSignature()) {
 			if (cls.getIRI().getFragment().equals("Pessoa")) {
-				System.out.println("My class is : " + cls.getIRI().getShortForm());
-				System.out.println("The IRI of my class is : " + cls);
-				System.out.println("-----------------------");
 				OWLReasoner reasoner = reasonerFactory.createReasoner(ontology);
 				NodeSet<OWLNamedIndividual> instances = reasoner.getInstances(cls, true);
-				System.out.println("The Individuals of my class : ");
-
+				
 				for (OWLNamedIndividual i : instances.getFlattened()) {
 					System.out.println(i.getIRI().getFragment());
 				}
-
 			}
 		}
+	}
+	public void addIndividual() {
+		
+	}
+	public void addAxiom() {
+		
 	}
 	
 	

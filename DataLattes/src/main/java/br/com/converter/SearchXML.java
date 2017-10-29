@@ -13,11 +13,13 @@ public class SearchXML {
 
 	private OntologyDAO ontology;
 	XPath xpath;
+	private Document xmlfile;
 	
-	public SearchXML() {
+	public SearchXML(Document xmlfile) {
 		XPathFactory xPathfactory = XPathFactory.newInstance();
 		this.xpath =  xPathfactory.newXPath();
 		this.ontology = new OntologyDAO();
+		this.xmlfile = xmlfile;
 	}
 	
 	
@@ -25,16 +27,23 @@ public class SearchXML {
 	//IDLattes
 	//Nacionalidade
 	//Sexo
-	public void Pessoa(Document document) throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("//EXEMPLO");
+	//Area de atuacao
+	public void Pessoa() throws XPathExpressionException {
+		
+		
 	}
+	public String NomeCompleto() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
+    	return expr.evaluate(xmlfile);
+	}
+	
 	//@cidade
 	//@estado
 	//@Pais
 	//--EnderecoProfissional
 	//codigoInstituicao
 	//--EnderecoResidencial
-	public void Endereco(Document document) throws XPathExpressionException {
+	public void Endereco() throws XPathExpressionException {
 		XPathExpression expr = xpath.compile("//EXEMPLO");
 	}
 	
@@ -44,9 +53,20 @@ public class SearchXML {
 	//idLattes (orientador)
 	//TituloCurso
 	//Titulo Trabalhofinal
-	public void Formacao(Document document) throws XPathExpressionException {
+	public void Formacao() throws XPathExpressionException {
 		XPathExpression expr = xpath.compile("//EXEMPLO");
 	}
+	
+	
+	//Disciplina
+	public void AtuacaoProfissional() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("//EXEMPLO");
+	}
+	
+	public void Produção() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("//EXEMPLO");
+	}
+	
 	
 	
 }
