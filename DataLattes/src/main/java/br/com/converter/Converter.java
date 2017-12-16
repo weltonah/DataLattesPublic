@@ -23,7 +23,6 @@ public class Converter {
 		String nome = file.getName();
         InputStream stream;
         ZipFile zf = null;
-        Resultado result = null;
         if(nome.contains(".zip")){
             zf = new ZipFile(file);
             ZipEntry ze = zf.entries().nextElement();

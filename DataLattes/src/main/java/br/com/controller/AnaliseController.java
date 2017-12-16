@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 @Controller
-public class analiseController {
+public class AnaliseController {
 	@RequestMapping("/inserirChave")
 	public String inserirChave() {
 		return "analise/inserirChave";
