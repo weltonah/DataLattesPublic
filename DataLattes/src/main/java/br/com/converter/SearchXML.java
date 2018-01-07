@@ -63,12 +63,11 @@ public class SearchXML {
 			return false;
 		}
 	}
-
-	public ArrayList<Producao> ArtigoCompletoPublicado() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("//ARTIGO-PUBLICADO");
+	
+	
+	public ArrayList<Producao> BuscarProducao(XPathExpression expr) throws XPathExpressionException{
 		NodeList artigos = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
 		ArrayList<Producao> ListArtigoCompleto = new ArrayList<Producao>();
-
 		for (int i = 0; i < artigos.getLength(); i++) {
 			Node artigoNode = artigos.item(i);
 			String titulo = artigoNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO-DO-ARTIGO")
@@ -93,22 +92,48 @@ public class SearchXML {
 		return ListArtigoCompleto;
 	}
 
-	public String ArtigoCompletoAceito() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
+	public ArrayList<Producao> ArtigoCompletoPublicado() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("//ARTIGO-PUBLICADO");
+		return BuscarProducao(expr);
 	}
-
-	public String LivroPublicado() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
+	public ArrayList<Producao> ArtigoCompletoAceito() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("//ARTIGO-ACEITO-PARA-PUBLICACAO");
+		return BuscarProducao(expr);
+	}
+	
+	
+	public ArrayList<Producao> LivroPublicadoOuOrganizar() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("//LIVRO-PUBLICADO-OU-ORGANIZADO");
+		NodeList livros = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
+		ArrayList<Producao> ListArtigoCompleto = new ArrayList<Producao>();
+		for (int i = 0; i < livros.getLength(); i++) {
+			Node livroNode = livros.item(i);
+			String titulo = livroNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO-DO-LIVRO")
+					.getTextContent();
+			String natureza = livroNode.getChildNodes().item(0).getAttributes().getNamedItem("NATUREZA")
+					.getTextContent();
+			String tipo = livroNode.getChildNodes().item(0).getAttributes().getNamedItem("TIPO")
+					.getTextContent();
+			String issn = livroNode.getChildNodes().item(1).getAttributes().getNamedItem("ISBN").getTextContent();
+			String ano = livroNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent();
+			Producao prod = new Producao(natureza, titulo, ano, issn);
+			prod.setTipo(tipo);
+			NodeList listAutores = livroNode.getChildNodes();
+			for (int j = 0; j < listAutores.getLength(); j++) {
+				Node autoresNode = listAutores.item(j);
+				if (autoresNode.getNodeName().contentEquals("AUTORES")) {
+					String[] auto = new String[2];
+					auto[0] = autoresNode.getAttributes().getNamedItem("NOME-COMPLETO-DO-AUTOR").getTextContent();
+					auto[1] = autoresNode.getAttributes().getNamedItem("NOME-PARA-CITACAO").getTextContent();
+					prod.addAutores(auto);
+				}
+			}
+			ListArtigoCompleto.add(prod);
+		}
+		return ListArtigoCompleto;
 	}
 
 	public String LivroCapitulo() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String LivroOrganizado() throws XPathExpressionException {
 		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
 		return expr.evaluate(xmlfile);
 	}

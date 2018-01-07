@@ -8,6 +8,7 @@ public class Producao {
 	private String titulo;
 	private String ano;
 	private String issn;
+	private String tipo;
 	
 	public Producao(String natureza, String titulo, String ano, String issn) {
 		this.natureza = natureza;
@@ -45,5 +46,11 @@ public class Producao {
 	}
 	public void addAutores(String[] autores) {
 		this.autores.add(autores);
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 }

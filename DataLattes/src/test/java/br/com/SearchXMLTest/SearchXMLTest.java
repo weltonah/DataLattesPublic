@@ -84,5 +84,8 @@ public class SearchXMLTest {
     	assertTrue(searchXML.DedicaoExclusiva());
     }
     
+    
+
+    
 
 }
