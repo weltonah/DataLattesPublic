@@ -71,16 +71,12 @@ public class SearchXML {
 
 		for (int i = 0; i < artigos.getLength(); i++) {
 			Node artigoNode = artigos.item(i);
-			for (int o = 0; o < artigoNode.getChildNodes().getLength(); o++) {
-				System.out.println(artigoNode.getChildNodes().item(o).toString());
-			}
 			String titulo = artigoNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO-DO-ARTIGO")
 					.getTextContent();
 			String natureza = artigoNode.getChildNodes().item(0).getAttributes().getNamedItem("NATUREZA")
 					.getTextContent();
 			String issn = artigoNode.getChildNodes().item(1).getAttributes().getNamedItem("ISSN").getTextContent();
-			Integer ano = Integer.valueOf(
-					artigoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO-DO-ARTIGO").getTextContent());
+			String ano = artigoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO-DO-ARTIGO").getTextContent();
 			Producao prod = new Producao(natureza, titulo, ano, issn);
 			NodeList listAutores = artigoNode.getChildNodes();
 			for (int j = 0; j < listAutores.getLength(); j++) {

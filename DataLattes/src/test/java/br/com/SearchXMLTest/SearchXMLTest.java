@@ -1,4 +1,4 @@
-package br.com.teste;
+package br.com.SearchXMLTest;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -15,6 +15,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPathExpressionException;
 
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
@@ -28,8 +29,8 @@ import br.com.converter.SearchXML;
 //@SpringBootTest
 public class SearchXMLTest {
 	
-	private Document xmlfile;
-	private SearchXML searchXML;
+	private static Document xmlfile;
+	private static SearchXML searchXML;
 	
 //    @Autowired
 //    private MockMvc mvc;
@@ -37,13 +38,13 @@ public class SearchXMLTest {
 //    @MockBean
 //    private StorageService storageService;
 	
-    @Before
-    public void shouldSaveUploadedFile() throws Exception {
+    @BeforeClass
+    public static void shouldSaveUploadedFile() throws Exception {
     	File file = new ClassPathResource("static/testFile/Jairocurriculo.xml").getFile();
     	DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
-        this.xmlfile = docBuilder.parse(file);
-        this.searchXML = new SearchXML(xmlfile);
+        xmlfile = docBuilder.parse(file);
+        searchXML = new SearchXML(xmlfile);
     }
     
     @Test
@@ -83,24 +84,5 @@ public class SearchXMLTest {
     	assertTrue(searchXML.DedicaoExclusiva());
     }
     
-    @Test
-    public void ArtigoCompletoPublicado() throws XPathExpressionException {
-    	
-    	ArrayList<Producao> listprod = searchXML.ArtigoCompletoPublicado();
-    	for(Producao prod : listprod) {
-    		System.out.println("titulo " + prod.getTitulo());
-    		System.out.println("ano " + prod.getAno());
-    		System.out.println("titulo " + prod.getIssn());
-    		System.out.println("natureza " + prod.getNatureza());
-    		ArrayList<String[]> autores = prod.getAutores();
-    		for(String[] s: autores) {
-    			System.out.println("autor :" + s[0]);
-    			System.out.println("citacao :" + s[1]);
-    		}
-    	}
-    	
-    	
-    	assertEquals("18052017","sd");
-    }
 
 }

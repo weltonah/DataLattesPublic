@@ -6,10 +6,10 @@ public class Producao {
 	private String natureza;
 	private ArrayList<String[]> autores;
 	private String titulo;
-	private int ano;
+	private String ano;
 	private String issn;
 	
-	public Producao(String natureza, String titulo, int ano, String issn) {
+	public Producao(String natureza, String titulo, String ano, String issn) {
 		this.natureza = natureza;
 		this.autores = new ArrayList<String[]>();
 		this.titulo = titulo;
@@ -28,10 +28,10 @@ public class Producao {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	public int getAno() {
+	public String getAno() {
 		return ano;
 	}
-	public void setAno(int ano) {
+	public void setAno(String ano) {
 		this.ano = ano;
 	}
 	public String getIssn() {
