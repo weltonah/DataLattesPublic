@@ -1,54 +1,48 @@
 package br.com.teste;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPathExpressionException;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 
+import br.com.Modelo.Producao;
 import br.com.converter.SearchXML;
-import br.com.storage.StorageService;
 
-@RunWith(SpringRunner.class)
-@AutoConfigureMockMvc
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@AutoConfigureMockMvc
+//@SpringBootTest
 public class SearchXMLTest {
 	
 	private Document xmlfile;
 	private SearchXML searchXML;
 	
-    @Autowired
-    private MockMvc mvc;
-
-    @MockBean
-    private StorageService storageService;
+//    @Autowired
+//    private MockMvc mvc;
+//
+//    @MockBean
+//    private StorageService storageService;
 	
     @Before
     public void shouldSaveUploadedFile() throws Exception {
-    	InputStream stream;
-    	File file = new ClassPathResource("static/testFile/curriculo.xml").getFile();
-    	stream = new FileInputStream(file);
-        DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
+    	File file = new ClassPathResource("static/testFile/Jairocurriculo.xml").getFile();
+    	DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
-        this.xmlfile = docBuilder.parse(stream);
-        stream.close();
+        this.xmlfile = docBuilder.parse(file);
         this.searchXML = new SearchXML(xmlfile);
     }
     
@@ -57,6 +51,56 @@ public class SearchXMLTest {
     	assertEquals("Jairo Francisco de Souza", searchXML.NomeCompleto());
     	
     }
+    @Test
+    public void NomeCitacao() throws XPathExpressionException {
+    	assertEquals("SOUZA, J. F.", searchXML.NomeCitacao());
+    	
+    }
+    @Test
+    public void IDLattes() throws XPathExpressionException {
+    	assertEquals("4516605108233899", searchXML.IDLattes());
+    }
+    @Test
+    public void ResumoCV() throws XPathExpressionException {
+    	assertEquals("Possui graduação em Ciência da "
+    			+ "Computação pela Universidade Federal de Juiz de "
+    			+ "Fora (2004), mestrado em Engenharia de Sistemas e "
+    			+ "Computação pela Universidade Federal do Rio de "
+    			+ "Janeiro (2007) e doutorado em Informática pela "
+    			+ "PUC-RJ, ambos na linha de Banco de Dados. "
+    			+ "É professor do Departamento de Ciência da "
+    			+ "Computação da Universidade Federal de Juiz de"
+    			+ " Fora e participa de pesquisas sobre Recuperação "
+    			+ "de Informação, Resolução de Identidade e "
+    			+ "Representação do Conhecimento.", searchXML.ResumoCV());
+    }
+    @Test
+    public void UltimaAtualizacao() throws XPathExpressionException {
+    	assertEquals("18052017", searchXML.UltimaAtualizacao());
+    }
+    @Test
+    public void DedicaoExclusiva() throws XPathExpressionException {
+    	assertTrue(searchXML.DedicaoExclusiva());
+    }
     
+    @Test
+    public void ArtigoCompletoPublicado() throws XPathExpressionException {
+    	
+    	ArrayList<Producao> listprod = searchXML.ArtigoCompletoPublicado();
+    	for(Producao prod : listprod) {
+    		System.out.println("titulo " + prod.getTitulo());
+    		System.out.println("ano " + prod.getAno());
+    		System.out.println("titulo " + prod.getIssn());
+    		System.out.println("natureza " + prod.getNatureza());
+    		ArrayList<String[]> autores = prod.getAutores();
+    		for(String[] s: autores) {
+    			System.out.println("autor :" + s[0]);
+    			System.out.println("citacao :" + s[1]);
+    		}
+    	}
+    	
+    	
+    	assertEquals("18052017","sd");
+    }
 
 }

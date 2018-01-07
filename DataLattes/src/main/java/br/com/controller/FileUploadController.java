@@ -27,7 +27,6 @@ public class FileUploadController {
 
 	@RequestMapping("/analise")
 	public String handleFileUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) {
-
 		storageService.store(file);
 		File xmlfile = storageService.load(file.getOriginalFilename()).toFile();
 		

@@ -1,22 +1,26 @@
 package br.com.Modelo;
 
+import java.util.ArrayList;
+
 public class Obras {
-	private String Nome;
+	private String nome;
 	private boolean valido;
 	private float valor;
 	private String issn;
 	private float FI;
+	private ArrayList<String> coautores;
 	
 	public Obras(){
 		valido = true;
 		issn = "null";
 		FI=0;
+		coautores = new ArrayList<String>();
 	}
 	public String getNome() {
-		return Nome;
+		return nome;
 	}
 	public void setNome(String nome) {
-		Nome = nome;
+		this.nome = nome;
 	}
 	public boolean isValido() {
 		return valido;
@@ -41,5 +45,11 @@ public class Obras {
 	}
 	public void setFI(float fI) {
 		FI = fI;
+	}
+	public ArrayList<String> getCoautores() {
+		return coautores;
+	}
+	public void AddCoautores(String coautores) {
+		this.coautores.add(coautores);
 	}
 }

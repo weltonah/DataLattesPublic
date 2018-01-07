@@ -11,7 +11,7 @@ import br.com.storage.StorageService;
 
 @SpringBootApplication
 @EnableConfigurationProperties(StorageProperties.class)
-public class DataLattesApplication {
+public class DataLattesApplication  {
 	public static void main(String[] args) {
 		SpringApplication.run(DataLattesApplication.class, args);
 	}

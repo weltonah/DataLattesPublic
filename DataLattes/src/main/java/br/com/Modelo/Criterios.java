@@ -1,12 +1,6 @@
 package br.com.Modelo;
 
-public class Criterios {/*
-	private float justificativa;
-	private float obj;
-	private float relevancia;
-	private float metodologia;
-	private float planoBolsista;
-	*/
+public class Criterios {
 	private String area;
 	private float dedicacaoExclusiva;
 	private float artCompPerioInd;
