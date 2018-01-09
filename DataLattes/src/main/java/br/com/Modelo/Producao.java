@@ -2,55 +2,83 @@ package br.com.Modelo;
 
 import java.util.ArrayList;
 
+/**
+ * 
+ */
 public class Producao {
-	private String natureza;
-	private ArrayList<String[]> autores;
+
 	private String titulo;
-	private String ano;
-	private String issn;
-	private String tipo;
-	
-	public Producao(String natureza, String titulo, String ano, String issn) {
-		this.natureza = natureza;
-		this.autores = new ArrayList<String[]>();
+	private int ano;
+	private ArrayList<String> palavra_chave;
+	private ArrayList<Autores> autores;
+	private ArrayList<AreaConhecimento> areaConhecimento;
+	private String campAux;
+	private String campAux2;
+
+	public Producao(String titulo, int ano) {
+		super();
 		this.titulo = titulo;
 		this.ano = ano;
-		this.issn = issn;
+		this.palavra_chave = new ArrayList<String>();
+		this.autores = new ArrayList<Autores>();
+		this.areaConhecimento = new ArrayList<AreaConhecimento>();
 	}
-	public String getNatureza() {
-		return natureza;
-	}
-	public void setNatureza(String natureza) {
-		this.natureza = natureza;
-	}
+
+
 	public String getTitulo() {
 		return titulo;
 	}
+
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	public String getAno() {
+
+	public int getAno() {
 		return ano;
 	}
-	public void setAno(String ano) {
+
+	public void setAno(int ano) {
 		this.ano = ano;
 	}
-	public String getIssn() {
-		return issn;
+
+	public String getCampAux() {
+		return campAux;
 	}
-	public void setIssn(String issn) {
-		this.issn = issn;
+
+	public void setCampAux(String campAux) {
+		this.campAux = campAux;
 	}
-	public ArrayList<String[]> getAutores() {
+
+	public String getCampAux2() {
+		return campAux2;
+	}
+
+	public void setCampAux2(String campAux2) {
+		this.campAux2 = campAux2;
+	}
+
+	public ArrayList<Autores> getAutores() {
 		return autores;
 	}
-	public void addAutores(String[] autores) {
+
+	public void AddAutores(Autores autores) {
 		this.autores.add(autores);
 	}
-	public String getTipo() {
-		return tipo;
+
+	public ArrayList<AreaConhecimento> getAreaConhecimento() {
+		return areaConhecimento;
 	}
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
+
+	public void AddAreaConhecimento(AreaConhecimento areaConhecimento) {
+		this.areaConhecimento.add(areaConhecimento);
 	}
+	public ArrayList<String> getPalavra_chave() {
+		return palavra_chave;
+	}
+	
+	public void AddAreaConhecimento(String palavra_chave) {
+		this.palavra_chave.add(palavra_chave);
+	}
+	
+
 }

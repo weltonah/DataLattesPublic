@@ -11,9 +11,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.w3c.dom.Document;
 
-import br.com.DAO.OntologyDAO;
-import br.com.Modelo.Resultado;
-
 public class Converter {
 	
 	private Document xmlfile;

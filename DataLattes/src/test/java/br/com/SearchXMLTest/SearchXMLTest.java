@@ -3,25 +3,17 @@ package br.com.SearchXMLTest;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPathExpressionException;
 
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
-import org.w3c.dom.Node;
 
-import br.com.Modelo.Producao;
 import br.com.converter.SearchXML;
 
 //@RunWith(SpringRunner.class)

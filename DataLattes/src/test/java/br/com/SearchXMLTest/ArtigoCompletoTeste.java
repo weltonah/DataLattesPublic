@@ -14,13 +14,13 @@ import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 
-import br.com.Modelo.Producao;
+import br.com.Modelo.Tipo0;
 import br.com.converter.SearchXML;
 
 public class ArtigoCompletoTeste {
 	private static Document xmlfile;
 	private static SearchXML searchXML;
-	private static ArrayList<Producao> listprod;
+	private static ArrayList<Tipo0> listprod;
 
 	// @Autowired
 	// private MockMvc mvc;
@@ -45,13 +45,13 @@ public class ArtigoCompletoTeste {
 	}
 	@Test
 	public void PrimeiroAno() throws XPathExpressionException {
-		assertEquals("2010",
+		assertEquals((int)2010,
 				listprod.get(0).getAno());
 	}
 	@Test
 	public void PrimeiroISSN() throws XPathExpressionException {
 		assertEquals("15541045",
-				listprod.get(0).getIssn());
+				listprod.get(0).getCodigo());
 	}
 	@Test
 	public void Primeiranatureza() throws XPathExpressionException {
@@ -61,22 +61,22 @@ public class ArtigoCompletoTeste {
 	@Test
 	public void PrimeiraPrimeiroAutornatureza() throws XPathExpressionException {
 		assertEquals("Jairo Francisco de Souza",
-				listprod.get(0).getAutores().get(0)[0]);
+				listprod.get(0).getAutores().get(0).getNome());
 	}
 	@Test
 	public void PrimeiraPrimeiroAutorcitacaonatureza() throws XPathExpressionException {
 		assertEquals("SOUZA, J. F.",
-				listprod.get(0).getAutores().get(0)[1]);
+				listprod.get(0).getAutores().get(0).getCitacao());
 	}
 	@Test
 	public void PrimeiraUltimoAutornatureza() throws XPathExpressionException {
 		assertEquals("Sean Wolfgang Matsui Siqueira",
-				listprod.get(0).getAutores().get(4)[0]);
+				listprod.get(0).getAutores().get(4).getNome());
 	}
 	@Test
 	public void PrimeiraUltimoAutorcitacaonatureza() throws XPathExpressionException {
 		assertEquals("SIQUEIRA, S. W. M.",
-				listprod.get(0).getAutores().get(4)[1]);
+				listprod.get(0).getAutores().get(4).getCitacao());
 	}
 	@Test
 	public void ultimoTitulo() throws XPathExpressionException {
@@ -85,13 +85,13 @@ public class ArtigoCompletoTeste {
 	}
 	@Test
 	public void ultimoAno() throws XPathExpressionException {
-		assertEquals("2012",
+		assertEquals((int)2012,
 				listprod.get(6).getAno());
 	}
 	@Test
 	public void ultimoISSN() throws XPathExpressionException {
 		assertEquals("19842902",
-				listprod.get(6).getIssn());
+				listprod.get(6).getCodigo());
 	}
 	@Test
 	public void ultimonatureza() throws XPathExpressionException {
@@ -101,22 +101,22 @@ public class ArtigoCompletoTeste {
 	@Test
 	public void ultimoPrimeiroAutornatureza() throws XPathExpressionException {
 		assertEquals("Regina Maria Maciel Braga Villela",
-				listprod.get(6).getAutores().get(0)[0]);
+				listprod.get(6).getAutores().get(0).getNome());
 	}
 	@Test
 	public void ultimoPrimeiroAutorcitacaonatureza() throws XPathExpressionException {
 		assertEquals("BRAGA, R. M. M.",
-				listprod.get(6).getAutores().get(0)[1]);
+				listprod.get(6).getAutores().get(0).getCitacao());
 	}
 	@Test
 	public void ultimoUltimoAutornatureza() throws XPathExpressionException {
 		assertEquals("Kate Revoredo",
-				listprod.get(6).getAutores().get(5)[0]);
+				listprod.get(6).getAutores().get(5).getNome());
 	}
 	@Test
 	public void ultimoUltimoAutorcitacaonatureza() throws XPathExpressionException {
 		assertEquals("REVOREDO, K.",
-				listprod.get(6).getAutores().get(5)[1]);
+				listprod.get(6).getAutores().get(5).getCitacao());
 	}
 
 }
