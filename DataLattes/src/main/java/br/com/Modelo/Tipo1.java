@@ -3,7 +3,7 @@ package br.com.Modelo;
 /**
  * 
  */
-public class Tipo1 extends Tipo7 {
+public class Tipo1 extends Producao {
 
 	/**
 	 * Default constructor
@@ -14,8 +14,8 @@ public class Tipo1 extends Tipo7 {
 	 */
 	private String codigo;
 
-	public Tipo1(String titulo, int ano, String tipo, String codigo) {
-		super(titulo, ano, tipo);
+	public Tipo1(String titulo, int ano,  String codigo) {
+		super(titulo, ano);
 		this.codigo = codigo;
 	}
 
@@ -25,6 +25,10 @@ public class Tipo1 extends Tipo7 {
 
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
+	}
+	public void imprimirTipo1() {
+		imprimirProducao();
+		System.out.println("codigo: " + codigo);
 	}
 
 }

@@ -66,9 +66,9 @@ public class SearchXML {
 			return false;
 		}
 	}
-	
-	
-	public ArrayList<Tipo0> BuscarProducao(XPathExpression expr) throws XPathExpressionException{
+
+	public ArrayList<Tipo0> BuscaTipo0(String raiz) throws XPathExpressionException {
+		XPathExpression expr = xpath.compile(raiz);
 		NodeList artigos = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
 		ArrayList<Tipo0> ListArtigoCompleto = new ArrayList<Tipo0>();
 		for (int i = 0; i < artigos.getLength(); i++) {
@@ -78,7 +78,8 @@ public class SearchXML {
 			String natureza = artigoNode.getChildNodes().item(0).getAttributes().getNamedItem("NATUREZA")
 					.getTextContent();
 			String codigo = artigoNode.getChildNodes().item(1).getAttributes().getNamedItem("ISSN").getTextContent();
-			int ano = Integer.valueOf(artigoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO-DO-ARTIGO").getTextContent());
+			int ano = Integer.valueOf(
+					artigoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO-DO-ARTIGO").getTextContent());
 			Tipo0 prod = new Tipo0(titulo, ano, natureza, codigo);
 			NodeList listAutores = artigoNode.getChildNodes();
 			for (int j = 0; j < listAutores.getLength(); j++) {
@@ -86,7 +87,7 @@ public class SearchXML {
 				if (autoresNode.getNodeName().contentEquals("AUTORES")) {
 					String aux0 = autoresNode.getAttributes().getNamedItem("NOME-COMPLETO-DO-AUTOR").getTextContent();
 					String aux1 = autoresNode.getAttributes().getNamedItem("NOME-PARA-CITACAO").getTextContent();
-					Autores aut = new Autores(aux0,aux1);
+					Autores aut = new Autores(aux0, aux1);
 					prod.AddAutores(aut);
 				}
 			}
@@ -96,17 +97,19 @@ public class SearchXML {
 	}
 
 	public ArrayList<Tipo0> ArtigoCompletoPublicado() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("//ARTIGO-PUBLICADO");
-		return BuscarProducao(expr);
+		return BuscaTipo0("//ARTIGO-PUBLICADO");
 	}
+
 	public ArrayList<Tipo0> ArtigoCompletoAceito() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("//ARTIGO-ACEITO-PARA-PUBLICACAO");
-		return BuscarProducao(expr);
+		return BuscaTipo0("//ARTIGO-ACEITO-PARA-PUBLICACAO");
 	}
-	
-	
+
 	public ArrayList<Tipo2> LivroPublicadoOuOrganizar() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("//LIVRO-PUBLICADO-OU-ORGANIZADO");
+		return BuscaTipo2("//LIVRO-PUBLICADO-OU-ORGANIZADO");
+	}
+
+	public ArrayList<Tipo2> BuscaTipo2(String raiz) throws XPathExpressionException {
+		XPathExpression expr = xpath.compile(raiz);
 		NodeList livros = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
 		ArrayList<Tipo2> ListArtigoCompleto = new ArrayList<Tipo2>();
 		for (int i = 0; i < livros.getLength(); i++) {
@@ -115,10 +118,10 @@ public class SearchXML {
 					.getTextContent();
 			String natureza = livroNode.getChildNodes().item(0).getAttributes().getNamedItem("NATUREZA")
 					.getTextContent();
-			String tipo = livroNode.getChildNodes().item(0).getAttributes().getNamedItem("TIPO")
-					.getTextContent();
+			String tipo = livroNode.getChildNodes().item(0).getAttributes().getNamedItem("TIPO").getTextContent();
 			String codigo = livroNode.getChildNodes().item(1).getAttributes().getNamedItem("ISBN").getTextContent();
-			int ano = Integer.valueOf(livroNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
+			int ano = Integer
+					.valueOf(livroNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
 			Tipo2 prod = new Tipo2(titulo, ano, natureza, tipo, codigo);
 			NodeList listAutores = livroNode.getChildNodes();
 			for (int j = 0; j < listAutores.getLength(); j++) {
@@ -126,7 +129,7 @@ public class SearchXML {
 				if (autoresNode.getNodeName().contentEquals("AUTORES")) {
 					String aux0 = autoresNode.getAttributes().getNamedItem("NOME-COMPLETO-DO-AUTOR").getTextContent();
 					String aux1 = autoresNode.getAttributes().getNamedItem("NOME-PARA-CITACAO").getTextContent();
-					Autores aut = new Autores(aux0,aux1);
+					Autores aut = new Autores(aux0, aux1);
 					prod.AddAutores(aut);
 				}
 			}
@@ -136,20 +139,23 @@ public class SearchXML {
 	}
 
 	public ArrayList<Tipo1> LivroCapitulo() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("//LIVRO-PUBLICADO-OU-ORGANIZADO");
+		return BuscaTipo1("//CAPITULO-DE-LIVRO-PUBLICADO");
+	}
+
+	public ArrayList<Tipo1> BuscaTipo1(String raiz) throws XPathExpressionException {
+		XPathExpression expr = xpath.compile(raiz);
 		NodeList livros = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
 		ArrayList<Tipo1> ListArtigoCompleto = new ArrayList<Tipo1>();
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node livroNode = livros.item(i);
 			String titulo = livroNode.getChildNodes().item(1).getAttributes().getNamedItem("TITULO-DO-LIVRO")
 					.getTextContent();
-			String tituloCap = livroNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO-DO-CAPITULO-DO-LIVRO")
-					.getTextContent();
-			String tipo = livroNode.getChildNodes().item(0).getAttributes().getNamedItem("TIPO")
-					.getTextContent();
+			String tituloCap = livroNode.getChildNodes().item(0).getAttributes()
+					.getNamedItem("TITULO-DO-CAPITULO-DO-LIVRO").getTextContent();
 			String codigo = livroNode.getChildNodes().item(1).getAttributes().getNamedItem("ISBN").getTextContent();
-			int ano = Integer.valueOf(livroNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
-			Tipo1 prod = new Tipo1(titulo, ano, tipo, codigo);
+			int ano = Integer
+					.valueOf(livroNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
+			Tipo1 prod = new Tipo1(titulo, ano, codigo);
 			prod.setCampAux(tituloCap);
 			NodeList listAutores = livroNode.getChildNodes();
 			for (int j = 0; j < listAutores.getLength(); j++) {
@@ -157,10 +163,11 @@ public class SearchXML {
 				if (autoresNode.getNodeName().contentEquals("AUTORES")) {
 					String aux0 = autoresNode.getAttributes().getNamedItem("NOME-COMPLETO-DO-AUTOR").getTextContent();
 					String aux1 = autoresNode.getAttributes().getNamedItem("NOME-PARA-CITACAO").getTextContent();
-					Autores aut = new Autores(aux0,aux1);
+					Autores aut = new Autores(aux0, aux1);
 					prod.AddAutores(aut);
 				}
 			}
+			prod.imprimirTipo1();
 			ListArtigoCompleto.add(prod);
 		}
 		return ListArtigoCompleto;

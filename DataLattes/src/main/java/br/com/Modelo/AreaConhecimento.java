@@ -1,8 +1,5 @@
 package br.com.Modelo;
 
-
-
-
 /**
  * 
  */
@@ -20,7 +17,7 @@ public class AreaConhecimento {
 		this.areaConhecimento = areaConhecimento;
 		this.subArea = subArea;
 	}
-	
+
 	public String getGrandeArea() {
 		return grandeArea;
 	}
@@ -28,8 +25,6 @@ public class AreaConhecimento {
 	public void setGrandeArea(String grandeArea) {
 		this.grandeArea = grandeArea;
 	}
-
-	
 
 	public String getAreaConhecimento() {
 		return areaConhecimento;
@@ -45,6 +40,11 @@ public class AreaConhecimento {
 
 	public void setSubArea(String subArea) {
 		this.subArea = subArea;
+	}
+	public void imprimir() {
+		System.out.println("grandeArea: " + grandeArea);
+		System.out.println("areaConhecimento: " + areaConhecimento);
+		System.out.println("subArea: " + subArea);
 	}
 
 }

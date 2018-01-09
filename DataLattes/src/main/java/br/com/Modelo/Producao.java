@@ -24,7 +24,6 @@ public class Producao {
 		this.areaConhecimento = new ArrayList<AreaConhecimento>();
 	}
 
-
 	public String getTitulo() {
 		return titulo;
 	}
@@ -72,13 +71,27 @@ public class Producao {
 	public void AddAreaConhecimento(AreaConhecimento areaConhecimento) {
 		this.areaConhecimento.add(areaConhecimento);
 	}
+
 	public ArrayList<String> getPalavra_chave() {
 		return palavra_chave;
 	}
-	
+
 	public void AddAreaConhecimento(String palavra_chave) {
 		this.palavra_chave.add(palavra_chave);
 	}
-	
+
+	public void imprimirProducao() {
+		System.out.println("************************");
+		System.out.println("titulo: " + this.titulo);
+		System.out.println("ano: " + this.ano);
+		System.out.println("aux: " + this.campAux);
+		System.out.println("aux2: " + this.campAux2);
+		System.out.println("%%%%%%% AUTORES %%%%%%%");
+		this.autores.forEach(n -> n.imprimir());
+		System.out.println("%%%%%%% PALAVRA-CHAVE %%%%%%%");
+		this.palavra_chave.forEach(n -> System.out.println("Palavra-chave :" + n));
+		System.out.println("%%%%%%% AREA CONHECIMENTO %%%%%%%");
+		this.areaConhecimento.forEach(n -> n.imprimir());
+	}
 
 }

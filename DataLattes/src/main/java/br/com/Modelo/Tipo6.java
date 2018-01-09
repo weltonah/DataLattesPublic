@@ -19,5 +19,9 @@ public class Tipo6 extends Producao {
 	public void setNatureza(String natureza) {
 		this.natureza = natureza;
 	}
+	public void imprimirTipo6() {
+		imprimirProducao();
+		System.out.println("natureza: " + natureza);
+	}
 
 }

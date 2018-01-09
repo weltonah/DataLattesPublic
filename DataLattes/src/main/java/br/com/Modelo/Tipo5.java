@@ -25,5 +25,9 @@ public class Tipo5 extends Tipo8 {
 	public void setRegPatente(RegistroPatente regPatente) {
 		this.regPatente = regPatente;
 	}
+	public void imprimirTipo5() {
+		imprimirTipo8();
+		this.regPatente.imprimir();
+	}
 
 }

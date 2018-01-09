@@ -31,5 +31,8 @@ public class Tipo4 extends Tipo3 {
 	public void setNatureza(String natureza) {
 		this.natureza = natureza;
 	}
-
+	public void imprimirTipo4() {
+		imprimirTipo3();
+		System.out.println("natureza: " + natureza);
+	}
 }

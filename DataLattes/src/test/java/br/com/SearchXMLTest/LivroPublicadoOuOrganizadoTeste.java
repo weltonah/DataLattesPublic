@@ -14,9 +14,6 @@ import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 
-import br.com.Modelo.Autores;
-import br.com.Modelo.Producao;
-import br.com.Modelo.Tipo0;
 import br.com.Modelo.Tipo2;
 import br.com.converter.SearchXML;
 
@@ -40,153 +37,130 @@ public class LivroPublicadoOuOrganizadoTeste {
 		searchXML = new SearchXML(xmlfile);
 		listprod = searchXML.LivroPublicadoOuOrganizar();
 	}
-	
-	@Test
-    public void ArtigoCompletoPublicado() throws XPathExpressionException {
-    	
-    	for(Tipo2 prod : listprod) {
-    		System.out.println("titulo " + prod.getTitulo());
-    		System.out.println("ano " + prod.getAno());
-    		System.out.println("ISSN " + prod.getCodigo());
-    		System.out.println("natureza " + prod.getNatureza());
-    		System.out.println("Tipo " + prod.getTipo());
-    		ArrayList<Autores> autores = prod.getAutores();
-    		for(Autores s: autores) {
-    			System.out.println("autor :" + s.getNome());
-    			System.out.println("citacao :" + s.getCitacao());
-    		}
-    	}
-    	
-    	
-    	assertEquals("1","1");
-    }
 
 	@Test
 	public void primeiroTituloPublicado() throws XPathExpressionException {
-		assertEquals("Petição Inicial: no processo civil e no processo do trabalho.",
-				listprod.get(0).getTitulo());
+		assertEquals("Petição Inicial: no processo civil e no processo do trabalho.", listprod.get(0).getTitulo());
 	}
+
 	@Test
 	public void PrimeiroAnoPublicado() throws XPathExpressionException {
-		assertEquals((int)1996,
-				listprod.get(0).getAno());
+		assertEquals((int) 1996, listprod.get(0).getAno());
 	}
+
 	@Test
 	public void PrimeiroISSNPublicado() throws XPathExpressionException {
-		assertEquals("",
-				listprod.get(0).getCodigo());
+		assertEquals("", listprod.get(0).getCodigo());
 	}
+
 	@Test
 	public void PrimeiranaturezaPublicado() throws XPathExpressionException {
-		assertEquals("TEXTO_INTEGRAL",
-				listprod.get(0).getNatureza());
+		assertEquals("TEXTO_INTEGRAL", listprod.get(0).getNatureza());
 	}
+
 	@Test
 	public void PrimeiraTipoPublicado() throws XPathExpressionException {
-		assertEquals("LIVRO_PUBLICADO",
-				listprod.get(0).getTipo());
+		assertEquals("LIVRO_PUBLICADO", listprod.get(0).getTipo());
 	}
+
 	@Test
 	public void PrimeiraPrimeiroAutornaturezaPublicado() throws XPathExpressionException {
-		assertEquals("Jorge Luiz Souto Maior",
-				listprod.get(0).getAutores().get(0).getNome());
+		assertEquals("Jorge Luiz Souto Maior", listprod.get(0).getAutores().get(0).getNome());
 	}
+
 	@Test
 	public void PrimeiraPrimeiroAutorcitacaonaturezaPublicado() throws XPathExpressionException {
-		assertEquals("SOUTO MAIOR, Jorge Luiz",
-				listprod.get(0).getAutores().get(0).getCitacao());
+		assertEquals("SOUTO MAIOR, Jorge Luiz", listprod.get(0).getAutores().get(0).getCitacao());
 	}
-	
+
 	@Test
 	public void ultimoTituloPublicado() throws XPathExpressionException {
-		assertEquals("Dumping social nas relações de trabalho",
-				listprod.get(4).getTitulo());
+		assertEquals("Dumping social nas relações de trabalho", listprod.get(4).getTitulo());
 	}
+
 	@Test
 	public void ultimoAnoPublicado() throws XPathExpressionException {
-		assertEquals((int)2014,
-				listprod.get(4).getAno());
+		assertEquals((int) 2014, listprod.get(4).getAno());
 	}
+
 	@Test
 	public void ultimoISSNPublicado() throws XPathExpressionException {
-		assertEquals("9788536128092",
-				listprod.get(4).getCodigo());
+		assertEquals("9788536128092", listprod.get(4).getCodigo());
 	}
+
 	@Test
 	public void ultimonaturezaPublicado() throws XPathExpressionException {
-		assertEquals("TEXTO_INTEGRAL",
-				listprod.get(4).getNatureza());
+		assertEquals("TEXTO_INTEGRAL", listprod.get(4).getNatureza());
 	}
+
 	@Test
 	public void ultimoTipoPublicado() throws XPathExpressionException {
-		assertEquals("LIVRO_PUBLICADO",
-				listprod.get(4).getTipo());
+		assertEquals("LIVRO_PUBLICADO", listprod.get(4).getTipo());
 	}
+
 	@Test
 	public void ultimoPrimeiroAutornaturezaPublicado() throws XPathExpressionException {
-		assertEquals("Jorge Luiz Souto Maior",
-				listprod.get(4).getAutores().get(0).getNome());
+		assertEquals("Jorge Luiz Souto Maior", listprod.get(4).getAutores().get(0).getNome());
 	}
+
 	@Test
 	public void ultimoPrimeiroAutorcitacaonaturezaPublicado() throws XPathExpressionException {
-		assertEquals("SOUTO MAIOR, Jorge Luiz",
-				listprod.get(4).getAutores().get(0).getCitacao());
+		assertEquals("SOUTO MAIOR, Jorge Luiz", listprod.get(4).getAutores().get(0).getCitacao());
 	}
+
 	@Test
 	public void ultimoUltimoAutornaturezaPublicado() throws XPathExpressionException {
-		assertEquals("Valdete Souto Severo",
-				listprod.get(4).getAutores().get(2).getNome());
+		assertEquals("Valdete Souto Severo", listprod.get(4).getAutores().get(2).getNome());
 	}
+
 	@Test
 	public void ultimoUltimoAutorcitacaonaturezaPublicado() throws XPathExpressionException {
-		assertEquals("SEVERO, Valdete Souto",
-				listprod.get(4).getAutores().get(2).getCitacao());
+		assertEquals("SEVERO, Valdete Souto", listprod.get(4).getAutores().get(2).getCitacao());
 	}
-	
+
 	@Test
 	public void ultimoTituloOrganizado() throws XPathExpressionException {
-		assertEquals("Trabalhos marginais",
-				listprod.get(5).getTitulo());
+		assertEquals("Trabalhos marginais", listprod.get(5).getTitulo());
 	}
+
 	@Test
 	public void ultimoAnoOrganizado() throws XPathExpressionException {
-		assertEquals((int)2014,
-				listprod.get(5).getAno());
+		assertEquals((int) 2014, listprod.get(5).getAno());
 	}
+
 	@Test
 	public void ultimoISSNOrganizado() throws XPathExpressionException {
-		assertEquals("9788536127415",
-				listprod.get(5).getCodigo());
+		assertEquals("9788536127415", listprod.get(5).getCodigo());
 	}
+
 	@Test
 	public void ultimonaturezaOrganizado() throws XPathExpressionException {
-		assertEquals("COLETANEA",
-				listprod.get(5).getNatureza());
+		assertEquals("COLETANEA", listprod.get(5).getNatureza());
 	}
+
 	@Test
 	public void ultimoTipoOrganizado() throws XPathExpressionException {
-		assertEquals("LIVRO_ORGANIZADO_OU_EDICAO",
-				listprod.get(5).getTipo());
+		assertEquals("LIVRO_ORGANIZADO_OU_EDICAO", listprod.get(5).getTipo());
 	}
+
 	@Test
 	public void ultimoPrimeiroAutornaturezaOrganizado() throws XPathExpressionException {
-		assertEquals("Jorge Luiz Souto Maior",
-				listprod.get(5).getAutores().get(0).getNome());
+		assertEquals("Jorge Luiz Souto Maior", listprod.get(5).getAutores().get(0).getNome());
 	}
+
 	@Test
 	public void ultimoPrimeiroAutorcitacaonaturezaOrganizado() throws XPathExpressionException {
-		assertEquals("SOUTO MAIOR, Jorge Luiz",
-				listprod.get(5).getAutores().get(0).getCitacao());
+		assertEquals("SOUTO MAIOR, Jorge Luiz", listprod.get(5).getAutores().get(0).getCitacao());
 	}
+
 	@Test
 	public void ultimoUltimoAutornaturezaOrganizado() throws XPathExpressionException {
-		assertEquals("Noa Piatã Bassfeld Gnata",
-				listprod.get(5).getAutores().get(1).getNome());
+		assertEquals("Noa Piatã Bassfeld Gnata", listprod.get(5).getAutores().get(1).getNome());
 	}
+
 	@Test
 	public void ultimoUltimoAutorcitacaonaturezaOrganizado() throws XPathExpressionException {
-		assertEquals("GNATA, Noa Piatã Bassfeld",
-				listprod.get(5).getAutores().get(1).getCitacao());
+		assertEquals("GNATA, Noa Piatã Bassfeld", listprod.get(5).getAutores().get(1).getCitacao());
 	}
 
 }

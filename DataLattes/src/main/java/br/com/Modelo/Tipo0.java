@@ -26,4 +26,8 @@ public class Tipo0 extends Tipo6 {
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
+	public void imprimirTipo0() {
+		imprimirTipo6();
+		System.out.println("codigo: "+ codigo );
+	}
 }

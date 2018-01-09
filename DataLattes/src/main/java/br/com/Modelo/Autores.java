@@ -41,5 +41,9 @@ public class Autores {
 	public void setCitacao(String citacao) {
 		this.citacao = citacao;
 	}
+	public void imprimir() {
+		System.out.println("nome: " + nome);
+		System.out.println("citacao: " + citacao);
+	}
 
 }

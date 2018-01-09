@@ -37,45 +37,46 @@ public class ArtigoAceitoTeste {
 		searchXML = new SearchXML(xmlfile);
 		listprod = searchXML.ArtigoCompletoAceito();
 	}
-
+	
 	@Test
 	public void primeiroTitulo() throws XPathExpressionException {
-		assertEquals("Uma abordagem para identificac&#807;a&#771;o de similaridade entre recursos educacionais utilizando bases de conhecimento externas",
+		assertEquals(
+				"Uma abordagem para identificac&#807;a&#771;o de similaridade entre recursos educacionais utilizando bases de conhecimento externas",
 				listprod.get(0).getTitulo());
 	}
+
 	@Test
 	public void PrimeiroAno() throws XPathExpressionException {
-		assertEquals((int)2017,
-				listprod.get(0).getAno());
+		assertEquals((int) 2017, listprod.get(0).getAno());
 	}
+
 	@Test
 	public void PrimeiroISSN() throws XPathExpressionException {
-		assertEquals("14145685",
-				listprod.get(0).getCodigo());
+		assertEquals("14145685", listprod.get(0).getCodigo());
 	}
+
 	@Test
 	public void Primeiranatureza() throws XPathExpressionException {
-		assertEquals("NAO_INFORMADO",
-				listprod.get(0).getNatureza());
+		assertEquals("NAO_INFORMADO", listprod.get(0).getNatureza());
 	}
+
 	@Test
 	public void PrimeiraPrimeiroAutornatureza() throws XPathExpressionException {
-		assertEquals("Laura Lima Dias",
-				listprod.get(0).getAutores().get(0).getNome());
+		assertEquals("Laura Lima Dias", listprod.get(0).getAutores().get(0).getNome());
 	}
+
 	@Test
 	public void PrimeiraPrimeiroAutorcitacaonatureza() throws XPathExpressionException {
-		assertEquals("DIAS, L. L.",
-				listprod.get(0).getAutores().get(0).getCitacao());
+		assertEquals("DIAS, L. L.", listprod.get(0).getAutores().get(0).getCitacao());
 	}
+
 	@Test
 	public void PrimeiraUltimoAutornatureza() throws XPathExpressionException {
-		assertEquals("Jairo Francisco de Souza",
-				listprod.get(0).getAutores().get(3).getNome());
+		assertEquals("Jairo Francisco de Souza", listprod.get(0).getAutores().get(3).getNome());
 	}
+
 	@Test
 	public void PrimeiraUltimoAutorcitacaonatureza() throws XPathExpressionException {
-		assertEquals("SOUZA, J. F.",
-				listprod.get(0).getAutores().get(3).getCitacao());
+		assertEquals("SOUZA, J. F.", listprod.get(0).getAutores().get(3).getCitacao());
 	}
 }

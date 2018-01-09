@@ -29,5 +29,8 @@ public class Tipo3 extends Producao {
 	public void setRegPatente(RegistroPatente regPatente) {
 		this.regPatente = regPatente;
 	}
-
+	public void imprimirTipo3() {
+		imprimirProducao();
+		regPatente.imprimir();
+	}
 }

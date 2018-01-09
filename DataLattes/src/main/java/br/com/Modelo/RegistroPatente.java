@@ -71,5 +71,11 @@ public class RegistroPatente {
 	public void setNomeTitular(String nomeTitular) {
 		this.nomeTitular = nomeTitular;
 	}
+	public void imprimir() {
+		System.out.println("tipoPatente: " + tipoPatente);
+		System.out.println("codigoPatente: " + codigoPatente);
+		System.out.println("dataConcessao: " + dataConcessao);
+		System.out.println("nomeTitular: " + nomeTitular);
+	}
 
 }
