@@ -11,6 +11,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 import org.w3c.dom.Document;
 
+import br.com.SearchXML.SearchXML;
+
 public class Converter {
 	
 	private Document xmlfile;

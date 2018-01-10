@@ -11,16 +11,15 @@ import javax.xml.xpath.XPathExpressionException;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 
 import br.com.Modelo.Tipo2;
-import br.com.converter.SearchXML;
+import br.com.SearchXML.SearchXMLProdBibliografica;
 
 public class LivroPrePosFacTeste {
 	private static Document xmlfile;
-	private static SearchXML searchXML;
+	private static SearchXMLProdBibliografica searchXML;
 	private static ArrayList<Tipo2> listprod;
 
 	// @Autowired
@@ -35,7 +34,7 @@ public class LivroPrePosFacTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		xmlfile = docBuilder.parse(file);
-		searchXML = new SearchXML(xmlfile);
+		searchXML = new SearchXMLProdBibliografica(xmlfile);
 		listprod = searchXML.LivroPrePosFacio();
 	}
 

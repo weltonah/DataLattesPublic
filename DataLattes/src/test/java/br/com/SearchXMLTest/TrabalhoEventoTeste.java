@@ -15,11 +15,12 @@ import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 
 import br.com.Modelo.Tipo0;
-import br.com.converter.SearchXML;
+import br.com.SearchXML.SearchXML;
+import br.com.SearchXML.SearchXMLProdBibliografica;
 
 public class TrabalhoEventoTeste {
 	private static Document xmlfile;
-	private static SearchXML searchXML;
+	private static SearchXMLProdBibliografica searchXML;
 	private static ArrayList<Tipo0> listprod;
 
 	// @Autowired
@@ -34,7 +35,7 @@ public class TrabalhoEventoTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		xmlfile = docBuilder.parse(file);
-		searchXML = new SearchXML(xmlfile);
+		searchXML = new SearchXMLProdBibliografica(xmlfile);
 		listprod = searchXML.TrabalhoCompletoEvento();
 	}
 
@@ -43,11 +44,7 @@ public class TrabalhoEventoTeste {
 		assertEquals("Peer-to-Peer Collaborative Integration of Dynamic Ontologies",
 				listprod.get(0).getTitulo());
 	}
-	@Test
-	public void imprimir() throws XPathExpressionException {
-		this.listprod.forEach(n -> n.imprimirTipo0());
-		assertEquals("exemplo", "exemplo");
-	}
+	
 	@Test
 	public void PrimeiroAno() throws XPathExpressionException {
 		assertEquals((int) 2005, listprod.get(0).getAno());

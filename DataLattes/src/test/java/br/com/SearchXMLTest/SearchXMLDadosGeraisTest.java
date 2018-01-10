@@ -14,15 +14,15 @@ import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 
-import br.com.converter.SearchXML;
+import br.com.SearchXML.SearchXMLDadosGerais;
 
 //@RunWith(SpringRunner.class)
 //@AutoConfigureMockMvc
 //@SpringBootTest
-public class SearchXMLTest {
+public class SearchXMLDadosGeraisTest {
 	
 	private static Document xmlfile;
-	private static SearchXML searchXML;
+	private static SearchXMLDadosGerais searchXML;
 	
 //    @Autowired
 //    private MockMvc mvc;
@@ -36,7 +36,7 @@ public class SearchXMLTest {
     	DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
         xmlfile = docBuilder.parse(file);
-        searchXML = new SearchXML(xmlfile);
+        searchXML = new SearchXMLDadosGerais(xmlfile);
     }
     
     @Test

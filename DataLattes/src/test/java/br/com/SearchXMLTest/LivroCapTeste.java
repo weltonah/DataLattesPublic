@@ -15,11 +15,11 @@ import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 
 import br.com.Modelo.Tipo1;
-import br.com.converter.SearchXML;
+import br.com.SearchXML.SearchXMLProdBibliografica;
 
 public class LivroCapTeste {
 	private static Document xmlfile;
-	private static SearchXML searchXML;
+	private static SearchXMLProdBibliografica searchXML;
 	private static ArrayList<Tipo1> listprod;
 
 	// @Autowired
@@ -34,7 +34,7 @@ public class LivroCapTeste {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		xmlfile = docBuilder.parse(file);
-		searchXML = new SearchXML(xmlfile);
+		searchXML = new SearchXMLProdBibliografica(xmlfile);
 		listprod = searchXML.LivroCapitulo();
 	}
 
