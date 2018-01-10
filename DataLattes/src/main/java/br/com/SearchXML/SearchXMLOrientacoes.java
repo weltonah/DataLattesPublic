@@ -1,9 +1,13 @@
 package br.com.SearchXML;
 
+import java.util.ArrayList;
+
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 
 import org.w3c.dom.Document;
+
+import br.com.Modelo.Orientacao;
 
 public class SearchXMLOrientacoes extends SearchXML {
 
@@ -11,145 +15,67 @@ public class SearchXMLOrientacoes extends SearchXML {
 		super(xmlfile);
 		// TODO Auto-generated constructor stub
 	}
-	public String Premio() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
+	
+	public ArrayList<Orientacao> OrientacaoDouAnd() throws XPathExpressionException {
+		return BuscaOrientacao("//ORIENTACOES-CONCLUIDAS-PARA-DOUTORADO", "TITULO-DO-TRABALHO", 1, "TIPO-DE-ORIENTACAO", 0, null);
 	}
 
-	public String Idioma() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
+	public ArrayList<Orientacao> OrientacaoDouCon() throws XPathExpressionException {
+		return BuscaOrientacao("//ORIENTACOES-CONCLUIDAS-PARA-DOUTORADO", "TITULO", 1, "TIPO-DE-ORIENTACAO", 0, null);
 	}
 
-	public String CursoComplementarCurtaDuracao() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
+	public ArrayList<Orientacao> OrientacaoMesAnd() throws XPathExpressionException {
+		return BuscaOrientacao("//ORIENTACAO-EM-ANDAMENTO-DE-MESTRADO", "TITULO-DO-TRABALHO", 0, "TIPO", 1, "TIPO-DE-ORIENTACAO");
 	}
 
-	public String CursoComplementarLongaDuracao() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
+	public ArrayList<Orientacao> OrientacaoMesCon() throws XPathExpressionException {
+		return BuscaOrientacao("//ORIENTACOES-CONCLUIDAS-PARA-MESTRADO", "TITULO", 0, "TIPO", 1, "TIPO-DE-ORIENTACAO");
+	}
+	// monografia, tcc , ic
+	public ArrayList<Orientacao> OutrasOrientacaoCon() throws XPathExpressionException {
+		return BuscaOrientacao("", NomeTitulo, a, aux, b, aux2);
 	}
 
-	public String EnsinoFundamental() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
+	public ArrayList<Orientacao> OrientacaoAperfEspecAnd() throws XPathExpressionException {
+		return BuscaOrientacao("", NomeTitulo, a, aux, b, aux2);
 	}
-
-	public String EnsinoMedio() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
+	public ArrayList<Orientacao> OrientacaoGraduacaoAnd() throws XPathExpressionException {
+		return BuscaOrientacao("", NomeTitulo, a, aux, b, aux2);
 	}
-
-	public String Graduacao() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String IC() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String LivreDocencia() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String Aperfeicoamento() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String Especializacao() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String MBA() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String PosDoutorado() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String ResidenciaMedica() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String CursoTecnico() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String BancaMestrado() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String BancaDoutorado() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String BancaQualificacao() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String OrientacaoDouAnd() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String OrientacaoDouCon() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String CoorientacaoDouAnd() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String CoorientacaoDouCon() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String OrientacaoMesAnd() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String OrientacaoMesCon() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String CoorientacaoMesAnd() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String CoorientacaoMesCon() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String OrientacaoTCCCon() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
-	}
-
-	public String OrientacaoIC() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
+	public ArrayList<Orientacao> OrientacaoICAnd() throws XPathExpressionException {
+		return BuscaOrientacao("", NomeTitulo, a, aux, b, aux2);
 	}
 	
+	
+	
+	public ArrayList<Orientacao> BancaMestrado() throws XPathExpressionException {
+		return BuscaOrientacao("", NomeTitulo, a, aux, b, aux2);
+	}
+	
+	public ArrayList<Orientacao> BancaDoutorado() throws XPathExpressionException {
+		return BuscaOrientacao("", NomeTitulo, a, aux, b, aux2);
+	}
+
+	public ArrayList<Orientacao> BancaQualificacao() throws XPathExpressionException {
+		return BuscaOrientacao("", NomeTitulo, a, aux, b, aux2);
+	}
+	public ArrayList<Orientacao> BancaAperfeicoamentoEspecificacao() throws XPathExpressionException {
+		return BuscaOrientacao("", NomeTitulo, a, aux, b, aux2);
+	}
+	public ArrayList<Orientacao> BancaGraduacao() throws XPathExpressionException {
+		return BuscaOrientacao("", NomeTitulo, a, aux, b, aux2);
+	}
+	public ArrayList<Orientacao> BancaProfessorTitular() throws XPathExpressionException {
+		return BuscaOrientacao("", NomeTitulo, a, aux, b, aux2);
+	}
+	public ArrayList<Orientacao> BancaConcursoPublico() throws XPathExpressionException {
+		return BuscaOrientacao("", NomeTitulo, a, aux, b, aux2);
+	}
+	public ArrayList<Orientacao> BancaLivreDocencia() throws XPathExpressionException {
+		return BuscaOrientacao("", NomeTitulo, a, aux, b, aux2);
+	}
+	public ArrayList<Orientacao> BancaAvaliacaoCurso() throws XPathExpressionException {
+		return BuscaOrientacao("", NomeTitulo, a, aux, b, aux2);
+	}
 
 }

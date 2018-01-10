@@ -13,6 +13,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import br.com.Modelo.Autores;
+import br.com.Modelo.Orientacao;
 import br.com.Modelo.Producao;
 import br.com.Modelo.RegistroPatente;
 import br.com.Modelo.Tipo0;
@@ -64,6 +65,39 @@ public class SearchXML {
 		}
 		return ListArtigoCompleto;
 	}
+	
+	public ArrayList<Orientacao> BuscaOrientacao(String raiz, String NomeTitulo, int a, String aux,int b, String aux2)
+			throws XPathExpressionException {
+		XPathExpression expr = xpath.compile(raiz);
+		NodeList artigos = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
+		ArrayList<Orientacao> ListArtigoCompleto = new ArrayList<Orientacao>();
+		for (int i = 0; i < artigos.getLength(); i++) {
+			Node artigoNode = artigos.item(i);
+			String titulo = artigoNode.getChildNodes().item(0).getAttributes().getNamedItem(NomeTitulo)
+					.getTextContent();
+			String natureza = artigoNode.getChildNodes().item(0).getAttributes().getNamedItem("NATUREZA")
+					.getTextContent();
+			int ano = Integer
+					.valueOf(artigoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
+			String nome_aluno = artigoNode.getChildNodes().item(1).getAttributes().getNamedItem("NOME-DO-ORIENTADO")
+					.getTextContent();
+			
+			Orientacao prod = new Orientacao(natureza, titulo, ano, nome_aluno);
+			if (aux != null) {
+				String campAux = artigoNode.getChildNodes().item(a).getAttributes().getNamedItem(aux).getTextContent();
+				prod.setCampAux(campAux);
+			}
+			if (aux2 != null) {
+				String campAux2 = artigoNode.getChildNodes().item(b).getAttributes().getNamedItem(aux2).getTextContent();
+				prod.setCampAux(campAux2);
+			}
+			
+			ListArtigoCompleto.add(prod);
+		}
+		return ListArtigoCompleto;
+	}
+	
+	
 
 	public ArrayList<Tipo0> BuscaTipo0(String raiz, String Tipocodigo, String NomeTitulo, String NomeAno, int a,
 			String aux, int b, String aux2) throws XPathExpressionException {

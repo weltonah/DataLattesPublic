@@ -11,6 +11,15 @@ public class SearchXMLFormacoes extends SearchXML{
 		super(xmlfile);
 		// TODO Auto-generated constructor stub
 	}
+	public String Premio() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
+		return expr.evaluate(xmlfile);
+	}
+
+	public String Idioma() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
+		return expr.evaluate(xmlfile);
+	}
 	public String Doutorado() throws XPathExpressionException {
 		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
 		return expr.evaluate(xmlfile);
@@ -21,7 +30,67 @@ public class SearchXMLFormacoes extends SearchXML{
 		return expr.evaluate(xmlfile);
 	}
 
-	public String OrientacaoExtensao() throws XPathExpressionException {
+	public String CursoComplementarCurtaDuracao() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
+		return expr.evaluate(xmlfile);
+	}
+
+	public String CursoComplementarLongaDuracao() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
+		return expr.evaluate(xmlfile);
+	}
+
+	public String EnsinoFundamental() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
+		return expr.evaluate(xmlfile);
+	}
+
+	public String EnsinoMedio() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
+		return expr.evaluate(xmlfile);
+	}
+
+	public String Graduacao() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
+		return expr.evaluate(xmlfile);
+	}
+
+	public String IC() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
+		return expr.evaluate(xmlfile);
+	}
+
+	public String LivreDocencia() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
+		return expr.evaluate(xmlfile);
+	}
+
+	public String Aperfeicoamento() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
+		return expr.evaluate(xmlfile);
+	}
+
+	public String Especializacao() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
+		return expr.evaluate(xmlfile);
+	}
+
+	public String MBA() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
+		return expr.evaluate(xmlfile);
+	}
+
+	public String PosDoutorado() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
+		return expr.evaluate(xmlfile);
+	}
+
+	public String ResidenciaMedica() throws XPathExpressionException {
+		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
+		return expr.evaluate(xmlfile);
+	}
+
+	public String CursoTecnico() throws XPathExpressionException {
 		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
 		return expr.evaluate(xmlfile);
 	}
