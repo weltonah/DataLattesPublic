@@ -17,7 +17,7 @@ import org.w3c.dom.Document;
 import br.com.Modelo.Tipo1;
 import br.com.converter.SearchXML;
 
-public class LivroCap {
+public class LivroCapTeste {
 	private static Document xmlfile;
 	private static SearchXML searchXML;
 	private static ArrayList<Tipo1> listprod;

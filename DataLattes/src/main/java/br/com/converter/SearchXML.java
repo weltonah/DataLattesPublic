@@ -16,6 +16,7 @@ import br.com.Modelo.Autores;
 import br.com.Modelo.Tipo0;
 import br.com.Modelo.Tipo1;
 import br.com.Modelo.Tipo2;
+import br.com.Modelo.Tipo3;
 
 public class SearchXML {
 
@@ -64,26 +65,29 @@ public class SearchXML {
 		}
 	}
 
-	public ArrayList<Tipo0> BuscaTipo0(String raiz,String Tipocodigo,int a, String aux,int b, String aux2) throws XPathExpressionException {
+	public ArrayList<Tipo0> BuscaTipo0(String raiz, String Tipocodigo, String NomeTitulo, String NomeAno, int a,
+			String aux, int b, String aux2) throws XPathExpressionException {
 		XPathExpression expr = xpath.compile(raiz);
 		NodeList artigos = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
 		ArrayList<Tipo0> ListArtigoCompleto = new ArrayList<Tipo0>();
 		for (int i = 0; i < artigos.getLength(); i++) {
 			Node artigoNode = artigos.item(i);
-			String titulo = artigoNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO-DO-ARTIGO")
+			String titulo = artigoNode.getChildNodes().item(0).getAttributes().getNamedItem(NomeTitulo)
 					.getTextContent();
 			String natureza = artigoNode.getChildNodes().item(0).getAttributes().getNamedItem("NATUREZA")
 					.getTextContent();
-			String codigo = artigoNode.getChildNodes().item(1).getAttributes().getNamedItem(Tipocodigo).getTextContent();
-			int ano = Integer.valueOf(
-					artigoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO-DO-ARTIGO").getTextContent());
+			String codigo = artigoNode.getChildNodes().item(1).getAttributes().getNamedItem(Tipocodigo)
+					.getTextContent();
+			int ano = Integer
+					.valueOf(artigoNode.getChildNodes().item(0).getAttributes().getNamedItem(NomeAno).getTextContent());
 			Tipo0 prod = new Tipo0(titulo, ano, natureza, codigo);
-			if(aux != null) {
+			if (aux != null) {
 				String campAux = artigoNode.getChildNodes().item(a).getAttributes().getNamedItem(aux).getTextContent();
 				prod.setCampAux(campAux);
 			}
-			if(aux2 != null) {
-				String campAux2 = artigoNode.getChildNodes().item(b).getAttributes().getNamedItem(aux2).getTextContent();
+			if (aux2 != null) {
+				String campAux2 = artigoNode.getChildNodes().item(b).getAttributes().getNamedItem(aux2)
+						.getTextContent();
 				prod.setCampAux2(campAux2);
 			}
 			NodeList listAutores = artigoNode.getChildNodes();
@@ -102,25 +106,26 @@ public class SearchXML {
 	}
 
 	public ArrayList<Tipo0> ArtigoCompletoPublicado() throws XPathExpressionException {
-		return BuscaTipo0("//ARTIGO-PUBLICADO","ISSN",0,null,0,null);
+		return BuscaTipo0("//ARTIGO-PUBLICADO", "ISSN", "TITULO-DO-ARTIGO", "ANO-DO-ARTIGO", 0, null, 0, null);
 	}
 
 	public ArrayList<Tipo0> ArtigoCompletoAceito() throws XPathExpressionException {
-		return BuscaTipo0("//ARTIGO-ACEITO-PARA-PUBLICACAO","ISSN",0,null,0,null);
+		return BuscaTipo0("//ARTIGO-ACEITO-PARA-PUBLICACAO", "ISSN", "TITULO-DO-ARTIGO", "ANO-DO-ARTIGO", 0, null, 0,
+				null);
 	}
 
 	public ArrayList<Tipo2> LivroPublicadoOuOrganizar() throws XPathExpressionException {
-		return BuscaTipo2("//LIVRO-PUBLICADO-OU-ORGANIZADO","ISBN",0,null);
+		return BuscaTipo2("//LIVRO-PUBLICADO-OU-ORGANIZADO", "ISBN", "TITULO-DO-LIVRO", 0, null);
 	}
 
-	public ArrayList<Tipo2> BuscaTipo2(String raiz,String Tipocodigo, int a, String aux) throws XPathExpressionException {
+	public ArrayList<Tipo2> BuscaTipo2(String raiz, String Tipocodigo, String NomeTitulo, int a, String aux)
+			throws XPathExpressionException {
 		XPathExpression expr = xpath.compile(raiz);
 		NodeList livros = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
 		ArrayList<Tipo2> ListArtigoCompleto = new ArrayList<Tipo2>();
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node livroNode = livros.item(i);
-			String titulo = livroNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO-DO-LIVRO")
-					.getTextContent();
+			String titulo = livroNode.getChildNodes().item(0).getAttributes().getNamedItem(NomeTitulo).getTextContent();
 			String natureza = livroNode.getChildNodes().item(0).getAttributes().getNamedItem("NATUREZA")
 					.getTextContent();
 			String tipo = livroNode.getChildNodes().item(0).getAttributes().getNamedItem("TIPO").getTextContent();
@@ -128,7 +133,7 @@ public class SearchXML {
 			int ano = Integer
 					.valueOf(livroNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
 			Tipo2 prod = new Tipo2(titulo, ano, natureza, tipo, codigo);
-			if(aux != null) {
+			if (aux != null) {
 				String campAux = livroNode.getChildNodes().item(a).getAttributes().getNamedItem(aux).getTextContent();
 				prod.setCampAux(campAux);
 			}
@@ -176,23 +181,59 @@ public class SearchXML {
 					prod.AddAutores(aut);
 				}
 			}
-			prod.imprimirTipo1();
 			ListArtigoCompleto.add(prod);
 		}
 		return ListArtigoCompleto;
 	}
 
 	public ArrayList<Tipo2> LivroPrePosFacio() throws XPathExpressionException {
-		return BuscaTipo2("//PREFACIO-POSFACIO","ISSN-ISBN",1,"TITULO-DA-PUBLICACAO");
+		return BuscaTipo2("//PREFACIO-POSFACIO", "ISSN-ISBN", "TITULO", 1, "TITULO-DA-PUBLICACAO");
 	}
+
 	public ArrayList<Tipo0> TrabalhoCompletoEvento() throws XPathExpressionException {
-		return BuscaTipo0("//PREFACIO-POSFACIO","ISBN",1,"CLASSIFICACAO-DO-EVENTO",1,"NOME-DO-EVENTO");
+		return BuscaTipo0("//TRABALHO-EM-EVENTOS", "ISBN", "TITULO-DO-TRABALHO", "ANO-DO-TRABALHO", 1,
+				"CLASSIFICACAO-DO-EVENTO", 1, "NOME-DO-EVENTO");
 	}
+	
+	public ArrayList<Tipo3> BuscaTipo3(String raiz, String Tipocodigo, String NomeTitulo, int a, String aux)
+			throws XPathExpressionException {
+		XPathExpression expr = xpath.compile(raiz);
+		NodeList livros = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
+		ArrayList<Tipo2> ListArtigoCompleto = new ArrayList<Tipo2>();
+		for (int i = 0; i < livros.getLength(); i++) {
+			Node livroNode = livros.item(i);
+			String titulo = livroNode.getChildNodes().item(0).getAttributes().getNamedItem(NomeTitulo).getTextContent();
+			String natureza = livroNode.getChildNodes().item(0).getAttributes().getNamedItem("NATUREZA")
+					.getTextContent();
+			String tipo = livroNode.getChildNodes().item(0).getAttributes().getNamedItem("TIPO").getTextContent();
+			String codigo = livroNode.getChildNodes().item(1).getAttributes().getNamedItem(Tipocodigo).getTextContent();
+			int ano = Integer
+					.valueOf(livroNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
+			Tipo2 prod = new Tipo2(titulo, ano, natureza, tipo, codigo);
+			if (aux != null) {
+				String campAux = livroNode.getChildNodes().item(a).getAttributes().getNamedItem(aux).getTextContent();
+				prod.setCampAux(campAux);
+			}
+			NodeList listAutores = livroNode.getChildNodes();
+			for (int j = 0; j < listAutores.getLength(); j++) {
+				Node autoresNode = listAutores.item(j);
+				if (autoresNode.getNodeName().contentEquals("AUTORES")) {
+					String aux0 = autoresNode.getAttributes().getNamedItem("NOME-COMPLETO-DO-AUTOR").getTextContent();
+					String aux1 = autoresNode.getAttributes().getNamedItem("NOME-PARA-CITACAO").getTextContent();
+					Autores aut = new Autores(aux0, aux1);
+					prod.AddAutores(aut);
+				}
+			}
+			ListArtigoCompleto.add(prod);
+		}
+		return ListArtigoCompleto;
+	}
+	
+	
 	
 
 	public String Patente() throws XPathExpressionException {
-		XPathExpression expr = xpath.compile("string(/*/DADOS-GERAIS[1]/@NOME-COMPLETO)");
-		return expr.evaluate(xmlfile);
+		return BuscaTipo3("//PATENTE", "ISSN-ISBN", "TITULO", 1, "TITULO-DA-PUBLICACAO");
 	}
 
 	public String PatenteNacional() throws XPathExpressionException {
