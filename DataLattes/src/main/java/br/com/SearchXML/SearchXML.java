@@ -245,6 +245,7 @@ public class SearchXML {
 		ArrayList<Tipo3> ListArtigoCompleto = new ArrayList<Tipo3>();
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node TipoNode = livros.item(i);
+			
 			System.out.println(TipoNode.getChildNodes().getLength());
 			String titulo = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem(NomeTitulo).getTextContent();
 			int ano = Integer

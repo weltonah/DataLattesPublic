@@ -30,7 +30,7 @@ public class TopografiaCircuitoTeste {
 
 	@BeforeClass
 	public static void shouldSaveUploadedFile() throws Exception {
-		File file = new ClassPathResource("static/testFile/Johncurriculo.xml").getFile();
+		File file = new ClassPathResource("static/testFile/padrao.xml").getFile();
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		xmlfile = docBuilder.parse(file);
