@@ -2,13 +2,11 @@ package br.com.SearchXML;
 
 import java.util.ArrayList;
 
-import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 
 import org.w3c.dom.Document;
 
 import br.com.Modelo.Producao;
-import br.com.Modelo.Tipo0;
 import br.com.Modelo.Tipo3;
 import br.com.Modelo.Tipo4;
 import br.com.Modelo.Tipo5;
@@ -85,8 +83,10 @@ public class SearchXMLProdTecnica extends SearchXML {
 	public ArrayList<Tipo6> Editoracao() throws XPathExpressionException {
 		return BuscaTipo6("//EDITORACAO", "TITULO", 0, null, 0, null);
 	}
+
 	public ArrayList<Tipo6> ManutencaoObraArtistica() throws XPathExpressionException {
-		return BuscaTipo6("//APRESENTACAO-DE-OBRA-ARTISTICA","TITULO",1,"TIPO-DE-EVENTO", 1, "ATIVIDADE-DOS-AUTORES");
+		return BuscaTipo6("//APRESENTACAO-DE-OBRA-ARTISTICA", "TITULO", 1, "TIPO-DE-EVENTO", 1,
+				"ATIVIDADE-DOS-AUTORES");
 	}
 
 	public ArrayList<Producao> Maquete() throws XPathExpressionException {

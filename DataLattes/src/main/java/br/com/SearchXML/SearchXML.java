@@ -257,7 +257,7 @@ public class SearchXML {
 			String dataConcessao = RegPatente.getAttributes().getNamedItem("DATA-DE-CONCESSAO").getTextContent();
 			String nomeTitular = RegPatente.getAttributes().getNamedItem("NOME-DO-TITULAR").getTextContent();
 			RegistroPatente regPatente = new RegistroPatente(tipoPatente, codigoPatente, dataConcessao, nomeTitular);
-
+			
 			Tipo3 prod = new Tipo3(titulo, ano, regPatente);
 			NodeList listAutores = TipoNode.getChildNodes();
 			for (int j = 0; j < listAutores.getLength(); j++) {

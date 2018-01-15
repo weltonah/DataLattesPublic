@@ -148,7 +148,7 @@ public class SearchXMLFormacoes extends SearchXML {
 			String nome_instituicao = graNode.getAttributes().getNamedItem("NOME-INSTITUICAO")
 					.getTextContent();
 			String nome_curso = graNode.getAttributes().getNamedItem("TITULO-DO-TRABALHO")
-					.getTextContent();
+					.getTextContent(); 
 			String aux[] = { nivel, ano, nome_instituicao, nome_curso };
 			gra.add(aux);
 		}
@@ -277,7 +277,7 @@ public class SearchXMLFormacoes extends SearchXML {
 		NodeList graNodeList = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
 		for (int i = 0; i < graNodeList.getLength(); i++) {
 			Node graNode = graNodeList.item(i);
-			String idioma = graNode.getAttributes().getNamedItem("IDIOMA").getTextContent();
+			String idioma = graNode.getAttributes().getNamedItem("DESCRICAO-DO-IDIOMA").getTextContent();
 			String profLeitura = graNode.getAttributes().getNamedItem("PROFICIENCIA-DE-LEITURA")
 					.getTextContent();
 			String profFala = graNode.getAttributes().getNamedItem("PROFICIENCIA-DE-FALA")
@@ -316,6 +316,7 @@ public class SearchXMLFormacoes extends SearchXML {
 		XPathExpression expr = xpath.compile("//MBA");
 		NodeList graNodeList = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
 		for (int i = 0; i < graNodeList.getLength(); i++) {
+			System.out.println(graNodeList.getLength());
 			Node graNode = graNodeList.item(i);
 			String nivel = graNode.getAttributes().getNamedItem("NIVEL").getTextContent();
 			String tituloTcc = graNode.getAttributes()
