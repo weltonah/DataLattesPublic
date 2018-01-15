@@ -1,4 +1,4 @@
-package br.com.SearchXMLTest;
+package br.com.SearchXMLTest.Tecnica;
 
 import static org.junit.Assert.assertEquals;
 
