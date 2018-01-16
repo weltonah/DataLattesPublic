@@ -14,13 +14,13 @@ import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 
-import br.com.Modelo.Tipo3;
+import br.com.Modelo.Tipo4;
 import br.com.SearchXML.SearchXMLProdTecnica;
 
-public class TopografiaCircuitoTeste {
+public class ProcessoTecnicaTeste {
 	private static Document xmlfile;
 	private static SearchXMLProdTecnica searchXML;
-	private static ArrayList<Tipo3> listprod;
+	private static ArrayList<Tipo4> listprod;
 
 	// @Autowired
 	// private MockMvc mvc;
@@ -30,48 +30,39 @@ public class TopografiaCircuitoTeste {
 
 	@BeforeClass
 	public static void shouldSaveUploadedFile() throws Exception {
-		File file = new ClassPathResource("static/XML/topografia.xml").getFile();
+		File file = new ClassPathResource("static/testFile/Johncurriculo.xml").getFile();
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		xmlfile = docBuilder.parse(file);
 		searchXML = new SearchXMLProdTecnica(xmlfile);
-		listprod = searchXML.TopogradiaDeCircuitoIntegrado();
+		listprod = searchXML.ProcessoTecnico();
 	}
 
 	@Test
 	public void primeiroTituloPublicado() throws XPathExpressionException {
-		assertEquals("titulo topografia", listprod.get(0).getTitulo());
-	}
-	
-	@Test
-	public void PrimeiroAnoPublicado() throws XPathExpressionException {
-		assertEquals((int) 2012, listprod.get(0).getAno());
+		assertEquals(
+				"Pedido de Patente F2",
+				listprod.get(0).getTitulo());
 	}
 
 	@Test
-	public void PrimeiroCodigoPublicado() throws XPathExpressionException {
-		assertEquals("8889", listprod.get(0).getRegPatente().getCodigoPatente());
+	public void PrimeiroAnoPublicado() throws XPathExpressionException {
+		assertEquals((int) 2011, listprod.get(0).getAno());
 	}
+
 	@Test
-	public void PrimeiroTipoPatentePublicado() throws XPathExpressionException {
-		assertEquals("PRIVILEGIO_DE_INOVACAO_PI", listprod.get(0).getRegPatente().getTipoPatente());
-	}
-	@Test
-	public void PrimeiroDataConPublicado() throws XPathExpressionException {
-		assertEquals("2011", listprod.get(0).getRegPatente().getDataConcessao());
-	}
-	@Test
-	public void PrimeiroNomePublicado() throws XPathExpressionException {
-		assertEquals("nome titular patente", listprod.get(0).getRegPatente().getNomeTitular());
+	public void PrimeiroNatureza() throws XPathExpressionException {
+		assertEquals("INSTRUMENTAL", listprod.get(0).getNatureza());
 	}
 
 	@Test
 	public void PrimeiraPrimeiroAutornaturezaPublicado() throws XPathExpressionException {
-		assertEquals("nome completo topografica", listprod.get(0).getAutores().get(0).getNome());
+		assertEquals("John Katz", listprod.get(0).getAutores().get(0).getNome());
 	}
+
 	@Test
 	public void PromeiroPrimeiroAutorcitacaonaturezaPublicado() throws XPathExpressionException {
-		assertEquals("N C P", listprod.get(0).getAutores().get(0).getCitacao());
+		assertEquals("KATZ, J.", listprod.get(0).getAutores().get(0).getCitacao());
 	}
-	
+
 }

@@ -14,13 +14,13 @@ import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 
-import br.com.Modelo.Tipo3;
+import br.com.Modelo.Tipo6;
 import br.com.SearchXML.SearchXMLProdTecnica;
 
-public class TopografiaCircuitoTeste {
+public class ApresentacaoTrabalhoTeste {
 	private static Document xmlfile;
 	private static SearchXMLProdTecnica searchXML;
-	private static ArrayList<Tipo3> listprod;
+	private static ArrayList<Tipo6> listprod;
 
 	// @Autowired
 	// private MockMvc mvc;
@@ -30,48 +30,43 @@ public class TopografiaCircuitoTeste {
 
 	@BeforeClass
 	public static void shouldSaveUploadedFile() throws Exception {
-		File file = new ClassPathResource("static/XML/topografia.xml").getFile();
+		File file = new ClassPathResource("static/testFile/Jairocurriculo.xml").getFile();
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		xmlfile = docBuilder.parse(file);
 		searchXML = new SearchXMLProdTecnica(xmlfile);
-		listprod = searchXML.TopogradiaDeCircuitoIntegrado();
+		listprod = searchXML.ApresentacaoTrabalho();
 	}
 
 	@Test
 	public void primeiroTituloPublicado() throws XPathExpressionException {
-		assertEquals("titulo topografia", listprod.get(0).getTitulo());
-	}
-	
-	@Test
-	public void PrimeiroAnoPublicado() throws XPathExpressionException {
-		assertEquals((int) 2012, listprod.get(0).getAno());
+		assertEquals(
+				"Sistema para Gestão de Conhecimento em Ensino de Engenharia e para Gestão e Resolução de Problemas da Comunidade",
+				listprod.get(0).getTitulo());
 	}
 
 	@Test
-	public void PrimeiroCodigoPublicado() throws XPathExpressionException {
-		assertEquals("8889", listprod.get(0).getRegPatente().getCodigoPatente());
+	public void PrimeiroAnoPublicado() throws XPathExpressionException {
+		assertEquals((int) 2003, listprod.get(0).getAno());
+	}
+
+	@Test
+	public void PrimeiroNatureza() throws XPathExpressionException {
+		assertEquals("SEMINARIO", listprod.get(0).getNatureza());
 	}
 	@Test
-	public void PrimeiroTipoPatentePublicado() throws XPathExpressionException {
-		assertEquals("PRIVILEGIO_DE_INOVACAO_PI", listprod.get(0).getRegPatente().getTipoPatente());
-	}
-	@Test
-	public void PrimeiroDataConPublicado() throws XPathExpressionException {
-		assertEquals("2011", listprod.get(0).getRegPatente().getDataConcessao());
-	}
-	@Test
-	public void PrimeiroNomePublicado() throws XPathExpressionException {
-		assertEquals("nome titular patente", listprod.get(0).getRegPatente().getNomeTitular());
+	public void PrimeiroNomeEvento() throws XPathExpressionException {
+		assertEquals("IX Seminário de Iniciação Científica", listprod.get(0).getCampAux());
 	}
 
 	@Test
 	public void PrimeiraPrimeiroAutornaturezaPublicado() throws XPathExpressionException {
-		assertEquals("nome completo topografica", listprod.get(0).getAutores().get(0).getNome());
+		assertEquals("Jairo Francisco de Souza", listprod.get(0).getAutores().get(0).getNome());
 	}
+
 	@Test
 	public void PromeiroPrimeiroAutorcitacaonaturezaPublicado() throws XPathExpressionException {
-		assertEquals("N C P", listprod.get(0).getAutores().get(0).getCitacao());
+		assertEquals("SOUZA, J. F.", listprod.get(0).getAutores().get(0).getCitacao());
 	}
-	
+
 }
