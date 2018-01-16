@@ -247,6 +247,7 @@ public class SearchXML {
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node TipoNode = livros.item(i);
 			String titulo = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem(NomeTitulo).getTextContent();
+			
 			int ano = Integer
 					.valueOf(TipoNode.getChildNodes().item(0).getAttributes().getNamedItem(NomeAno).getTextContent());
 
@@ -326,6 +327,8 @@ public class SearchXML {
 		XPathExpression expr = xpath.compile(raiz);
 		NodeList livros = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
 		ArrayList<Tipo5> ListArtigoCompleto = new ArrayList<Tipo5>();
+
+		System.out.println(livros.getLength());
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node TipoNode = livros.item(i);
 			String titulo = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO-DO-PRODUTO")
@@ -336,15 +339,21 @@ public class SearchXML {
 					.getTextContent();
 			String tipo = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("TIPO-PRODUTO")
 					.getTextContent();
-			Node RegPatente = TipoNode.getChildNodes().item(1).getFirstChild();
-			String tipoPatente = RegPatente.getAttributes().getNamedItem("TIPO-PATENTE").getTextContent();
-			String codigoPatente = RegPatente.getAttributes().getNamedItem("CODIGO-DO-REGISTRO-OU-PATENTE")
-					.getTextContent();
-			String dataConcessao = RegPatente.getAttributes().getNamedItem("DATA-DE-CONCESSAO").getTextContent();
-			String nomeTitular = RegPatente.getAttributes().getNamedItem("NOME-DO-TITULAR").getTextContent();
-			RegistroPatente regPatente = new RegistroPatente(tipoPatente, codigoPatente, dataConcessao, nomeTitular);
-
-			Tipo5 prod = new Tipo5(titulo, ano, natureza, tipo, regPatente);
+			
+			Tipo5 prod = new Tipo5(titulo, ano, natureza, tipo, null);
+			if (TipoNode.getChildNodes().item(1).getChildNodes().getLength() == 1) {
+				Node aux = TipoNode.getChildNodes().item(1).getFirstChild();
+				if (aux.getNodeName().contentEquals("REGISTRO-OU-PATENTE")) {
+					String tipoPatente = aux.getAttributes().getNamedItem("TIPO-PATENTE").getTextContent();
+					String codigoPatente = aux.getAttributes().getNamedItem("CODIGO-DO-REGISTRO-OU-PATENTE")
+							.getTextContent();
+					String dataConcessao = aux.getAttributes().getNamedItem("DATA-DE-CONCESSAO").getTextContent();
+					String nomeTitular = aux.getAttributes().getNamedItem("NOME-DO-TITULAR").getTextContent();
+					RegistroPatente regPatente = new RegistroPatente(tipoPatente, codigoPatente, dataConcessao,
+							nomeTitular);
+					prod.setRegPatente(regPatente);
+				}
+			}
 			NodeList listAutores = TipoNode.getChildNodes();
 			for (int j = 0; j < listAutores.getLength(); j++) {
 				Node autoresNode = listAutores.item(j);
