@@ -14,13 +14,13 @@ import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 
-import br.com.Modelo.Tipo3;
+import br.com.Modelo.Producao;
 import br.com.SearchXML.SearchXMLProdTecnica;
 
-public class MarcaTeste {
+public class MaqueteTeste {
 	private static Document xmlfile;
 	private static SearchXMLProdTecnica searchXML;
-	private static ArrayList<Tipo3> listprod;
+	private static ArrayList<Producao> listprod;
 
 	// @Autowired
 	// private MockMvc mvc;
@@ -35,27 +35,29 @@ public class MarcaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		xmlfile = docBuilder.parse(file);
 		searchXML = new SearchXMLProdTecnica(xmlfile);
-		listprod = searchXML.Marca();
+		listprod = searchXML.Maquete();
 	}
 
 	@Test
 	public void primeiroTituloPublicado() throws XPathExpressionException {
-		assertEquals("titulo marca", listprod.get(0).getTitulo());
+		assertEquals(
+				"maquete titulo",
+				listprod.get(0).getTitulo());
 	}
-
 	@Test
 	public void PrimeiroAnoPublicado() throws XPathExpressionException {
-		assertEquals((int) 2000, listprod.get(0).getAno());
+		assertEquals((int) 2009, listprod.get(0).getAno());
 	}
 
+	
 	@Test
 	public void PrimeiraPrimeiroAutornaturezaPublicado() throws XPathExpressionException {
-		assertEquals("nome marca", listprod.get(0).getAutores().get(0).getNome());
+		assertEquals("nome maquete", listprod.get(0).getAutores().get(0).getNome());
 	}
 
 	@Test
 	public void PromeiroPrimeiroAutorcitacaonaturezaPublicado() throws XPathExpressionException {
-		assertEquals("N m", listprod.get(0).getAutores().get(0).getCitacao());
+		assertEquals("n m", listprod.get(0).getAutores().get(0).getCitacao());
 	}
 
 }

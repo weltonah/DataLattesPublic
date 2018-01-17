@@ -42,7 +42,6 @@ public class SearchXML {
 		ArrayList<Producao> ListArtigoCompleto = new ArrayList<Producao>();
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node TipoNode = livros.item(i);
-			System.out.println(TipoNode.getChildNodes().getLength());
 			String titulo = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO").getTextContent();
 			int ano = Integer
 					.valueOf(TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
@@ -268,7 +267,6 @@ public class SearchXML {
 			NodeList listAutores = TipoNode.getChildNodes();
 			for (int j = 0; j < listAutores.getLength(); j++) {
 				Node autoresNode = listAutores.item(j);
-				System.out.println(autoresNode.toString());
 				if (autoresNode.getNodeName().contentEquals("AUTORES")) {
 					String aux0 = autoresNode.getAttributes().getNamedItem("NOME-COMPLETO-DO-AUTOR").getTextContent();
 					String aux1 = autoresNode.getAttributes().getNamedItem("NOME-PARA-CITACAO").getTextContent();
@@ -328,7 +326,6 @@ public class SearchXML {
 		NodeList livros = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
 		ArrayList<Tipo5> ListArtigoCompleto = new ArrayList<Tipo5>();
 
-		System.out.println(livros.getLength());
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node TipoNode = livros.item(i);
 			String titulo = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO-DO-PRODUTO")
@@ -413,7 +410,6 @@ public class SearchXML {
 		ArrayList<Tipo8> ListArtigoCompleto = new ArrayList<Tipo8>();
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node TipoNode = livros.item(i);
-			System.out.println(TipoNode.getChildNodes().getLength());
 			String titulo = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO").getTextContent();
 			int ano = Integer
 					.valueOf(TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());

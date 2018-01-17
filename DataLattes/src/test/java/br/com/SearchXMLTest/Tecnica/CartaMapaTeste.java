@@ -30,7 +30,7 @@ public class CartaMapaTeste {
 
 	@BeforeClass
 	public static void shouldSaveUploadedFile() throws Exception {
-		File file = new ClassPathResource("static/XML/topografia.xml").getFile();
+		File file = new ClassPathResource("static/testFile/Jairocurriculo.xml").getFile();
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		xmlfile = docBuilder.parse(file);

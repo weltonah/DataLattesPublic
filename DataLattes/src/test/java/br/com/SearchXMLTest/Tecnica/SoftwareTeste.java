@@ -30,7 +30,7 @@ public class SoftwareTeste {
 
 	@BeforeClass
 	public static void shouldSaveUploadedFile() throws Exception {
-		File file = new ClassPathResource("static/testFile/Jairocurriculo.xml").getFile();
+		File file = new ClassPathResource("static/testFile/Jairocurriculoriginal.xml").getFile();
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		xmlfile = docBuilder.parse(file);

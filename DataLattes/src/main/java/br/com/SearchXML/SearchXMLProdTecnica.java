@@ -83,12 +83,12 @@ public class SearchXMLProdTecnica extends SearchXML {
 	public ArrayList<Tipo6> Editoracao() throws XPathExpressionException {
 		return BuscaTipo6("//EDITORACAO", "TITULO", 0, null, 0, null);
 	}
-
+	//feito
 	public ArrayList<Tipo6> ManutencaoObraArtistica() throws XPathExpressionException {
-		return BuscaTipo6("//APRESENTACAO-DE-OBRA-ARTISTICA", "TITULO", 1, "TIPO-DE-EVENTO", 1,
-				"ATIVIDADE-DOS-AUTORES");
+		return BuscaTipo6("//MANUTENCAO-DE-OBRA-ARTISTICA", "TITULO", 1, "NOME-DA-OBRA", 0,
+				null);
 	}
-
+	//feito
 	public ArrayList<Producao> Maquete() throws XPathExpressionException {
 		return BuscaProducao("//MAQUETE", 0, null);
 	}
@@ -96,15 +96,15 @@ public class SearchXMLProdTecnica extends SearchXML {
 	public ArrayList<Tipo8> OrganizacaoEventos() throws XPathExpressionException {
 		return BuscaTipo8("//ORGANIZACAO-DE-EVENTO", 0, null);
 	}
-
+	//feito
 	public ArrayList<Tipo6> ProgramaRadioTVComentario() throws XPathExpressionException {
 		return BuscaTipo6("//PROGRAMA-DE-RADIO-OU-TV", "TITULO", 0, null, 0, null);
 	}
-
+	//feito
 	public ArrayList<Producao> RelatorioPesquisa() throws XPathExpressionException {
 		return BuscaProducao("//RELATORIO-DE-PESQUISA", 0, null);
 	}
-
+	//feito
 	public ArrayList<Tipo6> MidiaSocial() throws XPathExpressionException {
 		return BuscaTipo6("//MIDIA-SOCIAL-WEBSITE-BLOG", "TITULO", 0, null, 0, null);
 	}
