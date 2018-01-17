@@ -16,7 +16,7 @@ import org.w3c.dom.Document;
 
 import br.com.SearchXML.SearchXMLFormacoes;
 
-public class LivredocenciaTeste5 {
+public class MBATeste {
 	private static Document xmlfile;
 	private static SearchXMLFormacoes searchXML;
 	private static ArrayList<String[]> listprod;
@@ -34,27 +34,39 @@ public class LivredocenciaTeste5 {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		xmlfile = docBuilder.parse(file);
 		searchXML = new SearchXMLFormacoes(xmlfile);
-		listprod = searchXML.LivreDocencia();
+		listprod = searchXML.MBA();
 	}
 
 	@Test
 	public void nivel() throws XPathExpressionException {
-		assertEquals("4", listprod.get(0)[0]);
+		assertEquals("3", listprod.get(0)[0]);
+	}
+	
+	@Test
+	public void tituloTcc() throws XPathExpressionException {
+		assertEquals("titulo monografia mba", listprod.get(0)[1]);
 	}
 
 	@Test
 	public void ano() throws XPathExpressionException {
-		assertEquals("2010", listprod.get(0)[1]);
+		assertEquals("2009", listprod.get(0)[2]);
 	}
-
+	@Test
+	public void nome_orientador() throws XPathExpressionException {
+		assertEquals("orientador mba", listprod.get(0)[3]);
+	}
 	@Test
 	public void nome_instituicao() throws XPathExpressionException {
-		assertEquals("Nome instituicao livre docencia", listprod.get(0)[2]);
+		assertEquals("instituicao mba", listprod.get(0)[4]);
+	}
+	@Test
+	public void status() throws XPathExpressionException {
+		assertEquals("CONCLUIDO", listprod.get(0)[5]);
 	}
 
 	@Test
 	public void nome_curso() throws XPathExpressionException {
-		assertEquals("titulo trabalho livre docencia", listprod.get(0)[3]);
+		assertEquals("nome curso mba", listprod.get(0)[6]);
 	}
-
+	
 }

@@ -16,7 +16,7 @@ import org.w3c.dom.Document;
 
 import br.com.SearchXML.SearchXMLFormacoes;
 
-public class PremioTeste5 {
+public class AreaAtuacaoTeste {
 	private static Document xmlfile;
 	private static SearchXMLFormacoes searchXML;
 	private static ArrayList<String[]> listprod;
@@ -34,26 +34,39 @@ public class PremioTeste5 {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		xmlfile = docBuilder.parse(file);
 		searchXML = new SearchXMLFormacoes(xmlfile);
-		listprod = searchXML.Premio();
+		listprod = searchXML.areaAtuacao();
 	}
 
 	@Test
-	public void Nome() throws XPathExpressionException {
-		assertEquals("Best paper na 12a Conferência Ibero-americana WWW/Internet", listprod.get(0)[0]);
+	public void GrandeArea() throws XPathExpressionException {
+		assertEquals("CIENCIAS_EXATAS_E_DA_TERRA", listprod.get(0)[0]);
 	}
-
-
 	@Test
-	public void ano() throws XPathExpressionException {
-		assertEquals("2014", listprod.get(0)[1]);
+	public void nomearea() throws XPathExpressionException {
+		assertEquals("Ciência da Computação", listprod.get(0)[1]);
 	}
-
-
 	@Test
-	public void inst() throws XPathExpressionException {
-		assertEquals("IADIS", listprod.get(0)[2]);
+	public void subarea() throws XPathExpressionException {
+		assertEquals("Sistemas de Computação", listprod.get(0)[2]);
 	}
-
-
-
+	@Test
+	public void escialidade() throws XPathExpressionException {
+		assertEquals("Banco de Dados", listprod.get(0)[3]);
+	}
+	@Test
+	public void SegGrandeArea() throws XPathExpressionException {
+		assertEquals("CIENCIAS_EXATAS_E_DA_TERRA", listprod.get(1)[0]);
+	}
+	@Test
+	public void Segnomearea() throws XPathExpressionException {
+		assertEquals("Ciência da Computação", listprod.get(1)[1]);
+	}
+	@Test
+	public void Segsubarea() throws XPathExpressionException {
+		assertEquals("Representação do Conhecimento", listprod.get(1)[2]);
+	}
+	@Test
+	public void Segescialidade() throws XPathExpressionException {
+		assertEquals("", listprod.get(1)[3]);
+	}
 }

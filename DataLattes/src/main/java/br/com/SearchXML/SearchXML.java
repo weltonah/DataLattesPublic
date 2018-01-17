@@ -84,7 +84,7 @@ public class SearchXML {
 			}
 			if (aux2 != null) {
 				String campAux2 = TipoNode.getChildNodes().item(b).getAttributes().getNamedItem(aux2).getTextContent();
-				prod.setCampAux(campAux2);
+				prod.setCampAux2(campAux2);
 			}
 			NodeList listAutores = TipoNode.getChildNodes();
 			for (int j = 0; j < listAutores.getLength(); j++) {
@@ -127,7 +127,7 @@ public class SearchXML {
 			if (aux2 != null) {
 				String campAux2 = artigoNode.getChildNodes().item(b).getAttributes().getNamedItem(aux2)
 						.getTextContent();
-				prod.setCampAux(campAux2);
+				prod.setCampAux2(campAux2);
 			}
 
 			ListArtigoCompleto.add(prod);
@@ -246,7 +246,7 @@ public class SearchXML {
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node TipoNode = livros.item(i);
 			String titulo = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem(NomeTitulo).getTextContent();
-			
+
 			int ano = Integer
 					.valueOf(TipoNode.getChildNodes().item(0).getAttributes().getNamedItem(NomeAno).getTextContent());
 
@@ -336,7 +336,7 @@ public class SearchXML {
 					.getTextContent();
 			String tipo = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("TIPO-PRODUTO")
 					.getTextContent();
-			
+
 			Tipo5 prod = new Tipo5(titulo, ano, natureza, tipo, null);
 			if (TipoNode.getChildNodes().item(1).getChildNodes().getLength() == 1) {
 				Node aux = TipoNode.getChildNodes().item(1).getFirstChild();
@@ -382,12 +382,13 @@ public class SearchXML {
 			Tipo6 prod = new Tipo6(titulo, ano, natureza);
 			if (aux != null) {
 				String campAux = artigoNode.getChildNodes().item(a).getAttributes().getNamedItem(aux).getTextContent();
+				
 				prod.setCampAux(campAux);
 			}
 			if (aux2 != null) {
 				String campAux2 = artigoNode.getChildNodes().item(b).getAttributes().getNamedItem(aux2)
 						.getTextContent();
-				prod.setCampAux(campAux2);
+				prod.setCampAux2(campAux2);
 			}
 			NodeList listAutores = artigoNode.getChildNodes();
 			for (int j = 0; j < listAutores.getLength(); j++) {
@@ -415,8 +416,7 @@ public class SearchXML {
 					.valueOf(TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
 			String natureza = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("NATUREZA")
 					.getTextContent();
-			String tipo = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("TIPO")
-					.getTextContent();
+			String tipo = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("TIPO").getTextContent();
 			Tipo8 prod = new Tipo8(titulo, ano, natureza, tipo);
 			if (aux != null) {
 				String campAux = TipoNode.getChildNodes().item(a).getAttributes().getNamedItem(aux).getTextContent();

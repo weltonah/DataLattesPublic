@@ -16,7 +16,7 @@ import org.w3c.dom.Document;
 
 import br.com.SearchXML.SearchXMLFormacoes;
 
-public class MestradoProfTeste3 {
+public class MestradoProfTeste{
 	private static Document xmlfile;
 	private static SearchXMLFormacoes searchXML;
 	private static ArrayList<String[]> listprod;

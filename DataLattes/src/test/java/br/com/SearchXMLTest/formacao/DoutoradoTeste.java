@@ -16,7 +16,7 @@ import org.w3c.dom.Document;
 
 import br.com.SearchXML.SearchXMLFormacoes;
 
-public class AperfeicoamentoTeste3 {
+public class DoutoradoTeste {
 	private static Document xmlfile;
 	private static SearchXMLFormacoes searchXML;
 	private static ArrayList<String[]> listprod;
@@ -29,47 +29,47 @@ public class AperfeicoamentoTeste3 {
 
 	@BeforeClass
 	public static void shouldSaveUploadedFile() throws Exception {
-		File file = new ClassPathResource("static/testFile/Jairocurriculo.xml").getFile();
+		File file = new ClassPathResource("static/testFile/Jairocurriculoriginal.xml").getFile();
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		xmlfile = docBuilder.parse(file);
 		searchXML = new SearchXMLFormacoes(xmlfile);
-		listprod = searchXML.Aperfeicoamento();
+		listprod = searchXML.Doutorado();
 	}
 
 	@Test
 	public void nivel() throws XPathExpressionException {
-		assertEquals("0", listprod.get(0)[0]);
+		assertEquals("4", listprod.get(0)[0]);
 	}
 
 	@Test
 	public void tituloTcc() throws XPathExpressionException {
-		assertEquals("titulo monogra aperfeicoamento", listprod.get(0)[1]);
+		assertEquals("Uma abordagem heurística uni-objetivo para calibragem em meta-alinhadores de ontologias", listprod.get(0)[1]);
 	}
 
 	@Test
 	public void ano() throws XPathExpressionException {
-		assertEquals("2006", listprod.get(0)[2]);
+		assertEquals("2012", listprod.get(0)[2]);
 	}
 
 	@Test
 	public void nome_orientador() throws XPathExpressionException {
-		assertEquals("orientador aperfeicoamento", listprod.get(0)[3]);
+		assertEquals("Carlos José Pereira de Lucena", listprod.get(0)[3]);
 	}
 
 	@Test
 	public void nome_instituicao() throws XPathExpressionException {
-		assertEquals("instituicao aperfeicoamento", listprod.get(0)[4]);
+		assertEquals("Pontifícia Universidade Católica do Rio de Janeiro", listprod.get(0)[4]);
 	}
 
 	@Test
 	public void status() throws XPathExpressionException {
-		assertEquals("EM_ANDAMENTO", listprod.get(0)[5]);
+		assertEquals("CONCLUIDO", listprod.get(0)[5]);
 	}
 
 	@Test
 	public void nome_curso() throws XPathExpressionException {
-		assertEquals("nome aperfeicoamento", listprod.get(0)[6]);
+		assertEquals("Informática", listprod.get(0)[6]);
 	}
 
 }

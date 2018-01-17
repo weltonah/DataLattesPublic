@@ -16,7 +16,7 @@ import org.w3c.dom.Document;
 
 import br.com.SearchXML.SearchXMLFormacoes;
 
-public class PosDoutoradoTeste4 {
+public class AperfeicoamentoTeste {
 	private static Document xmlfile;
 	private static SearchXMLFormacoes searchXML;
 	private static ArrayList<String[]> listprod;
@@ -34,36 +34,42 @@ public class PosDoutoradoTeste4 {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		xmlfile = docBuilder.parse(file);
 		searchXML = new SearchXMLFormacoes(xmlfile);
-		listprod = searchXML.PosDoutorado();
+		listprod = searchXML.Aperfeicoamento();
 	}
 
 	@Test
 	public void nivel() throws XPathExpressionException {
-		assertEquals("3", listprod.get(0)[0]);
+		assertEquals("0", listprod.get(0)[0]);
 	}
 
 	@Test
 	public void tituloTcc() throws XPathExpressionException {
-		assertEquals("titulo trabalho pos doutorado", listprod.get(0)[1]);
+		assertEquals("titulo monogra aperfeicoamento", listprod.get(0)[1]);
 	}
 
 	@Test
 	public void ano() throws XPathExpressionException {
-		assertEquals("2009", listprod.get(0)[2]);
+		assertEquals("2006", listprod.get(0)[2]);
+	}
+
+	@Test
+	public void nome_orientador() throws XPathExpressionException {
+		assertEquals("orientador aperfeicoamento", listprod.get(0)[3]);
 	}
 
 	@Test
 	public void nome_instituicao() throws XPathExpressionException {
-		assertEquals("Nome instituicao pos doutorado", listprod.get(0)[3]);
+		assertEquals("instituicao aperfeicoamento", listprod.get(0)[4]);
 	}
+
 	@Test
 	public void status() throws XPathExpressionException {
-		assertEquals("CONCLUIDO", listprod.get(0)[4]);
+		assertEquals("EM_ANDAMENTO", listprod.get(0)[5]);
 	}
 
 	@Test
 	public void nome_curso() throws XPathExpressionException {
-		assertEquals("nome curso posdoutorado", listprod.get(0)[5]);
+		assertEquals("nome aperfeicoamento", listprod.get(0)[6]);
 	}
 
 }
