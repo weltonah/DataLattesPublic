@@ -31,7 +31,7 @@
 <body>
 	<c:import url="/WEB-INF/views/header.jsp" />
 	<div class="col-md-12">
-		<div class="mx-auto" style="margin: 0 auto;margin-top:20px; width: 70%; position: relative;">
+		<div class="mx-auto" style="margin: 0 auto;margin-top:20px; width: 85%; position: relative;">
 	    <jsp:doBody/>
 	    </div>
     </div>
