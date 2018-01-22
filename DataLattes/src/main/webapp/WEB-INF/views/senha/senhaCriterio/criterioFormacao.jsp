@@ -47,12 +47,12 @@
 			</div>
 			<div class=" col-md-4">
 				<div class=" col-md-5">
-					<input type="number" class="form-control" id="valorCon${formacao}" name="valorunitarioCon" placeholder="pts">
+					<input type="number" class="form-control livreAndConValorUni" id="valorCon${formacao}" name="${formacao}" placeholder="pts">
 				</div>
 			</div>
 			<div class=" col-md-4 ">
 				<div class=" col-md-5  Formacaovalorlimite hidden">
-					<input type="number" class="form-control " id="limiteCon${formacao}" name="valorlimiteCon" placeholder="itens">
+					<input type="number" class="form-control LivreAndConLimite" id="limiteCon${formacao}" name="${formacao}" placeholder="itens">
 				</div>
 			</div>
 			</div>
@@ -67,10 +67,10 @@
 				<label>Em andamento ou concluido</label>
 			</div>
 			<div class=" col-md-4"><div class=" col-md-5">
-					<input type="number" class="form-control" id="valor${formacao}" name="valorunitario" placeholder="pts">
+					<input type="number" class="form-control formacaoAndConValorUni " id="valor${formacao}" name="${formacao}" placeholder="pts">
 			</div></div>
 			<div class=" col-md-4"><div class=" col-md-5  Formacaovalorlimite hidden">
-					<input type="number" class="form-control" id="limite${formacao}" name="valorlimite" placeholder="itens">
+					<input type="number" class="form-control formacaoAndConLimite" id="limite${formacao}" name="${formacao}" placeholder="itens">
 			</div></div>
 		</div>
 		<div class="col-xs-12 hidden FormacaoSepAndCon" >
@@ -79,10 +79,10 @@
 				<label>Andamento</label>
 			</div>
 			<div class=" col-md-4"><div class=" col-md-5">
-					<input type="number" class="form-control" id="valorAnd${formacao}" name="valorunitarioAnd" placeholder="pts">
+					<input type="number" class="form-control formacaoAndValorUni" id="valorAnd${formacao}" name="${formacao}" placeholder="pts">
 			</div></div>
 			<div class=" col-md-4 "><div class=" col-md-5  Formacaovalorlimite hidden">
-					<input type="number" class="form-control" id="limiteAnd${formacao}" name="valorlimiteAnd" placeholder="itens">
+					<input type="number" class="form-control formacaoAndimite" id="limiteAnd${formacao}" name="${formacao}" placeholder="itens">
 			</div></div>
 			</div>
 			<div class=" col-xs-12">
@@ -90,10 +90,10 @@
 					<label>Concluido</label>
 				</div>
 				<div class=" col-md-4"><div class=" col-md-5">
-						<input type="number" class="form-control" id="valorCon${formacao}" name="valorunitarioCon" placeholder="pts">
+						<input type="number" class="form-control formacaoConValorUni" id="valorCon${formacao}" name="${formacao}" placeholder="pts">
 				</div></div>
 				<div class=" col-md-4 "><div class=" col-md-5 Formacaovalorlimite hidden">
-						<input type="number" class="form-control" id="limiteCon${formacao}" name="valorlimiteCon" placeholder="itens">
+						<input type="number" class="form-control formacaoConLimite" id="limiteCon${formacao}" name="${formacao}" placeholder="itens">
 				</div></div>
 			</div>
 		</div>

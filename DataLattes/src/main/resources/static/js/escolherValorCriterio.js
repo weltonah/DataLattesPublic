@@ -12,7 +12,7 @@ function FormacaoStatus() {
 	} else {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].classList.add("hidden");
-			
+
 		}
 		for (var j = 0; j < xx.length; j++) {
 			xx[j].classList.remove("hidden");
@@ -30,12 +30,10 @@ function FormacaoLimite() {
 	} else {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].classList.add("hidden");
-			
+
 		}
 	}
 }
-
-
 
 function ProdBibliLimite() {
 	var x = document.getElementById("myCheckProdBibliLimite").checked;
@@ -47,7 +45,7 @@ function ProdBibliLimite() {
 	} else {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].classList.add("hidden");
-			
+
 		}
 	}
 }
@@ -66,7 +64,7 @@ function TrabNacInter() {
 	} else {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].classList.add("hidden");
-			
+
 		}
 		for (var j = 0; j < xx.length; j++) {
 			xx[j].classList.remove("hidden");
@@ -83,7 +81,7 @@ function ProdTecLimite() {
 	} else {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].classList.add("hidden");
-			
+
 		}
 	}
 }
@@ -102,7 +100,7 @@ function TrabNacInter() {
 	} else {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].classList.add("hidden");
-			
+
 		}
 		for (var j = 0; j < xx.length; j++) {
 			xx[j].classList.remove("hidden");
@@ -119,7 +117,7 @@ function ProdArtLimite() {
 	} else {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].classList.add("hidden");
-			
+
 		}
 	}
 }
@@ -137,7 +135,7 @@ function ProdArtCarater() {
 	} else {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].classList.add("hidden");
-			
+
 		}
 		for (var j = 0; j < xx.length; j++) {
 			xx[j].classList.remove("hidden");
@@ -145,9 +143,6 @@ function ProdArtCarater() {
 
 	}
 }
-
-
-
 
 function OriBancLimite() {
 	var x = document.getElementById("myCheckOriBancLimite").checked;
@@ -159,7 +154,7 @@ function OriBancLimite() {
 	} else {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].classList.add("hidden");
-			
+
 		}
 	}
 }
@@ -177,27 +172,63 @@ function OriBancCarater() {
 	} else {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].classList.add("hidden");
-			
+
 		}
 		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.remove("hidden");
+			xx[j].classList.remove("hidde");
 		}
 
 	}
 }
 
+function GerarKey() {
+	var key;
+	key = "%Ano" + document.getElementById("AnoInicio").value + "/"
+			+ document.getElementById("AnoFim").value + "%"
 
-
-
-function OriIC() {
-	var x = document.getElementById("myCheckOriIC").checked;
-	if (x) {
-		document.getElementById("txtOriIC").innerHTML = "Ativado";
-		document.getElementById("OriICMisto").classList.remove("hidden");
-		document.getElementById("OriIC").style.backgroundColor = "#a5d6a7 ";
+	key = key + "Formacao"
+	if (document.getElementById("myCheckFormacaoStatus").checked) {
+		var and = document.querySelectorAll('.formacaoAndValorUni');
+		var con = document.querySelectorAll('.formacaoConValorUni');
+		if (document.getElementById("myCheckFormacaoLimite").checked) {
+			for (var i = 0; i < and.length; i++) {
+				var andLimite = document.querySelectorAll('.formacaoAndimite');
+				var conLimite = document.querySelectorAll('.formacaoConLimite');
+				key = key + "-" + and[i].name;
+				key = key + "@" + "And" + "V+" + and[i].value + "L&"
+						+ andLimite[i].value;
+				key = key + "@" + "Con" + "V+" + con[i].value + "L&"
+						+ conLimite[i].value + "@";
+				key = key + "-";
+			}
+		} else {
+			for (var i = 0; i < and.length; i++) {
+				key = key + "-" + and[i].name;
+				key = key + "@" + "And" + "V+" + and[i].value;
+				key = key + "@" + "Con" + "V+" + con[i].value + "@";
+				key = key + "-";
+			}
+		}
 	} else {
-		document.getElementById("txtOriIC").innerHTML = "Desativado";
-		document.getElementById("OriICMisto").classList.add("hidden");
-		document.getElementById("OriIC").style.backgroundColor = "#ffab91";
+		var andConValor = document.querySelectorAll('.formacaoAndConValorUni');
+		if (document.getElementById("myCheckFormacaoLimite").checked) {
+			var andConLimite = document
+					.querySelectorAll('.formacaoAndConLimite');
+			for (var i = 0; i < andConValor.length; i++) {
+				key = key + "-" + andConValor[i].name + "V+"
+						+ andConValor[i].value + "L&" + andConLimite[i].value
+						+ "-";
+			}
+		} else {
+			for (var i = 0; i < andConValor.length; i++) {
+				key = key + "-" + andConValor[i].name + "V+"
+						+ andConValor[i].value + "-";
+			}
+		}
 	}
+	key = key + "%"
+	var valor = document.querySelectorAll('.OriBancAndCon');
+	var limite = document.querySelectorAll('.OriBancSepAndCon');
+
+	document.getElementById("keyId").value = key;
 }

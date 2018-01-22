@@ -20,14 +20,18 @@
 			<div class=" col-md-4">
 				<div class=" col-md-5">
 					<label>Ano inicio</label>
-					<input type="number" class="form-control" id="valorCon${formacao}" name="valorunitarioCon" placeholder="anos">
+					<input type="number" class="form-control" id="AnoInicio" name="AnoInicio" placeholder="anos">
 				</div>
 			</div>
 			<div class=" col-md-4 ">
 				<div class=" col-md-5">
 					<label>Ano fim</label>
-					<input type="number" class="form-control " id="limiteCon${formacao}" value="2018" name="valorlimiteCon" placeholder="anos">
+					<input type="number" class="form-control " id="AnoFim" value="2018" name="AnoFim" placeholder="anos">
 				</div>
+			</div>
+			<div class="col-xs-12">
+				<input type="text" class="form-control " id="keyId" name="keyId" >
+				<input class="btn btn-default" type="button" value="Input" onclick="GerarKey(this)">
 			</div>
 			
 			</div>

@@ -8,7 +8,7 @@ function formacaoMarkAll() {
 	} else {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].checked = false;
-			
+
 		}
 	}
 }
@@ -22,7 +22,7 @@ function ProdArtMarkAll() {
 	} else {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].checked = false;
-			
+
 		}
 	}
 }
@@ -36,7 +36,7 @@ function ProdTecMarkAll() {
 	} else {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].checked = false;
-			
+
 		}
 	}
 }
@@ -50,7 +50,7 @@ function DadosGeraisMarkAll() {
 	} else {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].checked = false;
-			
+
 		}
 	}
 }
@@ -64,7 +64,7 @@ function OriBancMarkAll() {
 	} else {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].checked = false;
-			
+
 		}
 	}
 }
@@ -78,7 +78,29 @@ function ProdBiblMarkAll() {
 	} else {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].checked = false;
-			
+
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
