@@ -21,12 +21,24 @@ public class SenhaController {
 	}
 
 	@RequestMapping("/escolherValorCriterio")
-	public String escolherValorCriterio(@RequestParam("formacao") List<Integer> formacao,
-			@RequestParam("ProdArt") List<Integer> ProdArt, @RequestParam("ProdTec") List<Integer> ProdTec,
-			@RequestParam("OriBanc") List<Integer> OriBanc, @RequestParam("ProdBibl") List<Integer> ProdBibl) {
-
+	public String escolherValorCriterio(Model model,@RequestParam("formacao") List<String> formacao,
+			@RequestParam("ProdArt") List<String> ProdArt, @RequestParam("ProdTec") List<String> ProdTec,
+			@RequestParam("OriBanc") List<String> OriBanc, @RequestParam("ProdBibl") List<String> ProdBibl, @RequestParam("DadosGerais") List<String> DadosGerais) {
+		formacao.remove(0);
+		ProdArt.remove(0);
+		ProdTec.remove(0);
+		OriBanc.remove(0);
+		ProdBibl.remove(0);
+		DadosGerais.remove(0);
+		model.addAttribute("formacaoList", formacao);
+		model.addAttribute("ProdArtList", ProdArt);
+		model.addAttribute("ProdTecList", ProdTec);
+		model.addAttribute("OriBancList", OriBanc);
+		model.addAttribute("ProdBiblList", ProdBibl);
+		model.addAttribute("DadosGeraisList", DadosGerais);
 		return "senha/escolherValorCriterio";
 	}
+	
 
 	@RequestMapping("/criterioChave")
 	public String criterioChave() {

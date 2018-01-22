@@ -103,7 +103,7 @@ public class CriteriosCheckBox {
 		this.OriBanc.add("Banca de Avaliação de curso");
 	}
 	private void preencherDadosGerais() {
-		this.DadosGerais.add("zero");
+		this.DadosGerais.add("Dedicação Exclusiva");
 	}
 	public ArrayList<String> getFormacao() {
 		return formacao;

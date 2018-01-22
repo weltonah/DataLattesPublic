@@ -29,7 +29,7 @@
 													<c:forEach var="formacao" varStatus="status" items="${ck.getFormacao()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input type="checkbox" name="formacao" value="${status.index}"> ${formacao}
+																<input type="checkbox" name="formacao" value="${formacao}"> ${formacao}
 																<br>
 															</label>
 														</div>
@@ -52,7 +52,7 @@
 													<c:forEach var="formacao" varStatus="status" items="${ck.getProdArt()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input type="checkbox" name="ProdArt" value="${status.index}"> ${formacao }
+																<input type="checkbox" name="ProdArt" value="${formacao}"> ${formacao }
 																<br>
 															</label>
 														</div>
@@ -77,7 +77,29 @@
 													<c:forEach var="formacao" varStatus="status" items="${ck.getProdTec()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input type="checkbox" name="ProdTec" value="${status.index}"> ${formacao }
+																<input type="checkbox" name="ProdTec" value="${formacao}"> ${formacao }
+																<br>
+															</label>
+														</div>
+													</c:forEach>
+												</div>
+
+											</div>
+										</div>
+										<div class="well col-sm-12 " id="DadosGerais" style="background-color: #ffab91">
+											<div class="col-sm-12 ">
+												<div class="col-sm-12">
+													</br>
+													<label>Dados Gerais</label>
+												</div>
+											</div>
+											<div class="col-sm-12  well " id="DadosGeraisMisto">
+												<div class="checkbox col-md-12 row">
+													<input type="checkbox" class="hidden check" name="DadosGerais" value="-1" checked>
+													<c:forEach var="formacao" varStatus="status" items="${ck.getDadosGerais()}">
+														<div class="checkbox col-md-12 row">
+															<label>
+																<input type="checkbox" name="DadosGerais" value="${formacao}"> ${formacao }
 																<br>
 															</label>
 														</div>
@@ -101,7 +123,7 @@
 													<c:forEach var="formacao" varStatus="status" items="${ck.getOriBanc()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input type="checkbox" name="OriBanc" value="${status.index}"> ${formacao }
+																<input type="checkbox" name="OriBanc" value="${formacao}"> ${formacao }
 																<br>
 															</label>
 														</div>
@@ -123,7 +145,7 @@
 													<c:forEach var="formacao" varStatus="status" items="${ck.getProdBibli()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input type="checkbox" name="ProdBibl" value="${status.index}"> ${formacao }
+																<input type="checkbox" name="ProdBibl" value="${formacao}"> ${formacao }
 																<br>
 															</label>
 														</div>
