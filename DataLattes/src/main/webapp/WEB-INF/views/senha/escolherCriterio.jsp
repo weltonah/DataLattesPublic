@@ -26,10 +26,14 @@
 											<div class="col-sm-12  well " id="FormacaoMisto">
 												<div class="checkbox col-md-12 row">
 													<input type="checkbox" class="hidden check" name="formacao" value="-1" checked>
+													<div class="col-md-12">
+													<input type="checkbox" class="check" id="checkboxformacaoMarkAll" onclick="formacaoMarkAll(this)"> Marcar todos
+													</div>
+													<hr  style="border-top: 1px solid #8c8b8b;">
 													<c:forEach var="formacao" varStatus="status" items="${ck.getFormacao()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input type="checkbox" name="formacao" value="${formacao}"> ${formacao}
+																<input class="formacao" type="checkbox" name="formacao" value="${formacao}"> ${formacao}
 																<br>
 															</label>
 														</div>
@@ -49,10 +53,14 @@
 											<div class="col-md-12  well " id="ProdArtMisto">
 												<div class="checkbox col-md-12 row">
 													<input type="checkbox" class="hidden check" name="ProdArt" value="-1" checked>
+													<div class="col-md-12">
+													<input type="checkbox" class="check" id="checkboxProdArtMarkAll" onclick="ProdArtMarkAll(this)"> Marcar todos
+													</div>
+													<hr  style="border-top: 1px solid #8c8b8b;">
 													<c:forEach var="formacao" varStatus="status" items="${ck.getProdArt()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input type="checkbox" name="ProdArt" value="${formacao}"> ${formacao }
+																<input class="ProdArt" type="checkbox" name="ProdArt" value="${formacao}"> ${formacao }
 																<br>
 															</label>
 														</div>
@@ -74,10 +82,14 @@
 											<div class="col-sm-12  well " id="ProdTecniMisto">
 												<div class="checkbox col-md-12 row">
 													<input type="checkbox" class="hidden check" name="ProdTec" value="-1" checked>
+													<div class="col-md-12">
+													<input type="checkbox" class="check" id="checkboxProdTecMarkAll" onclick="ProdTecMarkAll(this)"> Marcar todos
+													</div>
+													<hr  style="border-top: 1px solid #8c8b8b;">
 													<c:forEach var="formacao" varStatus="status" items="${ck.getProdTec()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input type="checkbox" name="ProdTec" value="${formacao}"> ${formacao }
+																<input class="ProdTec" type="checkbox" name="ProdTec" value="${formacao}" > ${formacao }
 																<br>
 															</label>
 														</div>
@@ -99,7 +111,7 @@
 													<c:forEach var="formacao" varStatus="status" items="${ck.getDadosGerais()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input type="checkbox" name="DadosGerais" value="${formacao}"> ${formacao }
+																<input class="DadosGerais" type="checkbox" name="DadosGerais" value="${formacao}"> ${formacao }
 																<br>
 															</label>
 														</div>
@@ -120,10 +132,14 @@
 											<div class="col-sm-12  well " id="OrienMisto">
 												<div class="checkbox col-md-12 row">
 													<input type="checkbox" class="hidden check" name="OriBanc" value="-1" checked>
+													<div class="col-md-12">
+													<input type="checkbox" class="check" id="checkboxOriBancMarkAll" onclick="OriBancMarkAll(this)"> Marcar todos
+													</div>
+													<hr  style="border-top: 1px solid #8c8b8b;">
 													<c:forEach var="formacao" varStatus="status" items="${ck.getOriBanc()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input type="checkbox" name="OriBanc" value="${formacao}"> ${formacao }
+																<input class="OriBanc" type="checkbox" name="OriBanc" value="${formacao}"> ${formacao }
 																<br>
 															</label>
 														</div>
@@ -142,10 +158,14 @@
 											<div class="col-md-12  well " id="ProdBibliMisto">
 												<div class="checkbox col-md-12 row">
 													<input type="checkbox" class="hidden check" name="ProdBibl" value="-1" checked>
+													<div class="col-md-12">
+													<input type="checkbox" class="check" id="checkboxProdBiblMarkAll" onclick="ProdBiblMarkAll(this)"> Marcar todos
+													</div>
+													<hr  style="border-top: 1px solid #8c8b8b;">
 													<c:forEach var="formacao" varStatus="status" items="${ck.getProdBibli()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input type="checkbox" name="ProdBibl" value="${formacao}"> ${formacao }
+																<input class="ProdBibl" type="checkbox" name="ProdBibl" value="${formacao}"> ${formacao }
 																<br>
 															</label>
 														</div>
