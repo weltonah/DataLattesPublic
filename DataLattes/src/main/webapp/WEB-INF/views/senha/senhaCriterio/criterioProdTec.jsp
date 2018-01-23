@@ -38,14 +38,14 @@
 		<div class="col-xs-12">
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" id="myCheckTrabNacInter" name="myCheckTrabNacInter" onclick="TrabNacInter(this)"> Diferenciar por carater do evento
+					<input type="checkbox" id="myCheckPatenteNacInter" name="myCheckPatenteNacInter" onclick="PatenteNacInter(this)"> Diferenciar por carater do evento
 				</label>
 			</div>
 		</div>
 		<div class="col-xs-12">
 			<label>${ProdTec}:</label>
 		</div>
-			<div class="col-xs-12 TrabNacInter">
+			<div class="col-xs-12 PatenteNacInter">
 				<div class=" col-md-4">
 					<label>Patente nacional e internacional</label>
 				</div>
@@ -60,7 +60,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-12 TrabSepNacInter hidden">
+			<div class="col-xs-12 PatenteSepNacInter hidden">
 				<div class="col-xs-12">
 						<div class=" col-md-4">
 						<label>Patente nacional</label>

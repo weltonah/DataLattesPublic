@@ -88,7 +88,6 @@ public class CriteriosCheckBox {
 	private void preencherOriBanc() {
 		this.OriBanc.add("Orientação Mestrado");
 		this.OriBanc.add("Orientação Doutorado");
-		this.OriBanc.add("Orientação Aperfeicoamento");
 		this.OriBanc.add("Orientação Especialização ou Aperfeiçoamento");
 		this.OriBanc.add("Orientação de Graduação");
 		this.OriBanc.add("Orientação de Iniciação Cientifica");

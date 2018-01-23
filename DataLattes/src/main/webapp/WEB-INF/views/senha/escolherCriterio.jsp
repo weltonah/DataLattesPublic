@@ -25,7 +25,6 @@
 											</div>
 											<div class="col-sm-12  well " id="FormacaoMisto">
 												<div class="checkbox col-md-12 row">
-													<input type="checkbox" class="hidden check" name="formacao" value="-1" checked>
 													<div class="col-md-12">
 													<input type="checkbox" class="check" id="checkboxformacaoMarkAll" onclick="formacaoMarkAll(this)"> Marcar todos
 													</div>
@@ -52,7 +51,6 @@
 											</div>
 											<div class="col-md-12  well " id="ProdArtMisto">
 												<div class="checkbox col-md-12 row">
-													<input type="checkbox" class="hidden check" name="ProdArt" value="-1" checked>
 													<div class="col-md-12">
 													<input type="checkbox" class="check" id="checkboxProdArtMarkAll" onclick="ProdArtMarkAll(this)"> Marcar todos
 													</div>
@@ -81,7 +79,6 @@
 											</div>
 											<div class="col-sm-12  well " id="ProdTecniMisto">
 												<div class="checkbox col-md-12 row">
-													<input type="checkbox" class="hidden check" name="ProdTec" value="-1" checked>
 													<div class="col-md-12">
 													<input type="checkbox" class="check" id="checkboxProdTecMarkAll" onclick="ProdTecMarkAll(this)"> Marcar todos
 													</div>
@@ -107,7 +104,6 @@
 											</div>
 											<div class="col-sm-12  well " id="DadosGeraisMisto">
 												<div class="checkbox col-md-12 row">
-													<input type="checkbox" class="hidden check" name="DadosGerais" value="-1" checked>
 													<c:forEach var="formacao" varStatus="status" items="${ck.getDadosGerais()}">
 														<div class="checkbox col-md-12 row">
 															<label>
@@ -131,7 +127,6 @@
 											</div>
 											<div class="col-sm-12  well " id="OrienMisto">
 												<div class="checkbox col-md-12 row">
-													<input type="checkbox" class="hidden check" name="OriBanc" value="-1" checked>
 													<div class="col-md-12">
 													<input type="checkbox" class="check" id="checkboxOriBancMarkAll" onclick="OriBancMarkAll(this)"> Marcar todos
 													</div>
@@ -157,7 +152,6 @@
 											</div>
 											<div class="col-md-12  well " id="ProdBibliMisto">
 												<div class="checkbox col-md-12 row">
-													<input type="checkbox" class="hidden check" name="ProdBibl" value="-1" checked>
 													<div class="col-md-12">
 													<input type="checkbox" class="check" id="checkboxProdBiblMarkAll" onclick="ProdBiblMarkAll(this)"> Marcar todos
 													</div>

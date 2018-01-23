@@ -71,6 +71,28 @@ function TrabNacInter() {
 		}
 	}
 }
+function PatenteNacInter() {
+	var x = document.getElementById("myCheckPatenteNacInter").checked;
+	var inputs = document.querySelectorAll('.PatenteSepNacInter');
+	var xx = document.querySelectorAll('.PatenteNacInter');
+	if (x) {
+		for (var i = 0; i < inputs.length; i++) {
+			inputs[i].classList.remove("hidden");
+		}
+		for (var j = 0; j < xx.length; j++) {
+			xx[j].classList.add("hidden");
+		}
+	} else {
+		for (var i = 0; i < inputs.length; i++) {
+			inputs[i].classList.add("hidden");
+			
+		}
+		for (var j = 0; j < xx.length; j++) {
+			xx[j].classList.remove("hidden");
+		}
+	}
+}
+
 function ProdTecLimite() {
 	var x = document.getElementById("myCheckProdTecLimite").checked;
 	var inputs = document.querySelectorAll('.ProdTecvalorlimite');
@@ -86,27 +108,7 @@ function ProdTecLimite() {
 	}
 }
 
-function TrabNacInter() {
-	var x = document.getElementById("myCheckTrabNacInter").checked;
-	var inputs = document.querySelectorAll('.TrabSepNacInter');
-	var xx = document.querySelectorAll('.TrabNacInter');
-	if (x) {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.remove("hidden");
-		}
-		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.add("hidden");
-		}
-	} else {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.add("hidden");
 
-		}
-		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.remove("hidden");
-		}
-	}
-}
 function ProdArtLimite() {
 	var x = document.getElementById("myCheckProdArtLimite").checked;
 	var inputs = document.querySelectorAll('.ProdArtvalorlimite');
@@ -158,6 +160,8 @@ function OriBancLimite() {
 		}
 	}
 }
+
+
 function OriBancCarater() {
 	var x = document.getElementById("myCheckOriBancStatus").checked;
 	var inputs = document.querySelectorAll('.OriBancSepAndCon');
@@ -175,18 +179,21 @@ function OriBancCarater() {
 
 		}
 		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.remove("hidde");
+			xx[j].classList.remove("hidden");
 		}
 
 	}
 }
 
+
+
+
 function GerarKey() {
 	var key;
 	key = "%Ano" + document.getElementById("AnoInicio").value + "/"
-			+ document.getElementById("AnoFim").value + "%"
+			+ document.getElementById("AnoFim").value + "%";
 
-	key = key + "Formacao"
+	key = key + "Formacao";
 	if (document.getElementById("myCheckFormacaoStatus").checked) {
 		var and = document.querySelectorAll('.formacaoAndValorUni');
 		var con = document.querySelectorAll('.formacaoConValorUni');
@@ -194,20 +201,22 @@ function GerarKey() {
 			for (var i = 0; i < and.length; i++) {
 				var andLimite = document.querySelectorAll('.formacaoAndimite');
 				var conLimite = document.querySelectorAll('.formacaoConLimite');
-				key = key + "-" + and[i].name;
-				key = key + "@" + "And" + "V+" + and[i].value + "L&"
-						+ andLimite[i].value;
-				key = key + "@" + "Con" + "V+" + con[i].value + "L&"
-						+ conLimite[i].value + "@";
-				key = key + "-";
+				key = key + "*" + and[i].name;
+				key = key + "@" + "And" + "V+" + and[i].value  + "V+" + "L&"
+						+ andLimite[i].value + "L&";
+				key = key + "@" + "Con" + "V+" + con[i].value + "V+" + "L&"
+						+ conLimite[i].value + "L&"+ "@";
+				
 			}
+			key = key + "*";
 		} else {
 			for (var i = 0; i < and.length; i++) {
-				key = key + "-" + and[i].name;
-				key = key + "@" + "And" + "V+" + and[i].value;
-				key = key + "@" + "Con" + "V+" + con[i].value + "@";
-				key = key + "-";
+				key = key + "*" + and[i].name;
+				key = key + "@" + "And" + "V+" + and[i].value + "V+";
+				key = key + "@" + "Con" + "V+" + con[i].value + "V+" + "@";
+				
 			}
+			key = key + "*";
 		}
 	} else {
 		var andConValor = document.querySelectorAll('.formacaoAndConValorUni');
@@ -215,17 +224,22 @@ function GerarKey() {
 			var andConLimite = document
 					.querySelectorAll('.formacaoAndConLimite');
 			for (var i = 0; i < andConValor.length; i++) {
-				key = key + "-" + andConValor[i].name + "V+"
-						+ andConValor[i].value + "L&" + andConLimite[i].value
-						+ "-";
+				key = key + "*" + andConValor[i].name + "V+"
+						+ andConValor[i].value + "V+"+ "L&" + andConLimite[i].value
+						+ "L&";
 			}
+			key = key + "*";
 		} else {
 			for (var i = 0; i < andConValor.length; i++) {
-				key = key + "-" + andConValor[i].name + "V+"
-						+ andConValor[i].value + "-";
+				key = key + "*" + andConValor[i].name + "V+"
+						+ andConValor[i].value + "V+";
 			}
+			key = key + "*";
 		}
 	}
+	
+	
+	
 	key = key + "%"
 	var valor = document.querySelectorAll('.OriBancAndCon');
 	var limite = document.querySelectorAll('.OriBancSepAndCon');

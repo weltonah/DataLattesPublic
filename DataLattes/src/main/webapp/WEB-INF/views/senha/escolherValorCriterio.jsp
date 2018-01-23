@@ -35,22 +35,22 @@
 			</div>
 			
 			</div>
-			<c:if test="${!DadosGeraisList.isEmpty()}">
+			<c:if test="${DadosGeraisList.size()!=null}">
 			<c:import url="/WEB-INF/views/senha/senhaCriterio/criterioDadosGerais.jsp" />
 			</c:if>
-			<c:if test="${!formacaoList.isEmpty()}">
+			<c:if test="${formacaoList.size()!=null}">
 			<c:import url="/WEB-INF/views/senha/senhaCriterio/criterioFormacao.jsp" />
 			</c:if>
-			<c:if test="${!ProdArtList.isEmpty()}">
+			<c:if test="${ProdArtList.size()!=null}">
 			<c:import url="/WEB-INF/views/senha/senhaCriterio/criterioProdArt.jsp" />
 			</c:if>
-			<c:if test="${!ProdTecList.isEmpty()}">
+			<c:if test="${ProdTecList.size()!=null}">
 			<c:import url="/WEB-INF/views/senha/senhaCriterio/criterioProdTec.jsp" />
 			</c:if>
-			<c:if test="${!ProdBiblList.isEmpty()}">
+			<c:if test="${ProdBiblList.size()!=null}">
 			<c:import url="/WEB-INF/views/senha/senhaCriterio/criterioProdBibli.jsp" />
 			</c:if>
-			<c:if test="${!OriBancList.isEmpty()}">
+			<c:if test="${OriBancList.size()!=null}">
 			<c:import url="/WEB-INF/views/senha/senhaCriterio/criterioOriBanc.jsp" />
 			</c:if>
 			

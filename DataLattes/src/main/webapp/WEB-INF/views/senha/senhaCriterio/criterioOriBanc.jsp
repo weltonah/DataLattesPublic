@@ -55,10 +55,6 @@
 	</div>
 	</c:when>
 	
-	
-	
-	
-	
 	<c:otherwise>
 	<div class="well col-xs-12">
 		<div class="col-xs-12">
@@ -75,7 +71,7 @@
 					<input type="number" class="form-control" id="limite${OriBanc}" name="valorlimite" placeholder="itens">
 			</div></div>
 		</div>
-		<div class="col-xs-12 hidden OriBancSepAndCon" >
+		<div class="col-xs-12 OriBancSepAndCon hidden" >
 			<div class=" col-xs-12">
 			<div class=" col-md-4">
 				<label>Orientações em andamento</label>
