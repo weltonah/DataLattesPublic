@@ -190,10 +190,10 @@ function OriBancCarater() {
 
 function GerarKey() {
 	var key;
-	key = "%Ano" + document.getElementById("AnoInicio").value + "/"
+	key = "Ano>" + document.getElementById("AnoInicio").value + ">"
 			+ document.getElementById("AnoFim").value + "%";
 
-	key = key + "Formacao";
+	key = key + "Formacao!";
 	if (document.getElementById("myCheckFormacaoStatus").checked) {
 		var and = document.querySelectorAll('.formacaoAndValorUni');
 		var con = document.querySelectorAll('.formacaoConValorUni');
@@ -201,22 +201,22 @@ function GerarKey() {
 			for (var i = 0; i < and.length; i++) {
 				var andLimite = document.querySelectorAll('.formacaoAndimite');
 				var conLimite = document.querySelectorAll('.formacaoConLimite');
-				key = key + "*" + and[i].name;
-				key = key + "@" + "And" + "V+" + and[i].value  + "V+" + "L&"
-						+ andLimite[i].value + "L&";
-				key = key + "@" + "Con" + "V+" + con[i].value + "V+" + "L&"
-						+ conLimite[i].value + "L&"+ "@";
+				key = key + "#" + and[i].name;
+				key = key + "@" + "And" + "=" + and[i].value  + "=" + "&"
+						+ andLimite[i].value + "&";
+				key = key + "@" + "Con" + "=" + con[i].value + "=" + "&"
+						+ conLimite[i].value + "&"+ "@";
 				
 			}
-			key = key + "*";
+			key = key + "#";
 		} else {
 			for (var i = 0; i < and.length; i++) {
-				key = key + "*" + and[i].name;
-				key = key + "@" + "And" + "V+" + and[i].value + "V+";
-				key = key + "@" + "Con" + "V+" + con[i].value + "V+" + "@";
+				key = key + "#" + and[i].name;
+				key = key + "@" + "And" + "=" + and[i].value + "=";
+				key = key + "@" + "Con" + "=" + con[i].value + "=" + "@";
 				
 			}
-			key = key + "*";
+			key = key + "#";
 		}
 	} else {
 		var andConValor = document.querySelectorAll('.formacaoAndConValorUni');
@@ -224,17 +224,17 @@ function GerarKey() {
 			var andConLimite = document
 					.querySelectorAll('.formacaoAndConLimite');
 			for (var i = 0; i < andConValor.length; i++) {
-				key = key + "*" + andConValor[i].name + "V+"
-						+ andConValor[i].value + "V+"+ "L&" + andConLimite[i].value
-						+ "L&";
+				key = key + "#" + andConValor[i].name + "="
+						+ andConValor[i].value + "="+ "&" + andConLimite[i].value
+						+ "&";
 			}
-			key = key + "*";
+			key = key + "#";
 		} else {
 			for (var i = 0; i < andConValor.length; i++) {
-				key = key + "*" + andConValor[i].name + "V+"
-						+ andConValor[i].value + "V+";
+				key = key + "#" + andConValor[i].name + "="
+						+ andConValor[i].value + "=";
 			}
-			key = key + "*";
+			key = key + "#";
 		}
 	}
 	
