@@ -8,7 +8,7 @@
 		<h2> Formação</h2>
 	</div>
 </div>
-<div class="well col-xs-12">
+<div class="well col-xs-12 FormacaoDiv">
 	<div>
 		<h4>Configurações</h4>
 	</div>

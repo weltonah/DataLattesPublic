@@ -8,7 +8,7 @@
 		<h2> Orientações e Bancas</h2>
 	</div>
 </div>
-<div class="well col-xs-12">
+<div class="well col-xs-12 OriBancDiv">
 	<div>
 		<h4>Configurações</h4>
 	</div>
@@ -46,10 +46,10 @@
 				<label>Participado</label>
 			</div>
 			<div class=" col-md-4"><div class=" col-md-5">
-					<input type="number" class="form-control" id="valor${OriBanc}" name="valorunitario" placeholder="pts">
+					<input type="number" class="form-control OriBancInput" id="valor${OriBanc}" name="${OriBanc}" placeholder="pts">
 			</div></div>
-			<div class=" col-md-4"><div class=" col-md-5  OriBancvalorlimite hidden">
-					<input type="number" class="form-control" id="limite${OriBanc}" name="valorlimite" placeholder="itens">
+			<div class=" col-md-4"><div class=" col-md-5 ">
+					<input type="number" class="form-control  OriBancvalorlimite OriBancInputLimite hidden" id="limite${OriBanc}" name="${OriBanc}" placeholder="itens">
 			</div></div>
 		</div>
 	</div>
@@ -65,10 +65,10 @@
 				<label>Orientações em andamento ou concluidas</label>
 			</div>
 			<div class=" col-md-4"><div class=" col-md-5">
-					<input type="number" class="form-control" id="valor${OriBanc}" name="valorunitario" placeholder="pts">
+					<input type="number" class="form-control OriBancInput" id="valor${OriBanc}" name="${OriBanc}" placeholder="pts">
 			</div></div>
-			<div class=" col-md-4"><div class=" col-md-5  OriBancvalorlimite hidden">
-					<input type="number" class="form-control" id="limite${OriBanc}" name="valorlimite" placeholder="itens">
+			<div class=" col-md-4"><div class=" col-md-5 ">
+					<input type="number" class="form-control OriBancvalorlimite OriBancInputLimite hidden" id="limite${OriBanc}" name="${OriBanc}" placeholder="itens">
 			</div></div>
 		</div>
 		<div class="col-xs-12 OriBancSepAndCon hidden" >
@@ -77,10 +77,10 @@
 				<label>Orientações em andamento</label>
 			</div>
 			<div class=" col-md-4"><div class=" col-md-5">
-					<input type="number" class="form-control" id="valorAnd${OriBanc}" name="valorunitarioAnd" placeholder="pts">
+					<input type="number" class="form-control OriBancInput" id="valorAnd${OriBanc}" name="${OriBanc}" placeholder="pts">
 			</div></div>
-			<div class=" col-md-4 "><div class=" col-md-5  OriBancvalorlimite hidden">
-					<input type="number" class="form-control" id="limiteAnd${OriBanc}" name="valorlimiteAnd" placeholder="itens">
+			<div class=" col-md-4 "><div class=" col-md-5   ">
+					<input type="number" class="form-control OriBancvalorlimite OriBancInputLimite hidden" id="limiteAnd${OriBanc}" name="${OriBanc}" placeholder="itens">
 			</div></div>
 			</div>
 			<div class=" col-xs-12">
@@ -88,10 +88,10 @@
 					<label>Orientações concluidas</label>
 				</div>
 				<div class=" col-md-4"><div class=" col-md-5">
-						<input type="number" class="form-control" id="valorCon${OriBanc}" name="valorunitarioCon" placeholder="pts">
+						<input type="number" class="form-control OriBancInput" id="valorCon${OriBanc}" name="${OriBanc}" placeholder="pts">
 				</div></div>
-				<div class=" col-md-4 "><div class=" col-md-5 OriBancvalorlimite hidden">
-						<input type="number" class="form-control" id="limiteCon${OriBanc}" name="valorlimiteCon" placeholder="itens">
+				<div class=" col-md-4 "><div class=" col-md-5 ">
+						<input type="number" class="form-control OriBancvalorlimite OriBancInputLimite hidden" id="limiteCon${OriBanc}" name="${OriBanc}" placeholder="itens">
 				</div></div>
 			</div>
 		</div>

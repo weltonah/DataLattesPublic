@@ -192,57 +192,103 @@ function GerarKey() {
 	var key;
 	key = "Ano>" + document.getElementById("AnoInicio").value + ">"
 			+ document.getElementById("AnoFim").value + "%";
-
-	key = key + "Formacao!";
-	if (document.getElementById("myCheckFormacaoStatus").checked) {
-		var and = document.querySelectorAll('.formacaoAndValorUni');
-		var con = document.querySelectorAll('.formacaoConValorUni');
-		if (document.getElementById("myCheckFormacaoLimite").checked) {
-			for (var i = 0; i < and.length; i++) {
-				var andLimite = document.querySelectorAll('.formacaoAndimite');
-				var conLimite = document.querySelectorAll('.formacaoConLimite');
-				key = key + "#" + and[i].name;
-				key = key + "@" + "And" + "=" + and[i].value  + "=" + "&"
-						+ andLimite[i].value + "&";
-				key = key + "@" + "Con" + "=" + con[i].value + "=" + "&"
-						+ conLimite[i].value + "&"+ "@";
-				
+	var tipo = document.querySelectorAll('.FormacaoDiv');
+	if(tipo.length > 0){
+		key = key + "Formacao!";
+		if (document.getElementById("myCheckFormacaoStatus").checked) {
+			var and = document.querySelectorAll('.formacaoAndValorUni');
+			var con = document.querySelectorAll('.formacaoConValorUni');
+			if (document.getElementById("myCheckFormacaoLimite").checked) {
+				for (var i = 0; i < and.length; i++) {
+					var andLimite = document.querySelectorAll('.formacaoAndimite');
+					var conLimite = document.querySelectorAll('.formacaoConLimite');
+					key = key + "#" + and[i].name;
+					key = key + "@" + "Tipo1" + "=" + and[i].value  + "=" + "&"+ andLimite[i].value + "&";
+					key = key + "@" + "Tipo2" + "=" + con[i].value + "=" + "&"+ conLimite[i].value + "&"+ "@";
+				}
+				key = key + "#";
+			} else {
+				for (var i = 0; i < and.length; i++) {
+					key = key + "#" + and[i].name;
+					key = key + "@" + "Tipo1" + "=" + and[i].value + "=";
+					key = key + "@" + "Tipo2" + "=" + con[i].value + "=" + "@";
+				}
+				key = key + "#";
 			}
-			key = key + "#";
 		} else {
-			for (var i = 0; i < and.length; i++) {
-				key = key + "#" + and[i].name;
-				key = key + "@" + "And" + "=" + and[i].value + "=";
-				key = key + "@" + "Con" + "=" + con[i].value + "=" + "@";
-				
+			var andConValor = document.querySelectorAll('.formacaoAndConValorUni');
+			if (document.getElementById("myCheckFormacaoLimite").checked) {
+				var andConLimite = document.querySelectorAll('.formacaoAndConLimite');
+				for (var i = 0; i < andConValor.length; i++) {
+					key = key + "#" + andConValor[i].name + "="
+							+ andConValor[i].value + "="+ "&" + andConLimite[i].value + "&";
+				}
+				key = key + "#";
+			} else {
+				for (var i = 0; i < andConValor.length; i++) {
+					key = key + "#" + andConValor[i].name + "="+ andConValor[i].value + "=";
+				}
+				key = key + "#";
 			}
-			key = key + "#";
 		}
-	} else {
-		var andConValor = document.querySelectorAll('.formacaoAndConValorUni');
-		if (document.getElementById("myCheckFormacaoLimite").checked) {
-			var andConLimite = document
-					.querySelectorAll('.formacaoAndConLimite');
-			for (var i = 0; i < andConValor.length; i++) {
-				key = key + "#" + andConValor[i].name + "="
-						+ andConValor[i].value + "="+ "&" + andConLimite[i].value
-						+ "&";
-			}
-			key = key + "#";
-		} else {
-			for (var i = 0; i < andConValor.length; i++) {
-				key = key + "#" + andConValor[i].name + "="
-						+ andConValor[i].value + "=";
-			}
-			key = key + "#";
-		}
+		key = key + "%"
 	}
 	
 	
+	tipo = document.querySelectorAll('.OriBancDiv');
+	if(tipo.length > 0){
+		var valor = document.querySelectorAll('.OriBancInput');
+		var limite = document.querySelectorAll('.OriBancInputLimite');
+		for (var i = 0; i < and.length; i++) {
+			if(!(and[i].className..includes("hidden"))){
+				
+			}
+		}
+		
+		
+		
+		
+	}
+//		key = key + "Orietação ou Banca!";
+//		if (document.getElementById("myCheckOriBancStatus").checked) {
+//			var and = document.querySelectorAll('.OriBancAndValorUni');
+//			var con = document.querySelectorAll('.OriBancConValorUni');
+//			if (document.getElementById("myCheckOriBancLimite").checked) {
+//				for (var i = 0; i < and.length; i++) {
+//					var andLimite = document.querySelectorAll('.OriBancAndimite');
+//					var conLimite = document.querySelectorAll('.OriBancConimite');
+//					key = key + "#" + and[i].name;
+//					key = key + "@" + "Tipo1" + "=" + and[i].value  + "=" + "&"+ andLimite[i].value + "&";
+//					key = key + "@" + "Tipo2" + "=" + con[i].value + "=" + "&"+ conLimite[i].value + "&"+ "@";
+//				}
+//				key = key + "#";
+//			} else {
+//				for (var i = 0; i < and.length; i++) {
+//					key = key + "#" + and[i].name;
+//					key = key + "@" + "Tipo1" + "=" + and[i].value + "=";
+//					key = key + "@" + "Tipo2" + "=" + con[i].value + "=" + "@";
+//				}
+//				key = key + "#";
+//			}
+//		} else {
+//			var andConValor = document.querySelectorAll('.OriBancAndConValorUni');
+//			if (document.getElementById("myCheckOriBancLimite").checked) {
+//				var andConLimite = document.querySelectorAll('.OriBancAndConLimite');
+//				for (var i = 0; i < andConValor.length; i++) {
+//					key = key + "#" + andConValor[i].name + "="
+//							+ andConValor[i].value + "="+ "&" + andConLimite[i].value + "&";
+//				}
+//				key = key + "#";
+//			} else {
+//				for (var i = 0; i < andConValor.length; i++) {
+//					key = key + "#" + andConValor[i].name + "="+ andConValor[i].value + "=";
+//				}
+//				key = key + "#";
+//			}
+//		}
+//		key = key + "%";
 	
-	key = key + "%"
-	var valor = document.querySelectorAll('.OriBancAndCon');
-	var limite = document.querySelectorAll('.OriBancSepAndCon');
+	
 
 	document.getElementById("keyId").value = key;
 }

@@ -25,7 +25,6 @@ public class SenhaController {
 			@RequestParam(value="ProdArt", required=false) List<String> ProdArt, @RequestParam(value="ProdTec", required=false) List<String> ProdTec,
 			@RequestParam(value="OriBanc", required=false) List<String> OriBanc, @RequestParam(value="ProdBibl", required=false) List<String> ProdBibl,
 			@RequestParam(value="DadosGerais", required=false) List<String> DadosGerais) {
-		
 		model.addAttribute("formacaoList", formacao);
 		model.addAttribute("ProdArtList", ProdArt);
 		model.addAttribute("ProdTecList", ProdTec);

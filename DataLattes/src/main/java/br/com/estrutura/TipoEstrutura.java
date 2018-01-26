@@ -1,11 +1,10 @@
-package br.com.Modelo;
+package br.com.estrutura;
 
-public class DadosCriterio {
+public class TipoEstrutura {
 	private String NomeCriterio;
 	private String Valor;
 	private String Limite;
-	public DadosCriterio(String nomeCriterio, String valor) {
-		super();
+	public TipoEstrutura(String nomeCriterio, String valor) {
 		NomeCriterio = nomeCriterio;
 		Valor = valor;
 	}
