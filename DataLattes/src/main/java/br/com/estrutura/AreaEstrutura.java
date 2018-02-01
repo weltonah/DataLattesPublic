@@ -4,26 +4,38 @@ import java.util.ArrayList;
 
 public class AreaEstrutura {
 	private String nome;
-	private ArrayList<CriterioEstrutura> ListCrit;
-	public AreaEstrutura(String nome) {
+	private String abre;
+	private ArrayList<CriterioEstrutura> listCrit;
+
+	public AreaEstrutura(String nome, String abre) {
 		super();
 		this.nome = nome;
-		this.ListCrit = new ArrayList<CriterioEstrutura>();
+		this.abre = abre;
+		this.listCrit = new ArrayList<CriterioEstrutura>();
 	}
+
 	public String getNome() {
-		return nome;
+		return this.nome;
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
 	public ArrayList<CriterioEstrutura> getListCrit() {
-		return ListCrit;
+		return this.listCrit;
 	}
 	public void setListCrit(ArrayList<CriterioEstrutura> listCrit) {
-		ListCrit = listCrit;
+		this.listCrit = listCrit;
 	}
 	public void addListCrit(CriterioEstrutura crit) {
-		ListCrit.add(crit);
+		this.listCrit.add(crit);
+	}
+
+	public String getAbre() {
+		return this.abre;
+	}
+
+	public void setAbre(String abre) {
+		this.abre = abre;
 	}
 	
 	

@@ -4,7 +4,7 @@
 <tags:padrao>	
 	<jsp:body>
 	<div style="margin-top:20%;" class="row">
-	<form class="form-inline" action="criterio">
+	<form class="form-inline" action="criterio" method="POST">
 		<div class="form-group col-md-6 col-md-offset-3">
 		    <input type="text" class="form-control" id="key" name="key" placeholder="Inserir Chave">
 		    <button type="submit" class="btn btn-primary">Avançar</button>
