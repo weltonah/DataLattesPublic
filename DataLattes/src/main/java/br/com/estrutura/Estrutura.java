@@ -2,6 +2,9 @@ package br.com.estrutura;
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Estrutura {
 	private ArrayList<AreaEstrutura> listEst;
 

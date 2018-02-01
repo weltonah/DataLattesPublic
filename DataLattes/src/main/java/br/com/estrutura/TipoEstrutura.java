@@ -1,31 +1,21 @@
 package br.com.estrutura;
 
 public class TipoEstrutura {
-	private String nomeCriterio;
+	private String nomeTipo;
 	private String abre;
-	private String valor;
 	private String limite;
 
-	public TipoEstrutura(String nomeCriterio, String valor, String abre) {
-		this.nomeCriterio = nomeCriterio;
-		this.valor = valor;
+	public TipoEstrutura(String nomeCriterio, String abre) {
+		this.nomeTipo = nomeCriterio;
 		this.abre = abre;
 	}
 
-	public String getNomeCriterio() {
-		return this.nomeCriterio;
+	public String getNomeTipo() {
+		return this.nomeTipo;
 	}
 
-	public void setNomeCriterio(String nomeCriterio) {
-		this.nomeCriterio = nomeCriterio;
-	}
-
-	public String getValor() {
-		return this.valor;
-	}
-
-	public void setValor(String valor) {
-		this.valor = valor;
+	public void setNomeTipo(String nomeCriterio) {
+		this.nomeTipo = nomeCriterio;
 	}
 
 	public String getLimite() {

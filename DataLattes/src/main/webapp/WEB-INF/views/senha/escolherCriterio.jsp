@@ -16,23 +16,23 @@
 								<div class="col-sx-12">
 
 									<div class="col-sm-4  ">
-										<div class="well col-sm-12" id="Formacao" style="background-color: #ffab91">
+										<div class="well col-sm-12" id="formacao" style="background-color: #ffab91">
 											<div class="col-sm-12 ">
 												<div class="col-sm-12">
 													</br>
 													<label>Formação</label>
 												</div>
 											</div>
-											<div class="col-sm-12  well " id="FormacaoMisto">
+											<div class="col-sm-12  well " id="formacao.Misto">
 												<div class="checkbox col-md-12 row">
 													<div class="col-md-12">
-													<input type="checkbox" class="check" id="checkboxformacaoMarkAll" onclick="formacaoMarkAll(this)"> Marcar todos
+													<input type="checkbox" class="checkbox" id="checkboxformacaoMarkAll" onclick="formacaoMarkAll(this)"> Marcar todos
 													</div>
 													<hr  style="border-top: 1px solid #8c8b8b;">
-													<c:forEach var="formacao" varStatus="status" items="${ck.getFormacao()}">
+													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(0).getListCrit()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input class="formacao" type="checkbox" name="formacao" value="${formacao}"> ${formacao}
+																<input class="formacao" type="checkbox" name="formacao" value="${formacao.getAbre()}"> ${formacao.getCriterio()}
 																<br>
 															</label>
 														</div>
@@ -52,13 +52,13 @@
 											<div class="col-md-12  well " id="ProdArtMisto">
 												<div class="checkbox col-md-12 row">
 													<div class="col-md-12">
-													<input type="checkbox" class="check" id="checkboxProdArtMarkAll" onclick="ProdArtMarkAll(this)"> Marcar todos
+													<input type="checkbox" class="checkbox" id="checkboxProdArtMarkAll" onclick="ProdArtMarkAll(this)"> Marcar todos
 													</div>
 													<hr  style="border-top: 1px solid #8c8b8b;">
-													<c:forEach var="formacao" varStatus="status" items="${ck.getProdArt()}">
+													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(2).getListCrit()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input class="ProdArt" type="checkbox" name="ProdArt" value="${formacao}"> ${formacao }
+																<input class="ProdArt" type="checkbox" name="ProdArt" value="${formacao.getCriterio()}"> ${formacao.getCriterio() }
 																<br>
 															</label>
 														</div>
@@ -80,13 +80,13 @@
 											<div class="col-sm-12  well " id="ProdTecniMisto">
 												<div class="checkbox col-md-12 row">
 													<div class="col-md-12">
-													<input type="checkbox" class="check" id="checkboxProdTecMarkAll" onclick="ProdTecMarkAll(this)"> Marcar todos
+													<input type="checkbox" class="checkbox" id="checkboxProdTecMarkAll" onclick="ProdTecMarkAll(this)"> Marcar todos
 													</div>
 													<hr  style="border-top: 1px solid #8c8b8b;">
-													<c:forEach var="formacao" varStatus="status" items="${ck.getProdTec()}">
+													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(1).getListCrit()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input class="ProdTec" type="checkbox" name="ProdTec" value="${formacao}" > ${formacao }
+																<input class="ProdTec" type="checkbox" name="ProdTec" value="${formacao.getCriterio()}" > ${formacao.getCriterio() }
 																<br>
 															</label>
 														</div>
@@ -104,10 +104,10 @@
 											</div>
 											<div class="col-sm-12  well " id="DadosGeraisMisto">
 												<div class="checkbox col-md-12 row">
-													<c:forEach var="formacao" varStatus="status" items="${ck.getDadosGerais()}">
+													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(5).getListCrit()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input class="DadosGerais" type="checkbox" name="DadosGerais" value="${formacao}"> ${formacao }
+																<input class="DadosGerais" type="checkbox" name="DadosGerais" value="${formacao.getCriterio()}"> ${formacao.getCriterio() }
 																<br>
 															</label>
 														</div>
@@ -128,13 +128,13 @@
 											<div class="col-sm-12  well " id="OrienMisto">
 												<div class="checkbox col-md-12 row">
 													<div class="col-md-12">
-													<input type="checkbox" class="check" id="checkboxOriBancMarkAll" onclick="OriBancMarkAll(this)"> Marcar todos
+													<input type="checkbox" class="checkbox" id="checkboxOriBancMarkAll" onclick="OriBancMarkAll(this)"> Marcar todos
 													</div>
 													<hr  style="border-top: 1px solid #8c8b8b;">
-													<c:forEach var="formacao" varStatus="status" items="${ck.getOriBanc()}">
+													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(4).getListCrit()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input class="OriBanc" type="checkbox" name="OriBanc" value="${formacao}"> ${formacao }
+																<input class="OriBanc" type="checkbox" name="OriBanc" value="${formacao.getCriterio()}"> ${formacao.getCriterio() }
 																<br>
 															</label>
 														</div>
@@ -153,13 +153,13 @@
 											<div class="col-md-12  well " id="ProdBibliMisto">
 												<div class="checkbox col-md-12 row">
 													<div class="col-md-12">
-													<input type="checkbox" class="check" id="checkboxProdBiblMarkAll" onclick="ProdBiblMarkAll(this)"> Marcar todos
+													<input type="checkbox" class="checkbox" id="checkboxProdBiblMarkAll" onclick="ProdBiblMarkAll(this)"> Marcar todos
 													</div>
 													<hr  style="border-top: 1px solid #8c8b8b;">
-													<c:forEach var="formacao" varStatus="status" items="${ck.getProdBibli()}">
+													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(3).getListCrit()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input class="ProdBibl" type="checkbox" name="ProdBibl" value="${formacao}"> ${formacao }
+																<input class="ProdBibl" type="checkbox" name="ProdBibl" value="${formacao.getCriterio()}"> ${formacao.getCriterio() }
 																<br>
 															</label>
 														</div>

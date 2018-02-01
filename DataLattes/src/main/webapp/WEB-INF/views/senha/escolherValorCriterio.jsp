@@ -11,7 +11,7 @@
 	<div class="well col-md-12" style="background-color: #d1c4e9">
 		<form action="criterioChave">
 			<div class="col-md-12">
-				<h2> Selecione os criterios avaliados :</h2>
+				<h2> Selecione os criterios avaliados :   </h2>
 			</div>
 			<div class=" well col-xs-12">
 			<div class=" col-md-4">

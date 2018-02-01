@@ -6,21 +6,21 @@ public class CriterioEstrutura {
 	private String criterio;
 	private String abre;
 	private int tipo;
-	private ArrayList<TipoEstrutura> listTipo;
+	private ArrayList<ArrayList<TipoEstrutura>> listTipo;
 
 	public CriterioEstrutura(String criterio, String abre, int tipo) {
 		super();
 		this.criterio = criterio;
 		this.abre = abre;
 		this.tipo = tipo;
-		this.listTipo = new ArrayList<TipoEstrutura>();
+		this.listTipo = new ArrayList<ArrayList<TipoEstrutura>>();
 	}
 
 	public CriterioEstrutura(String criterio, String abre) {
 		super();
 		this.criterio = criterio;
 		this.abre = abre;
-		this.listTipo = new ArrayList<TipoEstrutura>();
+		this.listTipo = new ArrayList<ArrayList<TipoEstrutura>>();
 	}
 	public String getCriterio() {
 		return this.criterio;
@@ -28,13 +28,12 @@ public class CriterioEstrutura {
 	public void setCriterio(String criterio) {
 		this.criterio = criterio;
 	}
-	public ArrayList<TipoEstrutura> getListTipo() {
+
+	public ArrayList<ArrayList<TipoEstrutura>> getListTipo() {
 		return this.listTipo;
 	}
-	public void setListTipo(ArrayList<TipoEstrutura> listTipo) {
-		this.listTipo = listTipo;
-	}
-	public void addListTipo(TipoEstrutura tipo) {
+
+	public void addListTipo(ArrayList<TipoEstrutura> tipo) {
 		this.listTipo.add(tipo);
 	}
 
