@@ -1,7 +1,7 @@
-function FormacaoStatus() {
+function formacaoStatus() {
 	var x = document.getElementById("myCheckFormacaoStatus").checked;
-	var inputs = document.querySelectorAll('.FormacaoSepAndCon');
-	var xx = document.querySelectorAll('.FormacaoAndCon');
+	var inputs = document.querySelectorAll(".FormacaoTipoIndex1");
+	var xx = document.querySelectorAll(".FormacaoTipoIndex0");
 	if (x) {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].classList.remove("hidden");
@@ -229,11 +229,37 @@ function OriBancCarater() {
 
 
 
-function GerarKey() {
+function GerarKey(formacaosize) {
 	var key;
 	key = "Ano>" + document.getElementById("AnoInicio").value + ">"
 			+ document.getElementById("AnoFim").value + "%";
 	var tipo = document.querySelectorAll('.FormacaoDiv');
+	if(tipo.length > 0){
+		key = key + "Formacao!";
+		for(var i=0; i<formacaosize;i++){
+			
+		}
+		
+		key = key + "%";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	if(tipo.length > 0){
 		key = key + "Formacao!";
 		if (document.getElementById("myCheckFormacaoStatus").checked) {
@@ -272,7 +298,7 @@ function GerarKey() {
 				key = key + "#";
 			}
 		}
-		key = key + "%"
+		key = key + "%";
 	}
 	
 	

@@ -31,7 +31,7 @@
 			</div>
 			<div class="col-xs-12">
 				<input type="text" class="form-control " id="keyId" name="keyId" >
-				<input class="btn btn-default" type="button" value="Input" onclick="GerarKey(this)">
+				<input class="btn btn-default" type="button" value="Input" onclick="GerarKey(${conteudo.get(0).size()})">
 			</div>
 			
 			</div>

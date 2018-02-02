@@ -10,18 +10,18 @@
  </div>
  <div class="well col-xs-12 FormacaoDiv">
   <div>
-   <h4>Configurações</h4>
+   <h4>Configurações Gerais</h4>
   </div>
   <div class="checkbox">
    <label> <input type="checkbox" id="myCheckFormacaoStatus"
-    name="myCheckFormacaoStatus" onclick="FormacaoStatus(this)">
-    Diferenciar pontuação por status
+    name="myCheckFormacaoStatus" onclick="formacaoStatus(this)">
+    Diferenciar pontuação de TODOS os itens por status
    </label>
   </div>
   <div class="checkbox">
    <label> <input type="checkbox" id="myCheckFormacaoLimite"
     name="myCheckFormacaoLimite" onclick="formacaoLimite(this)">
-    Colocar limite maximo de itens contabilizados
+    Colocar limite maximo em TODOS os críterios
    </label>
   </div>
  </div>
@@ -58,7 +58,7 @@
     <c:forEach var="list" varStatus="liststatus"
      items="${item.getListTipo()}">
      <c:forEach var="tipo" varStatus="tipostatus" items="${list}">
-      <div class="well col-xs-12 FormacaoTipo${liststatus.index}tt${itemstatus.index} <c:if test="${not liststatus.first}">hidden</c:if>">
+      <div class="well col-xs-12 FormacaoTipo${liststatus.index}tt${itemstatus.index} FormacaoTipoIndex${liststatus.index} <c:if test="${not liststatus.first}">hidden</c:if>">
        <div class="col-md-4">
         <label>${tipo.getNomeTipo()}</label> <label>${tipostatus.index}</label>
        </div>
@@ -71,8 +71,8 @@
         </div>
        </div>
        <div class="col-md-4">
-        <div class="col-md-5  Formacaolimite${itemstatus.index} formacaolimiteGeral hidden">
-         <input type="number" class="form-control formacaoAndConLimite"
+        <div class="col-md-5  ">
+         <input type="number" class="form-control Formacaolimite${itemstatus.index} formacaolimiteGeral hidden"
           id="limite${tipo.getAbre()}" name="${tipo.getAbre()}"
           placeholder="itens">
         </div>
