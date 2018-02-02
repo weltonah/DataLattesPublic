@@ -58,7 +58,7 @@
 													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(2).getListCrit()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input class="ProdArt" type="checkbox" name="ProdArt" value="${formacao.getCriterio()}"> ${formacao.getCriterio() }
+																<input class="ProdArt" type="checkbox" name="ProdArt" value="${formacao.getAbre()}"> ${formacao.getCriterio() }
 																<br>
 															</label>
 														</div>
@@ -86,7 +86,7 @@
 													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(1).getListCrit()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input class="ProdTec" type="checkbox" name="ProdTec" value="${formacao.getCriterio()}" > ${formacao.getCriterio() }
+																<input class="ProdTec" type="checkbox" name="ProdTec" value="${formacao.getAbre()}" > ${formacao.getCriterio() }
 																<br>
 															</label>
 														</div>
@@ -107,7 +107,7 @@
 													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(5).getListCrit()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input class="DadosGerais" type="checkbox" name="DadosGerais" value="${formacao.getCriterio()}"> ${formacao.getCriterio() }
+																<input class="DadosGerais" type="checkbox" name="DadosGerais" value="${formacao.getAbre()}"> ${formacao.getCriterio() }
 																<br>
 															</label>
 														</div>
@@ -134,7 +134,7 @@
 													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(4).getListCrit()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input class="OriBanc" type="checkbox" name="OriBanc" value="${formacao.getCriterio()}"> ${formacao.getCriterio() }
+																<input class="OriBanc" type="checkbox" name="OriBanc" value="${formacao.getAbre()}"> ${formacao.getCriterio() }
 																<br>
 															</label>
 														</div>
@@ -159,7 +159,7 @@
 													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(3).getListCrit()}">
 														<div class="checkbox col-md-12 row">
 															<label>
-																<input class="ProdBibl" type="checkbox" name="ProdBibl" value="${formacao.getCriterio()}"> ${formacao.getCriterio() }
+																<input class="ProdBibl" type="checkbox" name="ProdBibl" value="${formacao.getAbre()}"> ${formacao.getCriterio() }
 																<br>
 															</label>
 														</div>

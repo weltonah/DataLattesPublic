@@ -20,9 +20,31 @@ function FormacaoStatus() {
 
 	}
 }
-function FormacaoLimite() {
-	var x = document.getElementById("myCheckFormacaoLimite").checked;
-	var inputs = document.querySelectorAll('.Formacaovalorlimite');
+function FormacaoItemStatus(item) {
+	var x = document.getElementById("myCheckFormacaoItemStatus"+item).checked;
+	var inputs = document.querySelectorAll(".FormacaoTipo1tt"+item);
+	var xx = document.querySelectorAll(".FormacaoTipo0tt"+item);
+	if (x) {
+		for (var i = 0; i < inputs.length; i++) {
+			inputs[i].classList.remove("hidden");
+		}
+		for (var j = 0; j < xx.length; j++) {
+			xx[j].classList.add("hidden");
+		}
+	} else {
+		for (var i = 0; i < inputs.length; i++) {
+			inputs[i].classList.add("hidden");
+
+		}
+		for (var j = 0; j < xx.length; j++) {
+			xx[j].classList.remove("hidden");
+		}
+
+	}
+}
+function FormacaoItemLimite(item) {
+	var x = document.getElementById("myCheckFormacaoItemLimite"+item).checked;
+	var inputs = document.querySelectorAll(".Formacaolimite"+item);
 	if (x) {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].classList.remove("hidden");
@@ -34,6 +56,25 @@ function FormacaoLimite() {
 		}
 	}
 }
+function formacaoLimite() {
+	var x = document.getElementById("myCheckFormacaoLimite").checked;
+	var inputs = document.querySelectorAll(".formacaolimiteGeral");
+	if (x) {
+		for (var i = 0; i < inputs.length; i++) {
+			inputs[i].classList.remove("hidden");
+		}
+	} else {
+		for (var i = 0; i < inputs.length; i++) {
+			inputs[i].classList.add("hidden");
+
+		}
+	}
+}
+
+
+
+
+
 
 function ProdBibliLimite() {
 	var x = document.getElementById("myCheckProdBibliLimite").checked;
@@ -235,59 +276,8 @@ function GerarKey() {
 	}
 	
 	
-	tipo = document.querySelectorAll('.OriBancDiv');
-	if(tipo.length > 0){
-		var valor = document.querySelectorAll('.OriBancInput');
-		var limite = document.querySelectorAll('.OriBancInputLimite');
-		for (var i = 0; i < and.length; i++) {
-			if(!(and[i].className..includes("hidden"))){
-				
-			}
-		}
-		
-		
-		
-		
-	}
-//		key = key + "Orietação ou Banca!";
-//		if (document.getElementById("myCheckOriBancStatus").checked) {
-//			var and = document.querySelectorAll('.OriBancAndValorUni');
-//			var con = document.querySelectorAll('.OriBancConValorUni');
-//			if (document.getElementById("myCheckOriBancLimite").checked) {
-//				for (var i = 0; i < and.length; i++) {
-//					var andLimite = document.querySelectorAll('.OriBancAndimite');
-//					var conLimite = document.querySelectorAll('.OriBancConimite');
-//					key = key + "#" + and[i].name;
-//					key = key + "@" + "Tipo1" + "=" + and[i].value  + "=" + "&"+ andLimite[i].value + "&";
-//					key = key + "@" + "Tipo2" + "=" + con[i].value + "=" + "&"+ conLimite[i].value + "&"+ "@";
-//				}
-//				key = key + "#";
-//			} else {
-//				for (var i = 0; i < and.length; i++) {
-//					key = key + "#" + and[i].name;
-//					key = key + "@" + "Tipo1" + "=" + and[i].value + "=";
-//					key = key + "@" + "Tipo2" + "=" + con[i].value + "=" + "@";
-//				}
-//				key = key + "#";
-//			}
-//		} else {
-//			var andConValor = document.querySelectorAll('.OriBancAndConValorUni');
-//			if (document.getElementById("myCheckOriBancLimite").checked) {
-//				var andConLimite = document.querySelectorAll('.OriBancAndConLimite');
-//				for (var i = 0; i < andConValor.length; i++) {
-//					key = key + "#" + andConValor[i].name + "="
-//							+ andConValor[i].value + "="+ "&" + andConLimite[i].value + "&";
-//				}
-//				key = key + "#";
-//			} else {
-//				for (var i = 0; i < andConValor.length; i++) {
-//					key = key + "#" + andConValor[i].name + "="+ andConValor[i].value + "=";
-//				}
-//				key = key + "#";
-//			}
-//		}
-//		key = key + "%";
 	
+
 	
 
 	document.getElementById("keyId").value = key;

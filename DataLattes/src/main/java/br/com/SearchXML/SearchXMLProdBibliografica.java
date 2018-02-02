@@ -2,7 +2,6 @@ package br.com.SearchXML;
 
 import java.util.ArrayList;
 
-import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 
 import org.w3c.dom.Document;

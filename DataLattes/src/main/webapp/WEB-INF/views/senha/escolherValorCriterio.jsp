@@ -35,22 +35,22 @@
 			</div>
 			
 			</div>
-			<c:if test="${DadosGeraisList.size()!=null}">
-			<c:import url="/WEB-INF/views/senha/senhaCriterio/criterioDadosGerais.jsp" />
+			<c:if test="${conteudo.get(0).size()!=null}">
+            <c:import url="/WEB-INF/views/senha/senhaCriterio/criterioFormacao.jsp" />
 			</c:if>
-			<c:if test="${formacaoList.size()!=null}">
+			<c:if test="${conteudo.get(1).size()!=null}">
 			<c:import url="/WEB-INF/views/senha/senhaCriterio/criterioFormacao.jsp" />
 			</c:if>
-			<c:if test="${ProdArtList.size()!=null}">
+			<c:if test="${conteudo.get(2).size()!=null}">
 			<c:import url="/WEB-INF/views/senha/senhaCriterio/criterioProdArt.jsp" />
 			</c:if>
-			<c:if test="${ProdTecList.size()!=null}">
+			<c:if test="${conteudo.get(3).size()!=null}">
 			<c:import url="/WEB-INF/views/senha/senhaCriterio/criterioProdTec.jsp" />
 			</c:if>
-			<c:if test="${ProdBiblList.size()!=null}">
+			<c:if test="${conteudo.get(4).size()!=null}">
 			<c:import url="/WEB-INF/views/senha/senhaCriterio/criterioProdBibli.jsp" />
 			</c:if>
-			<c:if test="${OriBancList.size()!=null}">
+			<c:if test="${conteudo.get(5).size()!=null}">
 			<c:import url="/WEB-INF/views/senha/senhaCriterio/criterioOriBanc.jsp" />
 			</c:if>
 			

@@ -1,6 +1,9 @@
 package br.com.estrutura;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Component;
 
@@ -10,6 +13,10 @@ public class PreencherEstrutura {
 	private Estrutura estr;
 
 	public PreencherEstrutura() {
+	}
+
+	@PostConstruct
+	public void Init() {
 		this.estr = new Estrutura();
 		ArrayList<AreaEstrutura> listArea = new ArrayList<AreaEstrutura>();
 		// Formacao
@@ -112,6 +119,43 @@ public class PreencherEstrutura {
 		areaEstruturaFormacao.setListCrit(listCritFormacao);
 		listArea.add(areaEstruturaFormacao);
 		this.estr.setListEst(listArea);
+	}
+
+	public Estrutura InserirCriteriosCheckbox(ArrayList<List<String>> conteudo) {
+		Estrutura copia = new Estrutura();
+		ArrayList<AreaEstrutura> listArea = new ArrayList<AreaEstrutura>();
+		AreaEstrutura areaEstruturaFormacao = null;
+		ArrayList<CriterioEstrutura> listCritFormacao = null;
+
+		for (int i = 0; i < conteudo.size(); i++) {
+			List<String> list = conteudo.get(i);
+			// System.out.println("@@ valor i " + i);
+			if (list != null) {
+				areaEstruturaFormacao = new AreaEstrutura(this.estr.getListEst().get(i).getNome(),
+						this.estr.getListEst().get(i).getAbre());
+				listCritFormacao = new ArrayList<CriterioEstrutura>();
+				int aux = 0;
+				for (int j = 0; j < list.size(); j++) {
+					// System.out.println("## valor j " + j);
+					for (int k = aux; k < this.estr.getListEst().get(i).getListCrit().size(); k++) {
+						// System.out.println("valor k " + k);
+						// System.out.println(
+						// list.get(j) + " " +
+						// this.estr.getListEst().get(i).getListCrit().get(k).getAbre());
+
+						if (this.estr.getListEst().get(i).getListCrit().get(k).getAbre().contentEquals(list.get(j))) {
+							listCritFormacao.add(this.estr.getListEst().get(i).getListCrit().get(k));
+							aux = k;
+							break;
+						}
+					}
+				}
+				areaEstruturaFormacao.setListCrit(listCritFormacao);
+				listArea.add(areaEstruturaFormacao);
+			}
+		}
+		copia.setListEst(listArea);
+		return copia;
 	}
 
 	public void PreencherAndCon(CriterioEstrutura crit, ArrayList<CriterioEstrutura> listCritFormacao) {

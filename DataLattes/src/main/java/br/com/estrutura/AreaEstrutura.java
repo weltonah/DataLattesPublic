@@ -37,6 +37,7 @@ public class AreaEstrutura {
 	public void setAbre(String abre) {
 		this.abre = abre;
 	}
+
 	
 	
 }

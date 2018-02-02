@@ -24,4 +24,5 @@ public class Estrutura {
 		this.listEst = listEst;
 	}
 
+
 }

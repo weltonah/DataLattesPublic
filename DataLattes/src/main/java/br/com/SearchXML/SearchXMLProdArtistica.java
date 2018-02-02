@@ -2,13 +2,11 @@ package br.com.SearchXML;
 
 import java.util.ArrayList;
 
-import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 
 import org.w3c.dom.Document;
 
 import br.com.Modelo.Tipo6;
-import br.com.Modelo.Tipo8;
 
 public class SearchXMLProdArtistica extends SearchXML {
 
