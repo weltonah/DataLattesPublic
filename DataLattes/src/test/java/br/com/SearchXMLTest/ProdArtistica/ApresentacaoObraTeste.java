@@ -16,7 +16,6 @@ import org.w3c.dom.Document;
 
 import br.com.Modelo.Tipo6;
 import br.com.SearchXML.SearchXMLProdArtistica;
-import br.com.SearchXML.SearchXMLProdTecnica;
 
 public class ApresentacaoObraTeste {
 	private static Document xmlfile;

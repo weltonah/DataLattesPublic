@@ -19,8 +19,8 @@
 										<div class="well col-sm-12" id="formacao" style="background-color: #ffab91">
 											<div class="col-sm-12 ">
 												<div class="col-sm-12">
-													</br>
-													<label>Formação</label>
+													
+													<label style="font-size: 20px;">Formação</label>
 												</div>
 											</div>
 											<div class="col-sm-12  well " id="formacao.Misto">
@@ -31,7 +31,7 @@
 													<hr  style="border-top: 1px solid #8c8b8b;">
 													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(0).getListCrit()}">
 														<div class="checkbox col-md-12 row">
-															<label>
+															<label style="font-size: 20px;">
 																<input class="formacao" type="checkbox" name="formacao" value="${formacao.getAbre()}"> ${formacao.getCriterio()}
 																<br>
 															</label>
@@ -45,8 +45,8 @@
 										<div class=" well col-sm-12 " id="ProdArtis" style="background-color: #ffab91">
 											<div class="col-md-12 ">
 												<div class="col-md-12">
-													</br>
-													<label>Produção Artistica</label>
+													
+													<label style="font-size: 20px;">Produção Artistica</label>
 												</div>
 											</div>
 											<div class="col-md-12  well " id="ProdArtMisto">
@@ -57,7 +57,7 @@
 													<hr  style="border-top: 1px solid #8c8b8b;">
 													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(2).getListCrit()}">
 														<div class="checkbox col-md-12 row">
-															<label>
+															<label style="font-size: 20px;">
 																<input class="ProdArt" type="checkbox" name="ProdArt" value="${formacao.getAbre()}"> ${formacao.getCriterio() }
 																<br>
 															</label>
@@ -73,8 +73,8 @@
 										<div class="well col-sm-12 " id="ProdTecni" style="background-color: #ffab91">
 											<div class="col-sm-12 ">
 												<div class="col-sm-12">
-													</br>
-													<label>Produção Técnica</label>
+													
+													<label style="font-size: 20px;">Produção Técnica</label>
 												</div>
 											</div>
 											<div class="col-sm-12  well " id="ProdTecniMisto">
@@ -85,7 +85,7 @@
 													<hr  style="border-top: 1px solid #8c8b8b;">
 													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(1).getListCrit()}">
 														<div class="checkbox col-md-12 row">
-															<label>
+															<label style="font-size: 20px;">
 																<input class="ProdTec" type="checkbox" name="ProdTec" value="${formacao.getAbre()}" > ${formacao.getCriterio() }
 																<br>
 															</label>
@@ -98,15 +98,15 @@
 										<div class="well col-sm-12 " id="DadosGerais" style="background-color: #ffab91">
 											<div class="col-sm-12 ">
 												<div class="col-sm-12">
-													</br>
-													<label>Dados Gerais</label>
+													
+													<label style="font-size: 20px;">Dados Gerais</label>
 												</div>
 											</div>
 											<div class="col-sm-12  well " id="DadosGeraisMisto">
 												<div class="checkbox col-md-12 row">
 													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(5).getListCrit()}">
 														<div class="checkbox col-md-12 row">
-															<label>
+															<label style="font-size: 20px;">
 																<input class="DadosGerais" type="checkbox" name="DadosGerais" value="${formacao.getAbre()}"> ${formacao.getCriterio() }
 																<br>
 															</label>
@@ -121,8 +121,8 @@
 										<div class="well col-sm-12 " id="Orien" style="background-color: #ffab91">
 											<div class="col-sm-12 ">
 												<div class="col-sm-12">
-													</br>
-													<label>Orientações e Bancas</label>
+													
+													<label style="font-size: 20px;">Orientações e Bancas</label>
 												</div>
 											</div>
 											<div class="col-sm-12  well " id="OrienMisto">
@@ -133,7 +133,7 @@
 													<hr  style="border-top: 1px solid #8c8b8b;">
 													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(4).getListCrit()}">
 														<div class="checkbox col-md-12 row">
-															<label>
+															<label style="font-size: 20px;">
 																<input class="OriBanc" type="checkbox" name="OriBanc" value="${formacao.getAbre()}"> ${formacao.getCriterio() }
 																<br>
 															</label>
@@ -146,19 +146,19 @@
 										<div class=" well col-sm-12 " id="ProdBibli" style="background-color: #ffab91">
 											<div class="col-md-12 ">
 												<div class="col-md-12">
-													</br>
-													<label>Produção Bibliografica</label>
+													
+													<label style="font-size: 20px;">Produção Bibliografica</label>
 												</div>
 											</div>
 											<div class="col-md-12  well " id="ProdBibliMisto">
 												<div class="checkbox col-md-12 row">
 													<div class="col-md-12">
-													<input type="checkbox" class="checkbox" id="checkboxProdBiblMarkAll" onclick="ProdBiblMarkAll(this)"> Marcar todos
+													<input type="checkbox" class="checkbox" id="checkboxProdBiblMarkAll"  onclick="ProdBiblMarkAll(this)"> Marcar todos
 													</div>
 													<hr  style="border-top: 1px solid #8c8b8b;">
 													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(3).getListCrit()}">
 														<div class="checkbox col-md-12 row">
-															<label>
+															<label style="font-size: 20px;">
 																<input class="ProdBibl" type="checkbox" name="ProdBibl" value="${formacao.getAbre()}"> ${formacao.getCriterio() }
 																<br>
 															</label>

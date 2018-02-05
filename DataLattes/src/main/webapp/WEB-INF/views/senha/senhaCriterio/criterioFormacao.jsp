@@ -33,7 +33,7 @@
    <div class="col-md-4">
     <label>Valor por item:</label>
    </div>
-   <div class="col-md-4 formacaolimiteGeral">
+   <div class="col-md-4">
     <label>Maximo de item contabilizado</label>
    </div>
   </div>
@@ -41,44 +41,59 @@
    items="${estcrit.getListEst().get(0).getListCrit()}">
    <div class="well col-xs-12">
     <div class="checkbox">
-    <label> <input type="checkbox" id="myCheckFormacaoItemStatus${itemstatus.index}"
-     name="myCheckFormacaoItemStatus${itemstatus.index}" onclick="FormacaoItemStatus(${itemstatus.index})">
-     Diferenciar pontuação por status do críterio
-    </label>
-   </div>
-   <div class="checkbox">
-    <label> <input type="checkbox" id="myCheckFormacaoItemLimite${itemstatus.index}"
-     name="myCheckFormacaoItemLimite${itemstatus.index}" onclick="FormacaoItemLimite(${itemstatus.index})">
-     Colocar limite maximo de itens contabilizados por críterio
-    </label>
-   </div>
+     <label> <input type="checkbox"
+      id="myCheckFormacaoItemStatus${itemstatus.index}"
+      name="myCheckFormacaoItemStatus${itemstatus.index}"
+      onclick="FormacaoItemStatus(${itemstatus.index})">
+      Diferenciar pontuação por status do críterio
+     </label>
+    </div>
+    <div class="checkbox">
+     <label> <input type="checkbox"
+      id="myCheckFormacaoItemLimite${itemstatus.index}"
+      name="myCheckFormacaoItemLimite${itemstatus.index}"
+      onclick="FormacaoItemLimite(${itemstatus.index})"> Colocar
+      limite maximo de itens contabilizados por críterio
+     </label>
+    </div>
     <div class="col-xs-12">
-     <span>${item.getCriterio()}</span>
+     <span class="NomeItem${itemstatus.index}" name="${item.getAbre()}">${item.getCriterio()}</span>
     </div>
     <c:forEach var="list" varStatus="liststatus"
      items="${item.getListTipo()}">
+     <div
+       class="well col-xs-12 FormacaoTipo${liststatus.index}tt${itemstatus.index} 
+       FormacaoItemIndex${itemstatus.index}
+       FormacaoTipoIndex${liststatus.index} <c:if test="${not liststatus.first}">hidden</c:if>"
+       name="${liststatus.index}" id="${itemstatus.index}">
      <c:forEach var="tipo" varStatus="tipostatus" items="${list}">
-      <div class="well col-xs-12 FormacaoTipo${liststatus.index}tt${itemstatus.index} FormacaoTipoIndex${liststatus.index} <c:if test="${not liststatus.first}">hidden</c:if>">
+      <div
+       class="well col-xs-12" >
        <div class="col-md-4">
-        <label>${tipo.getNomeTipo()}</label> <label>${tipostatus.index}</label>
+        <label>${tipo.getNomeTipo()}</label>
        </div>
        <div class="col-md-4">
         <div class="col-md-5">
          <input type="number"
-          class="form-control  formacaovalor${tipostatus.index} formacaoGeral"
-          id="valor${tipo.getAbre()}" name="${tipo.getAbre()}"
+          class="form-control  formacaovalor${liststatus.index}
+          FormacaoTipo${liststatus.index}tt${itemstatus.index} 
+          FormacaoTipo${liststatus.index}valor${itemstatus.index} 
+          FormacaoTipoIndex${liststatus.index}
+           formacaoGeral"
+          id="eeee${tipostatus.index}" name="${tipo.getAbre()}"
           placeholder="pts">
         </div>
        </div>
        <div class="col-md-4">
         <div class="col-md-5  ">
-         <input type="number" class="form-control Formacaolimite${itemstatus.index} formacaolimiteGeral hidden"
-          id="limite${tipo.getAbre()}" name="${tipo.getAbre()}"
+         <input type="number"
+          class="form-control FormacaoTipo${liststatus.index}limite${itemstatus.index}  Formacaolimite${itemstatus.index} formacaovalorlimite${liststatus.index} formacaolimiteGeral hidden"
+          id="eee${tipostatus.index}" name="${tipo.getAbre()}"
           placeholder="itens">
         </div>
        </div>
       </div>
-     </c:forEach>
+     </c:forEach></div>
     </c:forEach>
    </div>
   </c:forEach>

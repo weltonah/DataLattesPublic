@@ -15,7 +15,6 @@ import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 
 import br.com.Modelo.Tipo6;
-import br.com.SearchXML.SearchXML;
 import br.com.SearchXML.SearchXMLProdTecnica;
 
 public class TrabalhoTecnicoTeste {
