@@ -49,7 +49,7 @@ public class SenhaController {
 		// }
 		// }
 		model.addAttribute("estcrit", estcrit);
-		estcrit.getListEst().get(0).getListCrit().get(0).getListTipo().get(0);
+		// System.out.println(estcrit.getListEst().get(2).getNome());
 		model.addAttribute("conteudo", conteudo);
 		model.addAttribute("formacaoList", formacao);
 		model.addAttribute("ProdArtList", ProdArt);

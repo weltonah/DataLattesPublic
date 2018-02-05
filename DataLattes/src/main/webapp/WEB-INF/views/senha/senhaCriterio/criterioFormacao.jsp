@@ -5,7 +5,7 @@
 <div class=" well col-xs-12">
  <div class="col-xs-12">
   <div class="col-xs-4 col-md-offset-4">
-   <h2>${estcrit.getListEst().get(0).getNome()}</h2>
+   <h2>${estcrit.getListEst().get(idforech).getNome()}</h2>
   </div>
  </div>
  <div class="well col-xs-12 FormacaoDiv">
@@ -14,13 +14,13 @@
   </div>
   <div class="checkbox">
    <label> <input type="checkbox" id="myCheckFormacaoStatus"
-    name="myCheckFormacaoStatus" onclick="formacaoStatus(this)">
+    name="myCheckFormacaoStatus" onclick="FormacaoStatus(this)">
     Diferenciar pontuação de TODOS os itens por status
    </label>
   </div>
   <div class="checkbox">
    <label> <input type="checkbox" id="myCheckFormacaoLimite"
-    name="myCheckFormacaoLimite" onclick="formacaoLimite(this)">
+    name="myCheckFormacaoLimite" onclick="FormacaoLimite(this)">
     Colocar limite maximo em TODOS os críterios
    </label>
   </div>
@@ -38,7 +38,7 @@
    </div>
   </div>
   <c:forEach var="item" varStatus="itemstatus"
-   items="${estcrit.getListEst().get(0).getListCrit()}">
+   items="${estcrit.getListEst().get(idforech).getListCrit()}">
    <div class="well col-xs-12">
     <div class="checkbox">
      <label> <input type="checkbox"
@@ -57,7 +57,7 @@
      </label>
     </div>
     <div class="col-xs-12">
-     <span class="NomeItem${itemstatus.index}" name="${item.getAbre()}">${item.getCriterio()}</span>
+     <span class="NomeItem${itemstatus.index} indexCont0" name="${item.getAbre()}">${item.getCriterio()}</span>
     </div>
     <c:forEach var="list" varStatus="liststatus"
      items="${item.getListTipo()}">
@@ -75,11 +75,11 @@
        <div class="col-md-4">
         <div class="col-md-5">
          <input type="number"
-          class="form-control  formacaovalor${liststatus.index}
+          class="form-control  Formacaovalor${liststatus.index}
           FormacaoTipo${liststatus.index}tt${itemstatus.index} 
           FormacaoTipo${liststatus.index}valor${itemstatus.index} 
           FormacaoTipoIndex${liststatus.index}
-           formacaoGeral"
+           FormacaoGeral"
           id="eeee${tipostatus.index}" name="${tipo.getAbre()}"
           placeholder="pts">
         </div>
@@ -87,7 +87,7 @@
        <div class="col-md-4">
         <div class="col-md-5  ">
          <input type="number"
-          class="form-control FormacaoTipo${liststatus.index}limite${itemstatus.index}  Formacaolimite${itemstatus.index} formacaovalorlimite${liststatus.index} formacaolimiteGeral hidden"
+          class="form-control FormacaoTipo${liststatus.index}limite${itemstatus.index}  Formacaolimite${itemstatus.index} Formacaovalorlimite${liststatus.index} FormacaolimiteGeral hidden"
           id="eee${tipostatus.index}" name="${tipo.getAbre()}"
           placeholder="itens">
         </div>

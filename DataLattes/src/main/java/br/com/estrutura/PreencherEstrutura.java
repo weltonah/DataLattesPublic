@@ -142,7 +142,6 @@ public class PreencherEstrutura {
 						// System.out.println(
 						// list.get(j) + " " +
 						// this.estr.getListEst().get(i).getListCrit().get(k).getAbre());
-
 						if (this.estr.getListEst().get(i).getListCrit().get(k).getAbre().contentEquals(list.get(j))) {
 							listCritFormacao.add(this.estr.getListEst().get(i).getListCrit().get(k));
 							aux = k;

@@ -31,29 +31,32 @@
 			</div>
 			<div class="col-xs-12">
 				<input type="text" class="form-control " id="keyId" name="keyId" >
-				<input class="btn btn-default" type="button" value="Input" onclick="GerarKey(${conteudo.get(0).size()})">
+				<input class="btn btn-default" type="button" value="Input" onclick="GerarKey(this)">
 			</div>
 			
 			</div>
-			<c:if test="${conteudo.get(0).size()!=null}">
-            <c:import url="/WEB-INF/views/senha/senhaCriterio/criterioFormacao.jsp" />
-			</c:if>
-			<c:if test="${conteudo.get(1).size()!=null}">
-			<c:import url="/WEB-INF/views/senha/senhaCriterio/criterioFormacao.jsp" />
-			</c:if>
-			<c:if test="${conteudo.get(2).size()!=null}">
-			<c:import url="/WEB-INF/views/senha/senhaCriterio/criterioProdArt.jsp" />
-			</c:if>
-			<c:if test="${conteudo.get(3).size()!=null}">
-			<c:import url="/WEB-INF/views/senha/senhaCriterio/criterioProdTec.jsp" />
-			</c:if>
-			<c:if test="${conteudo.get(4).size()!=null}">
-			<c:import url="/WEB-INF/views/senha/senhaCriterio/criterioProdBibli.jsp" />
-			</c:if>
-			<c:if test="${conteudo.get(5).size()!=null}">
-			<c:import url="/WEB-INF/views/senha/senhaCriterio/criterioOriBanc.jsp" />
-			</c:if>
-			
+         <c:forEach var="estrutura" varStatus="estruturaStatus"
+         items="${estcrit.getListEst()}">
+         <c:set var="idforech" scope="application" value="${estruturaStatus.index }"/>
+              <c:if test="${estrutura.getAbre().contains('For')}">
+              <c:import url="/WEB-INF/views/senha/senhaCriterio/criterioFormacao.jsp" />
+              </c:if>
+              <c:if test="${estrutura.getAbre().contains('PrTe')}">
+              <c:import url="/WEB-INF/views/senha/senhaCriterio/criterioProdTec.jsp" />
+              </c:if>
+              <c:if test="${estrutura.getAbre().contains('PrArt')}">
+              <c:import url="/WEB-INF/views/senha/senhaCriterio/criterioProdArt.jsp" />
+              </c:if>
+              <c:if test="${estrutura.getAbre().contains('PrBli')}">
+              <c:import url="/WEB-INF/views/senha/senhaCriterio/criterioProdBibli.jsp" />
+              </c:if>
+              <c:if test="${estrutura.getAbre().contains('BaOr')}">
+              <c:import url="/WEB-INF/views/senha/senhaCriterio/criterioOriBanc.jsp" />
+              </c:if>
+              <c:if test="${estrutura.getAbre().contains('CrGe')}">
+              <c:import url="/WEB-INF/views/senha/senhaCriterio/criterioDadosGerais.jsp" />
+              </c:if>
+        </c:forEach>
 			<div class="col-md-12">
 				<a type="button" class="btn btn-default" href="index">Voltar</a>
 				<button type="submit" class="btn btn-success">Success</button>
