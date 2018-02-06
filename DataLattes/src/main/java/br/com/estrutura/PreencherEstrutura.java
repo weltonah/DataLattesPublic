@@ -94,6 +94,7 @@ public class PreencherEstrutura {
 		listCritFormacao = new ArrayList<CriterioEstrutura>();
 		PreencherAndCon(new CriterioEstrutura("Orientação Mestrado", "OrMe"), listCritFormacao);
 		PreencherAndCon(new CriterioEstrutura("Orientação Doutorado", "OrDo"), listCritFormacao);
+		PreencherAndCon(new CriterioEstrutura("Orientação Pós-Doutorado", "OrPoDo"), listCritFormacao);
 		PreencherAndCon(new CriterioEstrutura("Orientação Especialização ou Aperfeiçoamento", "OrEsAp"),
 				listCritFormacao);
 		PreencherAndCon(new CriterioEstrutura("Orientação de Graduação", "OrGr"), listCritFormacao);
@@ -143,6 +144,93 @@ public class PreencherEstrutura {
 						// list.get(j) + " " +
 						// this.estr.getListEst().get(i).getListCrit().get(k).getAbre());
 						if (this.estr.getListEst().get(i).getListCrit().get(k).getAbre().contentEquals(list.get(j))) {
+							listCritFormacao.add(this.estr.getListEst().get(i).getListCrit().get(k));
+							aux = k;
+							break;
+						}
+					}
+				}
+				areaEstruturaFormacao.setListCrit(listCritFormacao);
+				listArea.add(areaEstruturaFormacao);
+			}
+		}
+		copia.setListEst(listArea);
+		return copia;
+	}
+
+	public ArrayList<List<String[]>> decifrarChave(String key) {
+		ArrayList<List<String[]>> conteudo = new ArrayList<List<String[]>>();
+		String[] t = key.split("%");
+		String[] aux = t[0].split(">");
+		int anoInicio = !(aux[1].contentEquals("")) ? Integer.parseInt(aux[1]) : 1950;
+		int anofim = Integer.parseInt(aux[2]);
+		int cont = 0;
+		for (int i = 1; i < t.length; i++) {
+			ArrayList<String[]> listString = new ArrayList<String[]>();
+			String[] ta = t[i].split("!");
+			while (cont < this.estr.getListEst().size()) {
+				if (!(this.estr.getListEst().get(cont).getAbre().contentEquals(ta[0]))) {
+					System.out.println("->");
+					conteudo.add(null);
+					cont++;
+				} else {
+					cont++;
+					break;
+				}
+			}
+			String[] tipo = ta[1].split("#");
+			for (int j = 1; j < tipo.length; j++) {
+				String[] dif = tipo[j].split("@");
+				if (dif.length > 1) {
+					for (int k = 1; k < dif.length; k++) {
+						String[] crit = new String[4];
+						crit[0] = dif[0];
+						String[] criterio = dif[k].split("=");
+						crit[1] = criterio[0];
+						crit[2] = criterio[1];
+						if (criterio.length == 3) {
+							String[] limite = criterio[2].split("&");
+							crit[3] = limite[1];
+						}
+						listString.add(crit);
+					}
+				}
+			}
+			conteudo.add(listString);
+		}
+		return conteudo;
+	}
+
+	public Estrutura InserirCriteriosKey(ArrayList<List<String[]>> conteudo) {
+		Estrutura copia = new Estrutura();
+		ArrayList<AreaEstrutura> listArea = new ArrayList<AreaEstrutura>();
+		AreaEstrutura areaEstruturaFormacao = null;
+		ArrayList<CriterioEstrutura> listCritFormacao = null;
+		System.out.println(conteudo.size());
+		for (int i = 0; i < conteudo.size(); i++) {
+			List<String[]> list = conteudo.get(i);
+			// System.out.println("@@ valor i " + i);
+			if (list != null) {
+				areaEstruturaFormacao = new AreaEstrutura(this.estr.getListEst().get(i).getNome(),
+						this.estr.getListEst().get(i).getAbre());
+				listCritFormacao = new ArrayList<CriterioEstrutura>();
+
+				int aux = 0;
+				// System.out.println(this.estr.getListEst().get(i).getNome());
+				for (int j = 0; j < list.size(); j++) {
+					System.out.println("## valor j " + j);
+					for (int k = aux; k < this.estr.getListEst().get(i).getListCrit().size(); k++) {
+						// System.out.println("valor k " + k);
+						System.out.println(
+								list.get(j)[0] + " " + this.estr.getListEst().get(i).getListCrit().get(k).getAbre());
+						if (this.estr.getListEst().get(i).getListCrit().get(k).getAbre()
+								.contentEquals(list.get(j)[0])) {
+							ArrayList<TipoEstrutura> listTipoEstru = new ArrayList<TipoEstrutura>();
+							TipoEstrutura tipoEstrutura = new TipoEstrutura("", Integer.parseInt(list.get(j)[2]),
+									list.get(j)[1], Integer.parseInt(list.get(j)[3]));
+
+							listTipoEstru.add(tipoEstrutura);
+
 							listCritFormacao.add(this.estr.getListEst().get(i).getListCrit().get(k));
 							aux = k;
 							break;

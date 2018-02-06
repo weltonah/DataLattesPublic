@@ -9,7 +9,7 @@
 </jsp:attribute>
 	<jsp:body>
 	<div class="well col-md-12" style="background-color: #d1c4e9">
-		<form action="criterioChave">
+		<div class="col-xs-12 " id="mostrarCriterio" >
 			<div class="col-md-12">
 				<h2> Selecione os criterios avaliados :   </h2>
 			</div>
@@ -29,10 +29,7 @@
 					<input type="number" class="form-control " id="AnoFim" value="2018" name="AnoFim" placeholder="anos">
 				</div>
 			</div>
-			<div class="col-xs-12">
-				<input type="text" class="form-control " id="keyId" name="keyId" >
-				<input class="btn btn-default" type="button" value="Input" onclick="GerarKey(this)">
-			</div>
+			
 			
 			</div>
          <c:forEach var="estrutura" varStatus="estruturaStatus"
@@ -59,12 +56,17 @@
         </c:forEach>
 			<div class="col-md-12">
 				<a type="button" class="btn btn-default" href="index">Voltar</a>
-				<button type="submit" class="btn btn-success">Success</button>
+				<button type="submit" class="btn btn-success" onclick="GerarKey(this)">Gerar Chave</button>
 			</div>
+   </div>
+       <div class="col-xs-12 hidden " id="mostrarKey">
+    	    <form action="criterioChave">
+                 <input type="text" class="form-control " id="keyId" name="keyId" >
+                 <a type="button" class="btn btn-default" onclick="voltar(this)">Voltar</a>
+    		</form>
+      </div>
 	
-		</form>
-	</div>
-
-
+ 
+ </div>
 </jsp:body>
 </tags:padrao>

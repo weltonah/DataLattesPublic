@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Estrutura {
+	private int anoInicio;
+	private int anoFim;
 	private ArrayList<AreaEstrutura> listEst;
 
 	public Estrutura() {
@@ -24,5 +26,20 @@ public class Estrutura {
 		this.listEst = listEst;
 	}
 
+	public int getAnoInicio() {
+		return this.anoInicio;
+	}
+
+	public void setAnoInicio(int anoInicio) {
+		this.anoInicio = anoInicio;
+	}
+
+	public int getAnoFim() {
+		return this.anoFim;
+	}
+
+	public void setAnoFim(int anoFim) {
+		this.anoFim = anoFim;
+	}
 
 }

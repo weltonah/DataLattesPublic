@@ -119,6 +119,7 @@ function LimiteTudo(Nome) {
 }
 
 function GerarKey() {
+	
 	var key;
 	key = "Ano>" + document.getElementById("AnoInicio").value + ">"
 			+ document.getElementById("AnoFim").value + "%";
@@ -168,4 +169,11 @@ function GerarKey() {
 		}
 	}
 	document.getElementById("keyId").value = key;
+	document.getElementById("mostrarKey").classList.remove("hidden");
+	document.getElementById("mostrarCriterio").classList.add("hidden");
 }
+function voltar(){
+	document.getElementById("mostrarKey").classList.add("hidden");
+	document.getElementById("mostrarCriterio").classList.remove("hidden");
+}
+
