@@ -1,332 +1,162 @@
 function FormacaoStatus() {
-	var x = document.getElementById("myCheckFormacaoStatus").checked;
-	var inputs = document.querySelectorAll(".FormacaoTipoIndex1");
-	var xx = document.querySelectorAll(".FormacaoTipoIndex0");
-	if (x) {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.remove("hidden");
-		}
-		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.add("hidden");
-		}
-	} else {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.add("hidden");
-
-		}
-		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.remove("hidden");
-		}
-
-	}
+	StatusTudo("Formacao");
 }
 function FormacaoItemStatus(item) {
-	var x = document.getElementById("myCheckFormacaoItemStatus" + item).checked;
-	var inputs = document.querySelectorAll(".FormacaoTipo1tt" + item);
-	var xx = document.querySelectorAll(".FormacaoTipo0tt" + item);
-	if (x) {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.remove("hidden");
-		}
-		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.add("hidden");
-		}
-	} else {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.add("hidden");
-
-		}
-		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.remove("hidden");
-		}
-
-	}
+	ItemStatus("Formacao", item);
 }
 function FormacaoItemLimite(item) {
-	var x = document.getElementById("myCheckFormacaoItemLimite" + item).checked;
-	var inputs = document.querySelectorAll(".Formacaolimite" + item);
-	if (x) {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.remove("hidden");
-		}
-	} else {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.add("hidden");
-
-		}
-	}
+	ItemLimite("Formacao", item)
 }
 function FormacaoLimite() {
-	var x = document.getElementById("myCheckFormacaoLimite").checked;
-	var inputs = document.querySelectorAll(".FormacaolimiteGeral");
-	if (x) {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.remove("hidden");
-		}
-	} else {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.add("hidden");
-
-		}
-	}
+	LimiteTudo("Formacao");
 }
-
-
 function ProdArtStatus() {
-	var x = document.getElementById("myCheckProdArtStatus").checked;
-	var inputs = document.querySelectorAll(".ProdArtTipoIndex1");
-	var xx = document.querySelectorAll(".ProdArtTipoIndex0");
-	if (x) {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.remove("hidden");
-		}
-		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.add("hidden");
-		}
-	} else {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.add("hidden");
-
-		}
-		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.remove("hidden");
-		}
-
-	}
+	StatusTudo("ProdArt");
 }
 function ProdArtItemStatus(item) {
-	var x = document.getElementById("myCheckProdArtItemStatus" + item).checked;
-	var inputs = document.querySelectorAll(".ProdArtTipo1tt" + item);
-	var xx = document.querySelectorAll(".ProdArtTipo0tt" + item);
-	if (x) {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.remove("hidden");
-		}
-		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.add("hidden");
-		}
-	} else {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.add("hidden");
-
-		}
-		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.remove("hidden");
-		}
-
-	}
+	ItemStatus("ProdArt", item);
 }
 function ProdArtItemLimite(item) {
-	var x = document.getElementById("myCheckProdArtItemLimite" + item).checked;
-	var inputs = document.querySelectorAll(".ProdArtlimite" + item);
-	if (x) {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.remove("hidden");
-		}
-	} else {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.add("hidden");
-
-		}
-	}
+	ItemLimite("ProdArt", item)
 }
 function ProdArtLimite() {
-	var x = document.getElementById("myCheckProdArtLimite").checked;
-	var inputs = document.querySelectorAll(".ProdArtlimiteGeral");
-	if (x) {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.remove("hidden");
-		}
-	} else {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.add("hidden");
-
-		}
-	}
+	LimiteTudo("ProdArt");
 }
-
-
 function ProdTecStatus() {
-	var x = document.getElementById("myCheckProdTecStatus").checked;
-	var inputs = document.querySelectorAll(".ProdTecTipoIndex1");
-	var xx = document.querySelectorAll(".ProdTecTipoIndex0");
-	if (x) {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.remove("hidden");
-		}
-		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.add("hidden");
-		}
-	} else {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.add("hidden");
-
-		}
-		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.remove("hidden");
-		}
-
-	}
+	StatusTudo("ProdTec");
 }
 function ProdTecItemStatus(item) {
-	var x = document.getElementById("myCheckProdTecItemStatus" + item).checked;
-	var inputs = document.querySelectorAll(".ProdTecTipo1tt" + item);
-	var xx = document.querySelectorAll(".ProdTecTipo0tt" + item);
-	if (x) {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.remove("hidden");
-		}
-		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.add("hidden");
-		}
-	} else {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.add("hidden");
-
-		}
-		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.remove("hidden");
-		}
-
-	}
+	ItemStatus("ProdTec", item);
 }
 function ProdTecItemLimite(item) {
-	var x = document.getElementById("myCheckProdTecItemLimite" + item).checked;
-	var inputs = document.querySelectorAll(".ProdTeclimite" + item);
-	if (x) {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.remove("hidden");
-		}
-	} else {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.add("hidden");
-
-		}
-	}
+	ItemLimite("ProdTec", item);
 }
 function ProdTecLimite() {
-	var x = document.getElementById("myCheckProdTecLimite").checked;
-	var inputs = document.querySelectorAll(".ProdTeclimiteGeral");
-	if (x) {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.remove("hidden");
-		}
-	} else {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.add("hidden");
-
-		}
-	}
+	LimiteTudo("ProdTec");
 }
-
 function ProdBibliStatus() {
-	var x = document.getElementById("myCheckProdBibliStatus").checked;
-	var inputs = document.querySelectorAll(".ProdBibliTipoIndex1");
-	var xx = document.querySelectorAll(".ProdBibliTipoIndex0");
-	if (x) {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.remove("hidden");
-		}
-		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.add("hidden");
-		}
-	} else {
-		for (var i = 0; i < inputs.length; i++) {
-			inputs[i].classList.add("hidden");
-			
-		}
-		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.remove("hidden");
-		}
-		
-	}
+	StatusTudo("ProdBibli");
 }
 function ProdBibliItemStatus(item) {
-	var x = document.getElementById("myCheckProdBibliItemStatus" + item).checked;
-	var inputs = document.querySelectorAll(".ProdBibliTipo1tt" + item);
-	var xx = document.querySelectorAll(".ProdBibliTipo0tt" + item);
+	ItemStatus("ProdBibli", item);
+}
+function ProdBibliItemLimite(item) {
+	ItemLimite("ProdBibli", item);
+}
+function ProdBibliLimite() {
+	LimiteTudo("ProdBibli");
+}
+function OriBancStatus() {
+	StatusTudo("OriBanc");
+}
+function OriBancItemStatus(item) {
+	ItemStatus("OriBanc", item);
+}
+function OriBancItemLimite(item) {
+	ItemLimite("OriBanc", item);
+}
+function OriBancLimite() {
+	LimiteTudo("OriBanc");
+}
+function StatusTudo(Nome) {
+	var x = document.getElementById("myCheck" + Nome + "Status").checked;
+	var inputs = document.querySelectorAll("." + Nome + "TipoIndex1");
+	var xx = document.querySelectorAll("." + Nome + "TipoIndex0");
 	if (x) {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].classList.remove("hidden");
 		}
-		for (var j = 0; j < xx.length; j++) {
-			xx[j].classList.add("hidden");
-		}
+		for (var j = 0; j < xx.length; j++)
+			if (!(xx[j].classList.contains("Semtipo"))) {
+				xx[j].classList.add("hidden");
+			}
 	} else {
-		for (var i = 0; i < inputs.length; i++) {
+		for (var i = 0; i < inputs.length; i++)
 			inputs[i].classList.add("hidden");
-			
-		}
 		for (var j = 0; j < xx.length; j++) {
 			xx[j].classList.remove("hidden");
 		}
-		
 	}
 }
-function ProdBibliItemLimite(item) {
-	var x = document.getElementById("myCheckProdBibliItemLimite" + item).checked;
-	var inputs = document.querySelectorAll(".ProdBiblilimite" + item);
+function ItemStatus(Nome, item) {
+	var x = document.getElementById("myCheck" + Nome + "ItemStatus" + item).checked;
+	var inputs = document.querySelectorAll("." + Nome + "Tipo1tt" + item);
+	var xx = document.querySelectorAll("." + Nome + "Tipo0tt" + item);
 	if (x) {
-		for (var i = 0; i < inputs.length; i++) {
+		for (var i = 0; i < inputs.length; i++)
 			inputs[i].classList.remove("hidden");
-		}
+		for (var j = 0; j < xx.length; j++)
+			xx[j].classList.add("hidden");
 	} else {
-		for (var i = 0; i < inputs.length; i++) {
+		for (var i = 0; i < inputs.length; i++)
 			inputs[i].classList.add("hidden");
-			
-		}
+		for (var j = 0; j < xx.length; j++)
+			xx[j].classList.remove("hidden");
 	}
 }
-function ProdBibliLimite() {
-	var x = document.getElementById("myCheckProdBibliLimite").checked;
-	var inputs = document.querySelectorAll(".ProdBiblilimiteGeral");
+function ItemLimite(Nome, item) {
+	var x = document.getElementById("myCheck" + Nome + "ItemLimite" + item).checked;
+	var inputs = document.querySelectorAll("." + Nome + "limite" + item);
 	if (x) {
-		for (var i = 0; i < inputs.length; i++) {
+		for (var i = 0; i < inputs.length; i++)
 			inputs[i].classList.remove("hidden");
-		}
 	} else {
-		for (var i = 0; i < inputs.length; i++) {
+		for (var i = 0; i < inputs.length; i++)
 			inputs[i].classList.add("hidden");
-			
-		}
 	}
 }
 
-
-
+function LimiteTudo(Nome) {
+	var x = document.getElementById("myCheck" + Nome + "Limite").checked;
+	var inputs = document.querySelectorAll("." + Nome + "limiteGeral");
+	if (x) {
+		for (var i = 0; i < inputs.length; i++)
+			inputs[i].classList.remove("hidden");
+	} else {
+		for (var i = 0; i < inputs.length; i++)
+			inputs[i].classList.add("hidden");
+	}
+}
 
 function GerarKey() {
 	var key;
 	key = "Ano>" + document.getElementById("AnoInicio").value + ">"
 			+ document.getElementById("AnoFim").value + "%";
-	var NomeItemFor = ["Formacao","ProdTec","ProdArt","ProdBibli","OriBanc","DadosGerais"];
-	var NomeItemForAbre = ["For","PrTe","PrArt","PrBli","BaOr","CrGe"];
-	for(var t =0; t<6;t++ ){
-		var formDiv = document.querySelectorAll('.indexCont'+t);
+	var NomeItemFor = [ "Formacao", "ProdTec", "ProdArt", "ProdBibli",
+			"OriBanc", "DadosGerais" ];
+	var NomeItemForAbre = [ "For", "PrTe", "PrArt", "PrBli", "BaOr", "CrGe" ];
+	for (var t = 0; t < 6; t++) {
+		var formDiv = document.querySelectorAll('.indexCont' + t);
 		if (formDiv.length > 0) {
-			//alert(t);
-			key = key +NomeItemForAbre[t] +"!";
+			// alert(t);
+			key = key + NomeItemForAbre[t] + "!";
 			for (var i = 0; i < formDiv.length; i++) {
-				//var list = document.getElementById(i);
-				var list = document.querySelectorAll('.'+ NomeItemFor[t] +'ItemIndex' + i);
-				//alert(list.length);
-				for(var k=0; k < list.length ;k++){
-					//alert(i);
-					if(list[k] != null){
+				// var list = document.getElementById(i);
+				var list = document.querySelectorAll('.' + NomeItemFor[t]
+						+ 'ItemIndex' + i);
+				// alert(list.length);
+				for (var k = 0; k < list.length; k++) {
+					// alert(i);
+					if (list[k] != null) {
 						if (!(list[k].classList.contains("hidden"))) {
 							var listId = list[k].getAttribute("name");
-							var itemName= list[k].getAttribute("id");
-							var ItemAbre = document.getElementsByClassName("NomeItem"
-									+ itemName+"&"+t);
+							var itemName = list[k].getAttribute("id");
+							var ItemAbre = document
+									.getElementsByClassName("NomeItem"
+											+ itemName + "&" + t);
 							key = key + "#" + ItemAbre[0].getAttribute("name");
-							var valor = document.querySelectorAll('.'+ NomeItemFor[t] +'Tipo'+listId+'valor'+i);
-							var limite = document.querySelectorAll('.'+ NomeItemFor[t] +'Tipo'+listId+'limite'+i);
-							//alert('.FormacaoTipo'+listId+'valor'+i);
-							//alert(valor.length);
+							var valor = document.querySelectorAll('.'
+									+ NomeItemFor[t] + 'Tipo' + listId
+									+ 'valor' + i);
+							var limite = document.querySelectorAll('.'
+									+ NomeItemFor[t] + 'Tipo' + listId
+									+ 'limite' + i);
+							// alert('.FormacaoTipo'+listId+'valor'+i);
+							// alert(valor.length);
 							for (var j = 0; j < valor.length; j++) {
-								key = key + "@" + valor[j].getAttribute("name") + "="
-								+ valor[j].value + "=" ;
-								if(!(limite[j].classList.contains("hidden"))){
+								key = key + "@" + valor[j].getAttribute("name")
+										+ "=" + valor[j].value + "=";
+								if (!(limite[j].classList.contains("hidden"))) {
 									key = key + "&" + limite[j].value + "&";
 								}
 							}
@@ -339,4 +169,3 @@ function GerarKey() {
 	}
 	document.getElementById("keyId").value = key;
 }
-

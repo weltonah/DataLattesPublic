@@ -49,14 +49,6 @@ public class SenhaController {
 		// }
 		// }
 		model.addAttribute("estcrit", estcrit);
-		// System.out.println(estcrit.getListEst().get(2).getNome());
-		model.addAttribute("conteudo", conteudo);
-		model.addAttribute("formacaoList", formacao);
-		model.addAttribute("ProdArtList", ProdArt);
-		model.addAttribute("ProdTecList", ProdTec);
-		model.addAttribute("OriBancList", OriBanc);
-		model.addAttribute("ProdBiblList", ProdBibl);
-		model.addAttribute("DadosGeraisList", DadosGerais);
 		return "senha/escolherValorCriterio";
 	}
 

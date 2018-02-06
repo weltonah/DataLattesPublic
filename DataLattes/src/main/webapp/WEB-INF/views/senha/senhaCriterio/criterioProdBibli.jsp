@@ -69,13 +69,14 @@
      <div
        class="well col-xs-12 ProdBibliTipo${liststatus.index}tt${itemstatus.index} 
        ProdBibliItemIndex${itemstatus.index}
-       ProdBibliTipoIndex${liststatus.index} <c:if test="${not liststatus.first}">hidden</c:if>"
+       ProdBibliTipoIndex${liststatus.index} <c:if test="${not liststatus.first}">hidden</c:if>
+       <c:if test="${item.getListTipo().size() == 1}">Semtipo</c:if>"
        name="${liststatus.index}" id="${itemstatus.index}">
      <c:forEach var="tipo" varStatus="tipostatus" items="${list}">
       <div
        class="well col-xs-12" >
        <div class="col-md-4">
-        <label>${tipo.getNomeTipo()}</label>
+        <label>${tipo.getNomeTipo()}  </label>
        </div>
        <div class="col-md-4">
         <div class="col-md-5">
@@ -84,7 +85,8 @@
           ProdBibliTipo${liststatus.index}tt${itemstatus.index} 
           ProdBibliTipo${liststatus.index}valor${itemstatus.index} 
           ProdBibliTipoIndex${liststatus.index}
-           ProdBibliGeral"
+           ProdBibliGeral 
+           <c:if test="${item.getListTipo().size() == 1}">Semtipo</c:if>"
           id="eeee${tipostatus.index}" name="${tipo.getAbre()}"
           placeholder="pts">
         </div>

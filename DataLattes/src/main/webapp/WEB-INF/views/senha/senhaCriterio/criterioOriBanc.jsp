@@ -3,133 +3,105 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div class=" well col-xs-12">
- <div class="  col-xs-12">
-  <div class=" col-xs-10 col-md-offset-4">
-   <h2>Orientações e Bancas</h2>
+ <div class="col-xs-12">
+  <div class="col-xs-4 col-md-offset-4">
+   <h2>${estcrit.getListEst().get(idforech).getNome()}</h2>
   </div>
  </div>
  <div class="well col-xs-12 OriBancDiv">
   <div>
-   <h4>Configurações</h4>
+   <h4>Configurações Gerais</h4>
   </div>
   <div class="checkbox">
    <label> <input type="checkbox" id="myCheckOriBancStatus"
-    name="myCheckOriBancStatus" onclick="OriBancCarater(this)">
-    Diferenciar pontuação por carater
+    name="myCheckOriBancStatus" onclick="OriBancStatus(this)">
+    Diferenciar pontuação de TODOS os itens por status
    </label>
   </div>
   <div class="checkbox">
    <label> <input type="checkbox" id="myCheckOriBancLimite"
     name="myCheckOriBancLimite" onclick="OriBancLimite(this)">
-    Colocar limite maximo de itens contabilizados
+    Colocar limite maximo em TODOS os críterios
    </label>
   </div>
  </div>
- <div class=" well col-xs-12" id="OriBancDivGeral">
-  <div class=" col-xs-12">
-   <div class=" col-md-4">
+ <div class="well col-xs-12" id="OriBancDivGeral">
+  <div class="col-xs-12">
+   <div class="col-md-4">
     <label>Itens:</label>
    </div>
    <div class="col-md-4">
     <label>Valor por item:</label>
    </div>
-   <div class=" col-md-4 OriBancvalorlimite hidden">
+   <div class="col-md-4">
     <label>Maximo de item contabilizado</label>
    </div>
   </div>
-  <c:forEach var="OriBanc" varStatus="status" items="${OriBancList}">
-   <c:choose>
-    <c:when test="${OriBanc.contains('Banca')}">
-     <div class="well col-xs-12">
-      <div class="col-xs-12">
-       <label>${OriBanc}:</label>
-      </div>
-      <div class="col-xs-12">
-       <div class=" col-md-4">
-        <label>Participado</label>
+  <c:forEach var="item" varStatus="itemstatus"
+   items="${estcrit.getListEst().get(idforech).getListCrit()}">
+   <div class="well col-xs-12">
+   
+    <c:if test="${item.getListTipo().size() > 1}">
+    <div class="checkbox">
+     <label> <input type="checkbox"
+      id="myCheckOriBancItemStatus${itemstatus.index}"
+      name="myCheckOriBancItemStatus${itemstatus.index}"
+      onclick="OriBancItemStatus(${itemstatus.index})">
+      Diferenciar pontuação por status do críterio
+     </label>
+    </div>
+    </c:if>
+    
+    <div class="checkbox">
+     <label> <input type="checkbox"
+      id="myCheckOriBancItemLimite${itemstatus.index}"
+      name="myCheckOriBancItemLimite${itemstatus.index}"
+      onclick="OriBancItemLimite(${itemstatus.index})"> Colocar
+      limite maximo de itens contabilizados por críterio
+     </label>
+    </div>
+    <div class="col-xs-12">
+     <span class="NomeItem${itemstatus.index}&4 indexCont4" name="${item.getAbre()}">${item.getCriterio()}</span>
+    </div>
+    <c:forEach var="list" varStatus="liststatus"
+     items="${item.getListTipo()}">
+     <div
+       class="well col-xs-12 OriBancTipo${liststatus.index}tt${itemstatus.index} 
+       OriBancItemIndex${itemstatus.index}
+       OriBancTipoIndex${liststatus.index} <c:if test="${not liststatus.first}">hidden</c:if>
+       <c:if test="${item.getListTipo().size() == 1}">Semtipo</c:if>"
+       name="${liststatus.index}" id="${itemstatus.index}">
+     <c:forEach var="tipo" varStatus="tipostatus" items="${list}">
+      <div
+       class="well col-xs-12" >
+       <div class="col-md-4">
+        <label>${tipo.getNomeTipo()}  </label>
        </div>
-       <div class=" col-md-4">
-        <div class=" col-md-5">
-         <input type="number" class="form-control OriBancInput"
-          id="valor${OriBanc}" name="${OriBanc}" placeholder="pts">
-        </div>
-       </div>
-       <div class=" col-md-4">
-        <div class=" col-md-5 ">
+       <div class="col-md-4">
+        <div class="col-md-5">
          <input type="number"
-          class="form-control  OriBancvalorlimite OriBancInputLimite hidden"
-          id="limite${OriBanc}" name="${OriBanc}" placeholder="itens">
+          class="form-control  OriBancvalor${liststatus.index}
+          OriBancTipo${liststatus.index}tt${itemstatus.index} 
+          OriBancTipo${liststatus.index}valor${itemstatus.index} 
+          OriBancTipoIndex${liststatus.index}
+           OriBancGeral 
+           <c:if test="${item.getListTipo().size() == 1}">Semtipo</c:if>"
+          id="eeee${tipostatus.index}" name="${tipo.getAbre()}"
+          placeholder="pts">
         </div>
        </div>
-      </div>
-     </div>
-    </c:when>
-    <c:otherwise>
-     <div class="well col-xs-12">
-      <div class="col-xs-12">
-       <label>${OriBanc}:</label>
-      </div>
-      <div class="col-xs-12 OriBancAndCon">
-       <div class=" col-md-4">
-        <label>Orientações em andamento ou concluidas</label>
-       </div>
-       <div class=" col-md-4">
-        <div class=" col-md-5">
-         <input type="number" class="form-control OriBancInput"
-          id="valor${OriBanc}" name="${OriBanc}" placeholder="pts">
-        </div>
-       </div>
-       <div class=" col-md-4">
-        <div class=" col-md-5 ">
+       <div class="col-md-4">
+        <div class="col-md-5  ">
          <input type="number"
-          class="form-control OriBancvalorlimite OriBancInputLimite hidden"
-          id="limite${OriBanc}" name="${OriBanc}" placeholder="itens">
+          class="form-control OriBancTipo${liststatus.index}limite${itemstatus.index}  OriBanclimite${itemstatus.index} OriBancvalorlimite${liststatus.index} OriBanclimiteGeral hidden"
+          id="eee${tipostatus.index}" name="${tipo.getAbre()}"
+          placeholder="itens">
         </div>
        </div>
       </div>
-      <div class="col-xs-12 OriBancSepAndCon hidden">
-       <div class=" col-xs-12">
-        <div class=" col-md-4">
-         <label>Orientações em andamento</label>
-        </div>
-        <div class=" col-md-4">
-         <div class=" col-md-5">
-          <input type="number" class="form-control OriBancInput"
-           id="valorAnd${OriBanc}" name="${OriBanc}" placeholder="pts">
-         </div>
-        </div>
-        <div class=" col-md-4 ">
-         <div class=" col-md-5   ">
-          <input type="number"
-           class="form-control OriBancvalorlimite OriBancInputLimite hidden"
-           id="limiteAnd${OriBanc}" name="${OriBanc}"
-           placeholder="itens">
-         </div>
-        </div>
-       </div>
-       <div class=" col-xs-12">
-        <div class=" col-md-4">
-         <label>Orientações concluidas</label>
-        </div>
-        <div class=" col-md-4">
-         <div class=" col-md-5">
-          <input type="number" class="form-control OriBancInput"
-           id="valorCon${OriBanc}" name="${OriBanc}" placeholder="pts">
-         </div>
-        </div>
-        <div class=" col-md-4 ">
-         <div class=" col-md-5 ">
-          <input type="number"
-           class="form-control OriBancvalorlimite OriBancInputLimite hidden"
-           id="limiteCon${OriBanc}" name="${OriBanc}"
-           placeholder="itens">
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
-    </c:otherwise>
-   </c:choose>
+     </c:forEach></div>
+    </c:forEach>
+   </div>
   </c:forEach>
  </div>
 </div>
