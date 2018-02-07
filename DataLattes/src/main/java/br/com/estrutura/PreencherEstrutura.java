@@ -1,6 +1,7 @@
 package br.com.estrutura;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -12,7 +13,96 @@ public class PreencherEstrutura {
 
 	private Estrutura estr;
 
+	private HashMap<String, String> abreNome;
+
 	public PreencherEstrutura() {
+
+		this.abreNome = new HashMap<String, String>();
+		this.abreNome.put("AnCos", "Andamento ou Concluido");
+		this.abreNome.put("And", "Andamento");
+		this.abreNome.put("Ape", "Aperfeiçoamento");
+		this.abreNome.put("ApObAr", "Apresentação de Obra Artistica");
+		this.abreNome.put("ApPrRTV", "Apresentação de programa em Radio ou TV");
+		this.abreNome.put("ApTr", "Apresentação de Trabalho");
+		this.abreNome.put("ArAcPu", "Artigos aceitos para publicação");
+		this.abreNome.put("ArMu", "Arranjo musical");
+		this.abreNome.put("ArPu", "Artigos publicados");
+
+		this.abreNome.put("BaAvCu", "Banca de Avaliação de curso");
+		this.abreNome.put("BaCoPu", "Banca de Concurso Publico");
+		this.abreNome.put("BaDo", "Banca de Doutorado");
+		this.abreNome.put("BaEsAp", "Banca de Especialização ou Aperfeiçoamento");
+		this.abreNome.put("BaGr", "Banca de Graduação");
+		this.abreNome.put("BaLDo", "Banca de Livre-docencia");
+		this.abreNome.put("BaMe", "Banca de Mestrado");
+		this.abreNome.put("BaOr", "Orientações e Banca");
+		this.abreNome.put("BaPrTi", "Banca de Professor Titular");
+		this.abreNome.put("BaQu", "Banca de Qualificação");
+		this.abreNome.put("CaLi", "Capítulo de livro");
+		this.abreNome.put("CaMaSi", "Carta, mapa ou similar");
+		this.abreNome.put("Col", "Coletiva");
+		this.abreNome.put("CoMu", "Composição musical");
+		this.abreNome.put("Con", "Concluido");
+		this.abreNome.put("CPRTV", "Comentario em programa de Radio ou TV");
+		this.abreNome.put("CrGe", "Critérios Gerais");
+		this.abreNome.put("CrPa", "Criação de Partitura");
+		this.abreNome.put("CuMiCuDu", "Curso ministrado de curta duração");
+		this.abreNome.put("CuPr", "Cultivação Protegida");
+		this.abreNome.put("CuRe", "Cultivação Registrada");
+		this.abreNome.put("CuTePr", "Curso Técnico ou Profissionalizante");
+		this.abreNome.put("DeEx", "Dedicação Exclusiva");
+		this.abreNome.put("DeTe", "Desenho Técnico");
+		this.abreNome.put("Do", "Doutorado");
+		this.abreNome.put("Edi", "Editoração");
+		this.abreNome.put("Es", "Especialização");
+		this.abreNome.put("For", "Formação");
+		this.abreNome.put("Gr", "Graduação");
+		this.abreNome.put("InCo", "Individual ou Coletiva");
+		this.abreNome.put("Ind", "Individual");
+		this.abreNome.put("Int", "Internacional");
+		this.abreNome.put("LDo", "Livre-docência");
+		this.abreNome.put("Mac", "Marca");
+		this.abreNome.put("MaObAr", "Manutenção de obra artistica");
+		this.abreNome.put("Maq", "Maquete");
+		this.abreNome.put("MBA", "MBA");
+		this.abreNome.put("Me", "Mestrado");
+		this.abreNome.put("MePr", "Mestrado Profissionalizante");
+		this.abreNome.put("Mu", "Musica");
+		this.abreNome.put("Nac", "Nacional");
+		this.abreNome.put("NaIn", "Nacional ou Internacional");
+		this.abreNome.put("ObArVi", "Obra de Artes vizuais");
+		this.abreNome.put("OrDo", "Orientação Doutorado");
+		this.abreNome.put("OrEsAp", "Orientação Especialização ou Aperfeiçoamento");
+		this.abreNome.put("OrEv", "Organização de evento");
+		this.abreNome.put("OrGr", "Orientação de Graduação");
+		this.abreNome.put("OrInCi", "Orientação de Iniciação Cientifica");
+		this.abreNome.put("OrLi", "Organização de livro");
+		this.abreNome.put("OrMe", "Orientação Mestrado");
+		this.abreNome.put("OrPoDo", "Orientação Pós-Doutorado");
+		this.abreNome.put("Pa", "Patente");
+		this.abreNome.put("Par", "Participou");
+		this.abreNome.put("PDo", "Pós-Doutorado");
+		this.abreNome.put("PoDeEx", "Possui dedicação exclusiva");
+		this.abreNome.put("PrArt", "Produção Artística");
+		this.abreNome.put("PrBli", "Produção Bibliográfica");
+		this.abreNome.put("PrMaDi", "Produção de material didatico");
+		this.abreNome.put("ProuTe", "Processo ou técnica");
+		this.abreNome.put("PrPoLi", "Prefácio ou posfácio de livro");
+		this.abreNome.put("PrTe", "Produto Tecnologico");
+		this.abreNome.put("PrTec", "Produção Técnica");
+		this.abreNome.put("PuLi", "Publicação de livro");
+		this.abreNome.put("ReMe", "Residência médica");
+		this.abreNome.put("RePe", "Relatorio de pesquisa");
+		this.abreNome.put("So", "Sonoplastia");
+		this.abreNome.put("Sof", "Software");
+		this.abreNome.put("TeJoRe", "Textos em jornais ou revista");
+		this.abreNome.put("TeMiSo", "Texto em midia Social");
+		this.abreNome.put("ToCiIn", "Topografia de circuito integrado");
+		this.abreNome.put("Tr", "Tradução");
+		this.abreNome.put("TrArCe", "Trabalho em Arte Cenicas");
+		this.abreNome.put("TrArVi", "Trabalho em Artes Vizuais");
+		this.abreNome.put("TrEv", "Trabalho em eventos");
+		this.abreNome.put("TrTe", "Trabalho Técnico");
 	}
 
 	@PostConstruct
@@ -40,7 +130,7 @@ public class PreencherEstrutura {
 		PreencherConcluido(new CriterioEstrutura("Tradução", "Tr"), listCritFormacao);
 		PreencherConcluido(new CriterioEstrutura("Cultivação Registrada", "CuRe"), listCritFormacao);
 		PreencherConcluido(new CriterioEstrutura("Cultivação Protegida", "CuPr"), listCritFormacao);
-		PreencherConcluido(new CriterioEstrutura("Software", "So"), listCritFormacao);
+		PreencherConcluido(new CriterioEstrutura("Software", "Sof"), listCritFormacao);
 		PreencherNacInter(new CriterioEstrutura("Patente", "Pa"), listCritFormacao);
 		PreencherConcluido(new CriterioEstrutura("Desenho Técnico", "DeTe"), listCritFormacao);
 		PreencherConcluido(new CriterioEstrutura("Marca", "Mac"), listCritFormacao);
@@ -59,7 +149,7 @@ public class PreencherEstrutura {
 		PreencherConcluido(new CriterioEstrutura("Comentario em programa de Radio ou TV", "CPRTV"), listCritFormacao);
 		PreencherConcluido(new CriterioEstrutura("Relatorio de pesquisa", "RePe"), listCritFormacao);
 		PreencherConcluido(new CriterioEstrutura("Texto em midia Social", "TeMiSo"), listCritFormacao);
-		areaEstruturaFormacao = new AreaEstrutura("Produção Técnica", "PrTe");
+		areaEstruturaFormacao = new AreaEstrutura("Produção Técnica", "PrTec");
 		areaEstruturaFormacao.setListCrit(listCritFormacao);
 		listArea.add(areaEstruturaFormacao);
 		// Producao Artistica
@@ -114,7 +204,7 @@ public class PreencherEstrutura {
 		listArea.add(areaEstruturaFormacao);
 		// Dados Gerais
 		listCritFormacao = new ArrayList<CriterioEstrutura>();
-		PreencherGeral(new CriterioEstrutura("Dedicação Exclusiva", "DeEx"), "Possui dedicação exclusiva", "DeEx",
+		PreencherGeral(new CriterioEstrutura("Dedicação Exclusiva", "DeEx"), "Possui dedicação exclusiva", "PoDeEx",
 				listCritFormacao);
 		areaEstruturaFormacao = new AreaEstrutura("Critérios Gerais", "CrGe");
 		areaEstruturaFormacao.setListCrit(listCritFormacao);
@@ -169,15 +259,19 @@ public class PreencherEstrutura {
 			ArrayList<String[]> listString = new ArrayList<String[]>();
 			String[] ta = t[i].split("!");
 			while (cont < this.estr.getListEst().size()) {
+				// System.out.println(this.estr.getListEst().get(cont).getAbre());
+				// System.out.println(ta[0]);
 				if (!(this.estr.getListEst().get(cont).getAbre().contentEquals(ta[0]))) {
-					System.out.println("->");
+					// System.out.println("cria null");
 					conteudo.add(null);
 					cont++;
 				} else {
+					// System.out.println("sai for");
 					cont++;
 					break;
 				}
 			}
+
 			String[] tipo = ta[1].split("#");
 			for (int j = 1; j < tipo.length; j++) {
 				String[] dif = tipo[j].split("@");
@@ -206,32 +300,43 @@ public class PreencherEstrutura {
 		ArrayList<AreaEstrutura> listArea = new ArrayList<AreaEstrutura>();
 		AreaEstrutura areaEstruturaFormacao = null;
 		ArrayList<CriterioEstrutura> listCritFormacao = null;
-		System.out.println(conteudo.size());
+		// System.out.println(conteudo.size());
 		for (int i = 0; i < conteudo.size(); i++) {
 			List<String[]> list = conteudo.get(i);
-			// System.out.println("@@ valor i " + i);
 			if (list != null) {
 				areaEstruturaFormacao = new AreaEstrutura(this.estr.getListEst().get(i).getNome(),
 						this.estr.getListEst().get(i).getAbre());
 				listCritFormacao = new ArrayList<CriterioEstrutura>();
-
 				int aux = 0;
-				// System.out.println(this.estr.getListEst().get(i).getNome());
 				for (int j = 0; j < list.size(); j++) {
-					System.out.println("## valor j " + j);
+					// System.out.println("## valor j " + j);
 					for (int k = aux; k < this.estr.getListEst().get(i).getListCrit().size(); k++) {
-						// System.out.println("valor k " + k);
-						System.out.println(
-								list.get(j)[0] + " " + this.estr.getListEst().get(i).getListCrit().get(k).getAbre());
+						// System.out.println(
+						// list.get(j)[0] + " " +
+						// this.estr.getListEst().get(i).getListCrit().get(k).getAbre());
 						if (this.estr.getListEst().get(i).getListCrit().get(k).getAbre()
 								.contentEquals(list.get(j)[0])) {
 							ArrayList<TipoEstrutura> listTipoEstru = new ArrayList<TipoEstrutura>();
-							TipoEstrutura tipoEstrutura = new TipoEstrutura("", Integer.parseInt(list.get(j)[2]),
-									list.get(j)[1], Integer.parseInt(list.get(j)[3]));
-
+							CriterioEstrutura criterioEstrutura = new CriterioEstrutura(
+									this.abreNome.get(list.get(j)[0]), list.get(j)[0]);
+							int limitevalor = list.get(j)[3] == null ? -1 : Integer.parseInt(list.get(j)[3]);
+							TipoEstrutura tipoEstrutura = new TipoEstrutura(this.abreNome.get(list.get(j)[1]),
+									Integer.parseInt(list.get(j)[2]), list.get(j)[1], limitevalor);
 							listTipoEstru.add(tipoEstrutura);
-
-							listCritFormacao.add(this.estr.getListEst().get(i).getListCrit().get(k));
+							if (j + 1 < list.size()) {
+								if (list.get(j + 1)[0].contentEquals(list.get(j)[0])) {
+									criterioEstrutura = new CriterioEstrutura(
+											this.abreNome.get(list.get(j + 1)[0]), list.get(j)[0]);
+									limitevalor = list.get(j + 1)[3] == null ? -1
+											: Integer.parseInt(list.get(j + 1)[3]);
+									tipoEstrutura = new TipoEstrutura(this.abreNome.get(list.get(j + 1)[1]),
+											Integer.parseInt(list.get(j + 1)[2]), list.get(j + 1)[1], limitevalor);
+									listTipoEstru.add(tipoEstrutura);
+									k++;
+								}
+							}
+							criterioEstrutura.addListTipo(listTipoEstru);
+							listCritFormacao.add(criterioEstrutura);
 							aux = k;
 							break;
 						}

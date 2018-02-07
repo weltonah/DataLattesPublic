@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import br.com.estrutura.AreaEstrutura;
+import br.com.estrutura.CriterioEstrutura;
 import br.com.estrutura.Estrutura;
 import br.com.estrutura.PreencherEstrutura;
+import br.com.estrutura.TipoEstrutura;
 
 @Controller
 public class SenhaController {
@@ -65,6 +68,21 @@ public class SenhaController {
 		Estrutura SessaoCriteriosKey = this.preencherEstrutura.InserirCriteriosKey(conteudo);
 		SessaoCriteriosKey.setAnoFim(anoFim);
 		SessaoCriteriosKey.setAnoInicio(anoInicio);
+		for (AreaEstrutura listAre : SessaoCriteriosKey.getListEst()) {
+			System.out.println("******** " + listAre.getNome() + " ******");
+			for (CriterioEstrutura listcrit : listAre.getListCrit()) {
+				System.out.println("&&&&&& " + listcrit.getCriterio() + " &&&&");
+				for (ArrayList<TipoEstrutura> listTipo : listcrit.getListTipo()) {
+					for (TipoEstrutura listtipoEstrutura : listTipo) {
+						System.out.println("[" + listtipoEstrutura.getNomeTipo() + "," + listtipoEstrutura.getAbre()
+								+ ", " + listtipoEstrutura.getValor() + ", " + listtipoEstrutura.getLimite() + "]");
+
+					}
+
+				}
+			}
+
+		}
 
 		// model.addAttribute("List", listCriterio);
 		// model.addAttribute("Ano", dadosano);

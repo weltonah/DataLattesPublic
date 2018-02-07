@@ -125,7 +125,7 @@ function GerarKey() {
 			+ document.getElementById("AnoFim").value + "%";
 	var NomeItemFor = [ "Formacao", "ProdTec", "ProdArt", "ProdBibli",
 			"OriBanc", "DadosGerais" ];
-	var NomeItemForAbre = [ "For", "PrTe", "PrArt", "PrBli", "BaOr", "CrGe" ];
+	var NomeItemForAbre = [ "For", "PrTec", "PrArt", "PrBli", "BaOr", "CrGe" ];
 	for (var t = 0; t < 6; t++) {
 		var formDiv = document.querySelectorAll('.indexCont' + t);
 		if (formDiv.length > 0) {
