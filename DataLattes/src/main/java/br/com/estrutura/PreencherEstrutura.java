@@ -325,8 +325,8 @@ public class PreencherEstrutura {
 							listTipoEstru.add(tipoEstrutura);
 							if (j + 1 < list.size()) {
 								if (list.get(j + 1)[0].contentEquals(list.get(j)[0])) {
-									criterioEstrutura = new CriterioEstrutura(
-											this.abreNome.get(list.get(j + 1)[0]), list.get(j)[0]);
+									criterioEstrutura = new CriterioEstrutura(this.abreNome.get(list.get(j + 1)[0]),
+											list.get(j)[0]);
 									limitevalor = list.get(j + 1)[3] == null ? -1
 											: Integer.parseInt(list.get(j + 1)[3]);
 									tipoEstrutura = new TipoEstrutura(this.abreNome.get(list.get(j + 1)[1]),

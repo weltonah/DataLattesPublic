@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -51,7 +53,7 @@ public class SenhaController {
 	}
 
 	@RequestMapping(value = "/criterio", method = RequestMethod.POST)
-	public String criterio(@RequestParam("key") String key, Model model) {
+	public String criterio(@RequestParam("key") String key, Model model, HttpSession session) {
 		String[] t = key.split("%");
 		String[] aux = t[0].split(">");
 		int anoInicio = !(aux[1].contentEquals("")) ? Integer.parseInt(aux[1]) : 1950;
@@ -64,7 +66,6 @@ public class SenhaController {
 					System.out.println(Arrays.toString(strings));
 				}
 		}
-
 		Estrutura SessaoCriteriosKey = this.preencherEstrutura.InserirCriteriosKey(conteudo);
 		SessaoCriteriosKey.setAnoFim(anoFim);
 		SessaoCriteriosKey.setAnoInicio(anoInicio);
@@ -76,16 +77,12 @@ public class SenhaController {
 					for (TipoEstrutura listtipoEstrutura : listTipo) {
 						System.out.println("[" + listtipoEstrutura.getNomeTipo() + "," + listtipoEstrutura.getAbre()
 								+ ", " + listtipoEstrutura.getValor() + ", " + listtipoEstrutura.getLimite() + "]");
-
 					}
-
 				}
 			}
-
 		}
-
-		// model.addAttribute("List", listCriterio);
-		// model.addAttribute("Ano", dadosano);
+		model.addAttribute("SessaoCriteriosKey", SessaoCriteriosKey);
+		session.setAttribute("SessaoCriteriosKey", SessaoCriteriosKey);
 		return "analise/criterio";
 	}
 
