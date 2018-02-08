@@ -9,10 +9,6 @@ public class AnaliseController {
 	public String inserirChave() {
 		return "analise/inserirChave";
 	}
-
-	
-	
-
 	@RequestMapping("/upload")
 	public String upload() {
 		

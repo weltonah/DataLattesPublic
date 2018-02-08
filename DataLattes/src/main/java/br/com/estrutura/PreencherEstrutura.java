@@ -16,7 +16,6 @@ public class PreencherEstrutura {
 	private HashMap<String, String> abreNome;
 
 	public PreencherEstrutura() {
-
 		this.abreNome = new HashMap<String, String>();
 		this.abreNome.put("AnCos", "Andamento ou Concluido");
 		this.abreNome.put("And", "Andamento");
@@ -27,7 +26,6 @@ public class PreencherEstrutura {
 		this.abreNome.put("ArAcPu", "Artigos aceitos para publicação");
 		this.abreNome.put("ArMu", "Arranjo musical");
 		this.abreNome.put("ArPu", "Artigos publicados");
-
 		this.abreNome.put("BaAvCu", "Banca de Avaliação de curso");
 		this.abreNome.put("BaCoPu", "Banca de Concurso Publico");
 		this.abreNome.put("BaDo", "Banca de Doutorado");

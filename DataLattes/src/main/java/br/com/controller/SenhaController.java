@@ -1,7 +1,6 @@
 package br.com.controller;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -13,11 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import br.com.estrutura.AreaEstrutura;
-import br.com.estrutura.CriterioEstrutura;
 import br.com.estrutura.Estrutura;
 import br.com.estrutura.PreencherEstrutura;
-import br.com.estrutura.TipoEstrutura;
 
 @Controller
 public class SenhaController {
@@ -47,7 +43,6 @@ public class SenhaController {
 		conteudo.add(OriBanc);
 		conteudo.add(DadosGerais);
 		Estrutura estcrit = this.preencherEstrutura.InserirCriteriosCheckbox(conteudo);
-
 		model.addAttribute("estcrit", estcrit);
 		return "senha/escolherValorCriterio";
 	}
@@ -59,28 +54,30 @@ public class SenhaController {
 		int anoInicio = !(aux[1].contentEquals("")) ? Integer.parseInt(aux[1]) : 1950;
 		int anoFim = Integer.parseInt(aux[2]);
 		ArrayList<List<String[]>> conteudo = this.preencherEstrutura.decifrarChave(key);
-		for (List<String[]> list : conteudo) {
-			System.out.println("%%%$%$");
-			if (list != null)
-				for (String[] strings : list) {
-					System.out.println(Arrays.toString(strings));
-				}
-		}
+		// for (List<String[]> list : conteudo) {
+		// System.out.println("%%%$%$");
+		// if (list != null)
+		// for (String[] strings : list) {
+		// System.out.println(Arrays.toString(strings));
+		// }
+		// }
 		Estrutura SessaoCriteriosKey = this.preencherEstrutura.InserirCriteriosKey(conteudo);
 		SessaoCriteriosKey.setAnoFim(anoFim);
 		SessaoCriteriosKey.setAnoInicio(anoInicio);
-		for (AreaEstrutura listAre : SessaoCriteriosKey.getListEst()) {
-			System.out.println("******** " + listAre.getNome() + " ******");
-			for (CriterioEstrutura listcrit : listAre.getListCrit()) {
-				System.out.println("&&&&&& " + listcrit.getCriterio() + " &&&&");
-				for (ArrayList<TipoEstrutura> listTipo : listcrit.getListTipo()) {
-					for (TipoEstrutura listtipoEstrutura : listTipo) {
-						System.out.println("[" + listtipoEstrutura.getNomeTipo() + "," + listtipoEstrutura.getAbre()
-								+ ", " + listtipoEstrutura.getValor() + ", " + listtipoEstrutura.getLimite() + "]");
-					}
-				}
-			}
-		}
+		// for (AreaEstrutura listAre : SessaoCriteriosKey.getListEst()) {
+		// System.out.println("******** " + listAre.getNome() + " ******");
+		// for (CriterioEstrutura listcrit : listAre.getListCrit()) {
+		// System.out.println("&&&&&& " + listcrit.getCriterio() + " &&&&");
+		// for (ArrayList<TipoEstrutura> listTipo : listcrit.getListTipo()) {
+		// for (TipoEstrutura listtipoEstrutura : listTipo) {
+		// System.out.println("[" + listtipoEstrutura.getNomeTipo() + "," +
+		// listtipoEstrutura.getAbre()
+		// + ", " + listtipoEstrutura.getValor() + ", " + listtipoEstrutura.getLimite()
+		// + "]");
+		// }
+		// }
+		// }
+		// }
 		model.addAttribute("SessaoCriteriosKey", SessaoCriteriosKey);
 		session.setAttribute("SessaoCriteriosKey", SessaoCriteriosKey);
 		return "analise/criterio";

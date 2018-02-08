@@ -1,10 +1,15 @@
 package br.com.estrutura;
 
+import java.util.ArrayList;
+
 public class TipoEstrutura {
 	private String nomeTipo;
 	private int valor;
+	private int valorTotalContabilizado;
 	private String abre;
 	private int limite;
+	private ArrayList<ItemAnalisado> itemAnalisados;
+
 
 	public TipoEstrutura(String nomeTipo, int valor, String abre, int limite) {
 		this.nomeTipo = nomeTipo;
@@ -48,6 +53,27 @@ public class TipoEstrutura {
 
 	public void setLimite(int limite) {
 		this.limite = limite;
+	}
+
+	public ArrayList<ItemAnalisado> getItemAnalisados() {
+		return this.itemAnalisados;
+	}
+
+	public void setItemAnalisados(ArrayList<ItemAnalisado> itemAnalisados) {
+		for (ItemAnalisado itemAnalisado : itemAnalisados) {
+			this.valorTotalContabilizado = itemAnalisado.isValido()
+					? this.valorTotalContabilizado + itemAnalisado.getValorContabilizado()
+					: this.valorTotalContabilizado;
+		}
+		this.itemAnalisados = itemAnalisados;
+	}
+
+	public int getValorTotalContabilizado() {
+		return this.valorTotalContabilizado;
+	}
+
+	public void setValorTotalContabilizado(int valorTotalContabilizado) {
+		this.valorTotalContabilizado = valorTotalContabilizado;
 	}
 
 }

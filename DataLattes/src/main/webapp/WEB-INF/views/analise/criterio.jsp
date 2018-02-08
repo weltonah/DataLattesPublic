@@ -25,40 +25,50 @@
 				<label>Ano de analise</label>
 			</div>
 			<div class="col-md-4">
-				<label>${Ano.getValor()}</label>
+				<label>${SessaoCriteriosKey.getAnoInicio()}</label>
 			</div>
 			<div class=" col-md-4">
-				<label>${Ano.getLimite()}</label>
+				<label>${SessaoCriteriosKey.getAnoFim()}</label>
 			</div>
 		</div>
 		</div>
-	  <div class="well col-xs-12">
-	  <c:forEach var="exemplo" varStatus="status" items="${List}">
-	  		<label>${exemplo.getTipoCriterio()}</label><br>
-	  		<div class=" col-xs-12">
-				<div class=" col-md-4">
-					<label>Item:</label>
-				</div>
-				<div class="col-md-4">
-					<label>Valor por item:</label>
-				</div>
-				<div class=" col-md-4">
-					<label>Maximo de item contabilizado</label>
-				</div>
-			</div>
-	 	 <c:forEach var="DadosGerais" varStatus="status" items="${exemplo.getListDadosCriterio()}">
-	 	 	<div class=" col-xs-12">
-				<div class=" col-md-4">
-					<label>${DadosGerais.getNomeCriterio()}</label>
-				</div>
-				<div class="col-md-4">
-					<label>${DadosGerais.getValor()}</label>
-				</div>
-				<div class=" col-md-4">
-					<label>${DadosGerais.getLimite()}</label>
-				</div>
-			</div>
+	  
+	  <c:forEach var="AreaEstrutura" varStatus="AreaEstruturastatus" items="${SessaoCriteriosKey.getListEst()}">
+        <div class="well col-xs-12">
+	  		<label>${AreaEstrutura.getNome()}</label><br>
+	 	 <c:forEach var="CriterioEstrutura" varStatus="CriterioEstruturastatus" items="${AreaEstrutura.getListCrit()}">
+             <div class=" col-xs-12">
+              <div class=" col-md-4">
+              </div>
+              <div class="col-md-4">
+               <label>Valor por item:</label>
+              </div>
+              <div class=" col-md-4">
+               <label>Maximo de item contabilizado</label>
+              </div>
+             </div>
+             <div class="well col-xs-12">
+             <label>${CriterioEstrutura.getCriterio() }</label>
+    	 	 <c:forEach var="listTipo" varStatus="listTipostatus" items="${CriterioEstrutura.getListTipo()}">
+        	 	 <c:forEach var="TipoEstrutura" varStatus="TipoEstruturastatus" items="${listTipo}">
+        	 	 	<div class=" col-xs-12">
+        				<div class=" col-md-4">
+        					<label>${TipoEstrutura.getNomeTipo()}</label>
+        				</div>
+        				<div class="col-md-4">
+        					<label>${TipoEstrutura.getValor()}</label>
+        				</div>
+        				<div class=" col-md-4">
+                      <c:if test="${TipoEstrutura.getLimite() != -1}">
+        					<label>${TipoEstrutura.getLimite()}</label>
+                       </c:if>
+        				</div>
+        			</div>
+        	  	</c:forEach>
+    	  	</c:forEach>
+        	</div>
 	  	</c:forEach>
+        </div>
 	  </c:forEach>
 	  </div>
 	  </div>
