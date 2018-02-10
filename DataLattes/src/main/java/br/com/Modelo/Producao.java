@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * 
  */
-public class Producao {
+public class Producao extends ObjetoCriterio {
 
 	private String titulo;
 	private int ano;
@@ -24,24 +24,28 @@ public class Producao {
 		this.areaConhecimento = new ArrayList<AreaConhecimento>();
 	}
 
+	@Override
 	public String getTitulo() {
-		return titulo;
+		return this.titulo;
 	}
 
+	@Override
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
 
+	@Override
 	public int getAno() {
-		return ano;
+		return this.ano;
 	}
 
+	@Override
 	public void setAno(int ano) {
 		this.ano = ano;
 	}
 
 	public String getCampAux() {
-		return campAux;
+		return this.campAux;
 	}
 
 	public void setCampAux(String campAux) {
@@ -49,7 +53,7 @@ public class Producao {
 	}
 
 	public String getCampAux2() {
-		return campAux2;
+		return this.campAux2;
 	}
 
 	public void setCampAux2(String campAux2) {
@@ -57,7 +61,7 @@ public class Producao {
 	}
 
 	public ArrayList<Autores> getAutores() {
-		return autores;
+		return this.autores;
 	}
 
 	public void AddAutores(Autores autores) {
@@ -65,7 +69,7 @@ public class Producao {
 	}
 
 	public ArrayList<AreaConhecimento> getAreaConhecimento() {
-		return areaConhecimento;
+		return this.areaConhecimento;
 	}
 
 	public void AddAreaConhecimento(AreaConhecimento areaConhecimento) {
@@ -73,7 +77,7 @@ public class Producao {
 	}
 
 	public ArrayList<String> getPalavra_chave() {
-		return palavra_chave;
+		return this.palavra_chave;
 	}
 
 	public void AddAreaConhecimento(String palavra_chave) {

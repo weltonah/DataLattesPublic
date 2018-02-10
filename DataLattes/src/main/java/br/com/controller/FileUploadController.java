@@ -1,6 +1,7 @@
 package br.com.controller;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
 
@@ -16,7 +17,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.SearchXML.AnaliseDados;
 import br.com.converter.ConverterFile;
+import br.com.estrutura.AreaEstrutura;
+import br.com.estrutura.CriterioEstrutura;
 import br.com.estrutura.Estrutura;
+import br.com.estrutura.ItemAnalisado;
+import br.com.estrutura.TipoEstrutura;
 import br.com.storage.StorageFileNotFoundException;
 import br.com.storage.StorageService;
 
@@ -38,6 +43,25 @@ public class FileUploadController {
 		Estrutura SessaoCriteriosKey = (Estrutura) session.getAttribute("SessaoCriteriosKey");
 		new AnaliseDados().preencherEstruturaAnaliseXml(SessaoCriteriosKey,
 				ConverterFile.ConverterFileToDocument(xmlfile));
+		for (AreaEstrutura listAre : SessaoCriteriosKey.getListEst()) {
+			System.out.println("******** " + listAre.getNome() + " ******");
+			for (CriterioEstrutura listcrit : listAre.getListCrit()) {
+				System.out.println("&&&&&& " + listcrit.getCriterio() + " &&&&");
+				for (ArrayList<TipoEstrutura> listTipo : listcrit.getListTipo()) {
+					for (TipoEstrutura listtipoEstrutura : listTipo) {
+						System.out.println(listtipoEstrutura.getItemAnalisados().size());
+						System.out.println("[" + listtipoEstrutura.getNomeTipo() + "," + listtipoEstrutura.getAbre()
+								+ ", " + listtipoEstrutura.getValor() + ", " + listtipoEstrutura.getLimite() + "]");
+						for (ItemAnalisado itemAnalisado : listtipoEstrutura.getItemAnalisados()) {
+							System.out.println("valor contabilizado" + itemAnalisado.getValorContabilizado());
+							System.out.println("nome" + itemAnalisado.getItem().getTitulo());
+
+						}
+					}
+				}
+			}
+		}
+
 		model.addAttribute("SessaoCriteriosKey", SessaoCriteriosKey);
 		return "analise/analise";
 	}

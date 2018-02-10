@@ -114,7 +114,7 @@ public class PreencherEstrutura {
 		PreencherAndCon(new CriterioEstrutura("Mestrado", "Me"), listCritFormacao);
 		PreencherAndCon(new CriterioEstrutura("Doutorado", "Do"), listCritFormacao);
 		PreencherAndCon(new CriterioEstrutura("Pós-Doutorado", "PDo"), listCritFormacao);
-		PreencherAndCon(new CriterioEstrutura("Livre-docência", "LDo"), listCritFormacao);
+		PreencherConcluido(new CriterioEstrutura("Livre-docência", "LDo"), listCritFormacao);
 		PreencherAndCon(new CriterioEstrutura("Curso Técnico ou Profissionalizante", "CuTePr"), listCritFormacao);
 		PreencherAndCon(new CriterioEstrutura("Mestrado Profissionalizante", "MePr"), listCritFormacao);
 		PreencherAndCon(new CriterioEstrutura("Residência médica", "ReMe"), listCritFormacao);

@@ -16,7 +16,7 @@ public class SearchXMLOrientacoes extends SearchXML {
 	}
 
 	public ArrayList<Orientacao> OrientacaoDouAnd() throws XPathExpressionException {
-		return BuscaOrientacao("//ORIENTACOES-CONCLUIDAS-PARA-DOUTORADO", "TITULO-DO-TRABALHO", 1, "TIPO-DE-ORIENTACAO",
+		return BuscaOrientacao("//ORIENTACAO-EM-ANDAMENTO-DE-DOUTORADO", "TITULO-DO-TRABALHO", 1, "TIPO-DE-ORIENTACAO",
 				0, null);
 	}
 
@@ -49,7 +49,8 @@ public class SearchXMLOrientacoes extends SearchXML {
 	}
 
 	public ArrayList<Orientacao> OrientacaoICAnd() throws XPathExpressionException {
-		return BuscaOrientacao("//ORIENTACAO-EM-ANDAMENTO-DE-GRADUACAO", "TITULO-DO-TRABALHO", 0, null, 0, null);
+		return BuscaOrientacao("//ORIENTACAO-EM-ANDAMENTO-DE-INICIACAO-CIENTIFICA", "TITULO-DO-TRABALHO", 0, null, 0,
+				null);
 	}
 
 	public ArrayList<Orientacao> BancaMestrado() throws XPathExpressionException {

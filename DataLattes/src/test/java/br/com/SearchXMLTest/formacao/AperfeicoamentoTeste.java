@@ -49,7 +49,7 @@ public class AperfeicoamentoTeste {
 
 	@Test
 	public void ano() throws XPathExpressionException {
-		assertEquals("2006", listprod.get(0)[2]);
+		assertEquals("", listprod.get(0)[2]);
 	}
 
 	@Test

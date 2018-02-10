@@ -1,6 +1,6 @@
 package br.com.Modelo;
 
-public class Orientacao {
+public class Orientacao extends ObjetoCriterio {
 	private String natureza;
 	private String titulo;
 	private int ano;
@@ -15,37 +15,41 @@ public class Orientacao {
 		this.nome_aluno = nome_aluno;
 	}
 	public String getNatureza() {
-		return natureza;
+		return this.natureza;
 	}
 	public void setNatureza(String natureza) {
 		this.natureza = natureza;
 	}
+	@Override
 	public String getTitulo() {
-		return titulo;
+		return this.titulo;
 	}
+	@Override
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
+	@Override
 	public int getAno() {
-		return ano;
+		return this.ano;
 	}
+	@Override
 	public void setAno(int ano) {
 		this.ano = ano;
 	}
 	public String getNome_aluno() {
-		return nome_aluno;
+		return this.nome_aluno;
 	}
 	public void setNome_aluno(String nome_aluno) {
 		this.nome_aluno = nome_aluno;
 	}
 	public String getCampAux() {
-		return campAux;
+		return this.campAux;
 	}
 	public void setCampAux(String campAux) {
 		this.campAux = campAux;
 	}
 	public String getCampAux2() {
-		return campAux2;
+		return this.campAux2;
 	}
 	public void setCampAux2(String campAux2) {
 		this.campAux2 = campAux2;
