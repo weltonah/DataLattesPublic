@@ -4,6 +4,12 @@ public class ObjetoCriterio {
 	private String titulo;
 	private int ano;
 
+	public ObjetoCriterio(String titulo, int ano) {
+		super();
+		this.titulo = titulo;
+		this.ano = ano;
+	}
+
 	public String getTitulo() {
 		return this.titulo;
 	}

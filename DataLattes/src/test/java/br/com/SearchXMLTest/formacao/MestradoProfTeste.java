@@ -14,12 +14,13 @@ import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 
+import br.com.Modelo.Formacao;
 import br.com.SearchXML.SearchXMLFormacoes;
 
 public class MestradoProfTeste{
 	private static Document xmlfile;
 	private static SearchXMLFormacoes searchXML;
-	private static ArrayList<String[]> listprod;
+	private static ArrayList<Formacao> listprod;
 
 	// @Autowired
 	// private MockMvc mvc;
@@ -37,39 +38,35 @@ public class MestradoProfTeste{
 		listprod = searchXML.MestradoProfissional();
 	}
 
-	@Test
-	public void nivel() throws XPathExpressionException {
-		assertEquals("5", listprod.get(0)[0]);
-	}
 
 	@Test
 	public void tituloTcc() throws XPathExpressionException {
-		assertEquals("titulo tese mestrado profissionalizandte", listprod.get(0)[1]);
+		assertEquals("titulo tese mestrado profissionalizandte", listprod.get(0).getTituloTrabalho());
 	}
 
 	@Test
 	public void ano() throws XPathExpressionException {
-		assertEquals("", listprod.get(0)[2]);
+		assertEquals(-1, listprod.get(0).getAno());
 	}
 
 	@Test
 	public void nome_orientador() throws XPathExpressionException {
-		assertEquals("orientador mestrad pro", listprod.get(0)[3]);
+		assertEquals("orientador mestrad pro", listprod.get(0).getNomeOrientador());
 	}
 
 	@Test
 	public void nome_instituicao() throws XPathExpressionException {
-		assertEquals("instituicao mesd prof", listprod.get(0)[4]);
+		assertEquals("instituicao mesd prof", listprod.get(0).getNomeInstituicao());
 	}
 
 	@Test
 	public void status() throws XPathExpressionException {
-		assertEquals("EM_ANDAMENTO", listprod.get(0)[5]);
+		assertEquals("EM_ANDAMENTO", listprod.get(0).getStatus());
 	}
 
 	@Test
 	public void nome_curso() throws XPathExpressionException {
-		assertEquals("curso mest prof", listprod.get(0)[6]);
+		assertEquals("curso mest prof", listprod.get(0).getTitulo());
 	}
 
 }

@@ -14,12 +14,13 @@ import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 
+import br.com.Modelo.Formacao;
 import br.com.SearchXML.SearchXMLFormacoes;
 
 public class ResidenciaProfTeste {
 	private static Document xmlfile;
 	private static SearchXMLFormacoes searchXML;
-	private static ArrayList<String[]> listprod;
+	private static ArrayList<Formacao> listprod;
 
 	// @Autowired
 	// private MockMvc mvc;
@@ -37,31 +38,26 @@ public class ResidenciaProfTeste {
 		listprod = searchXML.ResidenciaMedica();
 	}
 
-	@Test
-	public void nivel() throws XPathExpressionException {
-		assertEquals("5", listprod.get(0)[0]);
-	}
-
 
 	@Test
 	public void ano() throws XPathExpressionException {
-		assertEquals("2001", listprod.get(0)[1]);
+		assertEquals(2001, listprod.get(0).getAno());
 	}
 
 
 	@Test
 	public void nome_instituicao() throws XPathExpressionException {
-		assertEquals("instituicao residencia", listprod.get(0)[2]);
+		assertEquals("instituicao residencia", listprod.get(0).getNomeInstituicao());
 	}
 
 	@Test
 	public void status() throws XPathExpressionException {
-		assertEquals("EM_ANDAMENTO", listprod.get(0)[3]);
+		assertEquals("EM_ANDAMENTO", listprod.get(0).getStatus());
 	}
 
 	@Test
 	public void nome_curso() throws XPathExpressionException {
-		assertEquals("titulo residencia", listprod.get(0)[4]);
+		assertEquals("titulo residencia", listprod.get(0).getTitulo());
 	}
 
 }

@@ -6,6 +6,7 @@ import javax.xml.xpath.XPathExpressionException;
 
 import org.w3c.dom.Document;
 
+import br.com.Modelo.Formacao;
 import br.com.Modelo.ObjetoCriterio;
 import br.com.Modelo.Orientacao;
 import br.com.Modelo.Producao;
@@ -26,6 +27,7 @@ import br.com.estrutura.TipoEstrutura;
 public class AnaliseDados {
 	int anofim;
 	int anoinicio;
+
 	public void preencherEstruturaAnaliseXml(Estrutura SessaoCriteriosKey, Document xmlfile) {
 		this.anofim = SessaoCriteriosKey.getAnoFim();
 		this.anoinicio = SessaoCriteriosKey.getAnoInicio();
@@ -41,8 +43,8 @@ public class AnaliseDados {
 		}
 	}
 
-	public ArrayList<ItemAnalisado> switchBuscaXml(String areaEstrutura, String criterioEstrutura,
-			String tipoEstrutura, Document xmlfile, TipoEstrutura ObjecttipoEstrutura) {
+	public ArrayList<ItemAnalisado> switchBuscaXml(String areaEstrutura, String criterioEstrutura, String tipoEstrutura,
+			Document xmlfile, TipoEstrutura ObjecttipoEstrutura) {
 		ArrayList<ItemAnalisado> listItemAnalisado = new ArrayList<ItemAnalisado>();
 		try {
 			switch (areaEstrutura) {
@@ -67,122 +69,132 @@ public class AnaliseDados {
 	}
 
 	public ArrayList<ItemAnalisado> ForSwitch(String criterioEstrutura, String tipoEstrutura, Document xmlfile,
-			TipoEstrutura ObjecttipoEstrutura)
-			throws XPathExpressionException {
-		ArrayList<String[]> ListFor;
+			TipoEstrutura ObjecttipoEstrutura) throws XPathExpressionException {
 		SearchXMLFormacoes searchXMLFormacoes = new SearchXMLFormacoes(xmlfile);
 		switch (criterioEstrutura) {
 		case "Gr":
-			ListFor = searchXMLFormacoes.Graduacao();
 			switch (tipoEstrutura) {
 			case "AnCos":
-				break;
+				return PreencherItemFormacaoAndCon(searchXMLFormacoes.Graduacao(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			case "And":
-				break;
+				return PreencherItemFormacaoAnd(searchXMLFormacoes.Graduacao(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			case "Con":
-				break;
+				return PreencherItemFormacaoCon(searchXMLFormacoes.Graduacao(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			}
-			break;
 		case "Es":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				break;
+				return PreencherItemFormacaoAndCon(searchXMLFormacoes.Especializacao(), criterioEstrutura,
+						tipoEstrutura, xmlfile, ObjecttipoEstrutura);
 			case "And":
-				break;
+				return PreencherItemFormacaoAnd(searchXMLFormacoes.Especializacao(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			case "Con":
-				break;
+				return PreencherItemFormacaoCon(searchXMLFormacoes.Especializacao(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			}
-			break;
 		case "Me":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				break;
+				return PreencherItemFormacaoAndCon(searchXMLFormacoes.Mestrado(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			case "And":
-				break;
+				return PreencherItemFormacaoAnd(searchXMLFormacoes.Mestrado(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			case "Con":
-				break;
+				return PreencherItemFormacaoCon(searchXMLFormacoes.Mestrado(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			}
-			break;
 		case "Do":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				break;
+				return PreencherItemFormacaoAndCon(searchXMLFormacoes.Doutorado(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			case "And":
-				break;
+				return PreencherItemFormacaoAnd(searchXMLFormacoes.Doutorado(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			case "Con":
-				break;
+				return PreencherItemFormacaoCon(searchXMLFormacoes.Doutorado(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			}
-			break;
 		case "PDo":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				break;
+				return PreencherItemFormacaoAndCon(searchXMLFormacoes.PosDoutorado(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			case "And":
-				break;
+				return PreencherItemFormacaoAnd(searchXMLFormacoes.PosDoutorado(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			case "Con":
-				break;
+				return PreencherItemFormacaoCon(searchXMLFormacoes.PosDoutorado(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			}
-			break;
 		case "LDo":
-			switch (tipoEstrutura) {
-			case "AnCos":
-				break;
-			case "And":
-				break;
-			case "Con":
-				break;
-			}
-			break;
+			return PreencherItemFormacao(searchXMLFormacoes.LivreDocencia(), criterioEstrutura, tipoEstrutura, xmlfile,
+					ObjecttipoEstrutura);
 		case "CuTePr":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				break;
+				return PreencherItemFormacaoAndCon(searchXMLFormacoes.CursoTecnico(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			case "And":
-				break;
+				return PreencherItemFormacaoAnd(searchXMLFormacoes.CursoTecnico(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			case "Con":
-				break;
+				return PreencherItemFormacaoCon(searchXMLFormacoes.CursoTecnico(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			}
-			break;
 		case "MePr":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				break;
+				return PreencherItemFormacaoAndCon(searchXMLFormacoes.MestradoProfissional(), criterioEstrutura,
+						tipoEstrutura, xmlfile, ObjecttipoEstrutura);
 			case "And":
-				break;
+				return PreencherItemFormacaoAnd(searchXMLFormacoes.MestradoProfissional(), criterioEstrutura,
+						tipoEstrutura, xmlfile, ObjecttipoEstrutura);
 			case "Con":
-				break;
+				return PreencherItemFormacaoCon(searchXMLFormacoes.MestradoProfissional(), criterioEstrutura,
+						tipoEstrutura, xmlfile, ObjecttipoEstrutura);
 			}
-			break;
 		case "ReMe":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				break;
+				return PreencherItemFormacaoAndCon(searchXMLFormacoes.ResidenciaMedica(), criterioEstrutura,
+						tipoEstrutura, xmlfile, ObjecttipoEstrutura);
 			case "And":
-				break;
+				return PreencherItemFormacaoAnd(searchXMLFormacoes.ResidenciaMedica(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			case "Con":
-				break;
+				return PreencherItemFormacaoCon(searchXMLFormacoes.ResidenciaMedica(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			}
-			break;
 		case "Ape":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				break;
+				return PreencherItemFormacaoAndCon(searchXMLFormacoes.Aperfeicoamento(), criterioEstrutura,
+						tipoEstrutura, xmlfile, ObjecttipoEstrutura);
 			case "And":
-				break;
+				return PreencherItemFormacaoAnd(searchXMLFormacoes.Aperfeicoamento(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			case "Con":
-				break;
+				return PreencherItemFormacaoCon(searchXMLFormacoes.Aperfeicoamento(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			}
-			break;
 		case "MBA":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				break;
+				return PreencherItemFormacaoAndCon(searchXMLFormacoes.MBA(), criterioEstrutura, tipoEstrutura, xmlfile,
+						ObjecttipoEstrutura);
 			case "And":
-				break;
+				return PreencherItemFormacaoAnd(searchXMLFormacoes.MBA(), criterioEstrutura, tipoEstrutura, xmlfile,
+						ObjecttipoEstrutura);
 			case "Con":
-				break;
+				return PreencherItemFormacaoCon(searchXMLFormacoes.MBA(), criterioEstrutura, tipoEstrutura, xmlfile,
+						ObjecttipoEstrutura);
 			}
-			break;
 		}
 		return null;
 
@@ -194,7 +206,6 @@ public class AnaliseDados {
 
 		switch (criterioEstrutura) {
 		case "Tr":
-			;
 			return PreencherItemTipo6(searchXMLProdTecnica.Traducao(), criterioEstrutura, tipoEstrutura, xmlfile,
 					ObjecttipoEstrutura);
 		case "CuRe":
@@ -209,11 +220,14 @@ public class AnaliseDados {
 		case "Pa":
 			switch (tipoEstrutura) {
 			case "NaIn":
-				//
+				return PreencherItemTipo3(searchXMLProdTecnica.Patente(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			case "Nac":
-				break;
+				return PreencherItemTipo3Nac(searchXMLProdTecnica.Patente(), criterioEstrutura, tipoEstrutura, xmlfile,
+						ObjecttipoEstrutura);
 			case "Int":
-				break;
+				return PreencherItemTipo3Inte(searchXMLProdTecnica.Patente(), criterioEstrutura, tipoEstrutura, xmlfile,
+						ObjecttipoEstrutura);
 			}
 		case "DeTe":
 			return PreencherItemTipo3(searchXMLProdTecnica.DesenhoIndustrial(), criterioEstrutura, tipoEstrutura,
@@ -272,7 +286,6 @@ public class AnaliseDados {
 
 	public ArrayList<ItemAnalisado> PrArtSwitch(String criterioEstrutura, String tipoEstrutura, Document xmlfile,
 			TipoEstrutura ObjecttipoEstrutura) throws XPathExpressionException {
-		ArrayList<Object> ListPrArt;
 		SearchXMLProdArtistica searchXMLProdArtistica = new SearchXMLProdArtistica(xmlfile);
 		switch (criterioEstrutura) {
 		case "CrPa":
@@ -400,8 +413,7 @@ public class AnaliseDados {
 	}
 
 	public ArrayList<ItemAnalisado> PrBliSwitch(String criterioEstrutura, String tipoEstrutura, Document xmlfile,
-			TipoEstrutura ObjecttipoEstrutura)
-			throws XPathExpressionException {
+			TipoEstrutura ObjecttipoEstrutura) throws XPathExpressionException {
 		SearchXMLProdBibliografica searchXMLProdBibliografica = new SearchXMLProdBibliografica(xmlfile);
 		switch (criterioEstrutura) {
 		case "TrEv":
@@ -423,8 +435,8 @@ public class AnaliseDados {
 			return PreencherItemTipo0(searchXMLProdBibliografica.ArtigoCompletoPublicado(), criterioEstrutura,
 					tipoEstrutura, xmlfile, ObjecttipoEstrutura);
 		case "TeJoRe":
-			return PreencherItemTipo0(searchXMLProdBibliografica.TextoJornalRevista(), criterioEstrutura,
-					tipoEstrutura, xmlfile, ObjecttipoEstrutura);
+			return PreencherItemTipo0(searchXMLProdBibliografica.TextoJornalRevista(), criterioEstrutura, tipoEstrutura,
+					xmlfile, ObjecttipoEstrutura);
 		case "CaLi":
 			return PreencherItemTipo1(searchXMLProdBibliografica.LivroCapitulo(), criterioEstrutura, tipoEstrutura,
 					xmlfile, ObjecttipoEstrutura);
@@ -441,19 +453,17 @@ public class AnaliseDados {
 		return null;
 	}
 
-	public ArrayList<ItemAnalisado> OrEsApSwitch(String criterioEstrutura, String tipoEstrutura,
-			Document xmlfile,TipoEstrutura ObjecttipoEstrutura) throws XPathExpressionException {
+	public ArrayList<ItemAnalisado> OrEsApSwitch(String criterioEstrutura, String tipoEstrutura, Document xmlfile,
+			TipoEstrutura ObjecttipoEstrutura) throws XPathExpressionException {
 		SearchXMLOrientacoes searchXMLOrientacoes = new SearchXMLOrientacoes(xmlfile);
 		switch (criterioEstrutura) {
 		case "OrMe":
 			switch (tipoEstrutura) {
 			case "AnCos":
 				ArrayList<ItemAnalisado> resultado = PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoMesAnd(),
-						criterioEstrutura,
-						tipoEstrutura, xmlfile, ObjecttipoEstrutura);
+						criterioEstrutura, tipoEstrutura, xmlfile, ObjecttipoEstrutura);
 				ArrayList<ItemAnalisado> resultado2 = PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoMesCon(),
-						criterioEstrutura,
-						tipoEstrutura, xmlfile, ObjecttipoEstrutura);
+						criterioEstrutura, tipoEstrutura, xmlfile, ObjecttipoEstrutura);
 				resultado.addAll(resultado2);
 				return resultado;
 			case "And":
@@ -504,12 +514,11 @@ public class AnaliseDados {
 			switch (tipoEstrutura) {
 			case "AnCos":
 				ArrayList<ItemAnalisado> resultado = PreencherItemOrientacao(
-						searchXMLOrientacoes.OrientacaoAperfEspecAnd(),
-						criterioEstrutura, tipoEstrutura, xmlfile, ObjecttipoEstrutura);
+						searchXMLOrientacoes.OrientacaoAperfEspecAnd(), criterioEstrutura, tipoEstrutura, xmlfile,
+						ObjecttipoEstrutura);
 				ArrayList<ItemAnalisado> resultado2 = PreencherItemOrientacaoTipo(
-						searchXMLOrientacoes.OutrasOrientacaoCon(),
-						criterioEstrutura, tipoEstrutura, xmlfile, ObjecttipoEstrutura,
-						"MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO");
+						searchXMLOrientacoes.OutrasOrientacaoCon(), criterioEstrutura, tipoEstrutura, xmlfile,
+						ObjecttipoEstrutura, "MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO");
 				resultado.addAll(resultado2);
 				return resultado;
 			case "And":
@@ -541,17 +550,16 @@ public class AnaliseDados {
 		case "OrInCi":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				ArrayList<ItemAnalisado> resultado = PreencherItemOrientacao(
-						searchXMLOrientacoes.OrientacaoICAnd(), criterioEstrutura, tipoEstrutura, xmlfile,
-						ObjecttipoEstrutura);
+				ArrayList<ItemAnalisado> resultado = PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoICAnd(),
+						criterioEstrutura, tipoEstrutura, xmlfile, ObjecttipoEstrutura);
 				ArrayList<ItemAnalisado> resultado2 = PreencherItemOrientacaoTipo(
 						searchXMLOrientacoes.OutrasOrientacaoCon(), criterioEstrutura, tipoEstrutura, xmlfile,
 						ObjecttipoEstrutura, "INICIACAO_CIENTIFICA");
 				resultado.addAll(resultado2);
 				return resultado;
 			case "And":
-				return PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoICAnd(), criterioEstrutura,
-						tipoEstrutura, xmlfile, ObjecttipoEstrutura);
+				return PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoICAnd(), criterioEstrutura, tipoEstrutura,
+						xmlfile, ObjecttipoEstrutura);
 			case "Con":
 				return PreencherItemOrientacaoTipo(searchXMLOrientacoes.OutrasOrientacaoCon(), criterioEstrutura,
 						tipoEstrutura, xmlfile, ObjecttipoEstrutura, "INICIACAO_CIENTIFICA");
@@ -573,12 +581,10 @@ public class AnaliseDados {
 					xmlfile, ObjecttipoEstrutura);
 		case "BaPrTi":
 			return PreencherItemOrientacao(searchXMLOrientacoes.BancaProfessorTitular(), criterioEstrutura,
-					tipoEstrutura,
-					xmlfile, ObjecttipoEstrutura);
+					tipoEstrutura, xmlfile, ObjecttipoEstrutura);
 		case "BaCoPu":
 			return PreencherItemOrientacao(searchXMLOrientacoes.BancaConcursoPublico(), criterioEstrutura,
-					tipoEstrutura,
-					xmlfile, ObjecttipoEstrutura);
+					tipoEstrutura, xmlfile, ObjecttipoEstrutura);
 		case "BaLDo":
 			return PreencherItemOrientacao(searchXMLOrientacoes.BancaLivreDocencia(), criterioEstrutura, tipoEstrutura,
 					xmlfile, ObjecttipoEstrutura);
@@ -590,20 +596,18 @@ public class AnaliseDados {
 	}
 
 	public ArrayList<ItemAnalisado> CrGeSwitch(String criterioEstrutura, String tipoEstrutura, Document xmlfile,
-			TipoEstrutura ObjecttipoEstrutura)
-			throws XPathExpressionException {
+			TipoEstrutura ObjecttipoEstrutura) throws XPathExpressionException {
 		SearchXMLDadosGerais searchXMLDadosGerais = new SearchXMLDadosGerais(xmlfile);
 		switch (criterioEstrutura) {
 		case "DeEx":
-			return PreencherItemBolean(searchXMLDadosGerais.DedicaoExclusiva(), criterioEstrutura, tipoEstrutura, xmlfile,
-					ObjecttipoEstrutura);
+			return PreencherItemBolean(searchXMLDadosGerais.DedicaoExclusiva(), criterioEstrutura, tipoEstrutura,
+					xmlfile, ObjecttipoEstrutura);
 		}
 		return null;
 	}
 
-
-	public ArrayList<ItemAnalisado> PreencherItemBolean(boolean flag, String criterioEstrutura,
-			String tipoEstrutura, Document xmlfile, TipoEstrutura ObjecttipoEstrutura) {
+	public ArrayList<ItemAnalisado> PreencherItemBolean(boolean flag, String criterioEstrutura, String tipoEstrutura,
+			Document xmlfile, TipoEstrutura ObjecttipoEstrutura) {
 		ArrayList<ItemAnalisado> listItem = new ArrayList<ItemAnalisado>();
 		int valorContabilizado = ObjecttipoEstrutura.getValor();
 		ItemAnalisado item;
@@ -623,7 +627,7 @@ public class AnaliseDados {
 		int valorContabilizado = ObjecttipoEstrutura.getValor();
 		for (ObjetoCriterio tipo : listArray) {
 			ItemAnalisado item;
-			if (limite == 0)
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno()))
 				item = new ItemAnalisado(valorContabilizado, false, tipo);
 			else {
 				item = new ItemAnalisado(valorContabilizado, true, tipo);
@@ -634,14 +638,14 @@ public class AnaliseDados {
 		return listItem;
 	}
 
-	public ArrayList<ItemAnalisado> PreencherItemOrientacao(ArrayList<Orientacao> listArray,
-			String criterioEstrutura, String tipoEstrutura, Document xmlfile, TipoEstrutura ObjecttipoEstrutura) {
+	public ArrayList<ItemAnalisado> PreencherItemOrientacao(ArrayList<Orientacao> listArray, String criterioEstrutura,
+			String tipoEstrutura, Document xmlfile, TipoEstrutura ObjecttipoEstrutura) {
 		ArrayList<ItemAnalisado> listItem = new ArrayList<ItemAnalisado>();
 		int limite = ObjecttipoEstrutura.getLimite();
 		int valorContabilizado = ObjecttipoEstrutura.getValor();
 		for (ObjetoCriterio tipo : listArray) {
 			ItemAnalisado item;
-			if (limite == 0)
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno()))
 				item = new ItemAnalisado(valorContabilizado, false, tipo);
 			else {
 				item = new ItemAnalisado(valorContabilizado, true, tipo);
@@ -661,7 +665,7 @@ public class AnaliseDados {
 		for (ObjetoCriterio tipo : listArray) {
 			ItemAnalisado item;
 			if (((Orientacao) tipo).getCampAux().contentEquals(tipoString)) {
-				if (limite == 0)
+				if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno()))
 					item = new ItemAnalisado(valorContabilizado, false, tipo);
 				else {
 					item = new ItemAnalisado(valorContabilizado, true, tipo);
@@ -681,7 +685,7 @@ public class AnaliseDados {
 		int valorContabilizado = ObjecttipoEstrutura.getValor();
 		for (ObjetoCriterio tipo : listArray) {
 			ItemAnalisado item;
-			if (limite == 0)
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno()))
 				item = new ItemAnalisado(valorContabilizado, false, tipo);
 			else {
 				item = new ItemAnalisado(valorContabilizado, true, tipo);
@@ -699,9 +703,91 @@ public class AnaliseDados {
 		int valorContabilizado = ObjecttipoEstrutura.getValor();
 		for (ObjetoCriterio tipo : listArray) {
 			ItemAnalisado item;
-			if (limite == 0)
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno()))
 				item = new ItemAnalisado(valorContabilizado, false, tipo);
 			else {
+				item = new ItemAnalisado(valorContabilizado, true, tipo);
+				limite--;
+			}
+			listItem.add(item);
+		}
+		return listItem;
+	}
+
+	private ArrayList<ItemAnalisado> PreencherItemFormacaoAnd(ArrayList<Formacao> listArray, String criterioEstrutura,
+			String tipoEstrutura, Document xmlfile, TipoEstrutura ObjecttipoEstrutura) {
+		ArrayList<ItemAnalisado> listItem = new ArrayList<ItemAnalisado>();
+		int limite = ObjecttipoEstrutura.getLimite();
+		int valorContabilizado = ObjecttipoEstrutura.getValor();
+		for (ObjetoCriterio tipo : listArray) {
+			ItemAnalisado item;
+			if (limite == 0) {
+				if (((Formacao) tipo).getStatus().contentEquals("EM_ANDAMENTO"))
+					item = new ItemAnalisado(valorContabilizado, false, tipo);
+				else
+					continue;
+			} else {
+				item = new ItemAnalisado(valorContabilizado, true, tipo);
+				limite--;
+			}
+			listItem.add(item);
+		}
+		return listItem;
+	}
+
+	private ArrayList<ItemAnalisado> PreencherItemFormacaoCon(ArrayList<Formacao> listArray, String criterioEstrutura,
+			String tipoEstrutura, Document xmlfile, TipoEstrutura ObjecttipoEstrutura) {
+		ArrayList<ItemAnalisado> listItem = new ArrayList<ItemAnalisado>();
+		int limite = ObjecttipoEstrutura.getLimite();
+		int valorContabilizado = ObjecttipoEstrutura.getValor();
+		for (ObjetoCriterio tipo : listArray) {
+			ItemAnalisado item;
+			if (limite == 0) {
+				if (((Formacao) tipo).getStatus().contentEquals("CONCLUIDO"))
+					item = new ItemAnalisado(valorContabilizado, false, tipo);
+				else
+					continue;
+			} else {
+				item = new ItemAnalisado(valorContabilizado, true, tipo);
+				limite--;
+			}
+			listItem.add(item);
+		}
+		return listItem;
+	}
+
+	private ArrayList<ItemAnalisado> PreencherItemFormacaoAndCon(ArrayList<Formacao> listArray,
+			String criterioEstrutura, String tipoEstrutura, Document xmlfile, TipoEstrutura ObjecttipoEstrutura) {
+		ArrayList<ItemAnalisado> listItem = new ArrayList<ItemAnalisado>();
+		int limite = ObjecttipoEstrutura.getLimite();
+		int valorContabilizado = ObjecttipoEstrutura.getValor();
+		for (ObjetoCriterio tipo : listArray) {
+			ItemAnalisado item;
+			if (limite == 0) {
+				if (((Formacao) tipo).getStatus().contentEquals("CONCLUIDO")
+						|| ((Formacao) tipo).getStatus().contentEquals("EM_ANDAMENTO"))
+					item = new ItemAnalisado(valorContabilizado, false, tipo);
+				else
+					continue;
+			} else {
+				item = new ItemAnalisado(valorContabilizado, true, tipo);
+				limite--;
+			}
+			listItem.add(item);
+		}
+		return listItem;
+	}
+
+	private ArrayList<ItemAnalisado> PreencherItemFormacao(ArrayList<Formacao> listArray, String criterioEstrutura,
+			String tipoEstrutura, Document xmlfile, TipoEstrutura ObjecttipoEstrutura) {
+		ArrayList<ItemAnalisado> listItem = new ArrayList<ItemAnalisado>();
+		int limite = ObjecttipoEstrutura.getLimite();
+		int valorContabilizado = ObjecttipoEstrutura.getValor();
+		for (ObjetoCriterio tipo : listArray) {
+			ItemAnalisado item;
+			if (limite == 0) {
+				item = new ItemAnalisado(valorContabilizado, false, tipo);
+			} else {
 				item = new ItemAnalisado(valorContabilizado, true, tipo);
 				limite--;
 			}
@@ -717,7 +803,7 @@ public class AnaliseDados {
 		int valorContabilizado = ObjecttipoEstrutura.getValor();
 		for (ObjetoCriterio tipo : listArray) {
 			ItemAnalisado item;
-			if (limite == 0) {
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno())) {
 				if (((Producao) tipo).getAutores().size() > 1)
 					item = new ItemAnalisado(valorContabilizado, false, tipo);
 				else
@@ -738,7 +824,7 @@ public class AnaliseDados {
 		int valorContabilizado = ObjecttipoEstrutura.getValor();
 		for (ObjetoCriterio tipo : listArray) {
 			ItemAnalisado item;
-			if (limite == 0) {
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno())) {
 				if (((Orientacao) tipo).getCampAux2().contentEquals("NACIONAL"))
 					item = new ItemAnalisado(valorContabilizado, false, tipo);
 				else
@@ -759,7 +845,7 @@ public class AnaliseDados {
 		int valorContabilizado = ObjecttipoEstrutura.getValor();
 		for (ObjetoCriterio tipo : listArray) {
 			ItemAnalisado item;
-			if (limite == 0) {
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno())) {
 				item = new ItemAnalisado(valorContabilizado, false, tipo);
 			} else {
 				item = new ItemAnalisado(valorContabilizado, true, tipo);
@@ -777,7 +863,7 @@ public class AnaliseDados {
 		int valorContabilizado = ObjecttipoEstrutura.getValor();
 		for (ObjetoCriterio tipo : listArray) {
 			ItemAnalisado item;
-			if (limite == 0) {
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno())) {
 				item = new ItemAnalisado(valorContabilizado, false, tipo);
 			} else {
 				item = new ItemAnalisado(valorContabilizado, true, tipo);
@@ -795,7 +881,7 @@ public class AnaliseDados {
 		int valorContabilizado = ObjecttipoEstrutura.getValor();
 		for (ObjetoCriterio tipo : listArray) {
 			ItemAnalisado item;
-			if (limite == 0) {
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno())) {
 				if (((Orientacao) tipo).getCampAux2().contentEquals("INTERNACIONAL"))
 					item = new ItemAnalisado(valorContabilizado, false, tipo);
 				else
@@ -816,7 +902,7 @@ public class AnaliseDados {
 		int valorContabilizado = ObjecttipoEstrutura.getValor();
 		for (ObjetoCriterio tipo : listArray) {
 			ItemAnalisado item;
-			if (limite == 0) {
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno())) {
 				if (((Tipo6) tipo).getNatureza().contentEquals("LIVRO_ORGANIZADO_OU_EDICAO"))
 					item = new ItemAnalisado(valorContabilizado, false, tipo);
 				else
@@ -837,7 +923,7 @@ public class AnaliseDados {
 		int valorContabilizado = ObjecttipoEstrutura.getValor();
 		for (ObjetoCriterio tipo : listArray) {
 			ItemAnalisado item;
-			if (limite == 0) {
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno())) {
 				if (((Tipo6) tipo).getNatureza().contentEquals("LIVRO_PUBLICADO"))
 					item = new ItemAnalisado(valorContabilizado, false, tipo);
 				else
@@ -858,7 +944,7 @@ public class AnaliseDados {
 		int valorContabilizado = ObjecttipoEstrutura.getValor();
 		for (ObjetoCriterio tipo : listArray) {
 			ItemAnalisado item;
-			if (limite == 0) {
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno())) {
 				item = new ItemAnalisado(valorContabilizado, false, tipo);
 			} else {
 				item = new ItemAnalisado(valorContabilizado, true, tipo);
@@ -869,14 +955,14 @@ public class AnaliseDados {
 		return listItem;
 	}
 
-	public static ArrayList<ItemAnalisado> PreencherItemTipo6Ind(ArrayList<Tipo6> listArray, String criterioEstrutura,
+	public ArrayList<ItemAnalisado> PreencherItemTipo6Ind(ArrayList<Tipo6> listArray, String criterioEstrutura,
 			String tipoEstrutura, Document xmlfile, TipoEstrutura ObjecttipoEstrutura) {
 		ArrayList<ItemAnalisado> listItem = new ArrayList<ItemAnalisado>();
 		int limite = ObjecttipoEstrutura.getLimite();
 		int valorContabilizado = ObjecttipoEstrutura.getValor();
 		for (ObjetoCriterio tipo : listArray) {
 			ItemAnalisado item;
-			if (limite == 0) {
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno())) {
 				if (((Producao) tipo).getAutores().size() == 1)
 					item = new ItemAnalisado(valorContabilizado, false, tipo);
 				else
@@ -898,7 +984,7 @@ public class AnaliseDados {
 		for (ObjetoCriterio tipo : listArray) {
 			System.out.println("entrouy");
 			ItemAnalisado item;
-			if (limite == 0)
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno()))
 				item = new ItemAnalisado(valorContabilizado, false, tipo);
 			else {
 				item = new ItemAnalisado(valorContabilizado, true, tipo);
@@ -916,7 +1002,7 @@ public class AnaliseDados {
 		int valorContabilizado = ObjecttipoEstrutura.getValor();
 		for (ObjetoCriterio tipo : listArray) {
 			ItemAnalisado item;
-			if (limite == 0)
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno()))
 				item = new ItemAnalisado(valorContabilizado, false, tipo);
 			else {
 				item = new ItemAnalisado(valorContabilizado, true, tipo);
@@ -934,8 +1020,50 @@ public class AnaliseDados {
 		int valorContabilizado = ObjecttipoEstrutura.getValor();
 		for (ObjetoCriterio tipo : listArray) {
 			ItemAnalisado item;
-			if (limite == 0)
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno()))
 				item = new ItemAnalisado(valorContabilizado, false, tipo);
+			else {
+				item = new ItemAnalisado(valorContabilizado, true, tipo);
+				limite--;
+			}
+			listItem.add(item);
+		}
+		return listItem;
+	}
+
+	public ArrayList<ItemAnalisado> PreencherItemTipo3Nac(ArrayList<Tipo3> listArray, String criterioEstrutura,
+			String tipoEstrutura, Document xmlfile, TipoEstrutura ObjecttipoEstrutura) {
+		ArrayList<ItemAnalisado> listItem = new ArrayList<ItemAnalisado>();
+		int limite = ObjecttipoEstrutura.getLimite();
+		int valorContabilizado = ObjecttipoEstrutura.getValor();
+		for (ObjetoCriterio tipo : listArray) {
+			ItemAnalisado item;
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno()))
+				if (((Tipo3) tipo).getCampAux().contentEquals("Brasil"))
+					item = new ItemAnalisado(valorContabilizado, false, tipo);
+				else
+					continue;
+			else {
+				item = new ItemAnalisado(valorContabilizado, true, tipo);
+				limite--;
+			}
+			listItem.add(item);
+		}
+		return listItem;
+	}
+
+	public ArrayList<ItemAnalisado> PreencherItemTipo3Inte(ArrayList<Tipo3> listArray, String criterioEstrutura,
+			String tipoEstrutura, Document xmlfile, TipoEstrutura ObjecttipoEstrutura) {
+		ArrayList<ItemAnalisado> listItem = new ArrayList<ItemAnalisado>();
+		int limite = ObjecttipoEstrutura.getLimite();
+		int valorContabilizado = ObjecttipoEstrutura.getValor();
+		for (ObjetoCriterio tipo : listArray) {
+			ItemAnalisado item;
+			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno()))
+				if (!((Tipo3) tipo).getCampAux().contentEquals("Brasil"))
+					item = new ItemAnalisado(valorContabilizado, false, tipo);
+				else
+					continue;
 			else {
 				item = new ItemAnalisado(valorContabilizado, true, tipo);
 				limite--;

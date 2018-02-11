@@ -8,7 +8,7 @@ public class Orientacao extends ObjetoCriterio {
 	private String campAux;
 	private String campAux2;
 	public Orientacao(String natureza, String titulo, int ano, String nome_aluno) {
-		super();
+		super(titulo, ano);
 		this.natureza = natureza;
 		this.titulo = titulo;
 		this.ano = ano;

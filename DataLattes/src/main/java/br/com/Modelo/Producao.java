@@ -16,7 +16,7 @@ public class Producao extends ObjetoCriterio {
 	private String campAux2;
 
 	public Producao(String titulo, int ano) {
-		super();
+		super(titulo, ano);
 		this.titulo = titulo;
 		this.ano = ano;
 		this.palavra_chave = new ArrayList<String>();

@@ -25,7 +25,7 @@ public class SearchXMLProdTecnica extends SearchXML {
 	}
 	//feito
 	public ArrayList<Tipo3> CultivacapRegistrada() throws XPathExpressionException {
-		return BuscaTipo3("//CULTIVAR-REGISTRADA", "DENOMINACAO", "ANO-SOLICITACAO");
+		return BuscaTipo3("//CULTIVAR-REGISTRADA", "DENOMINACAO", "ANO-SOLICITACAO", 0, null);
 	}
 	//feito
 	public ArrayList<Tipo4> Software() throws XPathExpressionException {
@@ -33,23 +33,23 @@ public class SearchXMLProdTecnica extends SearchXML {
 	}
 	//feito
 	public ArrayList<Tipo3> Patente() throws XPathExpressionException {
-		return BuscaTipo3("//PATENTE", "TITULO", "ANO-DESENVOLVIMENTO");
+		return BuscaTipo3("//PATENTE", "TITULO", "ANO-DESENVOLVIMENTO", 0, "PAIS");
 	}
 	//feito
 	public ArrayList<Tipo3> CultivacapProtegida() throws XPathExpressionException {
-		return BuscaTipo3("//CULTIVAR-PROTEGIDA", "DENOMINACAO", "ANO-SOLICITACAO");
+		return BuscaTipo3("//CULTIVAR-PROTEGIDA", "DENOMINACAO", "ANO-SOLICITACAO", 0, null);
 	}
 	//feito
 	public ArrayList<Tipo3> DesenhoIndustrial() throws XPathExpressionException {
-		return BuscaTipo3("//DESENHO-INDUSTRIAL", "TITULO", "ANO-DESENVOLVIMENTO");
+		return BuscaTipo3("//DESENHO-INDUSTRIAL", "TITULO", "ANO-DESENVOLVIMENTO", 0, null);
 	}
 	//feito
 	public ArrayList<Tipo3> Marca() throws XPathExpressionException {
-		return BuscaTipo3("//MARCA", "TITULO", "ANO-DESENVOLVIMENTO");
+		return BuscaTipo3("//MARCA", "TITULO", "ANO-DESENVOLVIMENTO", 0, null);
 	}
 	//feito
 	public ArrayList<Tipo3> TopogradiaDeCircuitoIntegrado() throws XPathExpressionException {
-		return BuscaTipo3("//TOPOGRAFIA-DE-CIRCUITO-INTEGRADO", "TITULO", "ANO-DESENVOLVIMENTO");
+		return BuscaTipo3("//TOPOGRAFIA-DE-CIRCUITO-INTEGRADO", "TITULO", "ANO-DESENVOLVIMENTO", 0, null);
 	}
 	//feito
 	public ArrayList<Tipo5> ProdutoTecnologico() throws XPathExpressionException {

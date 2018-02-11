@@ -37,8 +37,8 @@ public class SearchXML {
 	}
 
 	public ArrayList<Producao> BuscaProducao(String raiz, int a, String aux) throws XPathExpressionException {
-		XPathExpression expr = xpath.compile(raiz);
-		NodeList livros = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
+		XPathExpression expr = this.xpath.compile(raiz);
+		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		ArrayList<Producao> ListArtigoCompleto = new ArrayList<Producao>();
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node TipoNode = livros.item(i);
@@ -67,8 +67,8 @@ public class SearchXML {
 
 	public ArrayList<Tipo6> BuscaBanca(String raiz, String nomeTitulo, int a, String aux, int b, String aux2)
 			throws XPathExpressionException {
-		XPathExpression expr = xpath.compile(raiz);
-		NodeList livros = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
+		XPathExpression expr = this.xpath.compile(raiz);
+		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		ArrayList<Tipo6> ListArtigoCompleto = new ArrayList<Tipo6>();
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node TipoNode = livros.item(i);
@@ -105,8 +105,8 @@ public class SearchXML {
 
 	public ArrayList<Orientacao> BuscaOrientacao(String raiz, String NomeTitulo, int a, String aux, int b, String aux2)
 			throws XPathExpressionException {
-		XPathExpression expr = xpath.compile(raiz);
-		NodeList artigos = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
+		XPathExpression expr = this.xpath.compile(raiz);
+		NodeList artigos = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		ArrayList<Orientacao> ListArtigoCompleto = new ArrayList<Orientacao>();
 		for (int i = 0; i < artigos.getLength(); i++) {
 			Node artigoNode = artigos.item(i);
@@ -137,8 +137,8 @@ public class SearchXML {
 
 	public ArrayList<Tipo0> BuscaTipo0(String raiz, String Tipocodigo, String NomeTitulo, String NomeAno, int a,
 			String aux, int b, String aux2) throws XPathExpressionException {
-		XPathExpression expr = xpath.compile(raiz);
-		NodeList artigos = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
+		XPathExpression expr = this.xpath.compile(raiz);
+		NodeList artigos = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		ArrayList<Tipo0> ListArtigoCompleto = new ArrayList<Tipo0>();
 		for (int i = 0; i < artigos.getLength(); i++) {
 			Node artigoNode = artigos.item(i);
@@ -176,8 +176,8 @@ public class SearchXML {
 	}
 
 	public ArrayList<Tipo1> BuscaTipo1(String raiz) throws XPathExpressionException {
-		XPathExpression expr = xpath.compile(raiz);
-		NodeList livros = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
+		XPathExpression expr = this.xpath.compile(raiz);
+		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		ArrayList<Tipo1> ListArtigoCompleto = new ArrayList<Tipo1>();
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node TipoNode = livros.item(i);
@@ -207,8 +207,8 @@ public class SearchXML {
 
 	public ArrayList<Tipo2> BuscaTipo2(String raiz, String Tipocodigo, String NomeTitulo, int a, String aux)
 			throws XPathExpressionException {
-		XPathExpression expr = xpath.compile(raiz);
-		NodeList livros = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
+		XPathExpression expr = this.xpath.compile(raiz);
+		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		ArrayList<Tipo2> ListArtigoCompleto = new ArrayList<Tipo2>();
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node TipoNode = livros.item(i);
@@ -239,9 +239,10 @@ public class SearchXML {
 		return ListArtigoCompleto;
 	}
 
-	public ArrayList<Tipo3> BuscaTipo3(String raiz, String NomeTitulo, String NomeAno) throws XPathExpressionException {
-		XPathExpression expr = xpath.compile(raiz);
-		NodeList livros = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
+	public ArrayList<Tipo3> BuscaTipo3(String raiz, String NomeTitulo, String NomeAno, int a, String aux)
+			throws XPathExpressionException {
+		XPathExpression expr = this.xpath.compile(raiz);
+		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		ArrayList<Tipo3> ListArtigoCompleto = new ArrayList<Tipo3>();
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node TipoNode = livros.item(i);
@@ -251,14 +252,18 @@ public class SearchXML {
 					.valueOf(TipoNode.getChildNodes().item(0).getAttributes().getNamedItem(NomeAno).getTextContent());
 
 			Tipo3 prod = new Tipo3(titulo, ano, null);
+			if (aux != null) {
+				String campAux = TipoNode.getChildNodes().item(a).getAttributes().getNamedItem(aux).getTextContent();
+				prod.setCampAux(campAux);
+			}
 			if (TipoNode.getChildNodes().item(1).getChildNodes().getLength() == 1) {
-				Node aux = TipoNode.getChildNodes().item(1).getFirstChild();
-				if (aux.getNodeName().contentEquals("REGISTRO-OU-PATENTE")) {
-					String tipoPatente = aux.getAttributes().getNamedItem("TIPO-PATENTE").getTextContent();
-					String codigoPatente = aux.getAttributes().getNamedItem("CODIGO-DO-REGISTRO-OU-PATENTE")
+				Node patente = TipoNode.getChildNodes().item(1).getFirstChild();
+				if (patente.getNodeName().contentEquals("REGISTRO-OU-PATENTE")) {
+					String tipoPatente = patente.getAttributes().getNamedItem("TIPO-PATENTE").getTextContent();
+					String codigoPatente = patente.getAttributes().getNamedItem("CODIGO-DO-REGISTRO-OU-PATENTE")
 							.getTextContent();
-					String dataConcessao = aux.getAttributes().getNamedItem("DATA-DE-CONCESSAO").getTextContent();
-					String nomeTitular = aux.getAttributes().getNamedItem("NOME-DO-TITULAR").getTextContent();
+					String dataConcessao = patente.getAttributes().getNamedItem("DATA-DE-CONCESSAO").getTextContent();
+					String nomeTitular = patente.getAttributes().getNamedItem("NOME-DO-TITULAR").getTextContent();
 					RegistroPatente regPatente = new RegistroPatente(tipoPatente, codigoPatente, dataConcessao,
 							nomeTitular);
 					prod.setRegPatente(regPatente);
@@ -281,8 +286,8 @@ public class SearchXML {
 	}
 
 	public ArrayList<Tipo4> BuscaTipo4(String raiz, String NomeTitulo, String NomeAno) throws XPathExpressionException {
-		XPathExpression expr = xpath.compile(raiz);
-		NodeList livros = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
+		XPathExpression expr = this.xpath.compile(raiz);
+		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		ArrayList<Tipo4> ListArtigoCompleto = new ArrayList<Tipo4>();
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node TipoNode = livros.item(i);
@@ -322,8 +327,8 @@ public class SearchXML {
 	}
 
 	public ArrayList<Tipo5> BuscaTipo5(String raiz) throws XPathExpressionException {
-		XPathExpression expr = xpath.compile(raiz);
-		NodeList livros = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
+		XPathExpression expr = this.xpath.compile(raiz);
+		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		ArrayList<Tipo5> ListArtigoCompleto = new ArrayList<Tipo5>();
 
 		for (int i = 0; i < livros.getLength(); i++) {
@@ -368,8 +373,8 @@ public class SearchXML {
 
 	public ArrayList<Tipo6> BuscaTipo6(String raiz, String NomeTitulo, int a, String aux, int b, String aux2)
 			throws XPathExpressionException {
-		XPathExpression expr = xpath.compile(raiz);
-		NodeList artigos = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
+		XPathExpression expr = this.xpath.compile(raiz);
+		NodeList artigos = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		ArrayList<Tipo6> ListArtigoCompleto = new ArrayList<Tipo6>();
 		for (int i = 0; i < artigos.getLength(); i++) {
 			Node artigoNode = artigos.item(i);
@@ -382,7 +387,7 @@ public class SearchXML {
 			Tipo6 prod = new Tipo6(titulo, ano, natureza);
 			if (aux != null) {
 				String campAux = artigoNode.getChildNodes().item(a).getAttributes().getNamedItem(aux).getTextContent();
-				
+
 				prod.setCampAux(campAux);
 			}
 			if (aux2 != null) {
@@ -406,8 +411,8 @@ public class SearchXML {
 	}
 
 	public ArrayList<Tipo8> BuscaTipo8(String raiz, int a, String aux) throws XPathExpressionException {
-		XPathExpression expr = xpath.compile(raiz);
-		NodeList livros = (NodeList) expr.evaluate(xmlfile, XPathConstants.NODESET);
+		XPathExpression expr = this.xpath.compile(raiz);
+		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		ArrayList<Tipo8> ListArtigoCompleto = new ArrayList<Tipo8>();
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node TipoNode = livros.item(i);
