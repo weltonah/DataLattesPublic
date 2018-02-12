@@ -65,11 +65,11 @@ public class SearchXML {
 		return ListArtigoCompleto;
 	}
 
-	public ArrayList<Tipo6> BuscaBanca(String raiz, String nomeTitulo, int a, String aux, int b, String aux2)
+	public ArrayList<Orientacao> BuscaBanca(String raiz, String nomeTitulo, int a, String aux, int b, String aux2)
 			throws XPathExpressionException {
 		XPathExpression expr = this.xpath.compile(raiz);
 		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
-		ArrayList<Tipo6> ListArtigoCompleto = new ArrayList<Tipo6>();
+		ArrayList<Orientacao> ListArtigoCompleto = new ArrayList<Orientacao>();
 		for (int i = 0; i < livros.getLength(); i++) {
 			Node TipoNode = livros.item(i);
 			String titulo = TipoNode.getChildNodes().item(1).getAttributes().getNamedItem(nomeTitulo).getTextContent();
@@ -77,7 +77,9 @@ public class SearchXML {
 					.getTextContent();
 			int ano = Integer
 					.valueOf(TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
-			Tipo6 prod = new Tipo6(titulo, ano, natureza);
+			String nome_aluno = TipoNode.getChildNodes().item(1).getAttributes().getNamedItem("NOME-DO-CANDIDATO")
+					.getTextContent();
+			Orientacao prod = new Orientacao(natureza, titulo, ano, nome_aluno);
 			if (aux != null) {
 				String campAux = TipoNode.getChildNodes().item(a).getAttributes().getNamedItem(aux).getTextContent();
 				prod.setCampAux(campAux);
@@ -103,7 +105,41 @@ public class SearchXML {
 		return ListArtigoCompleto;
 	}
 
-	public ArrayList<Orientacao> BuscaOrientacao(String raiz, String NomeTitulo, int a, String aux, int b, String aux2)
+	public ArrayList<Orientacao> BuscaOrientacaoAnd(String raiz, String NomeTitulo, int a, String aux, int b,
+			String aux2)
+			throws XPathExpressionException {
+		XPathExpression expr = this.xpath.compile(raiz);
+		NodeList artigos = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
+		ArrayList<Orientacao> ListArtigoCompleto = new ArrayList<Orientacao>();
+		for (int i = 0; i < artigos.getLength(); i++) {
+			Node artigoNode = artigos.item(i);
+			String titulo = artigoNode.getChildNodes().item(0).getAttributes().getNamedItem(NomeTitulo)
+					.getTextContent();
+			String natureza = artigoNode.getChildNodes().item(0).getAttributes().getNamedItem("NATUREZA")
+					.getTextContent();
+			int ano = Integer
+					.valueOf(artigoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
+			String nome_aluno = artigoNode.getChildNodes().item(1).getAttributes().getNamedItem("NOME-DO-ORIENTANDO")
+					.getTextContent();
+
+			Orientacao prod = new Orientacao(natureza, titulo, ano, nome_aluno);
+			if (aux != null) {
+				String campAux = artigoNode.getChildNodes().item(a).getAttributes().getNamedItem(aux).getTextContent();
+				prod.setCampAux(campAux);
+			}
+			if (aux2 != null) {
+				String campAux2 = artigoNode.getChildNodes().item(b).getAttributes().getNamedItem(aux2)
+						.getTextContent();
+				prod.setCampAux2(campAux2);
+			}
+
+			ListArtigoCompleto.add(prod);
+		}
+		return ListArtigoCompleto;
+	}
+
+	public ArrayList<Orientacao> BuscaOrientacaoCon(String raiz, String NomeTitulo, int a, String aux, int b,
+			String aux2)
 			throws XPathExpressionException {
 		XPathExpression expr = this.xpath.compile(raiz);
 		NodeList artigos = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
@@ -134,6 +170,8 @@ public class SearchXML {
 		}
 		return ListArtigoCompleto;
 	}
+
+
 
 	public ArrayList<Tipo0> BuscaTipo0(String raiz, String Tipocodigo, String NomeTitulo, String NomeAno, int a,
 			String aux, int b, String aux2) throws XPathExpressionException {
