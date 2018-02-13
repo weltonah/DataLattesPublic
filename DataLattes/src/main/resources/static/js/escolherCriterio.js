@@ -54,9 +54,9 @@ function DadosGeraisMarkAll() {
 		}
 	}
 }
-function OriBancMarkAll() {
-	var x = document.getElementById("checkboxOriBancMarkAll").checked;
-	var inputs = document.querySelectorAll('.OriBanc');
+function BancMarkAll() {
+	var x = document.getElementById("checkboxBancMarkAll").checked;
+	var inputs = document.querySelectorAll('.Banc');
 	if (x) {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].checked = true;
@@ -65,6 +65,20 @@ function OriBancMarkAll() {
 		for (var i = 0; i < inputs.length; i++) {
 			inputs[i].checked = false;
 
+		}
+	}
+}
+function OrienMarkAll() {
+	var x = document.getElementById("checkboxOrienMarkAll").checked;
+	var inputs = document.querySelectorAll('.Orien');
+	if (x) {
+		for (var i = 0; i < inputs.length; i++) {
+			inputs[i].checked = true;
+		}
+	} else {
+		for (var i = 0; i < inputs.length; i++) {
+			inputs[i].checked = false;
+			
 		}
 	}
 }

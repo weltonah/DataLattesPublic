@@ -33,14 +33,16 @@ public class SenhaController {
 			@RequestParam(value = "ProdTec", required = false) List<String> ProdTec,
 			@RequestParam(value = "ProdArt", required = false) List<String> ProdArt,
 			@RequestParam(value = "ProdBibl", required = false) List<String> ProdBibl,
-			@RequestParam(value = "OriBanc", required = false) List<String> OriBanc,
+			@RequestParam(value = "Orien", required = false) List<String> Orien,
+			@RequestParam(value = "Banc", required = false) List<String> Banc,
 			@RequestParam(value = "DadosGerais", required = false) List<String> DadosGerais) {
 		ArrayList<List<String>> conteudo = new ArrayList<List<String>>();
 		conteudo.add(formacao);
 		conteudo.add(ProdTec);
 		conteudo.add(ProdArt);
 		conteudo.add(ProdBibl);
-		conteudo.add(OriBanc);
+		conteudo.add(Orien);
+		conteudo.add(Banc);
 		conteudo.add(DadosGerais);
 		Estrutura estcrit = this.preencherEstrutura.InserirCriteriosCheckbox(conteudo);
 		model.addAttribute("estcrit", estcrit);
@@ -51,7 +53,7 @@ public class SenhaController {
 	public String criterio(@RequestParam("key") String key, Model model, HttpSession session) {
 		String[] t = key.split("%");
 		String[] aux = t[0].split(">");
-		int anoInicio = !(aux[1].contentEquals("")) ? Integer.parseInt(aux[1]) : 1950;
+		int anoInicio = !(aux[1].contentEquals("")) ? Integer.parseInt(aux[1]) : 1900;
 		int anoFim = Integer.parseInt(aux[2]);
 		ArrayList<List<String[]>> conteudo = this.preencherEstrutura.decifrarChave(key);
 		// for (List<String[]> list : conteudo) {

@@ -46,17 +46,77 @@ function ProdBibliItemLimite(item) {
 function ProdBibliLimite() {
 	LimiteTudo("ProdBibli");
 }
-function OriBancStatus() {
-	StatusTudo("OriBanc");
+
+
+
+
+function OrienItemStatus(item,valor) {
+	var Nome = "Orien";
+	var valor0 = document.querySelectorAll("." + Nome + "Tipo0tt" + item);
+	var valor1 = document.querySelectorAll("." + Nome + "Tipo1tt" + item);
+	var valor2 = document.querySelectorAll("." + Nome + "Tipo2tt" + item);
+	var valor3 = document.querySelectorAll("." + Nome + "Tipo3tt" + item);
+	switch(valor){
+	case 0:
+		for (var i = 0; i < valor0.length; i++)
+			valor0[i].classList.remove("hidden");
+		for (var j = 0; j < valor1.length; j++)
+			valor1[j].classList.add("hidden");
+		for (var i = 0; i < valor2.length; i++)
+			valor2[i].classList.add("hidden");
+		for (var j = 0; j < valor3.length; j++)
+			valor3[j].classList.add("hidden");
+		break;
+	case 1:
+		for (var i = 0; i < valor0.length; i++)
+			valor0[i].classList.add("hidden");
+		for (var j = 0; j < valor1.length; j++)
+			valor1[j].classList.remove("hidden");
+		for (var i = 0; i < valor2.length; i++)
+			valor2[i].classList.add("hidden");
+		for (var j = 0; j < valor3.length; j++)
+			valor3[j].classList.add("hidden");
+		break;
+	case 2:
+		for (var i = 0; i < valor0.length; i++)
+			valor0[i].classList.add("hidden");
+		for (var j = 0; j < valor1.length; j++)
+			valor1[j].classList.add("hidden");
+		for (var i = 0; i < valor2.length; i++)
+			valor2[i].classList.remove("hidden");
+		for (var j = 0; j < valor3.length; j++)
+			valor3[j].classList.add("hidden");
+		break;
+	case 3:
+		for (var i = 0; i < valor0.length; i++)
+			valor0[i].classList.add("hidden");
+		for (var j = 0; j < valor1.length; j++)
+			valor1[j].classList.add("hidden");
+		for (var i = 0; i < valor2.length; i++)
+			valor2[i].classList.add("hidden");
+		for (var j = 0; j < valor3.length; j++)
+			valor3[j].classList.remove("hidden");
+		break;
+	
+	}
 }
-function OriBancItemStatus(item) {
-	ItemStatus("OriBanc", item);
+function OrienItemLimite(item) {
+	ItemLimite("Orien", item);
 }
-function OriBancItemLimite(item) {
-	ItemLimite("OriBanc", item);
+function OrienLimite() {
+	LimiteTudo("Orien");
 }
-function OriBancLimite() {
-	LimiteTudo("OriBanc");
+function BancStatus() {
+	StatusTudo("Banc");
+}
+function BancItemStatus(item) {
+	ItemStatus("Banc", item);
+}
+function BancItemLimite(item) {
+	ItemLimite("Banc", item);
+}
+function BancLimite() {
+	LimiteTudo("Banc");
 }
 function StatusTudo(Nome) {
 	var x = document.getElementById("myCheck" + Nome + "Status").checked;
@@ -124,9 +184,9 @@ function GerarKey() {
 	key = "Ano>" + document.getElementById("AnoInicio").value + ">"
 			+ document.getElementById("AnoFim").value + "%";
 	var NomeItemFor = [ "Formacao", "ProdTec", "ProdArt", "ProdBibli",
-			"OriBanc", "DadosGerais" ];
-	var NomeItemForAbre = [ "For", "PrTec", "PrArt", "PrBli", "BaOr", "CrGe" ];
-	for (var t = 0; t < 6; t++) {
+			"Orien", "Banc", "DadosGerais" ];
+	var NomeItemForAbre = [ "For", "PrTec", "PrArt", "PrBli", "Orien", "Banc", "CrGe" ];
+	for (var t = 0; t < 7; t++) {
 		var formDiv = document.querySelectorAll('.indexCont' + t);
 		if (formDiv.length > 0) {
 			// alert(t);

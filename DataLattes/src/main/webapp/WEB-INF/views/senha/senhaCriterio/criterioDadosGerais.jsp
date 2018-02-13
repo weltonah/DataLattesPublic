@@ -31,7 +31,7 @@
    <div class="well col-xs-12">
     
     <div class="col-xs-12">
-     <span class="NomeItem${itemstatus.index}&5 indexCont5 " name="${item.getAbre()}">${item.getCriterio()}</span>
+     <span class="NomeItem${itemstatus.index}&6 indexCont6 " name="${item.getAbre()}">${item.getCriterio()}</span>
     </div>
     <c:forEach var="list" varStatus="liststatus"
      items="${item.getListTipo()}">

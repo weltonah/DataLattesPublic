@@ -18,6 +18,7 @@ public class PreencherEstrutura {
 	public PreencherEstrutura() {
 		this.abreNome = new HashMap<String, String>();
 		this.abreNome.put("AnCos", "Andamento ou Concluido");
+		this.abreNome.put("AnCosOri", "Orientação");
 		this.abreNome.put("And", "Andamento");
 		this.abreNome.put("Ape", "Aperfeiçoamento");
 		this.abreNome.put("ApObAr", "Apresentação de Obra Artistica");
@@ -33,6 +34,7 @@ public class PreencherEstrutura {
 		this.abreNome.put("BaGr", "Banca de Graduação");
 		this.abreNome.put("BaLDo", "Banca de Livre-docencia");
 		this.abreNome.put("BaMe", "Banca de Mestrado");
+		this.abreNome.put("Banc", "Participaçao de Banca");
 		this.abreNome.put("BaOr", "Orientações e Banca");
 		this.abreNome.put("BaPrTi", "Banca de Professor Titular");
 		this.abreNome.put("BaQu", "Banca de Qualificação");
@@ -41,6 +43,9 @@ public class PreencherEstrutura {
 		this.abreNome.put("Col", "Coletiva");
 		this.abreNome.put("CoMu", "Composição musical");
 		this.abreNome.put("Con", "Concluido");
+		this.abreNome.put("Coo", "Coorientação");
+		this.abreNome.put("CooAnd", "Coorientação Andamento");
+		this.abreNome.put("CooCon", "Coorientação Concluida");
 		this.abreNome.put("CPRTV", "Comentario em programa de Radio ou TV");
 		this.abreNome.put("CrGe", "Critérios Gerais");
 		this.abreNome.put("CrPa", "Criação de Partitura");
@@ -73,6 +78,10 @@ public class PreencherEstrutura {
 		this.abreNome.put("OrEsAp", "Orientação Especialização ou Aperfeiçoamento");
 		this.abreNome.put("OrEv", "Organização de evento");
 		this.abreNome.put("OrGr", "Orientação de Graduação");
+		this.abreNome.put("Ori", "Orientação");
+		this.abreNome.put("OriAnd", "Orientação Andamento");
+		this.abreNome.put("Orien", "Orientações");
+		this.abreNome.put("OriCon", "Orientação Concluida");
 		this.abreNome.put("OrInCi", "Orientação de Iniciação Cientifica");
 		this.abreNome.put("OrLi", "Organização de livro");
 		this.abreNome.put("OrMe", "Orientação Mestrado");
@@ -180,13 +189,18 @@ public class PreencherEstrutura {
 		listArea.add(areaEstruturaFormacao);
 		// Banca e Orientacao
 		listCritFormacao = new ArrayList<CriterioEstrutura>();
-		PreencherAndCon(new CriterioEstrutura("Orientação Mestrado", "OrMe"), listCritFormacao);
-		PreencherAndCon(new CriterioEstrutura("Orientação Doutorado", "OrDo"), listCritFormacao);
-		PreencherAndCon(new CriterioEstrutura("Orientação Pós-Doutorado", "OrPoDo"), listCritFormacao);
-		PreencherAndCon(new CriterioEstrutura("Orientação Especialização ou Aperfeiçoamento", "OrEsAp"),
+		PreencherAndConOriCo(new CriterioEstrutura("Orientação Mestrado", "OrMe"), listCritFormacao);
+		PreencherAndConOriCo(new CriterioEstrutura("Orientação Doutorado", "OrDo"), listCritFormacao);
+		PreencherAndConOriCo(new CriterioEstrutura("Orientação Pós-Doutorado", "OrPoDo"), listCritFormacao);
+		PreencherAndConOriSub(new CriterioEstrutura("Orientação Especialização ou Aperfeiçoamento", "OrEsAp"),
 				listCritFormacao);
-		PreencherAndCon(new CriterioEstrutura("Orientação de Graduação", "OrGr"), listCritFormacao);
-		PreencherAndCon(new CriterioEstrutura("Orientação de Iniciação Cientifica", "OrInCi"), listCritFormacao);
+		PreencherAndConOriSub(new CriterioEstrutura("Orientação de Graduação", "OrGr"), listCritFormacao);
+		PreencherAndConOriSub(new CriterioEstrutura("Orientação de Iniciação Cientifica", "OrInCi"), listCritFormacao);
+		areaEstruturaFormacao = new AreaEstrutura("Orientações", "Orien");
+		areaEstruturaFormacao.setListCrit(listCritFormacao);
+		listArea.add(areaEstruturaFormacao);
+		// Banca
+		listCritFormacao = new ArrayList<CriterioEstrutura>();
 		PreencherParticipou(new CriterioEstrutura("Banca de Mestrado", "BaMe"), listCritFormacao);
 		PreencherParticipou(new CriterioEstrutura("Banca de Doutorado", "BaDo"), listCritFormacao);
 		PreencherParticipou(new CriterioEstrutura("Banca de Qualificação", "BaQu"), listCritFormacao);
@@ -197,7 +211,7 @@ public class PreencherEstrutura {
 		PreencherParticipou(new CriterioEstrutura("Banca de Concurso Publico", "BaCoPu"), listCritFormacao);
 		PreencherParticipou(new CriterioEstrutura("Banca de Livre-docencia", "BaLDo"), listCritFormacao);
 		PreencherParticipou(new CriterioEstrutura("Banca de Avaliação de curso", "BaAvCu"), listCritFormacao);
-		areaEstruturaFormacao = new AreaEstrutura("Orientações e Banca", "BaOr");
+		areaEstruturaFormacao = new AreaEstrutura("Participaçao de Banca", "Banc");
 		areaEstruturaFormacao.setListCrit(listCritFormacao);
 		listArea.add(areaEstruturaFormacao);
 		// Dados Gerais
@@ -269,7 +283,6 @@ public class PreencherEstrutura {
 					break;
 				}
 			}
-
 			String[] tipo = ta[1].split("#");
 			for (int j = 1; j < tipo.length; j++) {
 				String[] dif = tipo[j].split("@");
@@ -306,12 +319,18 @@ public class PreencherEstrutura {
 						this.estr.getListEst().get(i).getAbre());
 				listCritFormacao = new ArrayList<CriterioEstrutura>();
 				int aux = 0;
+				// System.out.println(list.size());
 				for (int j = 0; j < list.size(); j++) {
 					// System.out.println("## valor j " + j);
+					// System.out.println("%%%%" + list.get(j)[0]);
+					// System.out.println("%%%%" + aux);
+					// System.out.println("%%%%" +
+					// this.estr.getListEst().get(i).getListCrit().size());
 					for (int k = aux; k < this.estr.getListEst().get(i).getListCrit().size(); k++) {
 						// System.out.println(
 						// list.get(j)[0] + " " +
 						// this.estr.getListEst().get(i).getListCrit().get(k).getAbre());
+
 						if (this.estr.getListEst().get(i).getListCrit().get(k).getAbre()
 								.contentEquals(list.get(j)[0])) {
 							ArrayList<TipoEstrutura> listTipoEstru = new ArrayList<TipoEstrutura>();
@@ -322,16 +341,34 @@ public class PreencherEstrutura {
 									Integer.parseInt(list.get(j)[2]), list.get(j)[1], limitevalor);
 							listTipoEstru.add(tipoEstrutura);
 							if (j + 1 < list.size()) {
+								// System.out.println("&&&&&");
 								if (list.get(j + 1)[0].contentEquals(list.get(j)[0])) {
-									criterioEstrutura = new CriterioEstrutura(this.abreNome.get(list.get(j + 1)[0]),
-											list.get(j)[0]);
-									limitevalor = list.get(j + 1)[3] == null ? -1
-											: Integer.parseInt(list.get(j + 1)[3]);
-									tipoEstrutura = new TipoEstrutura(this.abreNome.get(list.get(j + 1)[1]),
-											Integer.parseInt(list.get(j + 1)[2]), list.get(j + 1)[1], limitevalor);
-									listTipoEstru.add(tipoEstrutura);
+									for (int p = j + 1; (list.get(p)[0].contentEquals(list.get(j)[0])); p++) {
+										// System.out.println(list.get(p)[0] + " ***** " + list.get(j)[0]);
+										criterioEstrutura = new CriterioEstrutura(this.abreNome.get(list.get(p)[0]),
+												list.get(j)[0]);
+										limitevalor = list.get(p)[3] == null ? -1 : Integer.parseInt(list.get(p)[3]);
+										tipoEstrutura = new TipoEstrutura(this.abreNome.get(list.get(p)[1]),
+												Integer.parseInt(list.get(p)[2]), list.get(p)[1], limitevalor);
+										listTipoEstru.add(tipoEstrutura);
+
+										if (!(p + 1 < list.size()))
+											break;
+									}
 									k++;
 								}
+
+								// if (list.get(j + 1)[0].contentEquals(list.get(j)[0])) {
+								// criterioEstrutura = new CriterioEstrutura(this.abreNome.get(list.get(j +
+								// 1)[0]),
+								// list.get(j)[0]);
+								// limitevalor = list.get(j + 1)[3] == null ? -1
+								// : Integer.parseInt(list.get(j + 1)[3]);
+								// tipoEstrutura = new TipoEstrutura(this.abreNome.get(list.get(j + 1)[1]),
+								// Integer.parseInt(list.get(j + 1)[2]), list.get(j + 1)[1], limitevalor);
+								// listTipoEstru.add(tipoEstrutura);
+								// k++;
+								// }
 							}
 							criterioEstrutura.addListTipo(listTipoEstru);
 							listCritFormacao.add(criterioEstrutura);
@@ -357,6 +394,64 @@ public class PreencherEstrutura {
 		tipo = new TipoEstrutura("Andamento", "And");
 		list.add(tipo);
 		tipo = new TipoEstrutura("Concluido", "Con");
+		list.add(tipo);
+		crit.addListTipo(list);
+		listCritFormacao.add(crit);
+	}
+
+	public void PreencherAndConOriCo(CriterioEstrutura crit, ArrayList<CriterioEstrutura> listCritFormacao) {
+		ArrayList<TipoEstrutura> list = new ArrayList<TipoEstrutura>();
+		TipoEstrutura tipo = new TipoEstrutura("Orientação", "AnCosOri");
+		list.add(tipo);
+		crit.addListTipo(list);
+		list = new ArrayList<TipoEstrutura>();
+		tipo = new TipoEstrutura("Andamento", "And");
+		list.add(tipo);
+		tipo = new TipoEstrutura("Concluido", "Con");
+		list.add(tipo);
+		crit.addListTipo(list);
+		list = new ArrayList<TipoEstrutura>();
+		tipo = new TipoEstrutura("Orientação", "Ori");
+		list.add(tipo);
+		tipo = new TipoEstrutura("Coorientação", "Coo");
+		list.add(tipo);
+		crit.addListTipo(list);
+		list = new ArrayList<TipoEstrutura>();
+		tipo = new TipoEstrutura("Orientação Andamento", "OriAnd");
+		list.add(tipo);
+		tipo = new TipoEstrutura("Coorientação Andamento", "CooAnd");
+		list.add(tipo);
+		tipo = new TipoEstrutura("Orientação Concluida", "OriCon");
+		list.add(tipo);
+		tipo = new TipoEstrutura("Coorientação Concluida", "CooCon");
+		list.add(tipo);
+		crit.addListTipo(list);
+		listCritFormacao.add(crit);
+	}
+
+	public void PreencherAndConOriSub(CriterioEstrutura crit, ArrayList<CriterioEstrutura> listCritFormacao) {
+		ArrayList<TipoEstrutura> list = new ArrayList<TipoEstrutura>();
+		TipoEstrutura tipo = new TipoEstrutura("Orientação", "AnCosOri");
+		list.add(tipo);
+		crit.addListTipo(list);
+		list = new ArrayList<TipoEstrutura>();
+		tipo = new TipoEstrutura("Andamento", "And");
+		list.add(tipo);
+		tipo = new TipoEstrutura("Concluido", "Con");
+		list.add(tipo);
+		crit.addListTipo(list);
+		list = new ArrayList<TipoEstrutura>();
+		tipo = new TipoEstrutura("Orientação", "Ori");
+		list.add(tipo);
+		tipo = new TipoEstrutura("Coorientação", "Coo");
+		list.add(tipo);
+		crit.addListTipo(list);
+		list = new ArrayList<TipoEstrutura>();
+		tipo = new TipoEstrutura("Orientação Andamento", "OriAnd");
+		list.add(tipo);
+		tipo = new TipoEstrutura("Orientação Concluida", "OriCon");
+		list.add(tipo);
+		tipo = new TipoEstrutura("Coorientação Concluida", "CooCon");
 		list.add(tipo);
 		crit.addListTipo(list);
 		listCritFormacao.add(crit);

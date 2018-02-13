@@ -8,24 +8,18 @@
    <h2>${estcrit.getListEst().get(idforech).getNome()}</h2>
   </div>
  </div>
- <div class="well col-xs-12 OriBancDiv">
+ <div class="well col-xs-12 BancDiv">
   <div>
    <h4>Configurações Gerais</h4>
   </div>
   <div class="checkbox">
-   <label> <input type="checkbox" id="myCheckOriBancStatus"
-    name="myCheckOriBancStatus" onclick="OriBancStatus(this)">
-    Diferenciar pontuação de TODOS os itens por status
-   </label>
-  </div>
-  <div class="checkbox">
-   <label> <input type="checkbox" id="myCheckOriBancLimite"
-    name="myCheckOriBancLimite" onclick="OriBancLimite(this)">
+   <label> <input type="checkbox" id="myCheckBancLimite"
+    name="myCheckBancLimite" onclick="BancLimite(this)">
     Colocar limite maximo em TODOS os críterios
    </label>
   </div>
  </div>
- <div class="well col-xs-12" id="OriBancDivGeral">
+ <div class="well col-xs-12" id="BancDivGeral">
   <div class="col-xs-12">
    <div class="col-md-4">
     <label>Itens:</label>
@@ -44,9 +38,9 @@
     <c:if test="${item.getListTipo().size() > 1}">
     <div class="checkbox">
      <label> <input type="checkbox"
-      id="myCheckOriBancItemStatus${itemstatus.index}"
-      name="myCheckOriBancItemStatus${itemstatus.index}"
-      onclick="OriBancItemStatus(${itemstatus.index})">
+      id="myCheckBancItemStatus${itemstatus.index}"
+      name="myCheckBancItemStatus${itemstatus.index}"
+      onclick="BancItemStatus(${itemstatus.index})">
       Diferenciar pontuação por status do críterio
      </label>
     </div>
@@ -54,21 +48,21 @@
     
     <div class="checkbox">
      <label> <input type="checkbox"
-      id="myCheckOriBancItemLimite${itemstatus.index}"
-      name="myCheckOriBancItemLimite${itemstatus.index}"
-      onclick="OriBancItemLimite(${itemstatus.index})"> Colocar
+      id="myCheckBancItemLimite${itemstatus.index}"
+      name="myCheckBancItemLimite${itemstatus.index}"
+      onclick="BancItemLimite(${itemstatus.index})"> Colocar
       limite maximo de itens contabilizados por críterio
      </label>
     </div>
     <div class="col-xs-12">
-     <span class="NomeItem${itemstatus.index}&4 indexCont4" name="${item.getAbre()}">${item.getCriterio()}</span>
+     <span class="NomeItem${itemstatus.index}&5 indexCont5" name="${item.getAbre()}">${item.getCriterio()}</span>
     </div>
     <c:forEach var="list" varStatus="liststatus"
      items="${item.getListTipo()}">
      <div
-       class="well col-xs-12 OriBancTipo${liststatus.index}tt${itemstatus.index} 
-       OriBancItemIndex${itemstatus.index}
-       OriBancTipoIndex${liststatus.index} <c:if test="${not liststatus.first}">hidden</c:if>
+       class="well col-xs-12 BancTipo${liststatus.index}tt${itemstatus.index} 
+       BancItemIndex${itemstatus.index}
+       BancTipoIndex${liststatus.index} <c:if test="${not liststatus.first}">hidden</c:if>
        <c:if test="${item.getListTipo().size() == 1}">Semtipo</c:if>"
        name="${liststatus.index}" id="${itemstatus.index}">
      <c:forEach var="tipo" varStatus="tipostatus" items="${list}">
@@ -80,11 +74,11 @@
        <div class="col-md-4">
         <div class="col-md-5">
          <input type="number"
-          class="form-control  OriBancvalor${liststatus.index}
-          OriBancTipo${liststatus.index}tt${itemstatus.index} 
-          OriBancTipo${liststatus.index}valor${itemstatus.index} 
-          OriBancTipoIndex${liststatus.index}
-           OriBancGeral 
+          class="form-control  Bancvalor${liststatus.index}
+          BancTipo${liststatus.index}tt${itemstatus.index} 
+          BancTipo${liststatus.index}valor${itemstatus.index} 
+          BancTipoIndex${liststatus.index}
+           BancGeral 
            <c:if test="${item.getListTipo().size() == 1}">Semtipo</c:if>"
           id="eeee${tipostatus.index}" name="${tipo.getAbre()}"
           placeholder="pts">
@@ -93,7 +87,7 @@
        <div class="col-md-4">
         <div class="col-md-5  ">
          <input type="number"
-          class="form-control OriBancTipo${liststatus.index}limite${itemstatus.index}  OriBanclimite${itemstatus.index} OriBancvalorlimite${liststatus.index} OriBanclimiteGeral hidden"
+          class="form-control BancTipo${liststatus.index}limite${itemstatus.index}  Banclimite${itemstatus.index} Bancvalorlimite${liststatus.index} BanclimiteGeral hidden"
           id="eee${tipostatus.index}" name="${tipo.getAbre()}"
           placeholder="itens">
         </div>

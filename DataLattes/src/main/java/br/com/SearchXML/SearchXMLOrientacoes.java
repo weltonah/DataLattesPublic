@@ -27,18 +27,19 @@ public class SearchXMLOrientacoes extends SearchXML {
 	}
 
 	public ArrayList<Orientacao> OrientacaoMesAnd() throws XPathExpressionException {
-		return BuscaOrientacaoAnd("//ORIENTACAO-EM-ANDAMENTO-DE-MESTRADO", "TITULO-DO-TRABALHO", 0, "TIPO", 1,
-				"TIPO-DE-ORIENTACAO");
+		return BuscaOrientacaoAnd("//ORIENTACAO-EM-ANDAMENTO-DE-MESTRADO", "TITULO-DO-TRABALHO", 1,
+				"TIPO-DE-ORIENTACAO", 0, "TIPO");
 	}
 
 	public ArrayList<Orientacao> OrientacaoMesCon() throws XPathExpressionException {
-		return BuscaOrientacaoCon("//ORIENTACOES-CONCLUIDAS-PARA-MESTRADO", "TITULO", 0, "TIPO", 1,
-				"TIPO-DE-ORIENTACAO");
+		return BuscaOrientacaoCon("//ORIENTACOES-CONCLUIDAS-PARA-MESTRADO", "TITULO", 1, "TIPO-DE-ORIENTACAO", 0,
+				"TIPO");
 	}
 
 	// monografia, tcc , ic
 	public ArrayList<Orientacao> OutrasOrientacaoCon() throws XPathExpressionException {
-		return BuscaOrientacaoCon("//OUTRAS-ORIENTACOES-CONCLUIDAS", "TITULO", 0, "TIPO", 0, null);
+		return BuscaOrientacaoCon("//OUTRAS-ORIENTACOES-CONCLUIDAS", "TITULO", 1, "TIPO-DE-ORIENTACAO-CONCLUIDA", 0,
+				"TIPO");
 
 	}
 

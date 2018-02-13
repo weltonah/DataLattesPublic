@@ -47,8 +47,11 @@
               <c:if test="${estrutura.getAbre().contains('PrBli')}">
               <c:import url="/WEB-INF/views/senha/senhaCriterio/criterioProdBibli.jsp" />
               </c:if>
-              <c:if test="${estrutura.getAbre().contains('BaOr')}">
-              <c:import url="/WEB-INF/views/senha/senhaCriterio/criterioOriBanc.jsp" />
+              <c:if test="${estrutura.getAbre().contains('Orien')}">
+              <c:import url="/WEB-INF/views/senha/senhaCriterio/criterioOrien.jsp" />
+              </c:if>
+              <c:if test="${estrutura.getAbre().contains('Banc')}">
+              <c:import url="/WEB-INF/views/senha/senhaCriterio/criterioBanc.jsp" />
               </c:if>
               <c:if test="${estrutura.getAbre().contains('CrGe')}">
               <c:import url="/WEB-INF/views/senha/senhaCriterio/criterioDadosGerais.jsp" />
