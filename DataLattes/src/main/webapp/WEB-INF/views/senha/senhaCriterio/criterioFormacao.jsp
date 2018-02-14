@@ -80,7 +80,7 @@
           FormacaoTipo${liststatus.index}valor${itemstatus.index} 
           FormacaoTipoIndex${liststatus.index}
            FormacaoGeral"
-          id="eeee${tipostatus.index}" name="${tipo.getAbre()}"
+          id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}" name="${tipo.getAbre()}"
           placeholder="pts">
         </div>
        </div>
@@ -88,7 +88,7 @@
         <div class="col-md-5  ">
          <input type="number"
           class="form-control FormacaoTipo${liststatus.index}limite${itemstatus.index}  Formacaolimite${itemstatus.index} Formacaovalorlimite${liststatus.index} FormacaolimiteGeral hidden"
-          id="eee${tipostatus.index}" name="${tipo.getAbre()}"
+          id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}limite" name="${tipo.getAbre()}"
           placeholder="itens">
         </div>
        </div>

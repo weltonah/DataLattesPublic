@@ -261,6 +261,7 @@ public class PreencherEstrutura {
 	}
 
 	public ArrayList<List<String[]>> decifrarChave(String key) {
+		System.out.println("ees");
 		ArrayList<List<String[]>> conteudo = new ArrayList<List<String[]>>();
 		String[] t = key.split("%");
 		String[] aux = t[0].split(">");
@@ -303,6 +304,7 @@ public class PreencherEstrutura {
 			}
 			conteudo.add(listString);
 		}
+
 		return conteudo;
 	}
 

@@ -80,7 +80,7 @@
           BancTipoIndex${liststatus.index}
            BancGeral 
            <c:if test="${item.getListTipo().size() == 1}">Semtipo</c:if>"
-          id="eeee${tipostatus.index}" name="${tipo.getAbre()}"
+          id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}" name="${tipo.getAbre()}"
           placeholder="pts">
         </div>
        </div>
@@ -88,7 +88,7 @@
         <div class="col-md-5  ">
          <input type="number"
           class="form-control BancTipo${liststatus.index}limite${itemstatus.index}  Banclimite${itemstatus.index} Bancvalorlimite${liststatus.index} BanclimiteGeral hidden"
-          id="eee${tipostatus.index}" name="${tipo.getAbre()}"
+          id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}limite" name="${tipo.getAbre()}"
           placeholder="itens">
         </div>
        </div>

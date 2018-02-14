@@ -103,7 +103,7 @@
           OrienTipoIndex${liststatus.index}
            OrienGeral 
            <c:if test="${item.getListTipo().size() == 1}">Semtipo</c:if>"
-          id="eeee${tipostatus.index}" name="${tipo.getAbre()}"
+          id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}" name="${tipo.getAbre()}"
           placeholder="pts">
         </div>
        </div>
@@ -111,7 +111,7 @@
         <div class="col-md-5  ">
          <input type="number"
           class="form-control OrienTipo${liststatus.index}limite${itemstatus.index}  Orienlimite${itemstatus.index} Orienvalorlimite${liststatus.index} OrienlimiteGeral hidden"
-          id="eee${tipostatus.index}" name="${tipo.getAbre()}"
+          id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}limite" name="${tipo.getAbre()}"
           placeholder="itens">
         </div>
        </div>

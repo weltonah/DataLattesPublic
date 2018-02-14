@@ -25,6 +25,8 @@ public class AnaliseDados {
 			for (CriterioEstrutura criterioEstrutura : areaEstrutura.getListCrit()) {
 				for (ArrayList<TipoEstrutura> listTipo : criterioEstrutura.getListTipo()) {
 					for (TipoEstrutura tipoEstrutura : listTipo) {
+						System.out.println(areaEstrutura.getAbre() + "  " + criterioEstrutura.getAbre() + "  "
+								+ tipoEstrutura.getAbre());
 						tipoEstrutura.setItemAnalisados(switchBuscaXml(areaEstrutura.getAbre(),
 								criterioEstrutura.getAbre(), tipoEstrutura.getAbre(), xmlfile, tipoEstrutura));
 					}

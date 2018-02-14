@@ -67,7 +67,7 @@
           ProdTecTipo${liststatus.index}valor${itemstatus.index} 
           ProdTecTipoIndex${liststatus.index}
            ProdTecGeral"
-          id="eeee${tipostatus.index}" name="${tipo.getAbre()}"
+          id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}" name="${tipo.getAbre()}"
           placeholder="pts">
         </div>
        </div>
@@ -75,7 +75,7 @@
         <div class="col-md-5  ">
          <input type="number"
           class="form-control ProdTecTipo${liststatus.index}limite${itemstatus.index}  ProdTeclimite${itemstatus.index} ProdTecvalorlimite${liststatus.index} ProdTeclimiteGeral hidden"
-          id="eee${tipostatus.index}" name="${tipo.getAbre()}"
+          id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}limite" name="${tipo.getAbre()}"
           placeholder="itens">
         </div>
        </div>

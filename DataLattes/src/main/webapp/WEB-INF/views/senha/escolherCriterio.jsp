@@ -104,6 +104,9 @@
 											</div>
 											<div class="col-sm-12  well " id="DadosGeraisMisto">
 												<div class="checkbox col-md-12 row">
+                                                       <div class="col-md-12">
+                                                      <input type="checkbox" class="checkbox" id="checkboxDadosGeraisMarkAll" onclick="DadosGeraisMarkAll(this)"> Marcar todos
+                                                      </div>
 													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(6).getListCrit()}">
 														<div class="checkbox col-md-12 row">
 															<label style="font-size: 20px;">
@@ -199,7 +202,7 @@
 								</div>
 								<div class="col-md-12">
 									<a type="button" class="btn btn-default" href="index">Voltar</a>
-									<button type="submit" class="btn btn-success">Success</button>
+									<button type="submit" id="submitForm" class="btn btn-success">Success</button>
 								</div>
 
 							</form:form>

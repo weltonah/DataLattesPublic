@@ -96,6 +96,20 @@ function ProdBiblMarkAll() {
 		}
 	}
 }
+function DadosGeraisMarkAll() {
+	var x = document.getElementById("checkboxDadosGeraisMarkAll").checked;
+	var inputs = document.querySelectorAll('.DadosGerais');
+	if (x) {
+		for (var i = 0; i < inputs.length; i++) {
+			inputs[i].checked = true;
+		}
+	} else {
+		for (var i = 0; i < inputs.length; i++) {
+			inputs[i].checked = false;
+			
+		}
+	}
+}
 
 
 

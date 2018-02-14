@@ -54,7 +54,7 @@
           DadosGeraisTipo${liststatus.index}valor${itemstatus.index} 
           DadosGeraisTipoIndex${liststatus.index}
            DadosGeraisGeral"
-          id="eeee${tipostatus.index}" name="${tipo.getAbre()}"
+          id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}" name="${tipo.getAbre()}"
           placeholder="pts">
         </div>
        </div>
@@ -62,7 +62,7 @@
         <div class="col-md-5  ">
          <input type="number"
           class="form-control DadosGeraisTipo${liststatus.index}limite${itemstatus.index}  DadosGeraislimite${itemstatus.index} DadosGeraisvalorlimite${liststatus.index} DadosGeraislimiteGeral hidden"
-          id="eee${tipostatus.index}" name="${tipo.getAbre()}"
+          id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}limite" name="${tipo.getAbre()}"
           placeholder="itens">
         </div>
        </div>

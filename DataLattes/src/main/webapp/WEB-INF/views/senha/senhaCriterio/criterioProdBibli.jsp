@@ -87,7 +87,7 @@
           ProdBibliTipoIndex${liststatus.index}
            ProdBibliGeral 
            <c:if test="${item.getListTipo().size() == 1}">Semtipo</c:if>"
-          id="eeee${tipostatus.index}" name="${tipo.getAbre()}"
+          id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}" name="${tipo.getAbre()}"
           placeholder="pts">
         </div>
        </div>
@@ -95,7 +95,7 @@
         <div class="col-md-5  ">
          <input type="number"
           class="form-control ProdBibliTipo${liststatus.index}limite${itemstatus.index}  ProdBiblilimite${itemstatus.index} ProdBiblivalorlimite${liststatus.index} ProdBiblilimiteGeral hidden"
-          id="eee${tipostatus.index}" name="${tipo.getAbre()}"
+          id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}limite" name="${tipo.getAbre()}"
           placeholder="itens">
         </div>
        </div>

@@ -80,7 +80,7 @@
           ProdArtTipo${liststatus.index}valor${itemstatus.index} 
           ProdArtTipoIndex${liststatus.index}
            ProdArtGeral"
-          id="eeee${tipostatus.index}" name="${tipo.getAbre()}"
+          id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}" name="${tipo.getAbre()}"
           placeholder="pts">
         </div>
        </div>
@@ -88,7 +88,7 @@
         <div class="col-md-5  ">
          <input type="number"
           class="form-control ProdArtTipo${liststatus.index}limite${itemstatus.index}  ProdArtlimite${itemstatus.index} ProdArtvalorlimite${liststatus.index} ProdArtlimiteGeral hidden"
-          id="eee${tipostatus.index}" name="${tipo.getAbre()}"
+          id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}limite" name="${tipo.getAbre()}"
           placeholder="itens">
         </div>
        </div>
