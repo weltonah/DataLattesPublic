@@ -514,7 +514,6 @@ public class FiltroSearchXml {
 		int limite = ObjecttipoEstrutura.getLimite();
 		int valorContabilizado = ObjecttipoEstrutura.getValor();
 		for (ObjetoCriterio tipo : listArray) {
-			System.out.println("entrouy");
 			ItemAnalisado item;
 			if (limite == 0 || (this.anofim < tipo.getAno() || this.anoinicio > tipo.getAno()))
 				item = new ItemAnalisado(valorContabilizado, false, tipo);

@@ -17,8 +17,7 @@ public class SearchXMLOrientacoes extends SearchXML {
 
 	public ArrayList<Orientacao> OrientacaoDouAnd() throws XPathExpressionException {
 		return BuscaOrientacaoAnd("//ORIENTACAO-EM-ANDAMENTO-DE-DOUTORADO", "TITULO-DO-TRABALHO", 1,
-				"TIPO-DE-ORIENTACAO",
-				0, null);
+				"TIPO-DE-ORIENTACAO", 0, null);
 	}
 
 	public ArrayList<Orientacao> OrientacaoDouCon() throws XPathExpressionException {
@@ -36,6 +35,16 @@ public class SearchXMLOrientacoes extends SearchXML {
 				"TIPO");
 	}
 
+	public ArrayList<Orientacao> OrientacaoPosDouCon() throws XPathExpressionException {
+		return BuscaOrientacaoCon("//ORIENTACOES-CONCLUIDAS-PARA-POS-DOUTORADO", "TITULO", 1, "TIPO-DE-ORIENTACAO", 0,
+				null);
+	}
+
+	public ArrayList<Orientacao> OrientacaoPosDouAnd() throws XPathExpressionException {
+		return BuscaOrientacaoAnd("//ORIENTACAO-EM-ANDAMENTO-DE-POS-DOUTORADO", "TITULO-DO-TRABALHO", 1,
+				"TIPO-DE-ORIENTACAO", 0, null);
+	}
+
 	// monografia, tcc , ic
 	public ArrayList<Orientacao> OutrasOrientacaoCon() throws XPathExpressionException {
 		return BuscaOrientacaoCon("//OUTRAS-ORIENTACOES-CONCLUIDAS", "TITULO", 1, "TIPO-DE-ORIENTACAO-CONCLUIDA", 0,
@@ -45,8 +54,7 @@ public class SearchXMLOrientacoes extends SearchXML {
 
 	public ArrayList<Orientacao> OrientacaoAperfEspecAnd() throws XPathExpressionException {
 		return BuscaOrientacaoAnd("//ORIENTACAO-EM-ANDAMENTO-DE-APERFEICOAMENTO-ESPECIALIZACAO", "TITULO-DO-TRABALHO",
-				0,
-				null, 0, null);
+				0, null, 0, null);
 	}
 
 	public ArrayList<Orientacao> OrientacaoGraduacaoAnd() throws XPathExpressionException {
@@ -58,42 +66,5 @@ public class SearchXMLOrientacoes extends SearchXML {
 				null);
 	}
 
-
-	public ArrayList<Orientacao> BancaMestrado() throws XPathExpressionException {
-		return BuscaBanca("//PARTICIPACAO-EM-BANCA-DE-MESTRADO", "TITULO", 0, "TIPO", 0, null);
-	}
-
-	public ArrayList<Orientacao> BancaDoutorado() throws XPathExpressionException {
-		return BuscaBanca("//PARTICIPACAO-EM-BANCA-DE-DOUTORADO", "TITULO", 0, null, 0, null);
-	}
-
-	public ArrayList<Orientacao> BancaQualificacao() throws XPathExpressionException {
-		return BuscaBanca("//PARTICIPACAO-EM-BANCA-DE-EXAME-QUALIFICACAO", "TITULO", 0, null, 0, null);
-	}
-
-	public ArrayList<Orientacao> BancaAperfeicoamentoEspecificacao() throws XPathExpressionException {
-		return BuscaBanca("//PARTICIPACAO-EM-BANCA-DE-APERFEICOAMENTO-ESPECIALIZACAO", "TITULO", 0, null, 0,
-				null);
-	}
-
-	public ArrayList<Orientacao> BancaGraduacao() throws XPathExpressionException {
-		return BuscaBanca("//PARTICIPACAO-EM-BANCA-DE-GRADUACAO", "TITULO", 0, null, 0, null);
-	}
-
-	public ArrayList<Orientacao> BancaProfessorTitular() throws XPathExpressionException {
-		return BuscaBanca("//BANCA-JULGADORA-PARA-PROFESSOR-TITULAR", "TITULO", 0, null, 0, null);
-	}
-
-	public ArrayList<Orientacao> BancaConcursoPublico() throws XPathExpressionException {
-		return BuscaBanca("//BANCA-JULGADORA-PARA-CONCURSO-PUBLICO", "TITULO", 0, null, 0, null);
-	}
-
-	public ArrayList<Orientacao> BancaLivreDocencia() throws XPathExpressionException {
-		return BuscaBanca("//BANCA-JULGADORA-PARA-LIVRE-DOCENCIA", "TITULO", 0, null, 0, null);
-	}
-
-	public ArrayList<Orientacao> BancaAvaliacaoCurso() throws XPathExpressionException {
-		return BuscaBanca("//BANCA-JULGADORA-PARA-AVALIACAO-CURSOS", "TITULO", 0, null, 0, null);
-	}
 
 }
