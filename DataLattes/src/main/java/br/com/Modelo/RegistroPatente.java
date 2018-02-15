@@ -1,35 +1,12 @@
 package br.com.Modelo;
 
-
-
-
 /**
  * 
  */
 public class RegistroPatente {
-
-	/**
-	 * Default constructor
-
-
-	/**
-	 * 
-	 */
 	private String tipoPatente;
-
-	/**
-	 * 
-	 */
 	private String codigoPatente;
-
-	/**
-	 * 
-	 */
 	private String dataConcessao;
-
-	/**
-	 * 
-	 */
 	private String nomeTitular;
 
 	public RegistroPatente(String tipoPatente, String codigoPatente, String dataConcessao, String nomeTitular) {
@@ -41,7 +18,7 @@ public class RegistroPatente {
 	}
 
 	public String getTipoPatente() {
-		return tipoPatente;
+		return this.tipoPatente;
 	}
 
 	public void setTipoPatente(String tipoPatente) {
@@ -49,7 +26,7 @@ public class RegistroPatente {
 	}
 
 	public String getCodigoPatente() {
-		return codigoPatente;
+		return this.codigoPatente;
 	}
 
 	public void setCodigoPatente(String codigoPatente) {
@@ -57,7 +34,7 @@ public class RegistroPatente {
 	}
 
 	public String getDataConcessao() {
-		return dataConcessao;
+		return this.dataConcessao;
 	}
 
 	public void setDataConcessao(String dataConcessao) {
@@ -65,17 +42,18 @@ public class RegistroPatente {
 	}
 
 	public String getNomeTitular() {
-		return nomeTitular;
+		return this.nomeTitular;
 	}
 
 	public void setNomeTitular(String nomeTitular) {
 		this.nomeTitular = nomeTitular;
 	}
+
 	public void imprimir() {
-		System.out.println("tipoPatente: " + tipoPatente);
-		System.out.println("codigoPatente: " + codigoPatente);
-		System.out.println("dataConcessao: " + dataConcessao);
-		System.out.println("nomeTitular: " + nomeTitular);
+		System.out.println("tipoPatente: " + this.tipoPatente);
+		System.out.println("codigoPatente: " + this.codigoPatente);
+		System.out.println("dataConcessao: " + this.dataConcessao);
+		System.out.println("nomeTitular: " + this.nomeTitular);
 	}
 
 }
