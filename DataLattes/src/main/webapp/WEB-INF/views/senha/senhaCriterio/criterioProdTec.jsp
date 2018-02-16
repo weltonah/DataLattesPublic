@@ -35,6 +35,17 @@
    items="${estcrit.getListEst().get(idforech).getListCrit()}">
    <div class="well col-xs-12">
    
+   <c:if test="${item.getCriterio().contentEquals('Patente')}">
+    <div class="checkbox">
+     <label> <input type="checkbox"
+      id="myCheckProdTecItemStatus${itemstatus.index}"
+      name="myCheckProdTecItemStatus${itemstatus.index}"
+      onclick="ProdTecItemStatus(${itemstatus.index})">
+      Diferenciar pontuação por status do críterio
+     </label>
+    </div>
+    </c:if>
+   
     <div class="checkbox">
      <label> <input type="checkbox"
       id="myCheckProdTecItemLimite${itemstatus.index}"

@@ -50,7 +50,6 @@ public class Analise {
 						for (ItemAnalisado itemAnalisado : listtipoEstrutura.getItemAnalisados()) {
 							System.out.println("valor contabilizado" + itemAnalisado.getValorContabilizado());
 							System.out.println("nome" + itemAnalisado.getItem().getTitulo());
-
 						}
 					}
 				}

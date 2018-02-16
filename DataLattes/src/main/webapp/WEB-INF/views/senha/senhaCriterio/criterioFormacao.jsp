@@ -40,6 +40,8 @@
   <c:forEach var="item" varStatus="itemstatus"
    items="${estcrit.getListEst().get(idforech).getListCrit()}">
    <div class="well col-xs-12">
+   
+    <c:if test="${!item.getCriterio().contentEquals('Livre-docência')}">
     <div class="checkbox">
      <label> <input type="checkbox"
       id="myCheckFormacaoItemStatus${itemstatus.index}"
@@ -48,6 +50,7 @@
       Diferenciar pontuação por status do críterio
      </label>
     </div>
+    </c:if>
     <div class="checkbox">
      <label> <input type="checkbox"
       id="myCheckFormacaoItemLimite${itemstatus.index}"
