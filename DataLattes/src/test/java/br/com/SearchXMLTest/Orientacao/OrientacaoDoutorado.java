@@ -58,12 +58,12 @@ public class OrientacaoDoutorado {
 
 	@Test
 	public void TipoOrientacao0() throws XPathExpressionException {
-		assertEquals("NAO_INFORMADO", listprod.get(0).getCampAux());
+		assertEquals("ORIENTADOR_PRINCIPAL", listprod.get(0).getCampAux());
 	}
 
 	@Test
 	public void TipoOrientacao0aux2() throws XPathExpressionException {
-		assertEquals("ORIENTADOR_PRINCIPAL", listprod.get(0).getCampAux2());
+		assertEquals("NAO_INFORMADO", listprod.get(0).getCampAux2());
 	}
 
 	@Test
@@ -89,12 +89,12 @@ public class OrientacaoDoutorado {
 
 	@Test
 	public void TipoOrientacao() throws XPathExpressionException {
-		assertEquals("ACADEMICO", listprod.get(5).getCampAux());
+		assertEquals("ORIENTADOR_PRINCIPAL", listprod.get(5).getCampAux());
 	}
 
 	@Test
 	public void TipoOrientacaoaux2() throws XPathExpressionException {
-		assertEquals("ORIENTADOR_PRINCIPAL", listprod.get(5).getCampAux2());
+		assertEquals("ACADEMICO", listprod.get(5).getCampAux2());
 	}
 
 	@Test

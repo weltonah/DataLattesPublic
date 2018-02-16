@@ -58,7 +58,7 @@ public class OrientacaoOutrasOrientacao {
 
 	@Test
 	public void TipoOrientacao0() throws XPathExpressionException {
-		assertEquals("", listprod.get(0).getCampAux());
+		assertEquals("CO_ORIENTADOR", listprod.get(0).getCampAux());
 	}
 
 	@Test
@@ -84,7 +84,7 @@ public class OrientacaoOutrasOrientacao {
 
 	@Test
 	public void TipoOrientacao() throws XPathExpressionException {
-		assertEquals("", listprod.get(5).getCampAux());
+		assertEquals("CO_ORIENTADOR", listprod.get(5).getCampAux());
 	}
 
 	@Test

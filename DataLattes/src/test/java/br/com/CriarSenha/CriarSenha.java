@@ -18,6 +18,7 @@ public class CriarSenha {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/chromedriver");
 		this.driver = new ChromeDriver();
 		this.driver.get("http://localhost:8080/");
+		this.driver.close();
 	}
 
 	@Test

@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import br.com.estrutura.PreencherEstrutura;
 
-public class decifrarChaveTeste {
+public class DecifrarChaveTeste {
 
 	@Test
 	public void TesteBasicoFormacao() {
