@@ -1,216 +1,189 @@
 <%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
-	<%@taglib tagdir="/WEB-INF/tags" prefix="tags"%>
+<%@taglib tagdir="/WEB-INF/tags" prefix="tags"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<tags:padrao>
+ <jsp:attribute name="extraScripts">
+<script src="<c:url value=" /js/escolherCriterio.js " />"></script>
+</jsp:attribute>
+ <jsp:body>
+ 
+<div class="col-10 " >
+<div class="row">
+<div class=col-12>
+Tutorial
+</div>
+<div style="background-color: #64b5f6 ">
+<form:form action="escolherValorCriterio">
+<div class="col-xl-12 ">
+	<h2> Selecione os criterios que serão avaliados :</h2>
+</div>
 
-		<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-			<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-				<tags:padrao>
-					<jsp:attribute name="extraScripts">
-						<script src="<c:url value=" /js/escolherCriterio.js " />"></script>
-					</jsp:attribute>
-					<jsp:body>
-						<div class="well col-md-12" style="background-color: #d1c4e9">
-							<form:form action="escolherValorCriterio">
-								<div class="col-sx-12 well">
-									<h2> Selecione os criterios que serão avaliados :</h2>
-								</div>
-								<div class="col-sx-12">
+<div class="card-columns col-xl-12 ">
+          <div class="card border-info " id="formacao" style="background-color: #ffab91">
+           <div class="card-header">
+             <label style="font-size: 20px;" >Formação</label>
+           </div>
+           <div class="card-body" id="formacao.Misto">
+            <div class="form-check">
+             <div >
+               <input type="checkbox" class="form-check-input" id="checkboxformacaoMarkAll" onclick="formacaoMarkAll(this)">
+               <label class="form-check-label" for="checkboxformacaoMarkAll">
+               Marcar todos
+              </label>
+             </div>
+             <hr  style="border-top: 1px solid #8c8b8b;">
+             <c:forEach var="formacao" varStatus="formacaostatus" items="${estr.getListEst().get(0).getListCrit()}">
+                <input class="formacao form-check-input" type="checkbox" name="formacao" id="formacao${formacaostatus.index}" value="${formacao.getAbre()}">
+                <label class="form-check-label" for="formacao${formacaostatus.index}"> ${formacao.getCriterio()}</label>
+                <br>
+             </c:forEach>
+            </div>
+           </div>
+          </div>
+          
+           <div class="card border-info " id="ProdArtis" style="background-color: #ffab91">
+           <div class="card-header">
+             <label style="font-size: 20px;">Produção Artistica</label>
+            </div>
+           <div class="card-body" id="ProdArtMisto">
+            <div class="form-check">
+             <div>
+             <input type="checkbox" class="form-check-input" id="checkboxProdArtMarkAll" onclick="ProdArtMarkAll(this)">
+             <label class="form-check-label" for="checkboxProdArtMarkAll"> Marcar todos</label>
+             </div>
+             <hr  style="border-top: 1px solid #8c8b8b;">
+             <c:forEach var="formacao" varStatus="ProdArtstatus" items="${estr.getListEst().get(2).getListCrit()}">
+                <input class="ProdArt  form-check-input" type="checkbox" name="formacao" id="ProdArt${ProdArtstatus.index}" value="${formacao.getAbre()}"> 
+                <label class="form-check-label" for="ProdArt${ProdArtstatus.index}">${formacao.getCriterio() }</label>
+                <br>
+             </c:forEach>
+            </div>
+            </div>
+           </div>
+          <div class="card border-info " id="ProdTecni" style="background-color: #ffab91">
+           <div class="card-header">
+             
+             <label style="font-size: 20px;">Produção Técnica</label>
+            </div>
+           <div class="card-body" id="ProdTecniMisto">
+            <div class="form-check">
+             <div >
+             <input type="checkbox" class="form-check-input" id="checkboxProdTecMarkAll" onclick="ProdTecMarkAll(this)">
+             <label class="form-check-label" for="checkboxProdTecMarkAll"> Marcar todos </label>
+             </div>
+             <hr  style="border-top: 1px solid #8c8b8b;">
+             <c:forEach var="formacao" varStatus="ProdTecnistatus" items="${estr.getListEst().get(1).getListCrit()}">
+                <input class="ProdTec form-check-input" type="checkbox" name="ProdTec" id="ProdTec${ProdTecnistatus.index }"value="${formacao.getAbre()}" > 
+                <label class="form-check-label" for="ProdTec${ProdTecnistatus.index }">
+                ${formacao.getCriterio() } </label>
+                <br>
+             </c:forEach>
+            </div>
+           </div>
+           </div>
+          
+          <div class="card border-info " id="DadosGerais" style="background-color: #ffab91">
+           <div class="card-header">
+             
+             <label style="font-size: 20px;">Dados Gerais</label>
+            </div>
+           <div class="card-body" id="DadosGeraisMisto">
+            <div class="form-check">
+             <div >
+             <input type="checkbox" class="form-check-input" id="checkboxDadosGeraisMarkAll" onclick="DadosGeraisMarkAll(this)"> 
+            <label class="form-check-label" for="checkboxDadosGeraisMarkAll"> Marcar todos </label>
+             </div>
+             <hr  style="border-top: 1px solid #8c8b8b;">
+             <c:forEach var="formacao" varStatus="DadosGeraisstatus" items="${estr.getListEst().get(6).getListCrit()}">
+                <input class="DadosGerais form-check-input" type="checkbox" id="DadosGerais${DadosGeraisstatus.index }" name="ProdTec" value="${formacao.getAbre()}" > 
+                <label class="form-check-label" for="DadosGerais${DadosGeraisstatus.index }">
+                ${formacao.getCriterio() } </label>
+                <br>
+             </c:forEach>
+            </div>
+           </div>
+           </div>
+          
+          <div class="card border-info " id="Orien" style="background-color: #ffab91">
+           <div class="card-header">
+             
+             <label style="font-size: 20px;">Orientações</label>
+            </div>
+           <div class="card-body"  id="OrienMisto">
+            <div class="form-check">
+             <div >
+             <input type="checkbox" class="form-check-input" id="checkboxOrienMarkAll" onclick="OrienMarkAll(this)">
+             <label class="form-check-label" for="checkboxOrienMarkAll"> Marcar todos </label> 
+             </div>
+             <hr  style="border-top: 1px solid #8c8b8b;">
+             <c:forEach var="formacao" varStatus="Orienstatus" items="${estr.getListEst().get(4).getListCrit()}">
+                <input class="Orien form-check-input" type="checkbox" id="Orien${Orienstatus.index }" name="Orien" value="${formacao.getAbre()}" > 
+                <label class="form-check-label" for="Orien${Orienstatus.index }">
+                ${formacao.getCriterio() } </label>
+                <br>
+             </c:forEach>
+            </div>
+           </div>
+          </div>
+          
+          <div class="card border-info " id="Banc" style="background-color: #ffab91">
+           <div class="card-header">
+             
+             <label style="font-size: 20px;">Bancas</label>
+            </div>
+           <div class="card-body"  id="BancMisto">
+            <div class="form-check">
+             <div >
+             <input type="checkbox" class="form-check-input" id="checkboxBancMarkAll" onclick="BancMarkAll(this)">
+             <label class="form-check-label" for="checkboxBancMarkAll"> Marcar todos </label> 
+             </div>
+             <hr  style="border-top: 1px solid #8c8b8b;">
+             <c:forEach var="formacao" varStatus="Bancstatus" items="${estr.getListEst().get(5).getListCrit()}">
+                <input class="Banc form-check-input" type="checkbox" id="Banc${Bancstatus.index }" name="Banc" value="${formacao.getAbre()}" > 
+                <label class="form-check-label" for="Banc${Bancstatus.index }">
+                ${formacao.getCriterio() } </label>
+                <br>
+             </c:forEach>
+            </div>
+           </div>
+           </div>
+          
+          <div class="card border-info " id="ProdBibli" style="background-color: #ffab91">
+           <div class="card-header">
+             <label style="font-size: 20px;">Produção Bibliografica</label>
+            </div>
+           <div class="card-body" id="ProdBibliMisto">
+            <div class="form-check">
+             <div >
+             <input type="checkbox" class="form-check-input" id="checkboxProdBiblMarkAll" onclick="ProdBiblMarkAll(this)"> 
+             <label class="form-check-label" for="checkboxProdBiblMarkAll"> Marcar todos </label> 
+            
+             </div>
+             <hr  style="border-top: 0.5px solid #8c8b8b;">
+             <c:forEach var="formacao" varStatus="ProdBiblistatus" items="${estr.getListEst().get(3).getListCrit()}">
+                <input class="ProdBibl form-check-input" type="checkbox" id="ProdBibl${ProdBiblistatus.index }" name="ProdBibl" value="${formacao.getAbre()}" > 
+                <label class="form-check-label" for="ProdBibl${ProdBiblistatus.index }">
+                ${formacao.getCriterio() } </label>
+                <br>
+             </c:forEach>
+            </div>
+           </div>
+           </div>
+           
+</div>
+<div class="col-xl-12">
+<a class="btn btn-outline-light" href="index" role="button">Voltar</a>
+<button type="submit" id="submitForm" class="btn btn-success">Success</button>
+</div>
 
-									<div class="col-sm-4  ">
-										<div class="well col-sm-12" id="formacao" style="background-color: #ffab91">
-											<div class="col-sm-12 ">
-												<div class="col-sm-12">
-													
-													<label style="font-size: 20px;">Formação</label>
-												</div>
-											</div>
-											<div class="col-sm-12  well " id="formacao.Misto">
-												<div class="checkbox col-md-12 row">
-													<div class="col-md-12">
-													<input type="checkbox" class="checkbox" id="checkboxformacaoMarkAll" onclick="formacaoMarkAll(this)"> Marcar todos
-													</div>
-													<hr  style="border-top: 1px solid #8c8b8b;">
-													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(0).getListCrit()}">
-														<div class="checkbox col-md-12 row">
-															<label style="font-size: 20px;">
-																<input class="formacao" type="checkbox" name="formacao" value="${formacao.getAbre()}"> ${formacao.getCriterio()}
-																<br>
-															</label>
-														</div>
-													</c:forEach>
-												</div>
+</form:form>
+</div></div></div>
 
-
-											</div>
-										</div>
-										<div class=" well col-sm-12 " id="ProdArtis" style="background-color: #ffab91">
-											<div class="col-md-12 ">
-												<div class="col-md-12">
-													
-													<label style="font-size: 20px;">Produção Artistica</label>
-												</div>
-											</div>
-											<div class="col-md-12  well " id="ProdArtMisto">
-												<div class="checkbox col-md-12 row">
-													<div class="col-md-12">
-													<input type="checkbox" class="checkbox" id="checkboxProdArtMarkAll" onclick="ProdArtMarkAll(this)"> Marcar todos
-													</div>
-													<hr  style="border-top: 1px solid #8c8b8b;">
-													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(2).getListCrit()}">
-														<div class="checkbox col-md-12 row">
-															<label style="font-size: 20px;">
-																<input class="ProdArt" type="checkbox" name="ProdArt" value="${formacao.getAbre()}"> ${formacao.getCriterio() }
-																<br>
-															</label>
-														</div>
-													</c:forEach>
-												</div>
-
-
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4  ">
-										<div class="well col-sm-12 " id="ProdTecni" style="background-color: #ffab91">
-											<div class="col-sm-12 ">
-												<div class="col-sm-12">
-													
-													<label style="font-size: 20px;">Produção Técnica</label>
-												</div>
-											</div>
-											<div class="col-sm-12  well " id="ProdTecniMisto">
-												<div class="checkbox col-md-12 row">
-													<div class="col-md-12">
-													<input type="checkbox" class="checkbox" id="checkboxProdTecMarkAll" onclick="ProdTecMarkAll(this)"> Marcar todos
-													</div>
-													<hr  style="border-top: 1px solid #8c8b8b;">
-													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(1).getListCrit()}">
-														<div class="checkbox col-md-12 row">
-															<label style="font-size: 20px;">
-																<input class="ProdTec" type="checkbox" name="ProdTec" value="${formacao.getAbre()}" > ${formacao.getCriterio() }
-																<br>
-															</label>
-														</div>
-													</c:forEach>
-												</div>
-
-											</div>
-										</div>
-										<div class="well col-sm-12 " id="DadosGerais" style="background-color: #ffab91">
-											<div class="col-sm-12 ">
-												<div class="col-sm-12">
-													
-													<label style="font-size: 20px;">Dados Gerais</label>
-												</div>
-											</div>
-											<div class="col-sm-12  well " id="DadosGeraisMisto">
-												<div class="checkbox col-md-12 row">
-                                                       <div class="col-md-12">
-                                                      <input type="checkbox" class="checkbox" id="checkboxDadosGeraisMarkAll" onclick="DadosGeraisMarkAll(this)"> Marcar todos
-                                                      </div>
-													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(6).getListCrit()}">
-														<div class="checkbox col-md-12 row">
-															<label style="font-size: 20px;">
-																<input class="DadosGerais" type="checkbox" name="DadosGerais" value="${formacao.getAbre()}"> ${formacao.getCriterio() }
-																<br>
-															</label>
-														</div>
-													</c:forEach>
-												</div>
-
-											</div>
-										</div>
-									</div>
-									<div class="col-sm-4  ">
-										<div class="well col-sm-12 " id="Orien" style="background-color: #ffab91">
-											<div class="col-sm-12 ">
-												<div class="col-sm-12">
-													
-													<label style="font-size: 20px;">Orientações</label>
-												</div>
-											</div>
-											<div class="col-sm-12  well " id="OrienMisto">
-												<div class="checkbox col-md-12 row">
-													<div class="col-md-12">
-													<input type="checkbox" class="checkbox" id="checkboxOrienMarkAll" onclick="OrienMarkAll(this)"> Marcar todos
-													</div>
-													<hr  style="border-top: 1px solid #8c8b8b;">
-													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(4).getListCrit()}">
-														<div class="checkbox col-md-12 row">
-															<label style="font-size: 20px;">
-																<input class="Orien" type="checkbox" name="Orien" value="${formacao.getAbre()}"> ${formacao.getCriterio() }
-																<br>
-															</label>
-														</div>
-													</c:forEach>
-												</div>
-
-											</div>
-										</div>
-										<div class="well col-sm-12 " id="Orien" style="background-color: #ffab91">
-											<div class="col-sm-12 ">
-												<div class="col-sm-12">
-													
-													<label style="font-size: 20px;">Bancas</label>
-												</div>
-											</div>
-											<div class="col-sm-12  well " id="BancMisto">
-												<div class="checkbox col-md-12 row">
-													<div class="col-md-12">
-													<input type="checkbox" class="checkbox" id="checkboxBancMarkAll" onclick="BancMarkAll(this)"> Marcar todos
-													</div>
-													<hr  style="border-top: 1px solid #8c8b8b;">
-													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(5).getListCrit()}">
-														<div class="checkbox col-md-12 row">
-															<label style="font-size: 20px;">
-																<input class="Banc" type="checkbox" name="Banc" value="${formacao.getAbre()}"> ${formacao.getCriterio() }
-																<br>
-															</label>
-														</div>
-													</c:forEach>
-												</div>
-
-											</div>
-										</div>
-										<div class=" well col-sm-12 " id="ProdBibli" style="background-color: #ffab91">
-											<div class="col-md-12 ">
-												<div class="col-md-12">
-													
-													<label style="font-size: 20px;">Produção Bibliografica</label>
-												</div>
-											</div>
-											<div class="col-md-12  well " id="ProdBibliMisto">
-												<div class="checkbox col-md-12 row">
-													<div class="col-md-12">
-													<input type="checkbox" class="checkbox" id="checkboxProdBiblMarkAll"  onclick="ProdBiblMarkAll(this)"> Marcar todos
-													</div>
-													<hr  style="border-top: 1px solid #8c8b8b;">
-													<c:forEach var="formacao" varStatus="status" items="${estr.getListEst().get(3).getListCrit()}">
-														<div class="checkbox col-md-12 row">
-															<label style="font-size: 20px;">
-																<input class="ProdBibl" type="checkbox" name="ProdBibl" value="${formacao.getAbre()}"> ${formacao.getCriterio() }
-																<br>
-															</label>
-														</div>
-													</c:forEach>
-												</div>
-
-											</div>
-										</div>
-									</div>
-
-						
-								</div>
-								<div class="col-md-12">
-									<a type="button" class="btn btn-default" href="index">Voltar</a>
-									<button type="submit" id="submitForm" class="btn btn-success">Success</button>
-								</div>
-
-							</form:form>
-						</div>
-
-
-					</jsp:body>
-
-
-
-				</tags:padrao>
+<div class="col-2" >
+<div class="alert alert-warning">
+  <span>asdasd</span>
+  </div>
+ </div>
+</jsp:body>
+</tags:padrao>

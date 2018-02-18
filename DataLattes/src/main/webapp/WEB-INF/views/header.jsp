@@ -1,17 +1,25 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<header>
-<div class="page-header col-md-12" style="margin:0; background-color: #ff4d4d; ">
-	<div class ="row">
-		
-	    <div class="col-xs-7">
-	        <h3 class="center" >DataLattes</h3>
-	    </div>
-	    <div class="col-xs-3"></div>
-	    <div class="col-xs-2">
-	        <a href="infoAjuda" 
-               target="_blank" style="margin-top: 20px;"    class="btn btn-warning center">Sobre o sistema</a>
-	    </div>
-    </div>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<div class="container-fluid" style="height: 97vh;">
+
+ <div class="row">
+   <a class="btn btn-primary btn-block" aria-pressed="true" href="index" role="button"
+    style="height: 100%;font-size: 30px;"> DataLattes </a>
+ <!--  </div> -->
+ <!--  <div class="col-12"> -->
+   <a class="btn btn-outline-primary btn-md btn-block" href="index" role="button"> Sobre a Chave
+   </a>
+   <a class="btn btn-outline-primary btn-md btn-block" href="index" role="button"> Sobre o XML
+   </a>
+   
+   
+   <a class="btn btn-outline-primary btn-md btn-block" href="index" role="button"> Infomações
+   </a>
+   <a class="btn btn-outline-primary btn-md btn-block" href="index" role="button"> Ajuda
+   </a>
+ </div>
+ 
+
+ 
+ 
 </div>
-</header>

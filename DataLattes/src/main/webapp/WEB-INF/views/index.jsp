@@ -3,13 +3,14 @@
 
 <tags:padrao>	
 	<jsp:body>
-	<div style="margin-top:20%;">
-	  <div class="row">
-	  <div class= "col-md-6 col-md-offset-3 ">
-	  	<a href="escolherCriterio" id="criarSenha" type="button" class="btn btn-primary btn-lg btn-block">Criar chave de criterio</a>
-	  	<a href="inserirChave" type="button" class="btn btn-default btn-lg btn-block">Usar chave de criterio </a>
-	  </div>
+ 
+	<div class="col-12 align-middle" style="height: 100vh; padding-top: 50vh;" >
+     
+	  <div class="col-6 offset-3 row">
+	  	<a href="escolherCriterio" id="criarSenha" role="button" class="btn btn-outline-secondary btn-lg btn-block">Criar chave de criterio</a>
+	  	<a href="inserirChave" role="button" class="btn btn-primary btn-lg btn-block">Usar chave de criterio </a>
 	  </div>
   	</div>
+   
 	</jsp:body>
 </tags:padrao>
