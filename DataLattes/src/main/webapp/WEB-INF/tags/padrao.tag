@@ -30,7 +30,7 @@
    <c:import url="/WEB-INF/views/header.jsp" />
     </div>
   </div>
-  <div class="offset-1 col-11 row" style="padding-right: 0px; padding-bottom:5px;margin-bottom: 10px;">
+  <div class="offset-1 col-11 row" style="padding-right: 0px;">
    <jsp:doBody />
   </div>
   
