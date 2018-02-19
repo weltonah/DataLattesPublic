@@ -18,22 +18,25 @@
  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
  crossorigin="anonymous">
-</head>
-<body style="background-color:  ;">
+ <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+ <link rel="stylesheet" href="https://unpkg.com/octicons@6.0.1/index.js">
 
- <div class="container-fluid row" style="margin-top:10px; ">
-  <div class="col-2">
-   <div class="position-fixed col-2" >
+</head>
+<body style="">
+
+ <div class="container-fluid row" style="margin-top:0px; padding-left: 0px; " >
+  <div class="col-1" style="padding-left: 0px;padding-right: 0px;">
+   <div class="position-fixed col-1" style="padding-left: 0px; padding-right: 0px;">
    <c:import url="/WEB-INF/views/header.jsp" />
     </div>
   </div>
-  <div class="offset-2 col-10 row" style="padding-right: 0px;">
+  <div class="offset-1 col-11 row" style="padding-right: 0px; padding-bottom:5px;margin-bottom: 10px;">
    <jsp:doBody />
   </div>
   
-  <div class="col-2 fixed-bottom " >
-  <c:import url="/WEB-INF/views/footer.jsp" />
- </div>
+<!--   <div class="col-2 fixed-bottom " > -->
+<%--   <c:import url="/WEB-INF/views/footer.jsp" /> --%>
+<!--  </div> -->
  
  </div>
 
@@ -49,5 +52,8 @@
   src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
   integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
   crossorigin="anonymous"></script>
+   <script>$(function () {
+   $('[data-toggle="tooltip"]').tooltip()
+ })</script>
 </body>
 </html>
