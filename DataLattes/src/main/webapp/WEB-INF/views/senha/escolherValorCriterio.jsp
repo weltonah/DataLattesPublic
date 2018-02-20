@@ -8,12 +8,25 @@
 <c:forEach var = "indice" begin = "0" end = "${sizeFor-1}">
 <script>
 $("#collapse${indice}tt${idforech}").on('hidden.bs.collapse', function() {
- $("#icon${indice}tt${idforech}").attr('class', 'ion-close-round');
- $("#button${indice}tt${idforech}").attr('class', 'btn btn-danger');
-});
-$("#collapse${indice}tt${idforech}").on('shown.bs.collapse', function() {
- $("#icon${indice}tt${idforech}").attr('class', 'ion-checkmark');
- $("#button${indice}tt${idforech}").attr('class', 'btn btn-success');
+var input =	document.querySelectorAll('.Formacaoitem${indice}tt${idforech}Input:not(.d-none)');
+for (var i = 0; i < input.length; i++){
+	if(input[i].value == ''){
+		$("#icon${indice}tt${idforech}").attr('class', 'ion-close-round');
+		 $("#button${indice}tt${idforech}").attr('class', 'btn btn-danger');
+		 return null;
+	}
+}
+var inputlimite =	document.querySelectorAll('.Formacaoitem${indice}tt${idforech}InputLimite:not(.d-none)');
+alert(inputlimite.length);
+for (var i = 0; i < inputlimite.length; i++){
+	if(inputlimite[i].value == ''){
+		$("#icon${indice}tt${idforech}").attr('class', 'ion-close-round');
+		 $("#button${indice}tt${idforech}").attr('class', 'btn btn-danger');
+		 return null;
+	}
+}
+$("#icon${indice}tt${idforech}").attr('class', 'ion-checkmark');
+$("#button${indice}tt${idforech}").attr('class', 'btn btn-success');
 });
 </script>
 </c:forEach>

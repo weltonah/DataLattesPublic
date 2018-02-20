@@ -5,6 +5,7 @@
 <div class="col-12">
 <div id="accordion${idforech}">
 <c:set var="sizeFor" scope="application" value="${estcrit.getListEst().get(idforech).getListCrit().size()}"/>
+<h2>${estcrit.getListEst().get(idforech).getNome()}</h2>
 <c:forEach var="item" varStatus="itemstatus"
    items="${estcrit.getListEst().get(idforech).getListCrit()}">
    <div class="card" style="margin-bottom: 10px;border-width: 0px;">
@@ -65,21 +66,30 @@
                              <label>${tipo.getNomeTipo()}</label>
                             </div>
                             <div class="col-4">
-                             <div class="col-5">
-                              <input type="number"
+                             <div class="col-9 input-group mb-2">
+                             <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">valor:</span>
+  </div>
+                              <input type="number" min="0"
                                class="form-control  Formacaovalor${liststatus.index}
+                               Formacaoitem${itemstatus.index}tt${idforech}Input
                                FormacaoTipo${liststatus.index}tt${itemstatus.index} 
                                FormacaoTipo${liststatus.index}valor${itemstatus.index} 
                                FormacaoTipoIndex${liststatus.index}
-                                FormacaoGeral"
+                                FormacaoGeral <c:if test="${not liststatus.first}">d-none</c:if>"
                                id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}" name="${tipo.getAbre()}"
-                               placeholder="pts">
+                               placeholder="pts" required>
                              </div>
                             </div>
                             <div class="col-4">
-                             <div class="col-5  ">
+                             <div class="col-9 input-group mb-2 Formacaolimite${itemstatus.index} d-none">
+                             <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">n° max:</span>
+  </div>
                               <input type="number"
-                               class="form-control FormacaoTipo${liststatus.index}limite${itemstatus.index}  Formacaolimite${itemstatus.index} Formacaovalorlimite${liststatus.index} FormacaolimiteGeral d-none"
+                               class="form-control FormacaoTipo${liststatus.index}limite${itemstatus.index}
+                                 Formacaolimite${itemstatus.index} Formacaoitem${itemstatus.index}tt${idforech}InputLimite 
+                                 Formacaovalorlimite${liststatus.index} FormacaolimiteGeral d-none"
                                id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}limite" name="${tipo.getAbre()}"
                                placeholder="itens">
                              </div>
