@@ -4,7 +4,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <tags:padrao>
  <jsp:attribute name="extraScripts">
-<script src="<c:url value=" /js/escolherCriterio.js " />"></script>
+<script src="<c:url value=" /js/escolherValorCriterio.js " />"></script>
 </jsp:attribute>
  <jsp:body>
  
@@ -13,29 +13,40 @@
 <div class="col-12" style="background-color: #64b5f6; height: 10vh;">
 Tutorial
 </div>
-<form:form action="escolherValorCriterio">
 <div class="rounded col-12"
       style="background-color: #64b5f6; margin-top: 1vh; padding-bottom: 10px;">
+<form action="escolherValorCriterio">
+
 
 <div class="col-12 ">
-	<h2> Selecione os critérios:</h2>
+	<h2></h2>
 </div>
 
-<div class="card-columns col-xl-12 ">
-    
+<div class="col-12 ">
+    <input type="hidden" id="sizeList" name="firstName" value="${estcrit.getListEst().size()}">
+    <c:forEach var="estrutura" varStatus="estruturaStatus"
+         items="${estcrit.getListEst()}">
+         <c:set var="idforech" scope="application" value="${estruturaStatus.index }"/>
+         <div class="col-12 <c:if test="${not estruturaStatus.first}"> d-none </c:if>"
+         id="divItem${estruturaStatus.index}">
+              <c:import url="/WEB-INF/views/senha/senhaCriterio/criterio${estrutura.getAbre()}.jsp" />
+         </div>
+        </c:forEach>
+        
 </div>
 <div class="col-12 row"
        style="padding-right: 0px; margin-right: 0px;">
        
 <div class="col-3 offset-9" style="padding-right: 0px;">
-<a class="btn btn-outline-light" href="index" role="button">Voltar</a>
-<button type="submit" id="submitForm" class="btn btn-success">Success</button>
+
 </div>
 </div>
 
 
+</form>
+<button class="btn btn-outline-light" onclick="Voltar()">Voltar</button>
+<button class="btn btn-success" onclick="Avancar()">Success</button>
 </div>
-</form:form>
 </div>
   </div>
 

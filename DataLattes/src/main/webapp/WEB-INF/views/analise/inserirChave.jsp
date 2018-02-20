@@ -20,9 +20,6 @@
       </div>
     </div>
       
-      
-      
-      
       		    <button type="submit" class="btn btn-primary">Avançar</button>
       	 </form>  
         

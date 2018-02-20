@@ -33,11 +33,6 @@
   <div class="offset-1 col-11 row" style="padding-right: 0px;">
    <jsp:doBody />
   </div>
-  
-<!--   <div class="col-2 fixed-bottom " > -->
-<%--   <c:import url="/WEB-INF/views/footer.jsp" /> --%>
-<!--  </div> -->
- 
  </div>
 
  <jsp:invoke fragment="extraScripts" />
