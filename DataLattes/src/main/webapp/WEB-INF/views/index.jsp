@@ -4,8 +4,11 @@
 <tags:padrao>	
 	<jsp:body>
  
+ 
+ 
+ 
 	<div class="col-12 align-middle" style="height: 100vh; padding-top: 50vh;" >
-     
+    
      
      
      

@@ -3,40 +3,51 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div class="col-12">
-<div id="accordion${idforech}">
-<c:set var="sizeFor" scope="application" value="${estcrit.getListEst().get(idforech).getListCrit().size()}"/>
-<c:forEach var="item" varStatus="itemstatus"
+ <div class="col-12">
+  <div class="col-4 col-offset-4">
+   <h2>${estcrit.getListEst().get(idforech).getNome()}</h2>
+  </div>
+ </div>
+ <div id="accordion${idforech} ">
+  <c:forEach var="item" varStatus="itemstatus"
    items="${estcrit.getListEst().get(idforech).getListCrit()}">
    <div class="card" style="margin-bottom: 10px;border-width: 0px;">
-    <div class="card-header" id="heading${itemstatus.index}tt${idforech}" style="padding: 0px;border-width: 0px;">
-      <h5 class="mb-0">
-        <button type="button" style="width: 100%;" id="button${itemstatus.index}tt${idforech}" class="btn btn-outline-secondary <c:if test="${not itemstatus.first}">collapsed</c:if>
-        " data-toggle="collapse" data-target="#collapse${itemstatus.index}tt${idforech}" aria-expanded="
-        <c:if test="${itemstatus.first}">true</c:if>
-        <c:if test="${not itemstatus.first}">false</c:if>
-        " aria-controls="collapse${itemstatus.index}tt${idforech}"  >
-          <div class="row">
-       <div class="col-2" >
+    <div class="card-header " id="heading${itemstatus.index}" style="padding: 0px;border-width: 0px;" >
+<!--      <h5 class="mb-0"> -->
+      <button type="button" style="width: 100%;"
+       class="btn btn-outline-secondary 
+        <c:if test="${not itemstatus.first}">collapsed</c:if>"
+       data-toggle="collapse" data-target="#collapse${itemstatus.index}"
+       aria-expanded="<c:if test="${itemstatus.first}">true</c:if>
+       <c:if test="${not itemstatus.first}">false</c:if>"
+       aria-controls="collapse${itemstatus.index}">
+       <div class="row">
+       <div class="col-2">
        ${item.getCriterio()}
        </div>
        <div class="col-1 offset-9 ">
-       <i class="" id="icon${itemstatus.index}tt${idforech}" ></i>
+       TT
        </div>
        </div>
-        </button>
-      </h5>
+       
+       </button>
+<!--      </h5> -->
     </div>
-    <div id="collapse${itemstatus.index}tt${idforech}" class="collapse 
-    <c:if test="${itemstatus.first}">show</c:if>" aria-labelledby="heading${itemstatus.index}tt${idforech}" data-parent="#accordion${idforech}">
-      <div class="card-body">
-                      <div class="col-12">
+    <div id="collapse${itemstatus.index}"
+     class="collapse 
+    <c:if test="${ itemstatus.first}">show</c:if>
+    "
+     aria-labelledby="heading${itemstatus.index}"
+     data-parent="#accordion${idforech}">
+     <div class="card-body">
+                      <div class=" col-12">
                          <c:if test="${!item.getCriterio().contentEquals('Livre-docência')}">
                          <div class="checkbox">
                           <label> <input type="checkbox"
                            id="myCheckFormacaoItemStatus${itemstatus.index}"
                            name="myCheckFormacaoItemStatus${itemstatus.index}"
                            onclick="FormacaoItemStatus(${itemstatus.index})">
-                           Diferenciar pontuação por status do critério
+                           Diferenciar pontuação por status do críterio
                           </label>
                          </div>
                          </c:if>
@@ -45,7 +56,7 @@
                            id="myCheckFormacaoItemLimite${itemstatus.index}"
                            name="myCheckFormacaoItemLimite${itemstatus.index}"
                            onclick="FormacaoItemLimite(${itemstatus.index})"> Colocar
-                           limite maximo de itens contabilizados por critério
+                           limite maximo de itens contabilizados por críterio
                           </label>
                          </div>
                          <div class="col-12">
@@ -88,10 +99,10 @@
                           </c:forEach></div>
                          </c:forEach>
                         </div>
-      </div>
+     </div>
     </div>
-  </div>
-   
-</c:forEach>
+   </div>
+  </c:forEach>
+ </div>
 </div>
-</div>
+

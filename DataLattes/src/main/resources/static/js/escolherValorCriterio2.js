@@ -4,6 +4,37 @@ function FormacaoStatus() {
 function FormacaoItemStatus(item) {
 	ItemStatus("Formacao", item);
 }
+
+
+
+<c:forEach var = "indice" begin = "0" end = "${sizeFor-1}">
+$("#collapse${indice}tt${idforech}").on('hidden.bs.collapse', function() {
+	alert("seda");
+	$("#icon${indice}tt${idforech}").attr('class', 'ion-close-round');
+	$("#button${indice}tt${idforech}").attr('class', 'btn btn-danger');
+});
+$("#collapse${indice}tt${idforech}").on('shown.bs.collapse', function() {
+	$("#icon${indice}tt${idforech}").attr('class', 'ion-checkmark');
+	$("#button${indice}tt${idforech}").attr('class', 'btn btn-success');
+});
+
+</c:forEach>
+
+
+
+
+
+$("#collapse0tt0").on('hidden.bs.collapse', function() {
+	alert("seda");
+	$("#icon0tt0").attr('class', 'ion-close-round');
+	$("#button0tt0").attr('class', 'btn btn-danger');
+});
+$("#collapse0tt0").on('shown.bs.collapse', function() {
+	$("#icon0tt0").attr('class', 'ion-checkmark');
+	$("#button0tt0").attr('class', 'btn btn-success');
+});
+
+
 function FormacaoItemLimite(item) {
 	ItemLimite("Formacao", item)
 }

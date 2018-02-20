@@ -5,6 +5,19 @@
 <tags:padrao>
  <jsp:attribute name="extraScripts">
 <script src="<c:url value=" /js/escolherValorCriterio.js " />"></script>
+<c:forEach var = "indice" begin = "0" end = "${sizeFor-1}">
+<script>
+$("#collapse${indice}tt${idforech}").on('hidden.bs.collapse', function() {
+ $("#icon${indice}tt${idforech}").attr('class', 'ion-close-round');
+ $("#button${indice}tt${idforech}").attr('class', 'btn btn-danger');
+});
+$("#collapse${indice}tt${idforech}").on('shown.bs.collapse', function() {
+ $("#icon${indice}tt${idforech}").attr('class', 'ion-checkmark');
+ $("#button${indice}tt${idforech}").attr('class', 'btn btn-success');
+});
+</script>
+</c:forEach>
+
 </jsp:attribute>
  <jsp:body>
  
@@ -55,5 +68,8 @@ Tutorial
   <span>asdasd</span>
 </div>
  </div>
+ 
+ 
 </jsp:body>
+
 </tags:padrao>
