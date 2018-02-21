@@ -18,7 +18,7 @@
         " aria-controls="collapse${itemstatus.index}tt${idforech}"  >
           <div class="row">
        <div class="col-2" >
-       ${item.getCriterio()}
+       <span class="indexCont${idforech}" name="${item.getAbre()}" id="${estcrit.getListEst().get(idforech).getAbre()}">${item.getCriterio()}</span>
        </div>
        <div class="col-1 offset-9 ">
        <i class="" id="icon${itemstatus.index}tt${idforech}" ></i>
@@ -48,7 +48,7 @@
                           </label>
                          </div>
                          <div class="col-12">
-                          <span class="NomeItem${itemstatus.index}&0 indexCont0" name="${item.getAbre()}"></span>
+                          <span class="NomeItem${itemstatus.index}&${idforech}" name="${item.getAbre()}"></span>
                          </div>
                          <c:forEach var="list" varStatus="liststatus"
                           items="${item.getListTipo()}">

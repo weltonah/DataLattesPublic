@@ -111,23 +111,20 @@ function OrienItemStatus(item,valor) {
 	}
 }
 
+
 function GerarKey() {
 	var key;
-//	key = "Ano>" + document.getElementById("AnoInicio").value + ">"
-//			+ document.getElementById("AnoFim").value + "%";
-	key = "Ano>" + 2000 + ">"
-	+ 2010 + "%";
-	var NomeItemFor = [ "Formacao", "ProdTec", "ProdArt", "ProdBibli",
-			"Orien", "Banc", "DadosGerais" ];
-	var NomeItemForAbre = [ "For", "PrTec", "PrArt", "PrBli", "Orien", "Banc", "CrGe" ];
+	key = "Ano>" + document.getElementById("AnoInicio").value + ">"
+			+ document.getElementById("AnoFim").value + "%";
+	//var NomeItemForAbre = [ "For", "PrTec", "PrArt", "PrBli", "Orien", "Banc", "CrGe" ];
 	for (var t = 0; t < 7; t++) {
 		var formDiv = document.querySelectorAll('.indexCont' + t);
 		if (formDiv.length > 0) {
-			// alert(t);
-			key = key + NomeItemForAbre[t] + "!";
+			//alert(formDiv[0].getAttribute("id"));
+			key = key + formDiv[0].getAttribute("id") + "!";
 			for (var i = 0; i < formDiv.length; i++) {
 				// var list = document.getElementById(i);
-				var list = document.querySelectorAll('.' + NomeItemForAbre[t]
+				var list = document.querySelectorAll('.' + formDiv[0].getAttribute("id")
 						+ 'ItemIndex' + i);
 				// alert(list.length);
 				for (var k = 0; k < list.length; k++) {
@@ -139,12 +136,14 @@ function GerarKey() {
 							var ItemAbre = document
 									.getElementsByClassName("NomeItem"
 											+ itemName + "&" + t);
+							//alert(ItemAbre.length)
+							
 							key = key + "#" + ItemAbre[0].getAttribute("name");
 							var valor = document.querySelectorAll('.'
-									+ NomeItemForAbre[t] + 'Tipo' + listId
+									+ formDiv[0].getAttribute("id") + 'Tipo' + listId
 									+ 'valor' + i);
 							var limite = document.querySelectorAll('.'
-									+ NomeItemForAbre[t] + 'Tipo' + listId
+									+ formDiv[0].getAttribute("id") + 'Tipo' + listId
 									+ 'limite' + i);
 							// alert('.FormacaoTipo'+listId+'valor'+i);
 							// alert(valor.length);
