@@ -35,7 +35,7 @@ public class SenhaController {
 			@RequestParam(value = "ProdBibl", required = false) List<String> ProdBibl,
 			@RequestParam(value = "Orien", required = false) List<String> Orien,
 			@RequestParam(value = "Banc", required = false) List<String> Banc,
-			@RequestParam(value = "DadosGerais", required = false) List<String> DadosGerais) {
+			@RequestParam(value = "DeEx", required = false) List<String> DeEx) {
 		ArrayList<List<String>> conteudo = new ArrayList<List<String>>();
 		conteudo.add(formacao);
 		conteudo.add(ProdTec);
@@ -43,7 +43,7 @@ public class SenhaController {
 		conteudo.add(ProdBibl);
 		conteudo.add(Orien);
 		conteudo.add(Banc);
-		conteudo.add(DadosGerais);
+		conteudo.add(DeEx);
 		Estrutura estcrit = this.preencherEstrutura.InserirCriteriosCheckbox(conteudo);
 		model.addAttribute("estcrit", estcrit);
 		return "senha/escolherValorCriterio";

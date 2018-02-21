@@ -31,19 +31,21 @@
     <c:if test="${itemstatus.first}">show</c:if>" aria-labelledby="heading${itemstatus.index}tt${idforech}" data-parent="#accordion${idforech}">
       <div class="card-body">
                       <div class="col-12">
+                         <c:if test="${!item.getCriterio().contentEquals('Livre-docência')}">
                          <div class="checkbox">
                           <label> <input type="checkbox"
-                           id="myCheck${estcrit.getListEst().get(idforech).getAbre()}ItemStatus${itemstatus.index}"
-                           name="myCheck${estcrit.getListEst().get(idforech).getAbre()}ItemStatus${itemstatus.index}"
-                           onclick="${estcrit.getListEst().get(idforech).getAbre()}ItemStatus(${itemstatus.index})">
+                           id="myCheckFormacaoItemStatus${itemstatus.index}"
+                           name="myCheckFormacaoItemStatus${itemstatus.index}"
+                           onclick="FormacaoItemStatus(${itemstatus.index})">
                            Diferenciar pontuação por status do critério
                           </label>
                          </div>
+                         </c:if>
                          <div class="checkbox">
                           <label> <input type="checkbox"
-                           id="myCheck${estcrit.getListEst().get(idforech).getAbre()}ItemLimite${itemstatus.index}"
-                           name="myCheck${estcrit.getListEst().get(idforech).getAbre()}ItemLimite${itemstatus.index}"
-                           onclick="${estcrit.getListEst().get(idforech).getAbre()}ItemLimite(${itemstatus.index})"> Colocar
+                           id="myCheckFormacaoItemLimite${itemstatus.index}"
+                           name="myCheckFormacaoItemLimite${itemstatus.index}"
+                           onclick="FormacaoItemLimite(${itemstatus.index})"> Colocar
                            limite maximo de itens contabilizados por critério
                           </label>
                          </div>
@@ -53,9 +55,9 @@
                          <c:forEach var="list" varStatus="liststatus"
                           items="${item.getListTipo()}">
                           <div
-                            class=" col-12 ${estcrit.getListEst().get(idforech).getAbre()}Tipo${liststatus.index}tt${itemstatus.index} 
-                            ${estcrit.getListEst().get(idforech).getAbre()}ItemIndex${itemstatus.index}
-                            ${estcrit.getListEst().get(idforech).getAbre()}TipoIndex${liststatus.index} <c:if test="${not liststatus.first}">d-none</c:if>"
+                            class=" col-12 FormacaoTipo${liststatus.index}tt${itemstatus.index} 
+                            FormacaoItemIndex${itemstatus.index}
+                            FormacaoTipoIndex${liststatus.index} <c:if test="${not liststatus.first}">d-none</c:if>"
                             name="${liststatus.index}" id="${itemstatus.index}">
                           <c:forEach var="tipo" varStatus="tipostatus" items="${list}">
                            <div
@@ -69,25 +71,25 @@
     <span class="input-group-text" id="basic-addon1">valor:</span>
   </div>
                               <input type="number" min="0"
-                               class="form-control  ${estcrit.getListEst().get(idforech).getAbre()}valor${liststatus.index}
-                               ${estcrit.getListEst().get(idforech).getAbre()}item${itemstatus.index}tt${idforech}Input
-                               ${estcrit.getListEst().get(idforech).getAbre()}Tipo${liststatus.index}tt${itemstatus.index} 
-                               ${estcrit.getListEst().get(idforech).getAbre()}Tipo${liststatus.index}valor${itemstatus.index} 
-                               ${estcrit.getListEst().get(idforech).getAbre()}TipoIndex${liststatus.index}
-                                ${estcrit.getListEst().get(idforech).getAbre()}Geral <c:if test="${not liststatus.first}">d-none</c:if>"
+                               class="form-control  Formacaovalor${liststatus.index}
+                               Formacaoitem${itemstatus.index}tt${idforech}Input
+                               FormacaoTipo${liststatus.index}tt${itemstatus.index} 
+                               FormacaoTipo${liststatus.index}valor${itemstatus.index} 
+                               FormacaoTipoIndex${liststatus.index}
+                                FormacaoGeral <c:if test="${not liststatus.first}">d-none</c:if>"
                                id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}" name="${tipo.getAbre()}"
                                placeholder="pts" required>
                              </div>
                             </div>
                             <div class="col-4">
-                             <div class="col-9 input-group mb-2 ${estcrit.getListEst().get(idforech).getAbre()}limite${itemstatus.index} d-none">
+                             <div class="col-9 input-group mb-2 Formacaolimite${itemstatus.index} d-none">
                              <div class="input-group-prepend">
     <span class="input-group-text" id="basic-addon1">n° max:</span>
   </div>
                               <input type="number"
-                               class="form-control ${estcrit.getListEst().get(idforech).getAbre()}Tipo${liststatus.index}limite${itemstatus.index}
-                                 ${estcrit.getListEst().get(idforech).getAbre()}limite${itemstatus.index} ${estcrit.getListEst().get(idforech).getAbre()}item${itemstatus.index}tt${idforech}InputLimite 
-                                 ${estcrit.getListEst().get(idforech).getAbre()}valorlimite${liststatus.index} ${estcrit.getListEst().get(idforech).getAbre()}limiteGeral d-none"
+                               class="form-control FormacaoTipo${liststatus.index}limite${itemstatus.index}
+                                 Formacaolimite${itemstatus.index} Formacaoitem${itemstatus.index}tt${idforech}InputLimite 
+                                 Formacaovalorlimite${liststatus.index} FormacaolimiteGeral d-none"
                                id="item${itemstatus.index}list${liststatus.index}tipo${tipostatus.index}limite" name="${tipo.getAbre()}"
                                placeholder="itens">
                              </div>

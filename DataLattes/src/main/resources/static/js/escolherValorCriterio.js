@@ -1,6 +1,3 @@
-
-
-
 var sizeList = document.getElementById('sizeList').value;
 var cont = 0;
 function Avancar() {
@@ -20,12 +17,6 @@ function Voltar() {
 	}
 
 }
-function FormacaoItemStatus(item) {
-	ItemStatus("Formacao", item);
-}
-function FormacaoItemLimite(item) {
-	ItemLimite("Formacao", item)
-}
 function ItemLimite(Nome, item) {
 	var x = document.getElementById("myCheck" + Nome + "ItemLimite" + item).checked;
 	var inputs = document.querySelectorAll("." + Nome + "limite" + item);
@@ -37,7 +28,6 @@ function ItemLimite(Nome, item) {
 			inputs[i].classList.add("d-none");
 	}
 }
-
 function ItemStatus(Nome, item) {
 	var x = document.getElementById("myCheck" + Nome + "ItemStatus" + item).checked;
 	var inputs = document.querySelectorAll("." + Nome + "Tipo1tt" + item);

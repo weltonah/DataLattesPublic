@@ -5,30 +5,39 @@
 <tags:padrao>
  <jsp:attribute name="extraScripts">
 <script src="<c:url value=" /js/escolherValorCriterio.js " />"></script>
-<c:forEach var = "indice" begin = "0" end = "${sizeFor-1}">
+<c:forEach var="idforechlist" begin="0" end="${estcrit.getListEst().size()-1}">
 <script>
-$("#collapse${indice}tt${idforech}").on('hidden.bs.collapse', function() {
-var input =	document.querySelectorAll('.Formacaoitem${indice}tt${idforech}Input:not(.d-none)');
-for (var i = 0; i < input.length; i++){
-	if(input[i].value == ''){
-		$("#icon${indice}tt${idforech}").attr('class', 'ion-close-round');
-		 $("#button${indice}tt${idforech}").attr('class', 'btn btn-danger');
-		 return null;
-	}
+function ${estcrit.getListEst().get(idforechlist).getAbre()}ItemStatus(item) {
+	ItemStatus("${estcrit.getListEst().get(idforechlist).getAbre()}", item);
 }
-var inputlimite =	document.querySelectorAll('.Formacaoitem${indice}tt${idforech}InputLimite:not(.d-none)');
-alert(inputlimite.length);
-for (var i = 0; i < inputlimite.length; i++){
-	if(inputlimite[i].value == ''){
-		$("#icon${indice}tt${idforech}").attr('class', 'ion-close-round');
-		 $("#button${indice}tt${idforech}").attr('class', 'btn btn-danger');
-		 return null;
-	}
+function ${estcrit.getListEst().get(idforechlist).getAbre()}ItemLimite(item) {
+	ItemLimite("${estcrit.getListEst().get(idforechlist).getAbre()}", item)
 }
-$("#icon${indice}tt${idforech}").attr('class', 'ion-checkmark');
-$("#button${indice}tt${idforech}").attr('class', 'btn btn-success');
-});
+
 </script>
+
+<c:forEach var="indice" begin="0" end="${estcrit.getListEst().get(idforechlist).getListCrit().size()-1}">
+<script>
+	$("#collapse${indice}tt${idforechlist}")
+			.on('hidden.bs.collapse', function() {
+		var input = document
+				.querySelectorAll('.${estcrit.getListEst().get(idforechlist).getAbre()}item${indice}tt${idforechlist}Input:not(.d-none)');
+		for (var i = 0; i < input.length; i++) {
+			if (input[i].value == '') {
+				$("#icon${indice}tt${idforechlist}").attr('class',
+						'ion-close-round');
+				$("#button${indice}tt${idforechlist}").attr(
+						'class', 'btn btn-danger');
+				return null;
+			}
+		}
+		$("#icon${indice}tt${idforechlist}").attr('class',
+				'ion-checkmark');
+		$("#button${indice}tt${idforechlist}").attr('class',
+				'btn btn-success');
+	});
+</script>
+</c:forEach>
 </c:forEach>
 
 </jsp:attribute>

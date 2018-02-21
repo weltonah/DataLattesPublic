@@ -51,7 +51,7 @@ Tutorial
            </div>
           </div>
           
-           <div class="card border-info " id="ProdArtis"
+           <div class="card border-info " id="ProdArt"
         style="background-color: #ffab91">
            <div class="card-header">
              <label style="font-size: 20px;">Produção Artistica</label>
@@ -68,7 +68,7 @@ Tutorial
              <c:forEach var="formacao" varStatus="ProdArtstatus"
            items="${estr.getListEst().get(2).getListCrit()}">
                 <input class="ProdArt  form-check-input" type="checkbox"
-            name="formacao" id="ProdArt${ProdArtstatus.index}"
+            name="ProdArt" id="ProdArt${ProdArtstatus.index}"
             value="${formacao.getAbre()}"> 
                 <label class="form-check-label"
             for="ProdArt${ProdArtstatus.index}">${formacao.getCriterio() }</label>
@@ -126,7 +126,7 @@ Tutorial
            items="${estr.getListEst().get(6).getListCrit()}">
                 <input class="DadosGerais form-check-input"
             type="checkbox" id="DadosGerais${DadosGeraisstatus.index }"
-            name="ProdTec" value="${formacao.getAbre()}"> 
+            name="DeEx" value="${formacao.getAbre()}"> 
                 <label class="form-check-label"
             for="DadosGerais${DadosGeraisstatus.index }">
                 ${formacao.getCriterio() } </label>
