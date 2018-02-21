@@ -1,31 +1,50 @@
-var sizeList = document.getElementById('sizeList').value;
+var sizeList = parseInt(document.getElementById('sizeList').value);
 var cont = 0;
 
-
 function Avancar() {
-	if (cont != sizeList) {
-		if(cont ==0){
+	if (cont < sizeList) {
+		if (cont == 0) {
 			document.getElementById('divItemInicial').classList.add("d-none");
-		}else{
-			document.getElementById('divItem' + (cont-1)).classList.add("d-none");
+		} else {
+			document.getElementById('divItem' + (cont - 1)).classList
+					.add("d-none");
 		}
 		cont++;
-		document.getElementById('divItem' + (cont-1)).classList.remove("d-none");
-	}else{
-		GerarKey();
+		document.getElementById('divItem' + (cont - 1)).classList
+				.remove("d-none");
+	} else {
+		if (cont == sizeList+1) {
+		} else {
+			document.getElementById('divItem' + (cont - 1)).classList
+					.add("d-none");
+			cont++;
+			GerarKey();
+			document.getElementById('divItemChave').classList.remove("d-none");
+		}
 	}
 }
 function Voltar() {
 	if (cont != 0) {
-		document.getElementById('divItem' + (cont-1)).classList.add("d-none");
-		cont--;
-		if(cont ==0){
-			document.getElementById('divItemInicial').classList.remove("d-none");
-		}else{
-		document.getElementById('divItem' + (cont-1)).classList.remove("d-none");
+		if (cont == (sizeList + 1)) {
+			document.getElementById('divItemChave').classList.add("d-none");
+			cont--;
+			document.getElementById('divItem' + (cont - 1)).classList
+					.remove("d-none");
+
+		} else {
+			document.getElementById('divItem' + (cont - 1)).classList
+					.add("d-none");
+			cont--;
+			if (cont == 0) {
+				document.getElementById('divItemInicial').classList
+						.remove("d-none");
+			} else {
+				document.getElementById('divItem' + (cont - 1)).classList
+						.remove("d-none");
+			}
 		}
 	} else {
-		javascript:window.history.go(-1);
+		javascript: window.history.go(-1);
 	}
 
 }
@@ -60,13 +79,13 @@ function OrienItemLimite(item) {
 	ItemLimite("Orien", item);
 }
 
-function OrienItemStatus(item,valor) {
+function OrienItemStatus(item, valor) {
 	var Nome = "Orien";
 	var valor0 = document.querySelectorAll("." + Nome + "Tipo0tt" + item);
 	var valor1 = document.querySelectorAll("." + Nome + "Tipo1tt" + item);
 	var valor2 = document.querySelectorAll("." + Nome + "Tipo2tt" + item);
 	var valor3 = document.querySelectorAll("." + Nome + "Tipo3tt" + item);
-	switch(valor){
+	switch (valor) {
 	case 0:
 		for (var i = 0; i < valor0.length; i++)
 			valor0[i].classList.remove("d-none");
@@ -107,25 +126,25 @@ function OrienItemStatus(item,valor) {
 		for (var j = 0; j < valor3.length; j++)
 			valor3[j].classList.remove("d-none");
 		break;
-	
+
 	}
 }
-
 
 function GerarKey() {
 	var key;
 	key = "Ano>" + document.getElementById("AnoInicio").value + ">"
 			+ document.getElementById("AnoFim").value + "%";
-	//var NomeItemForAbre = [ "For", "PrTec", "PrArt", "PrBli", "Orien", "Banc", "CrGe" ];
+	// var NomeItemForAbre = [ "For", "PrTec", "PrArt", "PrBli", "Orien",
+	// "Banc", "CrGe" ];
 	for (var t = 0; t < 7; t++) {
 		var formDiv = document.querySelectorAll('.indexCont' + t);
 		if (formDiv.length > 0) {
-			//alert(formDiv[0].getAttribute("id"));
+			// alert(formDiv[0].getAttribute("id"));
 			key = key + formDiv[0].getAttribute("id") + "!";
 			for (var i = 0; i < formDiv.length; i++) {
 				// var list = document.getElementById(i);
-				var list = document.querySelectorAll('.' + formDiv[0].getAttribute("id")
-						+ 'ItemIndex' + i);
+				var list = document.querySelectorAll('.'
+						+ formDiv[0].getAttribute("id") + 'ItemIndex' + i);
 				// alert(list.length);
 				for (var k = 0; k < list.length; k++) {
 					// alert(i);
@@ -136,15 +155,15 @@ function GerarKey() {
 							var ItemAbre = document
 									.getElementsByClassName("NomeItem"
 											+ itemName + "&" + t);
-							//alert(ItemAbre.length)
-							
+							// alert(ItemAbre.length)
+
 							key = key + "#" + ItemAbre[0].getAttribute("name");
 							var valor = document.querySelectorAll('.'
-									+ formDiv[0].getAttribute("id") + 'Tipo' + listId
-									+ 'valor' + i);
+									+ formDiv[0].getAttribute("id") + 'Tipo'
+									+ listId + 'valor' + i);
 							var limite = document.querySelectorAll('.'
-									+ formDiv[0].getAttribute("id") + 'Tipo' + listId
-									+ 'limite' + i);
+									+ formDiv[0].getAttribute("id") + 'Tipo'
+									+ listId + 'limite' + i);
 							// alert('.FormacaoTipo'+listId+'valor'+i);
 							// alert(valor.length);
 							for (var j = 0; j < valor.length; j++) {
@@ -163,10 +182,5 @@ function GerarKey() {
 	}
 	document.getElementById("keyId").value = key;
 	document.getElementById("divItemChave").classList.remove("d-none");
-	//document.getElementById("mostrarCriterio").classList.add("d-none");
+	// document.getElementById("mostrarCriterio").classList.add("d-none");
 }
-
-
-
-
-

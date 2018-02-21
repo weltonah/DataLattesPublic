@@ -105,7 +105,9 @@ Tutorial
           url="/WEB-INF/views/senha/senhaCriterio/criterio${estrutura.getAbre()}.jsp" />
          </div>
         </c:forEach>
-    <div class="col-12 " id="divItemChave">    
+        
+        
+    <div class="col-12 d-none " id="divItemChave">    
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><i
