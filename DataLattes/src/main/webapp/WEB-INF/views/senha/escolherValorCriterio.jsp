@@ -6,7 +6,9 @@
  <jsp:attribute name="extraScripts">
 <script src="<c:url value=" /js/escolherValorCriterio.js " />"></script>
 <c:forEach var="idforechlist" begin="0" end="${estcrit.getListEst().size()-1}">
+<c:if test="${!estcrit.getListEst().get(idforechlist).getAbre().contentEquals('Orien')}">
 <script>
+
 function ${estcrit.getListEst().get(idforechlist).getAbre()}ItemStatus(item) {
 	ItemStatus("${estcrit.getListEst().get(idforechlist).getAbre()}", item);
 }
@@ -15,7 +17,7 @@ function ${estcrit.getListEst().get(idforechlist).getAbre()}ItemLimite(item) {
 }
 
 </script>
-
+</c:if>
 <c:forEach var="indice" begin="0" end="${estcrit.getListEst().get(idforechlist).getListCrit().size()-1}">
 <script>
 	$("#collapse${indice}tt${idforechlist}")
@@ -39,7 +41,32 @@ function ${estcrit.getListEst().get(idforechlist).getAbre()}ItemLimite(item) {
 </script>
 </c:forEach>
 </c:forEach>
+<script>
+$("#collapseOne")
+.on('hidden.bs.collapse', function() {
+var input = document
+	.querySelectorAll('.AnoCriterio');
+for (var i = 0; i < input.length; i++) {
+if (input[i].value == '') {
+	$("#iconOne").attr('class',
+			'ion-close-round');
+	$("#buttonOne").attr(
+			'class', 'btn btn-danger');
+	return null;
+}
+}
+$("#iconOne").attr('class',
+	'ion-checkmark');
+$("#buttonOne").attr('class',
+	'btn btn-success');
+});
 
+
+
+
+var theDate=new Date()
+document.getElementById("AnoFim").value =theDate.getFullYear();
+</script>
 </jsp:attribute>
  <jsp:body>
  
@@ -59,14 +86,28 @@ Tutorial
 
 <div class="col-12 ">
     <input type="hidden" id="sizeList" name="firstName" value="${estcrit.getListEst().size()}">
+    
+    <div class="col-12 " id="divItemInicial">
+      <c:import url="/WEB-INF/views/senha/senhaCriterio/criterioInicio.jsp" />    
+        
+     </div>
+     
     <c:forEach var="estrutura" varStatus="estruturaStatus"
          items="${estcrit.getListEst()}">
          <c:set var="idforech" scope="application" value="${estruturaStatus.index }"/>
-         <div class="col-12 <c:if test="${not estruturaStatus.first}"> d-none </c:if>"
+         <div class="col-12 d-none"
          id="divItem${estruturaStatus.index}">
               <c:import url="/WEB-INF/views/senha/senhaCriterio/criterio${estrutura.getAbre()}.jsp" />
          </div>
         </c:forEach>
+    <div class="col-12 " id="divItemChave">    
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1"><i class="ion-key"></i></span>
+          </div>
+          <input type="text" class="form-control" id="keyId"  aria-describedby="basic-addon1">
+        </div>
+     </div>   
         
 </div>
 <div class="col-12 row"
