@@ -108,14 +108,18 @@ Tutorial
         
         
     <div class="col-12 d-none " id="divItemChave">    
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="basic-addon1"><i
-           class="ion-key"></i></span>
-          </div>
-          <input type="text" class="form-control" id="keyId"
-          aria-describedby="basic-addon1">
+        <div class="col-12">
+         <div class="alert alert-success" role="alert">
+           <h4 class="alert-heading">Parabéns</h4>
+           <p>Sua Chave DataLattes foi criada, faça download clicando no botão a baixo. Utilize essa chave toda vez que quiser utilizar os criterios selecionados </p>
+           <hr>
+            <button class="btn btn-info" onclick="GerarKey()" style="width:100%;font-size:25px;"> <i class="ion-android-download" > Gerar Key</i></button>
+         </div>
         </div>
+        <div class="col-12">
+        
+        </div>
+        
      </div>   
         
 </div>
@@ -129,7 +133,7 @@ Tutorial
 
 </form>
 <button class="btn btn-outline-light" onclick="Voltar()">Voltar</button>
-<button class="btn btn-success" onclick="Avancar()">Success</button>
+<button class="btn btn-success" onclick="Avancar()">Avançar</button>
 </div>
 </div>
   </div>

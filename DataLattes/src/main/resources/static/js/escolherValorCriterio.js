@@ -1,6 +1,14 @@
 var sizeList = parseInt(document.getElementById('sizeList').value);
 var cont = 0;
-
+function CriarFile(text) {
+	  var element = document.createElement('a');
+	  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+	  element.setAttribute('download', 'Chave.Dtkey');
+	  element.style.display = 'none';
+	  document.body.appendChild(element);
+	  element.click();
+	  document.body.removeChild(element);
+	}
 function Avancar() {
 	if (cont < sizeList) {
 		if (cont == 0) {
@@ -18,7 +26,7 @@ function Avancar() {
 			document.getElementById('divItem' + (cont - 1)).classList
 					.add("d-none");
 			cont++;
-			GerarKey();
+			//GerarKey();
 			document.getElementById('divItemChave').classList.remove("d-none");
 		}
 	}
@@ -180,7 +188,7 @@ function GerarKey() {
 			key = key + "%";
 		}
 	}
-	document.getElementById("keyId").value = key;
+	//document.getElementById("keyId").value = key;
 	document.getElementById("divItemChave").classList.remove("d-none");
-	// document.getElementById("mostrarCriterio").classList.add("d-none");
+	CriarFile(key);
 }

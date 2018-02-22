@@ -1,8 +1,11 @@
 package br.com.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +14,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import br.com.estrutura.Estrutura;
 import br.com.estrutura.PreencherEstrutura;
 
 @Controller
+@MultipartConfig(maxFileSize = 5000, maxRequestSize = 5000)
 public class SenhaController {
 
 	@Autowired
@@ -50,7 +55,13 @@ public class SenhaController {
 	}
 
 	@RequestMapping(value = "/criterio", method = RequestMethod.POST)
-	public String criterio(@RequestParam("key") String key, Model model, HttpSession session) {
+	public String criterio(@RequestParam("file") MultipartFile file, Model model, HttpSession session)
+			throws IOException {
+		File xmlfile = new File(file.getOriginalFilename());
+		xmlfile.createNewFile();
+		String key = new String(file.getBytes());
+		System.out.println(key);
+		xmlfile.delete();
 		String[] t = key.split("%");
 		String[] aux = t[0].split(">");
 		int anoInicio = !(aux[1].contentEquals("")) ? Integer.parseInt(aux[1]) : 1900;
@@ -63,6 +74,7 @@ public class SenhaController {
 		// System.out.println(Arrays.toString(strings));
 		// }
 		// }
+
 		Estrutura SessaoCriteriosKey = this.preencherEstrutura.InserirCriteriosKey(conteudo);
 		SessaoCriteriosKey.setAnoFim(anoFim);
 		SessaoCriteriosKey.setAnoInicio(anoInicio);

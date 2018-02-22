@@ -32,16 +32,16 @@
 </script>
 </jsp:attribute>	
 	<jsp:body>
-	<div style="margin-top:20%;">
 	  <div class="row">
-	  <div class="col-sm-12" >
-            <div class="center2">
+   <form method="post" action="analise" enctype="multipart/form-data">
+
+	  <div class="col-12" >
               <div class="well">
-                <form method="post" action="analise" enctype="multipart/form-data">
+                
                     <h3>Upload do arquivo lattes formato .zip ou .xml do professor </h3> 
-                <div class="col-xs-12" >
+                <div class="col-12" >
                     <div class="input-group">
-                        <label class="input-group-btn">
+                        <label style="margin:0px;">
                             <span class="btn btn-primary">
                                 <span class="glyphicon glyphicon-open-file" aria-hidden="true"></span>
                                 Selecione o arquivo&hellip; <input type="file" name="file" style="display: none;" multiple>
@@ -55,11 +55,11 @@
                     <a href="inserirChave" class="btn btn-danger">Voltar</a>
                     <button type="submit" class="btn btn-success">Analisar</button>
                 </div>
-                </form>
+               
               </div>
-             </div>
         </div>
+        
+        </form>
 	  </div>
-  	</div>
 	</jsp:body>
 </tags:padrao>
