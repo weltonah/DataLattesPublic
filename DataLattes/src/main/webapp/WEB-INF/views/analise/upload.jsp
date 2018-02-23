@@ -44,7 +44,7 @@
                         <label style="margin:0px;">
                             <span class="btn btn-primary">
                                 <span class="glyphicon glyphicon-open-file" aria-hidden="true"></span>
-                                Selecione o arquivo&hellip; <input type="file" name="file" style="display: none;" multiple>
+                                Selecione o arquivo&hellip; <input type="file" accept=".zip, .xml" name="file" style="display: none;" multiple>
                             </span>
                         </label>
                         <input type="text" class="form-control" readonly>

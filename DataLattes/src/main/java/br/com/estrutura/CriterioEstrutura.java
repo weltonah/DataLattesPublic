@@ -5,16 +5,9 @@ import java.util.ArrayList;
 public class CriterioEstrutura {
 	private String criterio;
 	private String abre;
-	private int tipo;
+	private boolean possuilimite;
 	private ArrayList<ArrayList<TipoEstrutura>> listTipo;
-
-	public CriterioEstrutura(String criterio, String abre, int tipo) {
-		super();
-		this.criterio = criterio;
-		this.abre = abre;
-		this.tipo = tipo;
-		this.listTipo = new ArrayList<ArrayList<TipoEstrutura>>();
-	}
+	private ArrayList<DadosTipoList> dadosTipoList;
 
 	public CriterioEstrutura(String criterio, String abre) {
 		super();
@@ -45,13 +38,26 @@ public class CriterioEstrutura {
 		this.abre = abre;
 	}
 
-	public int getTipo() {
-		return this.tipo;
+	public ArrayList<DadosTipoList> getDadosTipoList() {
+		return this.dadosTipoList;
 	}
 
-	public void setTipo(int tipo) {
-		this.tipo = tipo;
+	public void setDadosTipoList(ArrayList<DadosTipoList> dadosTipoList) {
+		this.dadosTipoList = dadosTipoList;
 	}
+
+	public void setListTipo(ArrayList<ArrayList<TipoEstrutura>> listTipo) {
+		this.listTipo = listTipo;
+	}
+
+	public boolean isPossuilimite() {
+		return this.possuilimite;
+	}
+
+	public void setPossuilimite(boolean possuilimite) {
+		this.possuilimite = possuilimite;
+	}
+
 	
 	
 }

@@ -37,6 +37,7 @@ public class AnaliseController {
 
 		File xmlfile = new File(file.getOriginalFilename());
 		xmlfile.createNewFile();
+
 		FileOutputStream fos = new FileOutputStream(xmlfile);
 		fos.write(file.getBytes());
 		fos.close();
@@ -44,7 +45,7 @@ public class AnaliseController {
 		Estrutura SessaoCriteriosKey = (Estrutura) session.getAttribute("SessaoCriteriosKey");
 		new AnaliseDados().preencherEstruturaAnaliseXml(SessaoCriteriosKey,
 				ConverterFile.ConverterFileToDocument(xmlfile));
-		xmlfile.delete();
+		// xmlfile.delete();
 		// for (AreaEstrutura listAre : SessaoCriteriosKey.getListEst()) {
 		// System.out.println("******** " + listAre.getNome() + " ******");
 		// for (CriterioEstrutura listcrit : listAre.getListCrit()) {

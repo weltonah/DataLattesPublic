@@ -8,7 +8,9 @@ import org.springframework.stereotype.Component;
 public class Estrutura {
 	private int anoInicio;
 	private int anoFim;
+	private double Notatotal;
 	private ArrayList<AreaEstrutura> listEst;
+	private DadosCurricular dadosCurricular;
 
 	public Estrutura() {
 		this.listEst = new ArrayList<AreaEstrutura>();
@@ -40,6 +42,22 @@ public class Estrutura {
 
 	public void setAnoFim(int anoFim) {
 		this.anoFim = anoFim;
+	}
+
+	public DadosCurricular getDadosCurricular() {
+		return this.dadosCurricular;
+	}
+
+	public void setDadosCurricular(DadosCurricular dadosCurricular) {
+		this.dadosCurricular = dadosCurricular;
+	}
+
+	public double getNotatotal() {
+		return this.Notatotal;
+	}
+
+	public void setNotatotal(double notatotal) {
+		this.Notatotal = notatotal;
 	}
 
 }

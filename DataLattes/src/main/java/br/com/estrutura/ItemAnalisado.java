@@ -3,31 +3,15 @@ package br.com.estrutura;
 import br.com.Modelo.ObjetoCriterio;
 
 public class ItemAnalisado {
-	private int valorContabilizado;
-	private boolean valido;
+	private int validade;
+	private String tipo;
 	private ObjetoCriterio item;
 
-	public ItemAnalisado(int valorContabilizado, boolean valido, ObjetoCriterio item) {
+	public ItemAnalisado(int validade, String tipo, ObjetoCriterio item) {
 		super();
-		this.valorContabilizado = valorContabilizado;
-		this.valido = valido;
+		this.validade = validade;
+		this.tipo = tipo;
 		this.item = item;
-	}
-
-	public int getValorContabilizado() {
-		return this.valorContabilizado;
-	}
-
-	public void setValorContabilizado(int valorContabilizado) {
-		this.valorContabilizado = valorContabilizado;
-	}
-
-	public boolean isValido() {
-		return this.valido;
-	}
-
-	public void setValido(boolean valido) {
-		this.valido = valido;
 	}
 
 	public ObjetoCriterio getItem() {
@@ -36,6 +20,22 @@ public class ItemAnalisado {
 
 	public void setItem(ObjetoCriterio item) {
 		this.item = item;
+	}
+
+	public int getValidade() {
+		return this.validade;
+	}
+
+	public void setValidade(int validade) {
+		this.validade = validade;
+	}
+
+	public String getTipo() {
+		return this.tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 }

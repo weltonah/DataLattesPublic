@@ -23,11 +23,10 @@ Tutorial
  	
  </div>
  <hr>
- <div class="row col-12 ">
-        <div class="row col-12">
+ <div class=" col-12">
     <div class="col-12">
-       <div class="row  col-12">
-           <div class=" col-4">
+       <div class="row col-12">
+           <div class="col-4">
             <label></label>
            </div>
            <div class="col-4">
@@ -38,21 +37,22 @@ Tutorial
            </div>
           </div>
             <div class="row col-12">
-           <div class=" col-4">
+           <div class="col-4">
             <label>Ano de analise</label>
            </div>
            <div class="col-4">
             <label>${SessaoCriteriosKey.getAnoInicio()}</label>
            </div>
-           <div class=" col-4">
+           <div class="col-4">
             <label>${SessaoCriteriosKey.getAnoFim()}</label>
            </div>
       </div>
    </div>
 <div class="col-12" id="accordion"> 
-  <div class="card">
+  
    <c:forEach var="AreaEstrutura" varStatus="AreaEstruturastatus" items="${SessaoCriteriosKey.getListEst()}">
-    <div class="card-header" id="heading${AreaEstruturastatus.index}">
+   <div class="card" style="margin-top:10px;">
+    <div class="card-header" id="heading${AreaEstruturastatus.index}" >
      <h5 class="mb-0">
       <button class="btn btn-link" data-toggle="collapse"
          data-target="#collapse${AreaEstruturastatus.index}"
@@ -68,13 +68,17 @@ Tutorial
       <c:forEach var="CriterioEstrutura" varStatus="CriterioEstruturastatus" items="${AreaEstrutura.getListCrit()}">
       
         <div class="card border-success">
-         <div class="card-body">
-           <h5 class="card-title">${CriterioEstrutura.getCriterio() }</h5>
-           <hr>
-            <div class="col-12">
+         <div class="card-body row">
+           <div class="col-12">
+             <h5 class="card-title">${CriterioEstrutura.getCriterio() }</h5>
+             <hr>
+           </div>
+            <div class="col-12" style="margin-top: 10px;">
+            <span style="font-size: 1vw;">
                 <c:forEach var="listTipo" varStatus="listTipostatus" items="${CriterioEstrutura.getListTipo()}">
-                <table class="table table-striped table-dark ">
-                  <thead class="">
+                
+                <table class="table table-striped table-dark">
+                  <thead>
                     <tr>
                       <th scope="col">Tipo</th>
                       <th scope="col">Valor</th>
@@ -84,7 +88,7 @@ Tutorial
                     </tr>
                   </thead>
                   <tbody>        
-                <c:forEach var="TipoEstrutura" varStatus="TipoEstruturastatus" items="${listTipo}">
+                  <c:forEach var="TipoEstrutura" varStatus="TipoEstruturastatus" items="${listTipo}">
                    <tr>
                      <th scope="row">${TipoEstrutura.getNomeTipo()}</th>
                      <td>${TipoEstrutura.getValor()}</td>
@@ -97,6 +101,7 @@ Tutorial
                   </tbody>
                 </table>
                 </c:forEach>
+                </span>
             </div>
             
          </div>
@@ -105,15 +110,14 @@ Tutorial
      </div>
     </div>
     </div>
+    </div>
 </c:forEach>
 </div>
 </div>
-</div>
- </div>
  
  <div class="col-12 row" style="padding-right: 0px; margin-right: 0px;margin-top:10px;">
 
-   <div class="col-2 offset-10" style="padding-right: 0px;">
+   <div class="col-3 offset-9" style="padding-right: 0px;">
      <a class="btn btn-outline-light" href="index" role="button">Voltar</a>
      <a href="upload" role="button" class="btn btn-primary ">Avançar </a>
    </div>

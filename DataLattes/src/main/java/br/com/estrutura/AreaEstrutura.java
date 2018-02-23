@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class AreaEstrutura {
 	private String nome;
 	private String abre;
+	private Double ValorTotalArea;
 	private ArrayList<CriterioEstrutura> listCrit;
 
 	public AreaEstrutura(String nome, String abre) {
@@ -38,6 +39,13 @@ public class AreaEstrutura {
 		this.abre = abre;
 	}
 
+	public Double getValorTotalArea() {
+		return this.ValorTotalArea;
+	}
+
+	public void setValorTotalArea(Double valorTotalArea) {
+		this.ValorTotalArea = valorTotalArea;
+	}
 	
 	
 }
