@@ -8,13 +8,13 @@ public class TipoEstrutura {
 	private int valorTotalContabilizado;
 	private String abre;
 	private int limite;
-	private String sentencaTabela;
 	private ArrayList<ItemAnalisado> itemAnalisados;
 
 	public TipoEstrutura(String nomeTipo, int valor, String abre, int limite) {
 		this.nomeTipo = nomeTipo;
 		this.valor = valor;
 		this.abre = abre;
+		this.valorTotalContabilizado = 0;
 		this.limite = limite;
 	}
 
@@ -59,6 +59,10 @@ public class TipoEstrutura {
 		return this.itemAnalisados;
 	}
 
+	public int ItemValidos() {
+		return getValorTotalContabilizado() / getValor();
+	}
+
 	public void setItemAnalisados(ArrayList<ItemAnalisado> itemAnalisados) {
 		this.itemAnalisados = itemAnalisados;
 	}
@@ -71,12 +75,5 @@ public class TipoEstrutura {
 		this.valorTotalContabilizado = valorTotalContabilizado;
 	}
 
-	public String getSentencaTabela() {
-		return this.sentencaTabela;
-	}
-
-	public void setSentencaTabela(String sentencaTabela) {
-		this.sentencaTabela = sentencaTabela;
-	}
 
 }

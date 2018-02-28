@@ -32,34 +32,35 @@
 </script>
 </jsp:attribute>	
 	<jsp:body>
-	  <div class="row">
-   <form method="post" action="analise" enctype="multipart/form-data">
-
-	  <div class="col-12" >
-              <div class="well">
-                
-                    <h3>Upload do arquivo lattes formato .zip ou .xml do professor </h3> 
-                <div class="col-12" >
-                    <div class="input-group">
-                        <label style="margin:0px;">
-                            <span class="btn btn-primary">
-                                <span class="glyphicon glyphicon-open-file" aria-hidden="true"></span>
-                                Selecione o arquivo&hellip; <input type="file" accept=".zip, .xml" name="file" style="display: none;" multiple>
+  <div class="col-12 align-middle"
+   style="height: 70vh; padding-top: 30vh;">
+  
+  
+  <div class="form-group col-8 offset-2 row alert alert-light" style="background-color: white;" >
+        <div class=" col-12 w-100">
+        <form method="post" action="analise" enctype="multipart/form-data">
+                    <h3 style="color: black;">Upload do arquivo lattes formato .zip ou .xml:</h3> <br>
+                     <div class="input-group w-100">
+                     
+                        <label style="margin: 0px;">
+                            <span class="btn btn-warning ">
+                                <span class="ion-android-upload" aria-hidden="true"></span>
+                               Selecione o arquivo&hellip; <input type="file" accept=".zip, .xml" name="file" style="display: none;" >
                             </span>
                         </label>
-                        <input type="text" class="form-control" readonly>
+                        <input type="text" class="form-control form-control-sm" readonly>
                     </div>
-                </div>
+                    <br>
+                    <a href="infoXML"><u>Não sei o que é o arquivo .zip ou .xml</u></a>
                 <br><br>
                 <div align="right">
-                    <a href="inserirChave" class="btn btn-danger">Voltar</a>
-                    <button type="submit" class="btn btn-success">Analisar</button>
+                    <a href="javascript: window.history.go(-1)" class="btn btn-outline-dark">Voltar</a>
+                    <button type="submit" class="btn btn-primary">Analisar</button>
                 </div>
-               
-              </div>
-        </div>
+                </form>
+         </div>
+         </div>
         
-        </form>
-	  </div>
+        </div>
 	</jsp:body>
 </tags:padrao>

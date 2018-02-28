@@ -1,8 +1,8 @@
 <div class=" col-4">
- <label>Anos de analise</label>
+ <h2>Criterios Gerais</h2>
 </div>
 <div id="accordionInicio">
- <div class="card" style="margin-bottom: 10px; border-width: 0px;">
+ <div class="card " style="margin-bottom: 10px; border-width: 0px;">
   <div class="card-header" id="headingOne"
    style="padding: 0px; border-width: 0px;">
    <h5 class="mb-0">

@@ -46,7 +46,7 @@ public class Analise {
 						System.out.println("[" + listtipoEstrutura.getNomeTipo() + "," + listtipoEstrutura.getAbre()
 								+ ", " + listtipoEstrutura.getValor() + ", " + listtipoEstrutura.getLimite() + "]");
 						for (ItemAnalisado itemAnalisado : listtipoEstrutura.getItemAnalisados()) {
-							System.out.println("valor contabilizado" + itemAnalisado.getValorContabilizado());
+							System.out.println("valor contabilizado" + listtipoEstrutura.getValorTotalContabilizado());
 							System.out.println("nome" + itemAnalisado.getItem().getTitulo());
 						}
 					}

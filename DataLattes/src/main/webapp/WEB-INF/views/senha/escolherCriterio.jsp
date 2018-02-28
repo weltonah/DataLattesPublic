@@ -8,22 +8,19 @@
 </jsp:attribute>
  <jsp:body>
  
-<div class="col-10 ">
+<div class="col-12 ">
 <div class="row">
-<div class="col-12" style="background-color: #64b5f6; height: 10vh;">
-Tutorial
-</div>
+
 <form:form action="escolherValorCriterio">
 <div class="rounded col-12"
-      style="background-color: #64b5f6; margin-top: 1vh; padding-bottom: 10px;">
+      style=" margin-top: 1vh;margin-bottom: 1vh; padding-bottom: 10px;">
 
 <div class="col-12 ">
-	<h2> Selecione os critérios:</h2>
+	<h2 style="color: #545454"> Selecione os critérios:</h2>
 </div>
-
 <div class="card-columns col-xl-12 ">
-          <div class="card border-info " id="formacao"
-        style="background-color: #ffab91">
+          <div class="card border-primary " id="formacao"
+        style="background-color: #fff">
            <div class="card-header">
              <label style="font-size: 20px;">Formação</label>
            </div>
@@ -51,8 +48,8 @@ Tutorial
            </div>
           </div>
           
-           <div class="card border-info " id="ProdArt"
-        style="background-color: #ffab91">
+           <div class="card border-primary " id="ProdArt"
+        style="background-color: #fff">
            <div class="card-header">
              <label style="font-size: 20px;">Produção Artistica</label>
             </div>
@@ -77,8 +74,8 @@ Tutorial
             </div>
             </div>
            </div>
-          <div class="card border-info " id="ProdTecni"
-        style="background-color: #ffab91">
+          <div class="card border-primary " id="ProdTecni"
+        style="background-color: #fff">
            <div class="card-header">
              
              <label style="font-size: 20px;">Produção Técnica</label>
@@ -106,8 +103,8 @@ Tutorial
            </div>
            </div>
           
-          <div class="card border-info " id="DadosGerais"
-        style="background-color: #ffab91">
+          <div class="card border-primary " id="DadosGerais"
+        style="background-color: #fff">
            <div class="card-header">
              
              <label style="font-size: 20px;">Dados Gerais</label>
@@ -136,8 +133,8 @@ Tutorial
            </div>
            </div>
           
-          <div class="card border-info " id="Orien"
-        style="background-color: #ffab91">
+          <div class="card border-primary " id="Orien"
+        style="background-color: #fff">
            <div class="card-header">
              
              <label style="font-size: 20px;">Orientações</label>
@@ -164,8 +161,8 @@ Tutorial
            </div>
           </div>
           
-          <div class="card border-info " id="Banc"
-        style="background-color: #ffab91">
+          <div class="card border-primary " id="Banc"
+        style="background-color: #fff">
            <div class="card-header">
              
              <label style="font-size: 20px;">Bancas</label>
@@ -192,8 +189,8 @@ Tutorial
            </div>
            </div>
           
-          <div class="card border-info " id="ProdBibli"
-        style="background-color: #ffab91">
+          <div class="card border-primary " id="ProdBibli"
+        style="background-color: #fff">
            <div class="card-header">
              <label style="font-size: 20px;">Produção Bibliografica</label>
             </div>
@@ -222,12 +219,13 @@ Tutorial
            </div>
            
 </div>
+<hr style="background-color: black;">
 <div class="col-12 row"
        style="padding-right: 0px; margin-right: 0px;">
        
-<div class="col-3 offset-9" style="padding-right: 0px;">
-<a class="btn btn-outline-light" href="index" role="button">Voltar</a>
-<button type="submit" id="submitForm" class="btn btn-success">Success</button>
+<div class="col-2 offset-10" style="padding-right: 0px;">
+<a class="btn btn-outline-dark" href="index" role="button">Voltar</a>
+<button type="submit" id="submitForm" class="btn btn-primary">Success</button>
 </div>
 </div>
 
@@ -237,10 +235,6 @@ Tutorial
 </div>
   </div>
 
-<div class="col-2">
-<div class="alert alert-warning">
-  <span>asdasd</span>
-</div>
- </div>
+
 </jsp:body>
 </tags:padrao>

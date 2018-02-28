@@ -31,7 +31,7 @@ function ${estcrit.getListEst().get(idforechlist).getAbre()}ItemLimite(item) {
   for (var i = 0; i < input.length; i++) {
    if (input[i].value == '') {
     $("#icon${indice}tt${idforechlist}").attr('class',
-      'ion-close-round');
+      'ion-close');
     $("#button${indice}tt${idforechlist}").attr(
       'class', 'btn btn-danger');
     return null;
@@ -72,19 +72,11 @@ document.getElementById("AnoFim").value =theDate.getFullYear();
 </jsp:attribute>
  <jsp:body>
  
-<div class="col-10 ">
-<div class="row">
-<div class="col-12" style="background-color: #64b5f6; height: 10vh;">
-Tutorial
-</div>
-<div class="rounded col-12"
-     style="background-color: #64b5f6; margin-top: 1vh; padding-bottom: 10px;">
-<form action="escolherValorCriterio">
-
-
 <div class="col-12 ">
-	<h2></h2>
-</div>
+<div class="row">
+<div class="rounded col-12"
+     style=" margin-top: 1vh; padding-bottom: 10px;">
+<form action="escolherValorCriterio">
 
 <div class="col-12 ">
     <input type="hidden" id="sizeList" name="firstName"
@@ -110,10 +102,10 @@ Tutorial
     <div class="col-12 d-none " id="divItemChave">    
         <div class="col-12">
          <div class="alert alert-success" role="alert">
-           <h4 class="alert-heading">Parabéns</h4>
+           <h4 class="alert-heading" style="color: #545454">Parabéns</h4>
            <p>Sua Chave DataLattes foi criada, faça download clicando no botão a baixo. Utilize essa chave toda vez que quiser utilizar os criterios selecionados </p>
            <hr>
-            <button class="btn btn-info" onclick="GerarKey()" style="width:100%;font-size:25px;"> <i class="ion-android-download" > Gerar Key</i></button>
+            <button class="btn btn-warning" onclick="GerarKey()" style="width:100%;font-size:25px;"> <i class="ion-android-download" > Gerar Key</i></button>
          </div>
         </div>
         <div class="col-12">
@@ -121,29 +113,20 @@ Tutorial
         </div>
         
      </div>   
-        
+      
 </div>
-<div class="col-12 row" style="padding-right: 0px; margin-right: 0px;">
-       
-<div class="col-3 offset-9" style="padding-right: 0px;">
-
-</div>
-</div>
-
-
 </form>
-<button class="btn btn-outline-light" onclick="Voltar()">Voltar</button>
-<button class="btn btn-success" onclick="Avancar()">Avançar</button>
+ <hr style="background-color: black;">  
+ <div class="col-12 row" style="padding-right: 0px; margin-right: 0px;margin-top:10px;">
+
+   <div class="col-2 offset-10" style="padding-right: 0px;">
+   
+<button class="btn btn-outline-dark" onclick="Voltar()">Voltar</button>
+<button class="btn btn-primary" id="botaoavancar" onclick="Avancar()">Avançar</button>
+</div>
+</div>
 </div>
 </div>
   </div>
-
-<div class="col-2">
-<div class="alert alert-warning">
-  <span>asdasd</span>
-</div>
- </div>
- 
- 
 </jsp:body>
 </tags:padrao>

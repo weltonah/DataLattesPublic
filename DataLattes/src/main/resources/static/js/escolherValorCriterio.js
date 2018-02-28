@@ -26,8 +26,9 @@ function Avancar() {
 			document.getElementById('divItem' + (cont - 1)).classList
 					.add("d-none");
 			cont++;
-			//GerarKey();
 			document.getElementById('divItemChave').classList.remove("d-none");
+			document.getElementById('botaoavancar').classList.add("d-none");
+			
 		}
 	}
 }
@@ -35,6 +36,7 @@ function Voltar() {
 	if (cont != 0) {
 		if (cont == (sizeList + 1)) {
 			document.getElementById('divItemChave').classList.add("d-none");
+			document.getElementById('botaoavancar').classList.remove("d-none");
 			cont--;
 			document.getElementById('divItem' + (cont - 1)).classList
 					.remove("d-none");

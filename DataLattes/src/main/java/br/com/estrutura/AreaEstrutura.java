@@ -5,13 +5,14 @@ import java.util.ArrayList;
 public class AreaEstrutura {
 	private String nome;
 	private String abre;
-	private Double ValorTotalArea;
+	private double ValorTotalArea;
 	private ArrayList<CriterioEstrutura> listCrit;
 
 	public AreaEstrutura(String nome, String abre) {
 		super();
 		this.nome = nome;
 		this.abre = abre;
+		this.ValorTotalArea = 0;
 		this.listCrit = new ArrayList<CriterioEstrutura>();
 	}
 
@@ -39,7 +40,7 @@ public class AreaEstrutura {
 		this.abre = abre;
 	}
 
-	public Double getValorTotalArea() {
+	public double getValorTotalArea() {
 		return this.ValorTotalArea;
 	}
 

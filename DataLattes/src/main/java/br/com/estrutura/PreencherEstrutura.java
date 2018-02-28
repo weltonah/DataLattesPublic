@@ -15,6 +15,14 @@ public class PreencherEstrutura {
 
 	private HashMap<String, String> abreNome;
 
+	public Estrutura getEstr() {
+		return this.estr;
+	}
+
+	public void setEstr(Estrutura estr) {
+		this.estr = estr;
+	}
+
 	public PreencherEstrutura() {
 		this.abreNome = new HashMap<String, String>();
 		this.abreNome.put("AnCos", "Andamento ou Concluido");
@@ -358,18 +366,6 @@ public class PreencherEstrutura {
 									}
 									k++;
 								}
-
-								// if (list.get(j + 1)[0].contentEquals(list.get(j)[0])) {
-								// criterioEstrutura = new CriterioEstrutura(this.abreNome.get(list.get(j +
-								// 1)[0]),
-								// list.get(j)[0]);
-								// limitevalor = list.get(j + 1)[3] == null ? -1
-								// : Integer.parseInt(list.get(j + 1)[3]);
-								// tipoEstrutura = new TipoEstrutura(this.abreNome.get(list.get(j + 1)[1]),
-								// Integer.parseInt(list.get(j + 1)[2]), list.get(j + 1)[1], limitevalor);
-								// listTipoEstru.add(tipoEstrutura);
-								// k++;
-								// }
 							}
 							criterioEstrutura.addListTipo(listTipoEstru);
 							listCritFormacao.add(criterioEstrutura);
@@ -418,13 +414,13 @@ public class PreencherEstrutura {
 		list.add(tipo);
 		crit.addListTipo(list);
 		list = new ArrayList<TipoEstrutura>();
-		tipo = new TipoEstrutura("Orientação Andamento", "OriAnd");
+		tipo = new TipoEstrutura("Orientação em andamento", "OriAnd");
 		list.add(tipo);
-		tipo = new TipoEstrutura("Coorientação Andamento", "CooAnd");
+		tipo = new TipoEstrutura("Coorientação em andamento", "CooAnd");
 		list.add(tipo);
-		tipo = new TipoEstrutura("Orientação Concluida", "OriCon");
+		tipo = new TipoEstrutura("Orientação concluida", "OriCon");
 		list.add(tipo);
-		tipo = new TipoEstrutura("Coorientação Concluida", "CooCon");
+		tipo = new TipoEstrutura("Coorientação concluida", "CooCon");
 		list.add(tipo);
 		crit.addListTipo(list);
 		listCritFormacao.add(crit);
@@ -433,6 +429,7 @@ public class PreencherEstrutura {
 	public void PreencherAndConOriSub(CriterioEstrutura crit, ArrayList<CriterioEstrutura> listCritFormacao) {
 		ArrayList<TipoEstrutura> list = new ArrayList<TipoEstrutura>();
 		TipoEstrutura tipo = new TipoEstrutura("Orientação", "AnCosOri");
+
 		list.add(tipo);
 		crit.addListTipo(list);
 		list = new ArrayList<TipoEstrutura>();
@@ -448,11 +445,11 @@ public class PreencherEstrutura {
 		list.add(tipo);
 		crit.addListTipo(list);
 		list = new ArrayList<TipoEstrutura>();
-		tipo = new TipoEstrutura("Orientação Andamento", "OriAnd");
+		tipo = new TipoEstrutura("Orientação em andamento", "OriAnd");
 		list.add(tipo);
-		tipo = new TipoEstrutura("Orientação Concluida", "OriCon");
+		tipo = new TipoEstrutura("Orientação concluida", "OriCon");
 		list.add(tipo);
-		tipo = new TipoEstrutura("Coorientação Concluida", "CooCon");
+		tipo = new TipoEstrutura("Coorientação concluida", "CooCon");
 		list.add(tipo);
 		crit.addListTipo(list);
 		listCritFormacao.add(crit);
@@ -511,11 +508,5 @@ public class PreencherEstrutura {
 		listCritFormacao.add(crit);
 	}
 
-	public Estrutura getEstr() {
-		return this.estr;
-	}
 
-	public void setEstr(Estrutura estr) {
-		this.estr = estr;
-	}
 }

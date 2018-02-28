@@ -27,10 +27,22 @@ public class AnaliseDados {
 					for (TipoEstrutura tipoEstrutura : listTipo) {
 						tipoEstrutura.setItemAnalisados(switchBuscaXml(areaEstrutura.getAbre(),
 								criterioEstrutura.getAbre(), tipoEstrutura.getAbre(), xmlfile, tipoEstrutura));
+						for (ItemAnalisado itemAnalisado : tipoEstrutura.getItemAnalisados()) {
+							if (itemAnalisado.getValidade() == 0) {
+							tipoEstrutura.setValorTotalContabilizado(
+									tipoEstrutura.getValorTotalContabilizado() + tipoEstrutura.getValor());
+								criterioEstrutura.setValorTotalCriterio(
+										criterioEstrutura.getValorTotalCriterio() + tipoEstrutura.getValor());
+							}
+						}
 					}
 				}
+				areaEstrutura.setValorTotalArea(
+						areaEstrutura.getValorTotalArea() + criterioEstrutura.getValorTotalCriterio());
 			}
+			SessaoCriteriosKey.setNotatotal(SessaoCriteriosKey.getNotatotal() + areaEstrutura.getValorTotalArea());
 		}
+		SessaoCriteriosKey.setDadosCurricular(this.filtroSearchXml.PreencherDadosCurricular(xmlfile));
 	}
 
 	public ArrayList<ItemAnalisado> switchBuscaXml(String areaEstrutura, String criterioEstrutura, String tipoEstrutura,

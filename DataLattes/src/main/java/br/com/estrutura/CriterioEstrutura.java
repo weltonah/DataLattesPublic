@@ -6,6 +6,7 @@ public class CriterioEstrutura {
 	private String criterio;
 	private String abre;
 	private boolean possuilimite;
+	private double ValorTotalCriterio;
 	private ArrayList<ArrayList<TipoEstrutura>> listTipo;
 	private ArrayList<DadosTipoList> dadosTipoList;
 
@@ -13,6 +14,7 @@ public class CriterioEstrutura {
 		super();
 		this.criterio = criterio;
 		this.abre = abre;
+		this.ValorTotalCriterio = 0;
 		this.listTipo = new ArrayList<ArrayList<TipoEstrutura>>();
 	}
 	public String getCriterio() {
@@ -56,6 +58,14 @@ public class CriterioEstrutura {
 
 	public void setPossuilimite(boolean possuilimite) {
 		this.possuilimite = possuilimite;
+	}
+
+	public double getValorTotalCriterio() {
+		return this.ValorTotalCriterio;
+	}
+
+	public void setValorTotalCriterio(double valorTotalCriterio) {
+		this.ValorTotalCriterio = valorTotalCriterio;
 	}
 
 	

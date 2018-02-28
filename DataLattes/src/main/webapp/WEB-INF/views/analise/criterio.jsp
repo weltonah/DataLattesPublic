@@ -7,24 +7,21 @@
 </jsp:attribute>
  <jsp:body>
  
-<div class="col-10 ">
+<div class="col-12 ">
 <div class="row">
-<div class="col-12" style="background-color: #64b5f6; height: 10vh;">
-Tutorial
-</div>
 
 <div class=" col-12"
-     style="background-color: #64b5f6; margin-top: 1vh; padding-bottom: 10px; padding-top: 10px;">
+     style="background-color: ; margin-top: 1vh;margin-bottom: 1vh;  padding-bottom: 10px; padding-top: 10px;">
 
  <div class="col-12 row">
-  <div class="col-2">
-      <h2> Critérios:</h2>
+  <div class="col-12">
+      <h2 style="color: #545454"> Descrição da Chave:</h2>
   </div>
  	
  </div>
- <hr>
- <div class=" col-12">
-    <div class="col-12">
+ <div class=" col-12" >
+    <div style="padding-left: 15px;padding-right:15px;">
+    <div class="col-12 border border-secondary" style="color: #545454;background-color: white;padding-left: 15px;padding-right:15px;">
        <div class="row col-12">
            <div class="col-4">
             <label></label>
@@ -48,13 +45,15 @@ Tutorial
            </div>
       </div>
    </div>
+   </div>
 <div class="col-12" id="accordion"> 
   
    <c:forEach var="AreaEstrutura" varStatus="AreaEstruturastatus" items="${SessaoCriteriosKey.getListEst()}">
-   <div class="card" style="margin-top:10px;">
-    <div class="card-header" id="heading${AreaEstruturastatus.index}" >
+   <div class="card" style="margin-top:10px;border:0px;">
+    <div class="card-header" id="heading${AreaEstruturastatus.index}" style="border:0px; padding: 0px;">
      <h5 class="mb-0">
-      <button class="btn btn-link" data-toggle="collapse"
+      <button class="btn btn-outline-primary w-100" data-toggle="collapse"
+         style="margin: 0px;"
          data-target="#collapse${AreaEstruturastatus.index}"
          aria-expanded="true"
          aria-controls="collapse${AreaEstruturastatus.index}">
@@ -114,11 +113,11 @@ Tutorial
 </c:forEach>
 </div>
 </div>
- 
+  <hr style="background-color: black;">  
  <div class="col-12 row" style="padding-right: 0px; margin-right: 0px;margin-top:10px;">
 
    <div class="col-3 offset-9" style="padding-right: 0px;">
-     <a class="btn btn-outline-light" href="index" role="button">Voltar</a>
+     <a class="btn btn-outline-dark" href="javascript: window.history.go(-1)" role="button">Voltar</a>
      <a href="upload" role="button" class="btn btn-primary ">Avançar </a>
    </div>
  </div>
@@ -127,11 +126,7 @@ Tutorial
 </div>
 </div>
 
-<div class="col-2">
-<div class="alert alert-warning">
-  <span>asdasd</span>
-</div>
- </div>
+
 
  </jsp:body>
 </tags:padrao>

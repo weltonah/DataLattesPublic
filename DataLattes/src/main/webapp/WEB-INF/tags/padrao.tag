@@ -10,6 +10,11 @@
 <!--     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"> -->
 <!--     <script defer src="https://use.fontawesome.com/releases/v5.0.0/js/all.js"> -->
 <!--     </script>  -->
+<style>
+
+</style>
+
+
 <meta charset="utf-8">
 <meta name="viewport"
  content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,7 +26,7 @@
  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
 </head>
-<body style="">
+<body style="background-color: #f2f2f2;">
 
  <div class="container-fluid row" style="margin-top:0px; padding-left: 0px; " >
   <div class="col-1" style="padding-left: 0px;padding-right: 0px;">

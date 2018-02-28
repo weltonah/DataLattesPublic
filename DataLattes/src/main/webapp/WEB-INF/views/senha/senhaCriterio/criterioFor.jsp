@@ -8,7 +8,7 @@
 <h2>${estcrit.getListEst().get(idforech).getNome()}</h2>
 <c:forEach var="item" varStatus="itemstatus"
    items="${estcrit.getListEst().get(idforech).getListCrit()}">
-   <div class="card" style="margin-bottom: 10px;border-width: 0px;">
+   <div class="card"  style="margin-bottom: 10px;border-width: 0px;">
     <div class="card-header" id="heading${itemstatus.index}tt${idforech}" style="padding: 0px;border-width: 0px;">
       <h5 class="mb-0">
         <button type="button" style="width: 100%;" id="button${itemstatus.index}tt${idforech}" class="btn btn-outline-secondary <c:if test="${not itemstatus.first}">collapsed</c:if>
@@ -21,7 +21,7 @@
        <span class="indexCont${idforech}" id="${estcrit.getListEst().get(idforech).getAbre()}" name="${item.getAbre()}">${item.getCriterio()}</span>
        </div>
        <div class="col-1 offset-9 ">
-       <i class="" id="icon${idforech}tt${idforech}" ></i>
+       <i class="" id="icon${itemstatus.index}tt${idforech}" ></i>
        </div>
        </div>
         </button>

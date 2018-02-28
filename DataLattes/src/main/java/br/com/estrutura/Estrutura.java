@@ -14,6 +14,7 @@ public class Estrutura {
 
 	public Estrutura() {
 		this.listEst = new ArrayList<AreaEstrutura>();
+		this.Notatotal = 0;
 	}
 
 	public void addList(AreaEstrutura e) {
@@ -52,8 +53,8 @@ public class Estrutura {
 		this.dadosCurricular = dadosCurricular;
 	}
 
-	public double getNotatotal() {
-		return this.Notatotal;
+	public int getNotatotal() {
+		return (int) this.Notatotal;
 	}
 
 	public void setNotatotal(double notatotal) {

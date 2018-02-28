@@ -7,7 +7,7 @@ public class ItemAnalisado {
 	private String tipo;
 	private ObjetoCriterio item;
 
-	public ItemAnalisado(int validade, String tipo, ObjetoCriterio item) {
+	public ItemAnalisado(String tipo, int validade, ObjetoCriterio item) {
 		super();
 		this.validade = validade;
 		this.tipo = tipo;

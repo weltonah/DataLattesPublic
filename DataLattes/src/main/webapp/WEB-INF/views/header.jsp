@@ -8,17 +8,17 @@
    <div class="btn-group-vertical">
    <div>
   <a class="btn btn-outline-light " aria-pressed="true" href="index" role="button"
-    style="height: 100%; padding-left:0px;font-size: 1.2vw;padding-right:0px;border-right:0px;border-left:0px;border-top:0px; border-radius:0px;">Data</br>Lattes </a>
+    style="height: 100%; padding-left:0px;font-size: 1.2vw;padding-right:0px;border-right:0px;border-left:0px;border-top:0px; border-radius:0px;white-space: normal;">DataLattes </a>
     <a class="btn btn-outline-light" data-toggle="tooltip" data-placement="right" title="Home"
     href="index" role="button" style="font-size: 1.3vw;border:0px;border-radius:0px;">
     <i class="ion-home" ></i> 
    </a>
     <a class="btn btn-outline-light" data-toggle="tooltip" data-placement="right" title="Sobre a Chave"
-    href="index" role="button" style="font-size: 1.3vw;border:0px;border-radius:0px;">
+    href="infoChave" role="button" style="font-size: 1.3vw;border:0px;border-radius:0px;">
     <i class="ion-key" ></i> 
    </a>
    <a class="btn btn-outline-light" data-toggle="tooltip" data-placement="right" title="Sobre o XML"
-    href="index" role="button" style="font-size: 1.3vw;border:0px;border-radius:0px;"> 
+    href="infoXML" role="button" style="font-size: 1.3vw;border:0px;border-radius:0px;"> 
    <i class="ion-code" ></i>
    </a>
     <a class="btn btn-outline-light" data-toggle="tooltip" data-placement="right" title="Informações"
@@ -32,12 +32,12 @@
 
    </div>
    
-   <div class="btn-group-vertical" style="top: 42vh;" >
+   <div class="btn-group-vertical" style="top: 47vh;" >
    <div>
     
-    <a class="btn btn-outline-dark  " href="index" role="button" style="font-size: 1.2vw;padding-left:0px;padding-right:0px;border-right:0px;border-left:0px">
+    <a class="btn btn-outline-dark  " href="index" role="button" style="white-space: normal;font-size: 1.2vw;padding-left:0px;padding-right:0px;border-right:0px;border-left:0px">
     <i class="octicon mark-github"></i>
-      Dê seu </br>feedback
+      Dê seu feedback
    </a>
    <a class="btn btn-outline-dark"
    data-toggle="tooltip" data-placement="right" title="Github"
@@ -53,7 +53,7 @@
    </div></div>
    
    
-   
+   </li></ul>
 </div>
   
  
