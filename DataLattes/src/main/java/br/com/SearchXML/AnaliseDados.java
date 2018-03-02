@@ -6,7 +6,7 @@ import javax.xml.xpath.XPathExpressionException;
 
 import org.w3c.dom.Document;
 
-import br.com.Modelo.Orientacao;
+import br.com.Modelo.ObjetoCriterio;
 import br.com.estrutura.AreaEstrutura;
 import br.com.estrutura.CriterioEstrutura;
 import br.com.estrutura.Estrutura;
@@ -29,8 +29,8 @@ public class AnaliseDados {
 								criterioEstrutura.getAbre(), tipoEstrutura.getAbre(), xmlfile, tipoEstrutura));
 						for (ItemAnalisado itemAnalisado : tipoEstrutura.getItemAnalisados()) {
 							if (itemAnalisado.getValidade() == 0) {
-							tipoEstrutura.setValorTotalContabilizado(
-									tipoEstrutura.getValorTotalContabilizado() + tipoEstrutura.getValor());
+								tipoEstrutura.setValorTotalContabilizado(
+										tipoEstrutura.getValorTotalContabilizado() + tipoEstrutura.getValor());
 								criterioEstrutura.setValorTotalCriterio(
 										criterioEstrutura.getValorTotalCriterio() + tipoEstrutura.getValor());
 							}
@@ -47,23 +47,24 @@ public class AnaliseDados {
 
 	public ArrayList<ItemAnalisado> switchBuscaXml(String areaEstrutura, String criterioEstrutura, String tipoEstrutura,
 			Document xmlfile, TipoEstrutura ObjecttipoEstrutura) {
-		ArrayList<ItemAnalisado> listItemAnalisado = new ArrayList<ItemAnalisado>();
+
 		try {
+			this.filtroSearchXml.setlimiteFile(xmlfile, ObjecttipoEstrutura.getLimite());
 			switch (areaEstrutura) {
 			case "For":
-				return ForSwitch(criterioEstrutura, tipoEstrutura, xmlfile, ObjecttipoEstrutura);
+				return ForSwitch(criterioEstrutura, tipoEstrutura);
 			case "PrTec":
-				return PrTecSwitch(criterioEstrutura, tipoEstrutura, xmlfile, ObjecttipoEstrutura);
+				return PrTecSwitch(criterioEstrutura, tipoEstrutura);
 			case "PrArt":
-				return PrArtSwitch(criterioEstrutura, tipoEstrutura, xmlfile, ObjecttipoEstrutura);
+				return PrArtSwitch(criterioEstrutura, tipoEstrutura);
 			case "PrBli":
-				return PrBliSwitch(criterioEstrutura, tipoEstrutura, xmlfile, ObjecttipoEstrutura);
+				return PrBliSwitch(criterioEstrutura, tipoEstrutura);
 			case "Orien":
-				return OrienSwitch(criterioEstrutura, tipoEstrutura, xmlfile, ObjecttipoEstrutura);
+				return OrienSwitch(criterioEstrutura, tipoEstrutura);
 			case "Banc":
-				return BancSwitch(criterioEstrutura, tipoEstrutura, xmlfile, ObjecttipoEstrutura);
+				return BancSwitch(criterioEstrutura, tipoEstrutura);
 			case "CrGe":
-				return CrGeSwitch(criterioEstrutura, tipoEstrutura, xmlfile, ObjecttipoEstrutura);
+				return CrGeSwitch(criterioEstrutura, tipoEstrutura);
 			}
 		} catch (XPathExpressionException e) {
 			// TODO Auto-generated catch block
@@ -72,690 +73,585 @@ public class AnaliseDados {
 		return null;
 	}
 
-	public ArrayList<ItemAnalisado> ForSwitch(String criterioEstrutura, String tipoEstrutura, Document xmlfile,
-			TipoEstrutura ObjecttipoEstrutura) throws XPathExpressionException {
-		SearchXMLFormacoes searchXMLFormacoes = new SearchXMLFormacoes(xmlfile);
+	public ArrayList<ItemAnalisado> ForSwitch(String criterioEstrutura, String tipoEstrutura)
+			throws XPathExpressionException {
+		SearchXMLFormacoes searchXMLFormacoes = new SearchXMLFormacoes(this.filtroSearchXml.getXmlfile());
 		switch (criterioEstrutura) {
 		case "Gr":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.Graduacao(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.Graduacao());
 			case "And":
-				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.Graduacao(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.Graduacao());
 			case "Con":
-				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.Graduacao(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.Graduacao());
 			}
 		case "Es":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.Especializacao(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.Especializacao());
 			case "And":
-				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.Especializacao(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.Especializacao());
 			case "Con":
-				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.Especializacao(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.Especializacao());
 			}
 		case "Me":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.Mestrado(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.Mestrado());
 			case "And":
-				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.Mestrado(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.Mestrado());
 			case "Con":
-				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.Mestrado(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.Mestrado());
 			}
 		case "Do":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.Doutorado(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.Doutorado());
 			case "And":
-				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.Doutorado(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.Doutorado());
 			case "Con":
-				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.Doutorado(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.Doutorado());
 			}
 		case "PDo":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.PosDoutorado(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.PosDoutorado());
 			case "And":
-				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.PosDoutorado(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.PosDoutorado());
 			case "Con":
-				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.PosDoutorado(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.PosDoutorado());
 			}
 		case "LDo":
-			return this.filtroSearchXml.PreencherItemFormacao(searchXMLFormacoes.LivreDocencia(), 
-					xmlfile, ObjecttipoEstrutura);
+			// return
+			// this.filtroSearchXml.PreencherItemFormacao(searchXMLFormacoes.LivreDocencia()
+			// );
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLFormacoes.LivreDocencia());
 		case "CuTePr":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.CursoTecnico(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.CursoTecnico());
 			case "And":
-				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.CursoTecnico(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.CursoTecnico());
 			case "Con":
-				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.CursoTecnico(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.CursoTecnico());
 			}
 		case "MePr":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.MestradoProfissional(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.MestradoProfissional());
 			case "And":
-				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.MestradoProfissional(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.MestradoProfissional());
 			case "Con":
-				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.MestradoProfissional(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.MestradoProfissional());
 			}
 		case "ReMe":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.ResidenciaMedica(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.ResidenciaMedica());
 			case "And":
-				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.ResidenciaMedica(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.ResidenciaMedica());
 			case "Con":
-				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.ResidenciaMedica(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.ResidenciaMedica());
 			}
 		case "Ape":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.Aperfeicoamento(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.Aperfeicoamento());
 			case "And":
-				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.Aperfeicoamento(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.Aperfeicoamento());
 			case "Con":
-				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.Aperfeicoamento(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.Aperfeicoamento());
 			}
 		case "MBA":
 			switch (tipoEstrutura) {
 			case "AnCos":
-				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.MBA(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAndCon(searchXMLFormacoes.MBA());
 			case "And":
-				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.MBA(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoAnd(searchXMLFormacoes.MBA());
 			case "Con":
-				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.MBA(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemFormacaoCon(searchXMLFormacoes.MBA());
 			}
 		}
 		return null;
 
 	}
 
-	public ArrayList<ItemAnalisado> PrTecSwitch(String criterioEstrutura, String tipoEstrutura, Document xmlfile,
-			TipoEstrutura ObjecttipoEstrutura) throws XPathExpressionException {
-		SearchXMLProdTecnica searchXMLProdTecnica = new SearchXMLProdTecnica(xmlfile);
+	public ArrayList<ItemAnalisado> PrTecSwitch(String criterioEstrutura, String tipoEstrutura)
+			throws XPathExpressionException {
+		SearchXMLProdTecnica searchXMLProdTecnica = new SearchXMLProdTecnica(this.filtroSearchXml.getXmlfile());
 
 		switch (criterioEstrutura) {
 		case "Tr":
-			return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdTecnica.Traducao(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.Traducao());
 		case "CuRe":
-			return this.filtroSearchXml.PreencherItemTipo3(searchXMLProdTecnica.CultivacapRegistrada(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.CultivacapRegistrada());
 		case "CuPr":
-			return this.filtroSearchXml.PreencherItemTipo3(searchXMLProdTecnica.CultivacapProtegida(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.CultivacapProtegida());
 		case "Sof":
-			return this.filtroSearchXml.PreencherItemTipo4(searchXMLProdTecnica.Software(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.Software());
 		case "Pa":
 			switch (tipoEstrutura) {
 			case "NaIn":
-				return this.filtroSearchXml.PreencherItemTipo3(searchXMLProdTecnica.Patente(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.Patente());
 			case "Nac":
-				return this.filtroSearchXml.PreencherItemTipo3Nac(searchXMLProdTecnica.Patente(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimitePatenteNac(searchXMLProdTecnica.Patente());
 			case "Int":
-				return this.filtroSearchXml.PreencherItemTipo3Inte(searchXMLProdTecnica.Patente(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimitePatenteInt(searchXMLProdTecnica.Patente());
 			}
 		case "DeTe":
-			return this.filtroSearchXml.PreencherItemTipo3(searchXMLProdTecnica.DesenhoIndustrial(),
-					xmlfile, ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.DesenhoIndustrial());
 		case "Mac":
-			return this.filtroSearchXml.PreencherItemTipo3(searchXMLProdTecnica.Marca(), xmlfile, ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.Marca());
 		case "ToCiIn":
-			return this.filtroSearchXml.PreencherItemTipo3(searchXMLProdTecnica.TopogradiaDeCircuitoIntegrado(),
-					xmlfile, ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.TopogradiaDeCircuitoIntegrado());
 		case "PrTe":
-			return this.filtroSearchXml.PreencherItemTipo5(searchXMLProdTecnica.ProdutoTecnologico(),
-					xmlfile, ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.ProdutoTecnologico());
 		case "ProuTe":
-			return this.filtroSearchXml.PreencherItemTipo4(searchXMLProdTecnica.ProcessoTecnico(),
-					xmlfile, ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.ProcessoTecnico());
 		case "TrTe":
-			return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdTecnica.TrabalhoTecnico(),
-					xmlfile, ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.TrabalhoTecnico());
 		case "ApTr":
-			return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdTecnica.ApresentacaoTrabalho(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.ApresentacaoTrabalho());
 		case "CaMaSi":
-			return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdTecnica.CartaMapa(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.CartaMapa());
 		case "CuMiCuDu":
-			return this.filtroSearchXml.PreencherItemProducao(searchXMLProdTecnica.CursoMinistradoCurtaDuracao(),
-					xmlfile, ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.CursoMinistradoCurtaDuracao());
 		case "PrMaDi":
-			return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdTecnica.MaterialDidatico(),
-					xmlfile, ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.MaterialDidatico());
 		case "Edi":
-			return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdTecnica.Editoracao(),
-					xmlfile, ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.Editoracao());
 		case "MaObAr":
-			return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdTecnica.ManutencaoObraArtistica(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.ManutencaoObraArtistica());
 		case "Maq":
-			return this.filtroSearchXml.PreencherItemProducao(searchXMLProdTecnica.Maquete(),
-					xmlfile, ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.Maquete());
 		case "OrEv":
-			return this.filtroSearchXml.PreencherItemTipo8(searchXMLProdTecnica.OrganizacaoEventos(),
-					xmlfile, ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.OrganizacaoEventos());
 		case "CPRTV":
-			return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdTecnica.ProgramaRadioTVComentario(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.ProgramaRadioTVComentario());
 		case "RePe":
-			return this.filtroSearchXml.PreencherItemProducao(searchXMLProdTecnica.RelatorioPesquisa(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.RelatorioPesquisa());
 		case "TeMiSo":
-			return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdTecnica.MidiaSocial(), 
-					xmlfile, ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdTecnica.MidiaSocial());
 		}
 		return null;
 	}
 
-	public ArrayList<ItemAnalisado> PrArtSwitch(String criterioEstrutura, String tipoEstrutura, Document xmlfile,
-			TipoEstrutura ObjecttipoEstrutura) throws XPathExpressionException {
-		SearchXMLProdArtistica searchXMLProdArtistica = new SearchXMLProdArtistica(xmlfile);
+	public ArrayList<ItemAnalisado> PrArtSwitch(String criterioEstrutura, String tipoEstrutura)
+			throws XPathExpressionException {
+		SearchXMLProdArtistica searchXMLProdArtistica = new SearchXMLProdArtistica(this.filtroSearchXml.getXmlfile());
 		switch (criterioEstrutura) {
 		case "CrPa":
 			switch (tipoEstrutura) {
 			case "InCo":
-				return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdArtistica.Partitura(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdArtistica.Partitura());
 			case "Ind":
-				return this.filtroSearchXml.PreencherItemTipo6Ind(searchXMLProdArtistica.Partitura(), 
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteInd(searchXMLProdArtistica.Partitura());
 			case "Col":
-				return this.filtroSearchXml.PreencherItemTipo6Cole(searchXMLProdArtistica.Partitura(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteCole(searchXMLProdArtistica.Partitura());
 			}
 		case "ApObAr":
 			switch (tipoEstrutura) {
 			case "InCo":
-				return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdArtistica.ApresentacaoObraArtistica(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdArtistica.ApresentacaoObraArtistica());
 			case "Ind":
-				return this.filtroSearchXml.PreencherItemTipo6Ind(searchXMLProdArtistica.ApresentacaoObraArtistica(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteInd(searchXMLProdArtistica.ApresentacaoObraArtistica());
 			case "Col":
-				return this.filtroSearchXml.PreencherItemTipo6Cole(searchXMLProdArtistica.ApresentacaoObraArtistica(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteCole(searchXMLProdArtistica.ApresentacaoObraArtistica());
 			}
 		case "ApPrRTV":
 			switch (tipoEstrutura) {
 			case "InCo":
-				return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdArtistica.ApresentacaoRadioTV(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdArtistica.ApresentacaoRadioTV());
 			case "Ind":
-				return this.filtroSearchXml.PreencherItemTipo6Ind(searchXMLProdArtistica.ApresentacaoRadioTV(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteInd(searchXMLProdArtistica.ApresentacaoRadioTV());
 			case "Col":
-				return this.filtroSearchXml.PreencherItemTipo6Cole(searchXMLProdArtistica.ApresentacaoRadioTV(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteCole(searchXMLProdArtistica.ApresentacaoRadioTV());
 			}
 		case "ArMu":
 			switch (tipoEstrutura) {
 			case "InCo":
-				return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdArtistica.ArranjoMusical(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdArtistica.ArranjoMusical());
 			case "Ind":
-				return this.filtroSearchXml.PreencherItemTipo6Ind(searchXMLProdArtistica.ArranjoMusical(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteInd(searchXMLProdArtistica.ArranjoMusical());
 			case "Col":
-				return this.filtroSearchXml.PreencherItemTipo6Cole(searchXMLProdArtistica.ArranjoMusical(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteCole(searchXMLProdArtistica.ArranjoMusical());
 			}
 		case "CoMu":
 			switch (tipoEstrutura) {
 			case "InCo":
-				return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdArtistica.ComposicaoMusical(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdArtistica.ComposicaoMusical());
 			case "Ind":
-				return this.filtroSearchXml.PreencherItemTipo6Ind(searchXMLProdArtistica.ComposicaoMusical(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteInd(searchXMLProdArtistica.ComposicaoMusical());
 			case "Col":
-				return this.filtroSearchXml.PreencherItemTipo6Cole(searchXMLProdArtistica.ComposicaoMusical(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteCole(searchXMLProdArtistica.ComposicaoMusical());
 			}
 		case "ObArVi":
 			switch (tipoEstrutura) {
 			case "InCo":
-				return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdArtistica.ObraArtesVisuais(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdArtistica.ObraArtesVisuais());
 			case "Ind":
-				return this.filtroSearchXml.PreencherItemTipo6Ind(searchXMLProdArtistica.ObraArtesVisuais(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteInd(searchXMLProdArtistica.ObraArtesVisuais());
 			case "Col":
-				return this.filtroSearchXml.PreencherItemTipo6Cole(searchXMLProdArtistica.ObraArtesVisuais(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteCole(searchXMLProdArtistica.ObraArtesVisuais());
 			}
 		case "So":
 			switch (tipoEstrutura) {
 			case "InCo":
-				return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdArtistica.Sonoplastia(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdArtistica.Sonoplastia());
 			case "Ind":
-				return this.filtroSearchXml.PreencherItemTipo6Ind(searchXMLProdArtistica.Sonoplastia(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteInd(searchXMLProdArtistica.Sonoplastia());
 			case "Col":
-				return this.filtroSearchXml.PreencherItemTipo6Cole(searchXMLProdArtistica.Sonoplastia(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteCole(searchXMLProdArtistica.Sonoplastia());
 			}
 		case "TrArCe":
 			switch (tipoEstrutura) {
 			case "InCo":
-				return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdArtistica.ArtesCenicas(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdArtistica.ArtesCenicas());
 			case "Ind":
-				return this.filtroSearchXml.PreencherItemTipo6Ind(searchXMLProdArtistica.ArtesCenicas(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteInd(searchXMLProdArtistica.ArtesCenicas());
 			case "Col":
-				return this.filtroSearchXml.PreencherItemTipo6Cole(searchXMLProdArtistica.ArtesCenicas(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteCole(searchXMLProdArtistica.ArtesCenicas());
 			}
 		case "TrArVi":
 			switch (tipoEstrutura) {
 			case "InCo":
-				return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdArtistica.ArtesVizuais(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdArtistica.ArtesVizuais());
 			case "Ind":
-				return this.filtroSearchXml.PreencherItemTipo6Ind(searchXMLProdArtistica.ArtesVizuais(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteInd(searchXMLProdArtistica.ArtesVizuais());
 			case "Col":
-				return this.filtroSearchXml.PreencherItemTipo6Cole(searchXMLProdArtistica.ArtesVizuais(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteCole(searchXMLProdArtistica.ArtesVizuais());
 			}
 		case "Mu":
 			switch (tipoEstrutura) {
 			case "InCo":
-				return this.filtroSearchXml.PreencherItemTipo6(searchXMLProdArtistica.Musica(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdArtistica.Musica());
 			case "Ind":
-				return this.filtroSearchXml.PreencherItemTipo6Ind(searchXMLProdArtistica.Musica(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteInd(searchXMLProdArtistica.Musica());
 			case "Col":
-				return this.filtroSearchXml.PreencherItemTipo6Cole(searchXMLProdArtistica.Musica(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimiteCole(searchXMLProdArtistica.Musica());
 			}
 		}
 		return null;
 	}
 
-	public ArrayList<ItemAnalisado> PrBliSwitch(String criterioEstrutura, String tipoEstrutura, Document xmlfile,
-			TipoEstrutura ObjecttipoEstrutura) throws XPathExpressionException {
-		SearchXMLProdBibliografica searchXMLProdBibliografica = new SearchXMLProdBibliografica(xmlfile);
+	public ArrayList<ItemAnalisado> PrBliSwitch(String criterioEstrutura, String tipoEstrutura)
+			throws XPathExpressionException {
+		SearchXMLProdBibliografica searchXMLProdBibliografica = new SearchXMLProdBibliografica(
+				this.filtroSearchXml.getXmlfile());
 		switch (criterioEstrutura) {
 		case "TrEv":
 			switch (tipoEstrutura) {
 			case "NaIn":
-				return this.filtroSearchXml.PreencherItemTipo0(searchXMLProdBibliografica.TrabalhoCompletoEvento(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdBibliografica.TrabalhoCompletoEvento());
 			case "Nac":
-				return this.filtroSearchXml.PreencherItemTipo0Nac(searchXMLProdBibliografica.TrabalhoCompletoEvento(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml
+						.PreencherAnoLimiteTrabNac(searchXMLProdBibliografica.TrabalhoCompletoEvento());
 			case "Int":
-				return this.filtroSearchXml.PreencherItemTipo0Int(searchXMLProdBibliografica.TrabalhoCompletoEvento(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml
+						.PreencherAnoLimiteTrabInt(searchXMLProdBibliografica.TrabalhoCompletoEvento());
 			}
 		case "ArPu":
-			return this.filtroSearchXml.PreencherItemTipo0(searchXMLProdBibliografica.ArtigoCompletoAceito(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdBibliografica.ArtigoCompletoAceito());
 		case "ArAcPu":
-			return this.filtroSearchXml.PreencherItemTipo0(searchXMLProdBibliografica.ArtigoCompletoPublicado(),
-					xmlfile, ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdBibliografica.ArtigoCompletoPublicado());
 		case "TeJoRe":
-			return this.filtroSearchXml.PreencherItemTipo0(searchXMLProdBibliografica.TextoJornalRevista(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdBibliografica.TextoJornalRevista());
 		case "CaLi":
-			return this.filtroSearchXml.PreencherItemTipo1(searchXMLProdBibliografica.LivroCapitulo(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdBibliografica.LivroCapitulo());
 		case "OrLi":
-			return this.filtroSearchXml.PreencherItemTipo2Or(searchXMLProdBibliografica.LivroPublicadoOuOrganizar(),
-					xmlfile, ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimiteOr(searchXMLProdBibliografica.LivroPublicadoOuOrganizar());
 		case "PuLi":
-			return this.filtroSearchXml.PreencherItemTipo2Pu(searchXMLProdBibliografica.LivroPublicadoOuOrganizar(),
-					xmlfile, ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimitePu(searchXMLProdBibliografica.LivroPublicadoOuOrganizar());
 		case "PrPoLi":
-			return this.filtroSearchXml.PreencherItemTipo2(searchXMLProdBibliografica.LivroPrePosFacio(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdBibliografica.LivroPrePosFacio());
 		}
 		return null;
 	}
 
-	public ArrayList<ItemAnalisado> OrienSwitch(String criterioEstrutura, String tipoEstrutura, Document xmlfile,
-			TipoEstrutura ObjecttipoEstrutura) throws XPathExpressionException {
-		SearchXMLOrientacoes searchXMLOrientacoes = new SearchXMLOrientacoes(xmlfile);
+	public ArrayList<ItemAnalisado> OrienSwitch(String criterioEstrutura, String tipoEstrutura)
+			throws XPathExpressionException {
+		SearchXMLOrientacoes searchXMLOrientacoes = new SearchXMLOrientacoes(this.filtroSearchXml.getXmlfile());
 		switch (criterioEstrutura) {
 		case "OrMe":
-			ArrayList<Orientacao> listArray;
-			ArrayList<Orientacao> listArray2;
+			ArrayList<ObjetoCriterio> listArray;
+			ArrayList<ObjetoCriterio> listArray2;
 			ArrayList<ItemAnalisado> resultado;
 			ArrayList<ItemAnalisado> resultado2;
 			switch (tipoEstrutura) {
 			case "AnCosOri":
-				resultado = this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoMesAnd(),
-						xmlfile, ObjecttipoEstrutura);
-				resultado2 = this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoMesCon(),
-						xmlfile, ObjecttipoEstrutura);
+				resultado = this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoMesAnd()
+						);
+				resultado2 = this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoMesCon()
+						);
 				resultado.addAll(resultado2);
 
 				return resultado;
 			case "And":
-				return this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoMesAnd(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoMesAnd()
+						);
 			case "Con":
-				return this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoMesCon(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoMesCon()
+						);
 			case "Ori":
 				listArray = searchXMLOrientacoes.OrientacaoMesAnd();
 				listArray2 = searchXMLOrientacoes.OrientacaoMesCon();
 				listArray.addAll(listArray2);
-				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray);
 			case "Coo":
 				listArray = searchXMLOrientacoes.OrientacaoMesAnd();
 				listArray2 = searchXMLOrientacoes.OrientacaoMesCon();
 				listArray.addAll(listArray2);
-				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray);
 
 			case "OriAnd":
 				listArray = searchXMLOrientacoes.OrientacaoMesAnd();
-				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray);
 			case "CooAnd":
 				listArray = searchXMLOrientacoes.OrientacaoMesAnd();
-				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray);
 			case "OriCon":
 				listArray = searchXMLOrientacoes.OrientacaoMesCon();
-				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray);
 			case "CooCon":
 				listArray = searchXMLOrientacoes.OrientacaoMesCon();
-				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray);
 			}
 			break;
 		case "OrDo":
 			switch (tipoEstrutura) {
 			case "AnCosOri":
-				resultado = this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoDouAnd(),
-						xmlfile, ObjecttipoEstrutura);
-				resultado2 = this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoDouCon(),
-						xmlfile, ObjecttipoEstrutura);
+				resultado = this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoDouAnd()
+						);
+				resultado2 = this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoDouCon()
+						);
 				resultado.addAll(resultado2);
 				return resultado;
 			case "And":
-				return this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoDouAnd(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoDouAnd()
+						);
 			case "Con":
-				return this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoDouCon(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoDouCon()
+						);
 			case "Ori":
 				listArray = searchXMLOrientacoes.OrientacaoDouAnd();
 				listArray2 = searchXMLOrientacoes.OrientacaoDouCon();
 				listArray.addAll(listArray2);
-				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray );
 			case "Coo":
 				listArray = searchXMLOrientacoes.OrientacaoDouAnd();
 				listArray2 = searchXMLOrientacoes.OrientacaoDouCon();
 				listArray.addAll(listArray2);
-				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray );
 			case "OriAnd":
 				listArray = searchXMLOrientacoes.OrientacaoDouAnd();
-				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray );
 			case "CooAnd":
 				listArray = searchXMLOrientacoes.OrientacaoDouAnd();
-				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray );
 			case "OriCon":
 				listArray = searchXMLOrientacoes.OrientacaoDouCon();
-				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray );
 			case "CooCon":
 				listArray = searchXMLOrientacoes.OrientacaoDouCon();
-				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray );
 			}
 		case "OrPoDo":
 			switch (tipoEstrutura) {
 			case "AnCosOri":
-				resultado = this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoPosDouAnd(),
-						xmlfile, ObjecttipoEstrutura);
-				resultado2 = this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoPosDouCon(),
-						xmlfile, ObjecttipoEstrutura);
+				resultado = this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoPosDouAnd()
+						);
+				resultado2 = this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoPosDouCon()
+						);
 				resultado.addAll(resultado2);
 				return resultado;
 			case "And":
-				return this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoPosDouAnd(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoPosDouAnd()
+						);
 			case "Con":
-				return this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoPosDouCon(), xmlfile,
-						ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoPosDouCon()
+						);
 			case "Ori":
 				listArray = searchXMLOrientacoes.OrientacaoPosDouAnd();
 				listArray2 = searchXMLOrientacoes.OrientacaoPosDouCon();
 				listArray.addAll(listArray2);
-				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray, xmlfile, ObjecttipoEstrutura);
 			case "Coo":
 				listArray = searchXMLOrientacoes.OrientacaoPosDouAnd();
 				listArray2 = searchXMLOrientacoes.OrientacaoPosDouCon();
 				listArray.addAll(listArray2);
-				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray );
 			case "OriAnd":
 				listArray = searchXMLOrientacoes.OrientacaoPosDouAnd();
-				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray );
 			case "CooAnd":
 				listArray = searchXMLOrientacoes.OrientacaoPosDouAnd();
-				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray );
 			case "OriCon":
 				listArray = searchXMLOrientacoes.OrientacaoPosDouCon();
-				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray);
 			case "CooCon":
 				listArray = searchXMLOrientacoes.OrientacaoPosDouCon();
-				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherItemOrientacaoCoo(listArray );
 			}
 		case "OrEsAp":
 			switch (tipoEstrutura) {
 			case "AnCosOri":
-				resultado = this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoAperfEspecAnd(),
-						xmlfile, ObjecttipoEstrutura);
+				resultado = this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoAperfEspecAnd()
+						);
 				resultado2 = this.filtroSearchXml.PreencherItemOrientacaoTipo(
-						searchXMLOrientacoes.OutrasOrientacaoCon(), xmlfile, ObjecttipoEstrutura,
+						searchXMLOrientacoes.OutrasOrientacaoCon() ,
 						"MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO");
 				resultado.addAll(resultado2);
 				return resultado;
 			case "And":
-				return this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoAperfEspecAnd(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoAperfEspecAnd()
+						);
 			case "Con":
-				return this.filtroSearchXml.PreencherItemOrientacaoTipo(searchXMLOrientacoes.OutrasOrientacaoCon(),
-						xmlfile, ObjecttipoEstrutura,
+				return this.filtroSearchXml.PreencherItemOrientacaoTipo(searchXMLOrientacoes.OutrasOrientacaoCon()
+						,
 						"MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO");
 			case "Ori":
-				resultado = this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoAperfEspecAnd(),
-						xmlfile, ObjecttipoEstrutura);
-				resultado2 = this.filtroSearchXml.PreencherItemOrientacaoOriTipo(
-						searchXMLOrientacoes.OutrasOrientacaoCon(), xmlfile, ObjecttipoEstrutura,
+				resultado = this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoAperfEspecAnd()
+						);
+				resultado2 = this.filtroSearchXml.PreencherAnoLimiteOriTipo(searchXMLOrientacoes.OutrasOrientacaoCon()
+						,
 						"MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO");
 				resultado.addAll(resultado2);
 				return resultado;
 			case "Coo":
-				resultado2 = this.filtroSearchXml.PreencherItemOrientacaoCooTipo(
-						searchXMLOrientacoes.OutrasOrientacaoCon(), xmlfile, ObjecttipoEstrutura,
+				resultado2 = this.filtroSearchXml.PreencherAnoLimiteCooTipo(searchXMLOrientacoes.OutrasOrientacaoCon()
+						,
 						"MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO");
 				resultado2.addAll(resultado2);
 				return resultado2;
 			case "OriAnd":
 				listArray = searchXMLOrientacoes.OrientacaoDouAnd();
-				return this.filtroSearchXml.PreencherItemOrientacao(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(listArray );
 			case "OriCon":
 				listArray = searchXMLOrientacoes.OutrasOrientacaoCon();
-				resultado = this.filtroSearchXml.PreencherItemOrientacaoTipo(listArray, xmlfile, ObjecttipoEstrutura,
+				resultado = this.filtroSearchXml.PreencherItemOrientacaoTipo(listArray, 
 						"MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO");
 			case "CooCon":
 				listArray = searchXMLOrientacoes.OutrasOrientacaoCon();
-				resultado = this.filtroSearchXml.PreencherItemOrientacaoCooTipo(listArray, xmlfile, ObjecttipoEstrutura,
+				resultado = this.filtroSearchXml.PreencherAnoLimiteCooTipo(listArray, 
 						"MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO");
 			}
 		case "OrGr":
 			switch (tipoEstrutura) {
 			case "AnCosOri":
-				resultado = this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoGraduacaoAnd(),
-						xmlfile, ObjecttipoEstrutura);
+				resultado = this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoGraduacaoAnd()
+						);
 				resultado2 = this.filtroSearchXml.PreencherItemOrientacaoTipo(
-						searchXMLOrientacoes.OutrasOrientacaoCon(), xmlfile, ObjecttipoEstrutura,
+						searchXMLOrientacoes.OutrasOrientacaoCon() ,
 						"TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO");
 				resultado.addAll(resultado2);
 				return resultado;
 			case "And":
-				return this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoGraduacaoAnd(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoGraduacaoAnd()
+						);
 			case "Con":
-				return this.filtroSearchXml.PreencherItemOrientacaoTipo(searchXMLOrientacoes.OutrasOrientacaoCon(),
-						xmlfile, ObjecttipoEstrutura,
-						"TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO");
+				return this.filtroSearchXml.PreencherItemOrientacaoTipo(searchXMLOrientacoes.OutrasOrientacaoCon()
+						, "TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO");
 			case "Ori":
-				resultado = this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoGraduacaoAnd(),
-						xmlfile, ObjecttipoEstrutura);
-				resultado2 = this.filtroSearchXml.PreencherItemOrientacaoOriTipo(
-						searchXMLOrientacoes.OutrasOrientacaoCon(), xmlfile, ObjecttipoEstrutura,
-						"TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO");
+				resultado = this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoGraduacaoAnd()
+						);
+				resultado2 = this.filtroSearchXml.PreencherAnoLimiteOriTipo(searchXMLOrientacoes.OutrasOrientacaoCon()
+						, "TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO");
 				resultado.addAll(resultado2);
 				return resultado;
 			case "Coo":
-				resultado2 = this.filtroSearchXml.PreencherItemOrientacaoCooTipo(
-						searchXMLOrientacoes.OutrasOrientacaoCon(), xmlfile, ObjecttipoEstrutura,
-						"TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO");
+				resultado2 = this.filtroSearchXml.PreencherAnoLimiteCooTipo(searchXMLOrientacoes.OutrasOrientacaoCon()
+						, "TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO");
 				resultado2.addAll(resultado2);
 				return resultado2;
 			case "OriAnd":
 				listArray = searchXMLOrientacoes.OrientacaoDouAnd();
-				return this.filtroSearchXml.PreencherItemOrientacao(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(listArray );
 			case "OriCon":
 				listArray = searchXMLOrientacoes.OutrasOrientacaoCon();
-				resultado = this.filtroSearchXml.PreencherItemOrientacaoTipo(listArray, xmlfile, ObjecttipoEstrutura,
+				resultado = this.filtroSearchXml.PreencherItemOrientacaoTipo(listArray ,
 						"TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO");
 			case "CooCon":
 				listArray = searchXMLOrientacoes.OutrasOrientacaoCon();
-				resultado = this.filtroSearchXml.PreencherItemOrientacaoCooTipo(listArray, xmlfile, ObjecttipoEstrutura,
+				resultado = this.filtroSearchXml.PreencherAnoLimiteCooTipo(listArray ,
 						"TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO");
 			}
 		case "OrInCi":
 			switch (tipoEstrutura) {
 			case "AnCosOri":
-				resultado = this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoICAnd(),
-						xmlfile, ObjecttipoEstrutura);
+				resultado = this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoICAnd()
+						);
 				resultado2 = this.filtroSearchXml.PreencherItemOrientacaoTipo(
-						searchXMLOrientacoes.OutrasOrientacaoCon(), xmlfile, ObjecttipoEstrutura,
+						searchXMLOrientacoes.OutrasOrientacaoCon() ,
 						"INICIACAO_CIENTIFICA");
 				resultado.addAll(resultado2);
 				return resultado;
 			case "And":
-				return this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoICAnd(),
-						xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoICAnd()
+						);
 			case "Con":
-				return this.filtroSearchXml.PreencherItemOrientacaoTipo(searchXMLOrientacoes.OutrasOrientacaoCon(),
-						xmlfile, ObjecttipoEstrutura,
-						"INICIACAO_CIENTIFICA");
+				return this.filtroSearchXml.PreencherItemOrientacaoTipo(searchXMLOrientacoes.OutrasOrientacaoCon()
+						, "INICIACAO_CIENTIFICA");
 			case "Ori":
-				resultado = this.filtroSearchXml.PreencherItemOrientacao(searchXMLOrientacoes.OrientacaoICAnd(),
-						xmlfile, ObjecttipoEstrutura);
-				resultado2 = this.filtroSearchXml.PreencherItemOrientacaoOriTipo(
-						searchXMLOrientacoes.OutrasOrientacaoCon(), xmlfile, ObjecttipoEstrutura,
-						"INICIACAO_CIENTIFICA");
+				resultado = this.filtroSearchXml.PreencherAnoLimite(searchXMLOrientacoes.OrientacaoICAnd()
+						);
+				resultado2 = this.filtroSearchXml.PreencherAnoLimiteOriTipo(searchXMLOrientacoes.OutrasOrientacaoCon()
+						, "INICIACAO_CIENTIFICA");
 				resultado.addAll(resultado2);
 				return resultado;
 			case "Coo":
-				resultado2 = this.filtroSearchXml.PreencherItemOrientacaoCooTipo(
-						searchXMLOrientacoes.OutrasOrientacaoCon(), xmlfile, ObjecttipoEstrutura,
-						"INICIACAO_CIENTIFICA");
+				resultado2 = this.filtroSearchXml.PreencherAnoLimiteCooTipo(searchXMLOrientacoes.OutrasOrientacaoCon()
+						, "INICIACAO_CIENTIFICA");
 				resultado2.addAll(resultado2);
 				return resultado2;
 			case "OriAnd":
 				listArray = searchXMLOrientacoes.OrientacaoDouAnd();
-				return this.filtroSearchXml.PreencherItemOrientacao(listArray, xmlfile, ObjecttipoEstrutura);
+				return this.filtroSearchXml.PreencherAnoLimite(listArray );
 			case "OriCon":
 				listArray = searchXMLOrientacoes.OutrasOrientacaoCon();
-				resultado = this.filtroSearchXml.PreencherItemOrientacaoTipo(listArray, xmlfile, ObjecttipoEstrutura,
+				resultado = this.filtroSearchXml.PreencherItemOrientacaoTipo(listArray,
 						"INICIACAO_CIENTIFICA");
 			case "CooCon":
 				listArray = searchXMLOrientacoes.OutrasOrientacaoCon();
-				resultado = this.filtroSearchXml.PreencherItemOrientacaoCooTipo(listArray, xmlfile, ObjecttipoEstrutura,
+				resultado = this.filtroSearchXml.PreencherAnoLimiteCooTipo(listArray,
 						"INICIACAO_CIENTIFICA");
 			}
 		}
 		return null;
 	}
 
-	public ArrayList<ItemAnalisado> BancSwitch(String criterioEstrutura, String tipoEstrutura, Document xmlfile,
-			TipoEstrutura ObjecttipoEstrutura) throws XPathExpressionException {
-		SearchXMLBanca SearchXMLBanca = new SearchXMLBanca(xmlfile);
+	public ArrayList<ItemAnalisado> BancSwitch(String criterioEstrutura, String tipoEstrutura)
+			throws XPathExpressionException {
+		SearchXMLBanca SearchXMLBanca = new SearchXMLBanca(this.filtroSearchXml.getXmlfile());
 		switch (criterioEstrutura) {
 		case "BaMe":
-			return this.filtroSearchXml.PreencherItemOrientacao(SearchXMLBanca.BancaMestrado(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaMestrado());
 		case "BaDo":
-			return this.filtroSearchXml.PreencherItemOrientacao(SearchXMLBanca.BancaDoutorado(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaDoutorado());
 		case "BaQu":
-			return this.filtroSearchXml.PreencherItemOrientacao(SearchXMLBanca.BancaQualificacao(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaQualificacao());
 		case "BaEsAp":
-			return this.filtroSearchXml.PreencherItemOrientacao(
-					SearchXMLBanca.BancaAperfeicoamentoEspecificacao(), xmlfile, ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaAperfeicoamentoEspecificacao());
 		case "BaGr":
-			return this.filtroSearchXml.PreencherItemOrientacao(SearchXMLBanca.BancaGraduacao(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaGraduacao());
 		case "BaPrTi":
-			return this.filtroSearchXml.PreencherItemOrientacao(SearchXMLBanca.BancaProfessorTitular(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaProfessorTitular());
 		case "BaCoPu":
-			return this.filtroSearchXml.PreencherItemOrientacao(SearchXMLBanca.BancaConcursoPublico(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaConcursoPublico());
 		case "BaLDo":
-			return this.filtroSearchXml.PreencherItemOrientacao(SearchXMLBanca.BancaLivreDocencia(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaLivreDocencia());
 		case "BaAvCu":
-			return this.filtroSearchXml.PreencherItemOrientacao(SearchXMLBanca.BancaAvaliacaoCurso(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaAvaliacaoCurso());
 		}
 		return null;
 	}
 
-	public ArrayList<ItemAnalisado> CrGeSwitch(String criterioEstrutura, String tipoEstrutura, Document xmlfile,
-			TipoEstrutura ObjecttipoEstrutura) throws XPathExpressionException {
-		SearchXMLDadosGerais searchXMLDadosGerais = new SearchXMLDadosGerais(xmlfile);
+	public ArrayList<ItemAnalisado> CrGeSwitch(String criterioEstrutura, String tipoEstrutura)
+			throws XPathExpressionException {
+		SearchXMLDadosGerais searchXMLDadosGerais = new SearchXMLDadosGerais(this.filtroSearchXml.getXmlfile());
 		switch (criterioEstrutura) {
 		case "DeEx":
-			return this.filtroSearchXml.PreencherItemBolean(searchXMLDadosGerais.DedicaoExclusiva(), xmlfile,
-					ObjecttipoEstrutura);
+			return this.filtroSearchXml.PreencherItemBolean(searchXMLDadosGerais.DedicaoExclusiva());
 		}
 		return null;
 	}

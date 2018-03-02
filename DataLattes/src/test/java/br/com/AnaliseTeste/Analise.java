@@ -10,12 +10,8 @@ import org.springframework.core.io.ClassPathResource;
 
 import br.com.SearchXML.AnaliseDados;
 import br.com.converter.ConverterFile;
-import br.com.estrutura.AreaEstrutura;
-import br.com.estrutura.CriterioEstrutura;
 import br.com.estrutura.Estrutura;
-import br.com.estrutura.ItemAnalisado;
 import br.com.estrutura.PreencherEstrutura;
-import br.com.estrutura.TipoEstrutura;
 
 public class Analise {
 
@@ -36,22 +32,25 @@ public class Analise {
 		new AnaliseDados().preencherEstruturaAnaliseXml(SessaoCriteriosKey,
 				ConverterFile.ConverterFileToDocument(xmlfile));
 
-		for (AreaEstrutura listAre : SessaoCriteriosKey.getListEst()) {
-			System.out.println("******** " + listAre.getNome() + " ******");
-			for (CriterioEstrutura listcrit : listAre.getListCrit()) {
-				System.out.println("&&&&&& " + listcrit.getCriterio() + " &&&&");
-				for (ArrayList<TipoEstrutura> listTipo : listcrit.getListTipo()) {
-					for (TipoEstrutura listtipoEstrutura : listTipo) {
-						System.out.println(listtipoEstrutura.getItemAnalisados().size());
-						System.out.println("[" + listtipoEstrutura.getNomeTipo() + "," + listtipoEstrutura.getAbre()
-								+ ", " + listtipoEstrutura.getValor() + ", " + listtipoEstrutura.getLimite() + "]");
-						for (ItemAnalisado itemAnalisado : listtipoEstrutura.getItemAnalisados()) {
-							System.out.println("valor contabilizado" + listtipoEstrutura.getValorTotalContabilizado());
-							System.out.println("nome" + itemAnalisado.getItem().getTitulo());
-						}
-					}
-				}
-			}
-		}
+		// for (AreaEstrutura listAre : SessaoCriteriosKey.getListEst()) {
+		// System.out.println("******** " + listAre.getNome() + " ******");
+		// for (CriterioEstrutura listcrit : listAre.getListCrit()) {
+		// System.out.println("&&&&&& " + listcrit.getCriterio() + " &&&&");
+		// for (ArrayList<TipoEstrutura> listTipo : listcrit.getListTipo()) {
+		// for (TipoEstrutura listtipoEstrutura : listTipo) {
+		// System.out.println(listtipoEstrutura.getItemAnalisados().size());
+		// System.out.println("[" + listtipoEstrutura.getNomeTipo() + "," +
+		// listtipoEstrutura.getAbre()
+		// + ", " + listtipoEstrutura.getValor() + ", " + listtipoEstrutura.getLimite()
+		// + "]");
+		// for (ItemAnalisado itemAnalisado : listtipoEstrutura.getItemAnalisados()) {
+		// System.out.println("valor contabilizado" +
+		// listtipoEstrutura.getValorTotalContabilizado());
+		// //System.out.println("nome" + itemAnalisado.getItem().getTitulo());
+		// }
+		// }
+		// }
+		// }
+		// }
 	}
 }

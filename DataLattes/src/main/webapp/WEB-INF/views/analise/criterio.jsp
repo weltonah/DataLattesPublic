@@ -81,7 +81,7 @@
                     <tr>
                       <th scope="col">Tipo</th>
                       <th scope="col">Valor</th>
-                      <c:if test="${listTipo.get(0).getLimite() != -1}">
+                      <c:if test="${!listTipo.get(0).getLimiteString().isEmpty()}">
                       <th scope="col">Limite</th>
                       </c:if>
                     </tr>
@@ -91,8 +91,8 @@
                    <tr>
                      <th scope="row">${TipoEstrutura.getNomeTipo()}</th>
                      <td>${TipoEstrutura.getValor()}</td>
-                     <c:if test="${TipoEstrutura.getLimite() != -1}">
-                     <td>${TipoEstrutura.getLimite()}
+                     <c:if test="${!TipoEstrutura.getLimiteString().isEmpty()}">
+                     <td>${TipoEstrutura.getLimiteString()}
                      </td>
                      </c:if>
                    </tr>

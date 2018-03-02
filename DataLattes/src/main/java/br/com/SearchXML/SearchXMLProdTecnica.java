@@ -6,12 +6,7 @@ import javax.xml.xpath.XPathExpressionException;
 
 import org.w3c.dom.Document;
 
-import br.com.Modelo.Producao;
-import br.com.Modelo.Tipo3;
-import br.com.Modelo.Tipo4;
-import br.com.Modelo.Tipo5;
-import br.com.Modelo.Tipo6;
-import br.com.Modelo.Tipo8;
+import br.com.Modelo.ObjetoCriterio;
 
 public class SearchXMLProdTecnica extends SearchXML {
 
@@ -20,92 +15,92 @@ public class SearchXMLProdTecnica extends SearchXML {
 		// TODO Auto-generated constructor stub
 	}
 	//feito
-	public ArrayList<Tipo6> Traducao() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> Traducao() throws XPathExpressionException {
 		return BuscaTipo6("//TRADUCAO", "TITULO", 1, "TITULO-DA-OBRA-ORIGINAL", 0, null);
 	}
 	//feito
-	public ArrayList<Tipo3> CultivacapRegistrada() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> CultivacapRegistrada() throws XPathExpressionException {
 		return BuscaTipo3("//CULTIVAR-REGISTRADA", "DENOMINACAO", "ANO-SOLICITACAO", 0, null);
 	}
 	//feito
-	public ArrayList<Tipo4> Software() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> Software() throws XPathExpressionException {
 		return BuscaTipo4("//SOFTWARE", "TITULO-DO-SOFTWARE", "ANO");
 	}
 	//feito
-	public ArrayList<Tipo3> Patente() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> Patente() throws XPathExpressionException {
 		return BuscaTipo3("//PATENTE", "TITULO", "ANO-DESENVOLVIMENTO", 0, "PAIS");
 	}
 	//feito
-	public ArrayList<Tipo3> CultivacapProtegida() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> CultivacapProtegida() throws XPathExpressionException {
 		return BuscaTipo3("//CULTIVAR-PROTEGIDA", "DENOMINACAO", "ANO-SOLICITACAO", 0, null);
 	}
 	//feito
-	public ArrayList<Tipo3> DesenhoIndustrial() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> DesenhoIndustrial() throws XPathExpressionException {
 		return BuscaTipo3("//DESENHO-INDUSTRIAL", "TITULO", "ANO-DESENVOLVIMENTO", 0, null);
 	}
 	//feito
-	public ArrayList<Tipo3> Marca() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> Marca() throws XPathExpressionException {
 		return BuscaTipo3("//MARCA", "TITULO", "ANO-DESENVOLVIMENTO", 0, null);
 	}
 	//feito
-	public ArrayList<Tipo3> TopogradiaDeCircuitoIntegrado() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> TopogradiaDeCircuitoIntegrado() throws XPathExpressionException {
 		return BuscaTipo3("//TOPOGRAFIA-DE-CIRCUITO-INTEGRADO", "TITULO", "ANO-DESENVOLVIMENTO", 0, null);
 	}
 	//feito
-	public ArrayList<Tipo5> ProdutoTecnologico() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> ProdutoTecnologico() throws XPathExpressionException {
 		return BuscaTipo5("//PRODUTO-TECNOLOGICO");
 	}
 	//feito
-	public ArrayList<Tipo4> ProcessoTecnico() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> ProcessoTecnico() throws XPathExpressionException {
 		return BuscaTipo4("//PROCESSOS-OU-TECNICAS", "TITULO-DO-PROCESSO", "ANO");
 	}
 	//feito
-	public ArrayList<Tipo6> TrabalhoTecnico() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> TrabalhoTecnico() throws XPathExpressionException {
 		return BuscaTipo6("//TRABALHO-TECNICO", "TITULO-DO-TRABALHO-TECNICO", 0, null, 0, null);
 	}
 	//feito
-	public ArrayList<Tipo6> ApresentacaoTrabalho() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> ApresentacaoTrabalho() throws XPathExpressionException {
 		return BuscaTipo6("//APRESENTACAO-DE-TRABALHO", "TITULO", 1, "NOME-DO-EVENTO", 0, null);
 	}
 	//feito
-	public ArrayList<Tipo6> CartaMapa() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> CartaMapa() throws XPathExpressionException {
 		return BuscaTipo6("//CARTA-MAPA-OU-SIMILAR", "TITULO", 0, null, 0, null);
 	}
 	//feito
-	public ArrayList<Producao> CursoMinistradoCurtaDuracao() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> CursoMinistradoCurtaDuracao() throws XPathExpressionException {
 		return BuscaProducao("//CURSO-DE-CURTA-DURACAO-MINISTRADO", 0, null);
 	}
 	//feito
-	public ArrayList<Tipo6> MaterialDidatico() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> MaterialDidatico() throws XPathExpressionException {
 		return BuscaTipo6("//DESENVOLVIMENTO-DE-MATERIAL-DIDATICO-OU-INSTRUCIONAL", "TITULO", 0, null, 0, null);
 	}
 	//feito
-	public ArrayList<Tipo6> Editoracao() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> Editoracao() throws XPathExpressionException {
 		return BuscaTipo6("//EDITORACAO", "TITULO", 0, null, 0, null);
 	}
 	//feito
-	public ArrayList<Tipo6> ManutencaoObraArtistica() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> ManutencaoObraArtistica() throws XPathExpressionException {
 		return BuscaTipo6("//MANUTENCAO-DE-OBRA-ARTISTICA", "TITULO", 1, "NOME-DA-OBRA", 0,
 				null);
 	}
 	//feito
-	public ArrayList<Producao> Maquete() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> Maquete() throws XPathExpressionException {
 		return BuscaProducao("//MAQUETE", 0, null);
 	}
 	//feito
-	public ArrayList<Tipo8> OrganizacaoEventos() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> OrganizacaoEventos() throws XPathExpressionException {
 		return BuscaTipo8("//ORGANIZACAO-DE-EVENTO", 0, null);
 	}
 	//feito
-	public ArrayList<Tipo6> ProgramaRadioTVComentario() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> ProgramaRadioTVComentario() throws XPathExpressionException {
 		return BuscaTipo6("//PROGRAMA-DE-RADIO-OU-TV", "TITULO", 0, null, 0, null);
 	}
 	//feito
-	public ArrayList<Producao> RelatorioPesquisa() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> RelatorioPesquisa() throws XPathExpressionException {
 		return BuscaProducao("//RELATORIO-DE-PESQUISA", 0, null);
 	}
 	//feito
-	public ArrayList<Tipo6> MidiaSocial() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> MidiaSocial() throws XPathExpressionException {
 		return BuscaTipo6("//MIDIA-SOCIAL-WEBSITE-BLOG", "TITULO", 0, null, 0, null);
 	}
 

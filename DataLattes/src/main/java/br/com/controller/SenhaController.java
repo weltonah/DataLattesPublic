@@ -65,7 +65,6 @@ public class SenhaController {
 		File xmlfile = new File(file.getOriginalFilename());
 		xmlfile.createNewFile();
 		String key = new String(file.getBytes());
-		System.out.println(key);
 		xmlfile.delete();
 		String[] t = key.split("%");
 		String[] aux = t[0].split(">");

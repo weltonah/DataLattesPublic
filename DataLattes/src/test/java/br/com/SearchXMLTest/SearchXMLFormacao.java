@@ -13,6 +13,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 
 import br.com.Modelo.Formacao;
+import br.com.Modelo.ObjetoCriterio;
 import br.com.SearchXML.SearchXMLFormacoes;
 
 public class SearchXMLFormacao {
@@ -24,12 +25,12 @@ public class SearchXMLFormacao {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLFormacoes searchXML = new SearchXMLFormacoes(xmlfile);
-		ArrayList<Formacao> listprod = searchXML.Aperfeicoamento();
-		assertEquals("titulo monogra aperfeicoamento", listprod.get(0).getTituloTrabalho());
+		ArrayList<ObjetoCriterio> listprod = searchXML.Aperfeicoamento();
+		assertEquals("titulo monogra aperfeicoamento", ((Formacao) listprod.get(0)).getTituloTrabalho());
 		assertEquals(-1, listprod.get(0).getAno());
-		assertEquals("orientador aperfeicoamento", listprod.get(0).getNomeOrientador());
-		assertEquals("instituicao aperfeicoamento", listprod.get(0).getNomeInstituicao());
-		assertEquals("EM_ANDAMENTO", listprod.get(0).getStatus());
+		assertEquals("orientador aperfeicoamento", ((Formacao) listprod.get(0)).getNomeOrientador());
+		assertEquals("instituicao aperfeicoamento", ((Formacao) listprod.get(0)).getNomeInstituicao());
+		assertEquals("EM_ANDAMENTO", ((Formacao) listprod.get(0)).getStatus());
 		assertEquals("nome aperfeicoamento", listprod.get(0).getTitulo());
 	}
 
@@ -40,11 +41,11 @@ public class SearchXMLFormacao {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLFormacoes searchXML = new SearchXMLFormacoes(xmlfile);
-		ArrayList<Formacao> listprod = searchXML.CursoTecnico();
+		ArrayList<ObjetoCriterio> listprod = searchXML.CursoTecnico();
 		assertEquals(1997, listprod.get(0).getAno());
-		assertEquals("Colégio Pio X", listprod.get(0).getNomeInstituicao());
-		assertEquals("CONCLUIDO", listprod.get(0).getStatus());
-		assertEquals("Processamento de Dados", listprod.get(0).getTitulo());
+		assertEquals("Colégio Pio X", ((Formacao) listprod.get(0)).getNomeInstituicao());
+		assertEquals("CONCLUIDO", ((Formacao) listprod.get(0)).getStatus());
+		assertEquals("Processamento de Dados", ((Formacao) listprod.get(0)).getTitulo());
 	}
 
 	@Test
@@ -54,13 +55,14 @@ public class SearchXMLFormacao {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLFormacoes searchXML = new SearchXMLFormacoes(xmlfile);
-		ArrayList<Formacao> listprod = searchXML.Doutorado();
+		ArrayList<ObjetoCriterio> listprod = searchXML.Doutorado();
 		assertEquals("Uma abordagem heurística uni-objetivo para calibragem em meta-alinhadores de ontologias",
-				listprod.get(0).getTituloTrabalho());
+				((Formacao) listprod.get(0)).getTituloTrabalho());
 		assertEquals(2012, listprod.get(0).getAno());
-		assertEquals("Carlos José Pereira de Lucena", listprod.get(0).getNomeOrientador());
-		assertEquals("Pontifícia Universidade Católica do Rio de Janeiro", listprod.get(0).getNomeInstituicao());
-		assertEquals("CONCLUIDO", listprod.get(0).getStatus());
+		assertEquals("Carlos José Pereira de Lucena", ((Formacao) listprod.get(0)).getNomeOrientador());
+		assertEquals("Pontifícia Universidade Católica do Rio de Janeiro",
+				((Formacao) listprod.get(0)).getNomeInstituicao());
+		assertEquals("CONCLUIDO", ((Formacao) listprod.get(0)).getStatus());
 		assertEquals("Informática", listprod.get(0).getTitulo());
 	}
 
@@ -71,12 +73,12 @@ public class SearchXMLFormacao {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLFormacoes searchXML = new SearchXMLFormacoes(xmlfile);
-		ArrayList<Formacao> listprod = searchXML.Especializacao();
-		assertEquals("Monografia Especializacao", listprod.get(0).getTituloTrabalho());
+		ArrayList<ObjetoCriterio> listprod = searchXML.Especializacao();
+		assertEquals("Monografia Especializacao", ((Formacao) listprod.get(0)).getTituloTrabalho());
 		assertEquals(-1, listprod.get(0).getAno());
-		assertEquals("Orientador Especializacao", listprod.get(0).getNomeOrientador());
-		assertEquals("Nome instituicao Especializacao", listprod.get(0).getNomeInstituicao());
-		assertEquals("EM_ANDAMENTO", listprod.get(0).getStatus());
+		assertEquals("Orientador Especializacao", ((Formacao) listprod.get(0)).getNomeOrientador());
+		assertEquals("Nome instituicao Especializacao", ((Formacao) listprod.get(0)).getNomeInstituicao());
+		assertEquals("EM_ANDAMENTO", ((Formacao) listprod.get(0)).getStatus());
 		assertEquals("Nome do curso especializacao", listprod.get(0).getTitulo());
 	}
 
@@ -87,12 +89,12 @@ public class SearchXMLFormacao {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLFormacoes searchXML = new SearchXMLFormacoes(xmlfile);
-		ArrayList<Formacao> listprod = searchXML.Graduacao();
-		assertEquals("Um Aporte de Web Mining para a Web Semântica", listprod.get(0).getTituloTrabalho());
+		ArrayList<ObjetoCriterio> listprod = searchXML.Graduacao();
+		assertEquals("Um Aporte de Web Mining para a Web Semântica", ((Formacao) listprod.get(0)).getTituloTrabalho());
 		assertEquals(2004, listprod.get(0).getAno());
-		assertEquals("Tarcísio de Souza Lima", listprod.get(0).getNomeOrientador());
-		assertEquals("Universidade Federal de Juiz de Fora", listprod.get(0).getNomeInstituicao());
-		assertEquals("CONCLUIDO", listprod.get(0).getStatus());
+		assertEquals("Tarcísio de Souza Lima", ((Formacao) listprod.get(0)).getNomeOrientador());
+		assertEquals("Universidade Federal de Juiz de Fora", ((Formacao) listprod.get(0)).getNomeInstituicao());
+		assertEquals("CONCLUIDO", ((Formacao) listprod.get(0)).getStatus());
 		assertEquals("Informática", listprod.get(0).getTitulo());
 	}
 
@@ -103,9 +105,9 @@ public class SearchXMLFormacao {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLFormacoes searchXML = new SearchXMLFormacoes(xmlfile);
-		ArrayList<Formacao> listprod = searchXML.LivreDocencia();
+		ArrayList<ObjetoCriterio> listprod = searchXML.LivreDocencia();
 		assertEquals(2010, listprod.get(0).getAno());
-		assertEquals("Nome instituicao livre docencia", listprod.get(0).getNomeInstituicao());
+		assertEquals("Nome instituicao livre docencia", ((Formacao) listprod.get(0)).getNomeInstituicao());
 		assertEquals("titulo trabalho livre docencia", listprod.get(0).getTitulo());
 	}
 
@@ -116,12 +118,12 @@ public class SearchXMLFormacao {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLFormacoes searchXML = new SearchXMLFormacoes(xmlfile);
-		ArrayList<Formacao> listprod = searchXML.MBA();
-		assertEquals("titulo monografia mba", listprod.get(0).getTituloTrabalho());
+		ArrayList<ObjetoCriterio> listprod = searchXML.MBA();
+		assertEquals("titulo monografia mba", ((Formacao) listprod.get(0)).getTituloTrabalho());
 		assertEquals(2009, listprod.get(0).getAno());
-		assertEquals("orientador mba", listprod.get(0).getNomeOrientador());
-		assertEquals("instituicao mba", listprod.get(0).getNomeInstituicao());
-		assertEquals("CONCLUIDO", listprod.get(0).getStatus());
+		assertEquals("orientador mba", ((Formacao) listprod.get(0)).getNomeOrientador());
+		assertEquals("instituicao mba", ((Formacao) listprod.get(0)).getNomeInstituicao());
+		assertEquals("CONCLUIDO", ((Formacao) listprod.get(0)).getStatus());
 		assertEquals("nome curso mba", listprod.get(0).getTitulo());
 	}
 
@@ -132,12 +134,12 @@ public class SearchXMLFormacao {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLFormacoes searchXML = new SearchXMLFormacoes(xmlfile);
-		ArrayList<Formacao> listprod = searchXML.MestradoProfissional();
-		assertEquals("titulo tese mestrado profissionalizandte", listprod.get(0).getTituloTrabalho());
+		ArrayList<ObjetoCriterio> listprod = searchXML.MestradoProfissional();
+		assertEquals("titulo tese mestrado profissionalizandte", ((Formacao) listprod.get(0)).getTituloTrabalho());
 		assertEquals(-1, listprod.get(0).getAno());
-		assertEquals("orientador mestrad pro", listprod.get(0).getNomeOrientador());
-		assertEquals("instituicao mesd prof", listprod.get(0).getNomeInstituicao());
-		assertEquals("EM_ANDAMENTO", listprod.get(0).getStatus());
+		assertEquals("orientador mestrad pro", ((Formacao) listprod.get(0)).getNomeOrientador());
+		assertEquals("instituicao mesd prof", ((Formacao) listprod.get(0)).getNomeInstituicao());
+		assertEquals("EM_ANDAMENTO", ((Formacao) listprod.get(0)).getStatus());
 		assertEquals("curso mest prof", listprod.get(0).getTitulo());
 	}
 
@@ -148,13 +150,13 @@ public class SearchXMLFormacao {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLFormacoes searchXML = new SearchXMLFormacoes(xmlfile);
-		ArrayList<Formacao> listprod = searchXML.Mestrado();
+		ArrayList<ObjetoCriterio> listprod = searchXML.Mestrado();
 		assertEquals("Negociação de significado para viabilizar interoperabilidade semântica",
-				listprod.get(0).getTituloTrabalho());
+				((Formacao) listprod.get(0)).getTituloTrabalho());
 		assertEquals(2007, listprod.get(0).getAno());
-		assertEquals("Jano Moreira de Souza", listprod.get(0).getNomeOrientador());
-		assertEquals("Universidade Federal do Rio de Janeiro", listprod.get(0).getNomeInstituicao());
-		assertEquals("CONCLUIDO", listprod.get(0).getStatus());
+		assertEquals("Jano Moreira de Souza", ((Formacao) listprod.get(0)).getNomeOrientador());
+		assertEquals("Universidade Federal do Rio de Janeiro", ((Formacao) listprod.get(0)).getNomeInstituicao());
+		assertEquals("CONCLUIDO", ((Formacao) listprod.get(0)).getStatus());
 		assertEquals("Engenharia de Sistemas e Computação", listprod.get(0).getTitulo());
 	}
 
@@ -165,11 +167,11 @@ public class SearchXMLFormacao {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLFormacoes searchXML = new SearchXMLFormacoes(xmlfile);
-		ArrayList<Formacao> listprod = searchXML.PosDoutorado();
-		assertEquals("titulo trabalho pos doutorado", listprod.get(0).getTituloTrabalho());
+		ArrayList<ObjetoCriterio> listprod = searchXML.PosDoutorado();
+		assertEquals("titulo trabalho pos doutorado", ((Formacao) listprod.get(0)).getTituloTrabalho());
 		assertEquals(2009, listprod.get(0).getAno());
-		assertEquals("Nome instituicao pos doutorado", listprod.get(0).getNomeInstituicao());
-		assertEquals("CONCLUIDO", listprod.get(0).getStatus());
+		assertEquals("Nome instituicao pos doutorado", ((Formacao) listprod.get(0)).getNomeInstituicao());
+		assertEquals("CONCLUIDO", ((Formacao) listprod.get(0)).getStatus());
 		assertEquals("nome curso posdoutorado", listprod.get(0).getTitulo());
 	}
 
@@ -180,10 +182,10 @@ public class SearchXMLFormacao {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLFormacoes searchXML = new SearchXMLFormacoes(xmlfile);
-		ArrayList<Formacao> listprod = searchXML.ResidenciaMedica();
+		ArrayList<ObjetoCriterio> listprod = searchXML.ResidenciaMedica();
 		assertEquals(2001, listprod.get(0).getAno());
-		assertEquals("instituicao residencia", listprod.get(0).getNomeInstituicao());
-		assertEquals("EM_ANDAMENTO", listprod.get(0).getStatus());
+		assertEquals("instituicao residencia", ((Formacao) listprod.get(0)).getNomeInstituicao());
+		assertEquals("EM_ANDAMENTO", ((Formacao) listprod.get(0)).getStatus());
 		assertEquals("titulo residencia", listprod.get(0).getTitulo());
 	}
 

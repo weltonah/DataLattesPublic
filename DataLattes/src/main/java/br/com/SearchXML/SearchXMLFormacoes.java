@@ -11,6 +11,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import br.com.Modelo.Formacao;
+import br.com.Modelo.ObjetoCriterio;
 
 public class SearchXMLFormacoes extends SearchXML {
 
@@ -19,8 +20,8 @@ public class SearchXMLFormacoes extends SearchXML {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ArrayList<Formacao> Graduacao() throws XPathExpressionException {
-		ArrayList<Formacao> gra = new ArrayList<Formacao>();
+	public ArrayList<ObjetoCriterio> Graduacao() throws XPathExpressionException {
+		ArrayList<ObjetoCriterio> gra = new ArrayList<ObjetoCriterio>();
 		XPathExpression expr = this.xpath.compile("//GRADUACAO");
 		NodeList graNodeList = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		for (int i = 0; i < graNodeList.getLength(); i++) {
@@ -39,8 +40,8 @@ public class SearchXMLFormacoes extends SearchXML {
 		return gra;
 	}
 
-	public ArrayList<Formacao> Especializacao() throws XPathExpressionException {
-		ArrayList<Formacao> gra = new ArrayList<Formacao>();
+	public ArrayList<ObjetoCriterio> Especializacao() throws XPathExpressionException {
+		ArrayList<ObjetoCriterio> gra = new ArrayList<ObjetoCriterio>();
 		XPathExpression expr = this.xpath.compile("//ESPECIALIZACAO");
 		NodeList graNodeList = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		for (int i = 0; i < graNodeList.getLength(); i++) {
@@ -58,8 +59,8 @@ public class SearchXMLFormacoes extends SearchXML {
 		return gra;
 	}
 
-	public ArrayList<Formacao> Mestrado() throws XPathExpressionException {
-		ArrayList<Formacao> gra = new ArrayList<Formacao>();
+	public ArrayList<ObjetoCriterio> Mestrado() throws XPathExpressionException {
+		ArrayList<ObjetoCriterio> gra = new ArrayList<ObjetoCriterio>();
 		XPathExpression expr = this.xpath.compile("//MESTRADO");
 		NodeList graNodeList = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		for (int i = 0; i < graNodeList.getLength(); i++) {
@@ -78,8 +79,8 @@ public class SearchXMLFormacoes extends SearchXML {
 		return gra;
 	}
 
-	public ArrayList<Formacao> Doutorado() throws XPathExpressionException {
-		ArrayList<Formacao> gra = new ArrayList<Formacao>();
+	public ArrayList<ObjetoCriterio> Doutorado() throws XPathExpressionException {
+		ArrayList<ObjetoCriterio> gra = new ArrayList<ObjetoCriterio>();
 		XPathExpression expr = this.xpath.compile("//DOUTORADO");
 		NodeList graNodeList = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		for (int i = 0; i < graNodeList.getLength(); i++) {
@@ -98,8 +99,8 @@ public class SearchXMLFormacoes extends SearchXML {
 		return gra;
 	}
 
-	public ArrayList<Formacao> PosDoutorado() throws XPathExpressionException {
-		ArrayList<Formacao> gra = new ArrayList<Formacao>();
+	public ArrayList<ObjetoCriterio> PosDoutorado() throws XPathExpressionException {
+		ArrayList<ObjetoCriterio> gra = new ArrayList<ObjetoCriterio>();
 		XPathExpression expr = this.xpath.compile("//POS-DOUTORADO");
 		NodeList graNodeList = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		for (int i = 0; i < graNodeList.getLength(); i++) {
@@ -117,8 +118,8 @@ public class SearchXMLFormacoes extends SearchXML {
 		return gra;
 	}
 
-	public ArrayList<Formacao> LivreDocencia() throws XPathExpressionException {
-		ArrayList<Formacao> gra = new ArrayList<Formacao>();
+	public ArrayList<ObjetoCriterio> LivreDocencia() throws XPathExpressionException {
+		ArrayList<ObjetoCriterio> gra = new ArrayList<ObjetoCriterio>();
 		XPathExpression expr = this.xpath.compile("//LIVRE-DOCENCIA");
 		NodeList graNodeList = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		for (int i = 0; i < graNodeList.getLength(); i++) {
@@ -137,8 +138,8 @@ public class SearchXMLFormacoes extends SearchXML {
 	}
 
 	// testado
-	public ArrayList<Formacao> CursoTecnico() throws XPathExpressionException {
-		ArrayList<Formacao> gra = new ArrayList<Formacao>();
+	public ArrayList<ObjetoCriterio> CursoTecnico() throws XPathExpressionException {
+		ArrayList<ObjetoCriterio> gra = new ArrayList<ObjetoCriterio>();
 		XPathExpression expr = this.xpath.compile("//CURSO-TECNICO-PROFISSIONALIZANTE");
 		NodeList graNodeList = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		for (int i = 0; i < graNodeList.getLength(); i++) {
@@ -154,8 +155,8 @@ public class SearchXMLFormacoes extends SearchXML {
 		return gra;
 	}
 
-	public ArrayList<Formacao> MestradoProfissional() throws XPathExpressionException {
-		ArrayList<Formacao> gra = new ArrayList<Formacao>();
+	public ArrayList<ObjetoCriterio> MestradoProfissional() throws XPathExpressionException {
+		ArrayList<ObjetoCriterio> gra = new ArrayList<ObjetoCriterio>();
 		XPathExpression expr = this.xpath.compile("//MESTRADO-PROFISSIONALIZANTE");
 		NodeList graNodeList = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		for (int i = 0; i < graNodeList.getLength(); i++) {
@@ -174,8 +175,8 @@ public class SearchXMLFormacoes extends SearchXML {
 		return gra;
 	}
 
-	public ArrayList<Formacao> ResidenciaMedica() throws XPathExpressionException {
-		ArrayList<Formacao> gra = new ArrayList<Formacao>();
+	public ArrayList<ObjetoCriterio> ResidenciaMedica() throws XPathExpressionException {
+		ArrayList<ObjetoCriterio> gra = new ArrayList<ObjetoCriterio>();
 		XPathExpression expr = this.xpath.compile("//RESIDENCIA-MEDICA");
 		NodeList graNodeList = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		for (int i = 0; i < graNodeList.getLength(); i++) {
@@ -191,8 +192,8 @@ public class SearchXMLFormacoes extends SearchXML {
 		return gra;
 	}
 
-	public ArrayList<Formacao> Aperfeicoamento() throws XPathExpressionException {
-		ArrayList<Formacao> gra = new ArrayList<Formacao>();
+	public ArrayList<ObjetoCriterio> Aperfeicoamento() throws XPathExpressionException {
+		ArrayList<ObjetoCriterio> gra = new ArrayList<ObjetoCriterio>();
 		XPathExpression expr = this.xpath.compile("//APERFEICOAMENTO");
 		NodeList graNodeList = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		for (int i = 0; i < graNodeList.getLength(); i++) {
@@ -210,8 +211,8 @@ public class SearchXMLFormacoes extends SearchXML {
 		return gra;
 	}
 
-	public ArrayList<Formacao> MBA() throws XPathExpressionException {
-		ArrayList<Formacao> gra = new ArrayList<Formacao>();
+	public ArrayList<ObjetoCriterio> MBA() throws XPathExpressionException {
+		ArrayList<ObjetoCriterio> gra = new ArrayList<ObjetoCriterio>();
 		XPathExpression expr = this.xpath.compile("//MBA");
 		NodeList graNodeList = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		for (int i = 0; i < graNodeList.getLength(); i++) {
@@ -230,8 +231,8 @@ public class SearchXMLFormacoes extends SearchXML {
 		return gra;
 	}
 
-	public ArrayList<Formacao> areaAtuacao() throws XPathExpressionException {
-		ArrayList<Formacao> gra = new ArrayList<Formacao>();
+	public ArrayList<ObjetoCriterio> areaAtuacao() throws XPathExpressionException {
+		ArrayList<ObjetoCriterio> gra = new ArrayList<ObjetoCriterio>();
 		XPathExpression expr = this.xpath.compile("//AREA-DE-ATUACAO");
 		NodeList graNodeList = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		for (int i = 0; i < graNodeList.getLength(); i++) {
@@ -249,8 +250,8 @@ public class SearchXMLFormacoes extends SearchXML {
 		return gra;
 	}
 
-	public ArrayList<Formacao> Idioma() throws XPathExpressionException {
-		ArrayList<Formacao> gra = new ArrayList<Formacao>();
+	public ArrayList<ObjetoCriterio> Idioma() throws XPathExpressionException {
+		ArrayList<ObjetoCriterio> gra = new ArrayList<ObjetoCriterio>();
 		XPathExpression expr = this.xpath.compile("//IDIOMA");
 		NodeList graNodeList = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		for (int i = 0; i < graNodeList.getLength(); i++) {
@@ -268,8 +269,8 @@ public class SearchXMLFormacoes extends SearchXML {
 		return gra;
 	}
 
-	public ArrayList<Formacao> Premio() throws XPathExpressionException {
-		ArrayList<Formacao> gra = new ArrayList<Formacao>();
+	public ArrayList<ObjetoCriterio> Premio() throws XPathExpressionException {
+		ArrayList<ObjetoCriterio> gra = new ArrayList<ObjetoCriterio>();
 		XPathExpression expr = this.xpath.compile("//PREMIO-TITULO");
 		NodeList graNodeList = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
 		for (int i = 0; i < graNodeList.getLength(); i++) {

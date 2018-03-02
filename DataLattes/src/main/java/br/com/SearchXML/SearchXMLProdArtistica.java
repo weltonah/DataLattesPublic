@@ -6,7 +6,7 @@ import javax.xml.xpath.XPathExpressionException;
 
 import org.w3c.dom.Document;
 
-import br.com.Modelo.Tipo6;
+import br.com.Modelo.ObjetoCriterio;
 
 public class SearchXMLProdArtistica extends SearchXML {
 
@@ -15,44 +15,44 @@ public class SearchXMLProdArtistica extends SearchXML {
 		// TODO Auto-generated constructor stub
 	}
 	//feito
-	public ArrayList<Tipo6> Partitura() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> Partitura() throws XPathExpressionException {
 		return BuscaTipo6("//PARTITURA-MUSICAL", "TITULO", 0, null, 0, null);
 	}
 	//feito
-	public ArrayList<Tipo6> ApresentacaoObraArtistica() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> ApresentacaoObraArtistica() throws XPathExpressionException {
 		return BuscaTipo6("//APRESENTACAO-DE-OBRA-ARTISTICA", "TITULO", 1, "TIPO-DE-EVENTO", 1,
 				"ATIVIDADE-DOS-AUTORES");
 	}
 	//feito
-	public ArrayList<Tipo6> ApresentacaoRadioTV() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> ApresentacaoRadioTV() throws XPathExpressionException {
 		return BuscaTipo6("//APRESENTACAO-EM-RADIO-OU-TV", "TITULO", 0, null, 0, null);
 	}
 	//feito
-	public ArrayList<Tipo6> ArranjoMusical() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> ArranjoMusical() throws XPathExpressionException {
 		return BuscaTipo6("//ARRANJO-MUSICAL", "TITULO", 0, null, 0, null);
 	}
 	//feito
-	public ArrayList<Tipo6> ComposicaoMusical() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> ComposicaoMusical() throws XPathExpressionException {
 		return BuscaTipo6("//COMPOSICAO-MUSICAL", "TITULO", 0, null, 0, null);
 	}
 	//feito
-	public ArrayList<Tipo6> ObraArtesVisuais() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> ObraArtesVisuais() throws XPathExpressionException {
 		return BuscaTipo6("//OBRA-DE-ARTES-VISUAIS","TITULO", 1, "TIPO-DE-EVENTO",0,null);
 	}
 	//feito
-	public ArrayList<Tipo6> Sonoplastia() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> Sonoplastia() throws XPathExpressionException {
 		return BuscaTipo6("//SONOPLASTIA", "TITULO", 0, null, 0, null);
 	}
 	//feito
-	public ArrayList<Tipo6> ArtesCenicas() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> ArtesCenicas() throws XPathExpressionException {
 		return BuscaTipo6("//ARTES-CENICAS","TITULO", 1, "TIPO-DE-EVENTO",0,null);
 	}
 	//feito
-	public ArrayList<Tipo6> ArtesVizuais() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> ArtesVizuais() throws XPathExpressionException {
 		return BuscaTipo6("//ARTES-VISUAIS", "TITULO", 0, null, 0, null);
 	}
 
-	public ArrayList<Tipo6> Musica() throws XPathExpressionException {
+	public ArrayList<ObjetoCriterio> Musica() throws XPathExpressionException {
 		return BuscaTipo6("//MUSICA", "TITULO", 1, "TIPO-DE-EVENTO",0,null);
 	}
 

@@ -12,6 +12,7 @@ import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 
+import br.com.Modelo.ObjetoCriterio;
 import br.com.Modelo.Tipo6;
 import br.com.SearchXML.SearchXMLProdArtistica;
 
@@ -23,14 +24,14 @@ public class SearchXMLProdArtisticaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdArtistica searchXML = new SearchXMLProdArtistica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.ApresentacaoObraArtistica();
-		assertEquals("titulo obraArt", listprod.get(0).getTitulo());
-		assertEquals(2006, listprod.get(0).getAno());
-		assertEquals("COREOGRAFICA", listprod.get(0).getNatureza());
-		assertEquals("CONCERTO", listprod.get(0).getCampAux());
-		assertEquals("CANTO", listprod.get(0).getCampAux2());
-		assertEquals("nome obraArt", listprod.get(0).getAutores().get(0).getNome());
-		assertEquals("n obraArt", listprod.get(0).getAutores().get(0).getCitacao());
+		ArrayList<ObjetoCriterio> listprod = searchXML.ApresentacaoObraArtistica();
+		assertEquals("titulo obraArt", ((Tipo6) listprod.get(0)).getTitulo());
+		assertEquals(2006, ((Tipo6) listprod.get(0)).getAno());
+		assertEquals("COREOGRAFICA", ((Tipo6) listprod.get(0)).getNatureza());
+		assertEquals("CONCERTO", ((Tipo6) listprod.get(0)).getCampAux());
+		assertEquals("CANTO", ((Tipo6) listprod.get(0)).getCampAux2());
+		assertEquals("nome obraArt", ((Tipo6) listprod.get(0)).getAutores().get(0).getNome());
+		assertEquals("n obraArt", ((Tipo6) listprod.get(0)).getAutores().get(0).getCitacao());
 	}
 
 	@Test
@@ -40,12 +41,12 @@ public class SearchXMLProdArtisticaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdArtistica searchXML = new SearchXMLProdArtistica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.ApresentacaoRadioTV();
-		assertEquals("titulo apreRadio", listprod.get(0).getTitulo());
-		assertEquals(2011, listprod.get(0).getAno());
-		assertEquals("DANCA", listprod.get(0).getNatureza());
-		assertEquals("nome apreRadio", listprod.get(0).getAutores().get(0).getNome());
-		assertEquals("n apreRadio", listprod.get(0).getAutores().get(0).getCitacao());
+		ArrayList<ObjetoCriterio> listprod = searchXML.ApresentacaoRadioTV();
+		assertEquals("titulo apreRadio", ((Tipo6) listprod.get(0)).getTitulo());
+		assertEquals(2011, ((Tipo6) listprod.get(0)).getAno());
+		assertEquals("DANCA", ((Tipo6) listprod.get(0)).getNatureza());
+		assertEquals("nome apreRadio", ((Tipo6) listprod.get(0)).getAutores().get(0).getNome());
+		assertEquals("n apreRadio", ((Tipo6) listprod.get(0)).getAutores().get(0).getCitacao());
 	}
 
 	@Test
@@ -55,12 +56,12 @@ public class SearchXMLProdArtisticaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdArtistica searchXML = new SearchXMLProdArtistica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.ArranjoMusical();
-		assertEquals("titulo arranjo", listprod.get(0).getTitulo());
-		assertEquals(2012, listprod.get(0).getAno());
-		assertEquals("CANTO", listprod.get(0).getNatureza());
-		assertEquals("nome arranjo", listprod.get(0).getAutores().get(0).getNome());
-		assertEquals("n arranjo", listprod.get(0).getAutores().get(0).getCitacao());
+		ArrayList<ObjetoCriterio> listprod = searchXML.ArranjoMusical();
+		assertEquals("titulo arranjo", ((Tipo6) listprod.get(0)).getTitulo());
+		assertEquals(2012, ((Tipo6) listprod.get(0)).getAno());
+		assertEquals("CANTO", ((Tipo6) listprod.get(0)).getNatureza());
+		assertEquals("nome arranjo", ((Tipo6) listprod.get(0)).getAutores().get(0).getNome());
+		assertEquals("n arranjo", ((Tipo6) listprod.get(0)).getAutores().get(0).getCitacao());
 	}
 
 	@Test
@@ -70,13 +71,13 @@ public class SearchXMLProdArtisticaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdArtistica searchXML = new SearchXMLProdArtistica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.ArtesCenicas();
-		assertEquals("titulo ArtesCenicas", listprod.get(0).getTitulo());
-		assertEquals(2009, listprod.get(0).getAno());
-		assertEquals("AUDIOVISUAL", listprod.get(0).getNatureza());
-		assertEquals("Exposicao", listprod.get(0).getCampAux());
-		assertEquals("nome ArtesCenicas", listprod.get(0).getAutores().get(0).getNome());
-		assertEquals("n ArtesCenicas", listprod.get(0).getAutores().get(0).getCitacao());
+		ArrayList<ObjetoCriterio> listprod = searchXML.ArtesCenicas();
+		assertEquals("titulo ArtesCenicas", ((Tipo6) listprod.get(0)).getTitulo());
+		assertEquals(2009, ((Tipo6) listprod.get(0)).getAno());
+		assertEquals("AUDIOVISUAL", ((Tipo6) listprod.get(0)).getNatureza());
+		assertEquals("Exposicao", ((Tipo6) listprod.get(0)).getCampAux());
+		assertEquals("nome ArtesCenicas", ((Tipo6) listprod.get(0)).getAutores().get(0).getNome());
+		assertEquals("n ArtesCenicas", ((Tipo6) listprod.get(0)).getAutores().get(0).getCitacao());
 	}
 
 	@Test
@@ -86,12 +87,12 @@ public class SearchXMLProdArtisticaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdArtistica searchXML = new SearchXMLProdArtistica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.ArtesVizuais();
-		assertEquals("titulo ArtesVizuais", listprod.get(0).getTitulo());
-		assertEquals(2006, listprod.get(0).getAno());
-		assertEquals("INTERVENCAO_URBANA", listprod.get(0).getNatureza());
-		assertEquals("nome ArtesVizuais", listprod.get(0).getAutores().get(0).getNome());
-		assertEquals("n ArtesVizuais", listprod.get(0).getAutores().get(0).getCitacao());
+		ArrayList<ObjetoCriterio> listprod = searchXML.ArtesVizuais();
+		assertEquals("titulo ArtesVizuais", ((Tipo6) listprod.get(0)).getTitulo());
+		assertEquals(2006, ((Tipo6) listprod.get(0)).getAno());
+		assertEquals("INTERVENCAO_URBANA", ((Tipo6) listprod.get(0)).getNatureza());
+		assertEquals("nome ArtesVizuais", ((Tipo6) listprod.get(0)).getAutores().get(0).getNome());
+		assertEquals("n ArtesVizuais", ((Tipo6) listprod.get(0)).getAutores().get(0).getCitacao());
 	}
 
 	@Test
@@ -101,12 +102,12 @@ public class SearchXMLProdArtisticaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdArtistica searchXML = new SearchXMLProdArtistica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.ComposicaoMusical();
-		assertEquals("titulo composicao", listprod.get(0).getTitulo());
-		assertEquals(2012, listprod.get(0).getAno());
-		assertEquals("CANTO", listprod.get(0).getNatureza());
-		assertEquals("nome composicao", listprod.get(0).getAutores().get(0).getNome());
-		assertEquals("n composicao", listprod.get(0).getAutores().get(0).getCitacao());
+		ArrayList<ObjetoCriterio> listprod = searchXML.ComposicaoMusical();
+		assertEquals("titulo composicao", ((Tipo6) listprod.get(0)).getTitulo());
+		assertEquals(2012, ((Tipo6) listprod.get(0)).getAno());
+		assertEquals("CANTO", ((Tipo6) listprod.get(0)).getNatureza());
+		assertEquals("nome composicao", ((Tipo6) listprod.get(0)).getAutores().get(0).getNome());
+		assertEquals("n composicao", ((Tipo6) listprod.get(0)).getAutores().get(0).getCitacao());
 	}
 
 	@Test
@@ -116,13 +117,13 @@ public class SearchXMLProdArtisticaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdArtistica searchXML = new SearchXMLProdArtistica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.Musica();
-		assertEquals("titulo musica", listprod.get(0).getTitulo());
-		assertEquals(2002, listprod.get(0).getAno());
-		assertEquals("APRESENTACAO_DE_OBRA", listprod.get(0).getNatureza());
-		assertEquals("Abertura", listprod.get(0).getCampAux());
-		assertEquals("nome musica", listprod.get(0).getAutores().get(0).getNome());
-		assertEquals("n musica", listprod.get(0).getAutores().get(0).getCitacao());
+		ArrayList<ObjetoCriterio> listprod = searchXML.Musica();
+		assertEquals("titulo musica", ((Tipo6) listprod.get(0)).getTitulo());
+		assertEquals(2002, ((Tipo6) listprod.get(0)).getAno());
+		assertEquals("APRESENTACAO_DE_OBRA", ((Tipo6) listprod.get(0)).getNatureza());
+		assertEquals("Abertura", ((Tipo6) listprod.get(0)).getCampAux());
+		assertEquals("nome musica", ((Tipo6) listprod.get(0)).getAutores().get(0).getNome());
+		assertEquals("n musica", ((Tipo6) listprod.get(0)).getAutores().get(0).getCitacao());
 	}
 
 	@Test
@@ -132,13 +133,13 @@ public class SearchXMLProdArtisticaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdArtistica searchXML = new SearchXMLProdArtistica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.ObraArtesVisuais();
-		assertEquals("titulo ObraArtes", listprod.get(0).getTitulo());
-		assertEquals(2006, listprod.get(0).getAno());
-		assertEquals("CINEMA", listprod.get(0).getNatureza());
-		assertEquals("APRESENTACAO", listprod.get(0).getCampAux());
-		assertEquals("nome ObraArtes", listprod.get(0).getAutores().get(0).getNome());
-		assertEquals("n ObraArtes", listprod.get(0).getAutores().get(0).getCitacao());
+		ArrayList<ObjetoCriterio> listprod = searchXML.ObraArtesVisuais();
+		assertEquals("titulo ObraArtes", ((Tipo6) listprod.get(0)).getTitulo());
+		assertEquals(2006, ((Tipo6) listprod.get(0)).getAno());
+		assertEquals("CINEMA", ((Tipo6) listprod.get(0)).getNatureza());
+		assertEquals("APRESENTACAO", ((Tipo6) listprod.get(0)).getCampAux());
+		assertEquals("nome ObraArtes", ((Tipo6) listprod.get(0)).getAutores().get(0).getNome());
+		assertEquals("n ObraArtes", ((Tipo6) listprod.get(0)).getAutores().get(0).getCitacao());
 	}
 
 	@Test
@@ -148,12 +149,12 @@ public class SearchXMLProdArtisticaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdArtistica searchXML = new SearchXMLProdArtistica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.Partitura();
-		assertEquals("titulo partitura", listprod.get(0).getTitulo());
-		assertEquals(2006, listprod.get(0).getAno());
-		assertEquals("CANTO", listprod.get(0).getNatureza());
-		assertEquals("nome partitura", listprod.get(0).getAutores().get(0).getNome());
-		assertEquals("n partitura", listprod.get(0).getAutores().get(0).getCitacao());
+		ArrayList<ObjetoCriterio> listprod = searchXML.Partitura();
+		assertEquals("titulo partitura", ((Tipo6) listprod.get(0)).getTitulo());
+		assertEquals(2006, ((Tipo6) listprod.get(0)).getAno());
+		assertEquals("CANTO", ((Tipo6) listprod.get(0)).getNatureza());
+		assertEquals("nome partitura", ((Tipo6) listprod.get(0)).getAutores().get(0).getNome());
+		assertEquals("n partitura", ((Tipo6) listprod.get(0)).getAutores().get(0).getCitacao());
 	}
 
 	@Test
@@ -163,11 +164,11 @@ public class SearchXMLProdArtisticaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdArtistica searchXML = new SearchXMLProdArtistica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.Sonoplastia();
-		assertEquals("titulo sonoplastia", listprod.get(0).getTitulo());
-		assertEquals(2000, listprod.get(0).getAno());
-		assertEquals("CINEMA", listprod.get(0).getNatureza());
-		assertEquals("nome sonoplastia", listprod.get(0).getAutores().get(0).getNome());
-		assertEquals("n sonoplastia", listprod.get(0).getAutores().get(0).getCitacao());
+		ArrayList<ObjetoCriterio> listprod = searchXML.Sonoplastia();
+		assertEquals("titulo sonoplastia", ((Tipo6) listprod.get(0)).getTitulo());
+		assertEquals(2000, ((Tipo6) listprod.get(0)).getAno());
+		assertEquals("CINEMA", ((Tipo6) listprod.get(0)).getNatureza());
+		assertEquals("nome sonoplastia", ((Tipo6) listprod.get(0)).getAutores().get(0).getNome());
+		assertEquals("n sonoplastia", ((Tipo6) listprod.get(0)).getAutores().get(0).getCitacao());
 	}
 }

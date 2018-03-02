@@ -130,7 +130,7 @@
        <div id="accordion${AreaEstruturastatus.index}tt${CriterioEstruturastatus.index}tt${TipoEstruturastatus.index}">
        <div class="card">
        <div class="card-header" style="margin:0px;padding:0px; " id="heading${AreaEstruturastatus.index}tt${CriterioEstruturastatus.index}tt${TipoEstruturastatus.index}">
-           <button class="rounded-0 btn btn-light w-100 text-left" style="white-space: normal;margin:0px;padding:0px; " data-toggle="collapse" 
+           <button class="rounded-0 btn btn-light w-100 text-left border border-dark" style="white-space: normal;margin:0px;padding:0px; " data-toggle="collapse" 
            data-target="#collapse${AreaEstruturastatus.index}tt${CriterioEstruturastatus.index}tt${TipoEstruturastatus.index}"
             aria-expanded="true" aria-controls="collapse${AreaEstruturastatus.index}tt${CriterioEstruturastatus.index}tt${TipoEstruturastatus.index}">
              <div class="row" style="margin:0px;padding:0px; ">
@@ -150,17 +150,17 @@
            </button>
        </div>
         <div id="collapse${AreaEstruturastatus.index}tt${CriterioEstruturastatus.index}tt${TipoEstruturastatus.index}"
-         class="collapse border border-dark" 
+         class="collapse border border-dark bg-dark" 
           aria-labelledby="heading${AreaEstruturastatus.index}tt${CriterioEstruturastatus.index}tt${TipoEstruturastatus.index}"
            data-parent="#accordion${AreaEstruturastatus.index}tt${CriterioEstruturastatus.index}tt${TipoEstruturastatus.index}">
-          <div class="row card-body" ">
+          <div class="row card-body">
           
           <c:forEach var="ItemAnalisado" varStatus="ItemAnalisadostatus" items="${TipoEstrutura.getItemAnalisados()}">
            <div class="col-12
            <c:if test="${ItemAnalisado.getValidade() == 0 || ItemAnalisado.getValidade() == -1}">alert-success </c:if>
            <c:if test="${ItemAnalisado.getValidade() == 2}">alert-warning </c:if>
            <c:if test="${ItemAnalisado.getValidade() == 1}">alert-danger </c:if>"
-           style="border-top: solid 1px;">
+           style="margin-top:3px;">
            
               <div class=" col-10">
                <label>Titulo : ${ItemAnalisado.getItem().getTitulo()}</label>

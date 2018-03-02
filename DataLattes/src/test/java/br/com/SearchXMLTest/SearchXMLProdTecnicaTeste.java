@@ -12,6 +12,7 @@ import org.junit.Test;
 import org.springframework.core.io.ClassPathResource;
 import org.w3c.dom.Document;
 
+import br.com.Modelo.ObjetoCriterio;
 import br.com.Modelo.Producao;
 import br.com.Modelo.Tipo3;
 import br.com.Modelo.Tipo4;
@@ -32,7 +33,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.ApresentacaoTrabalho();
+		ArrayList<ObjetoCriterio> aux = searchXML.ApresentacaoTrabalho();
+		ArrayList<Tipo6> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo6) objetoCriterio);
+		}
 		assertEquals(
 				"Sistema para Gestão de Conhecimento em Ensino de Engenharia e para Gestão e Resolução de Problemas da Comunidade",
 				listprod.get(0).getTitulo());
@@ -50,7 +55,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.CartaMapa();
+		ArrayList<ObjetoCriterio> aux = searchXML.CartaMapa();
+		ArrayList<Tipo6> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo6) objetoCriterio);
+		}
 		assertEquals("titulo cartamapa", listprod.get(0).getTitulo());
 		assertEquals(2006, listprod.get(0).getAno());
 		assertEquals("AEROFOTOGRAMA", listprod.get(0).getNatureza());
@@ -65,7 +74,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo3> listprod = searchXML.CultivacapProtegida();
+		ArrayList<ObjetoCriterio> aux = searchXML.CultivacapProtegida();
+		ArrayList<Tipo3> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo3) objetoCriterio);
+		}
 		assertEquals("titulo cultProg", listprod.get(0).getTitulo());
 		assertEquals(2010, listprod.get(0).getAno());
 		assertEquals("nome cultiprot", listprod.get(0).getAutores().get(0).getNome());
@@ -79,7 +92,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo3> listprod = searchXML.CultivacapRegistrada();
+		ArrayList<ObjetoCriterio> aux = searchXML.CultivacapRegistrada();
+		ArrayList<Tipo3> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo3) objetoCriterio);
+		}
 		assertEquals("titulo cultCult", listprod.get(0).getTitulo());
 		assertEquals(2010, listprod.get(0).getAno());
 		assertEquals("nome cultiReg", listprod.get(0).getAutores().get(0).getNome());
@@ -93,7 +110,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Producao> listprod = searchXML.CursoMinistradoCurtaDuracao();
+		ArrayList<ObjetoCriterio> aux = searchXML.CursoMinistradoCurtaDuracao();
+		ArrayList<Producao> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Producao) objetoCriterio);
+		}
 		assertEquals("Introdução a Objetos Distribuídos em CORBA", listprod.get(0).getTitulo());
 		assertEquals(2003, listprod.get(0).getAno());
 		assertEquals("Jairo Francisco de Souza", listprod.get(0).getAutores().get(0).getNome());
@@ -107,7 +128,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo3> listprod = searchXML.DesenhoIndustrial();
+		ArrayList<ObjetoCriterio> aux = searchXML.DesenhoIndustrial();
+		ArrayList<Tipo3> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo3) objetoCriterio);
+		}
 		assertEquals("titulo Desenho industrial", listprod.get(0).getTitulo());
 		assertEquals(2011, listprod.get(0).getAno());
 		assertEquals("nome desenho", listprod.get(0).getAutores().get(0).getNome());
@@ -121,7 +146,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.Editoracao();
+		ArrayList<ObjetoCriterio> aux = searchXML.Editoracao();
+		ArrayList<Tipo6> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo6) objetoCriterio);
+		}
 		assertEquals("titulo editoracao", listprod.get(0).getTitulo());
 		assertEquals(2013, listprod.get(0).getAno());
 		assertEquals("LIVRO", listprod.get(0).getNatureza());
@@ -136,7 +165,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.ManutencaoObraArtistica();
+		ArrayList<ObjetoCriterio> aux = searchXML.ManutencaoObraArtistica();
+		ArrayList<Tipo6> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo6) objetoCriterio);
+		}
 		assertEquals("manutencao titulo", listprod.get(0).getTitulo());
 		assertEquals(2014, listprod.get(0).getAno());
 		assertEquals("NAO_INFORMADO", listprod.get(0).getNatureza());
@@ -152,7 +185,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Producao> listprod = searchXML.Maquete();
+		ArrayList<ObjetoCriterio> aux = searchXML.Maquete();
+		ArrayList<Producao> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Producao) objetoCriterio);
+		}
 		assertEquals("maquete titulo", listprod.get(0).getTitulo());
 		assertEquals(2009, listprod.get(0).getAno());
 		assertEquals("nome maquete", listprod.get(0).getAutores().get(0).getNome());
@@ -166,7 +203,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo3> listprod = searchXML.Marca();
+		ArrayList<ObjetoCriterio> aux = searchXML.Marca();
+		ArrayList<Tipo3> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo3) objetoCriterio);
+		}
 		assertEquals("titulo marca", listprod.get(0).getTitulo());
 		assertEquals(2000, listprod.get(0).getAno());
 		assertEquals("nome marca", listprod.get(0).getAutores().get(0).getNome());
@@ -180,7 +221,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.MaterialDidatico();
+		ArrayList<ObjetoCriterio> aux = searchXML.MaterialDidatico();
+		ArrayList<Tipo6> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo6) objetoCriterio);
+		}
 		assertEquals("titulo materialdidatico", listprod.get(0).getTitulo());
 		assertEquals(2013, listprod.get(0).getAno());
 		assertEquals("Exemplo", listprod.get(0).getNatureza());
@@ -195,7 +240,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.MidiaSocial();
+		ArrayList<ObjetoCriterio> aux = searchXML.MidiaSocial();
+		ArrayList<Tipo6> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo6) objetoCriterio);
+		}
 		assertEquals("midia titulo", listprod.get(0).getTitulo());
 		assertEquals(2003, listprod.get(0).getAno());
 		assertEquals("REDE_SOCIAL", listprod.get(0).getNatureza());
@@ -210,7 +259,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo8> listprod = searchXML.OrganizacaoEventos();
+		ArrayList<ObjetoCriterio> aux = searchXML.OrganizacaoEventos();
+		ArrayList<Tipo8> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo8) objetoCriterio);
+		}
 		assertEquals("I Encontro de Informação e Tecnologia - ENITEC", listprod.get(0).getTitulo());
 		assertEquals(2002, listprod.get(0).getAno());
 		assertEquals("ORGANIZACAO", listprod.get(0).getNatureza());
@@ -226,7 +279,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo3> listprod = searchXML.Patente();
+		ArrayList<ObjetoCriterio> aux = searchXML.Patente();
+		ArrayList<Tipo3> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo3) objetoCriterio);
+		}
 		assertEquals("Pedido de Patente F2", listprod.get(0).getTitulo());
 		assertEquals(2011, listprod.get(0).getAno());
 		assertEquals("61490937", listprod.get(0).getRegPatente().getCodigoPatente());
@@ -252,7 +309,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo4> listprod = searchXML.ProcessoTecnico();
+		ArrayList<ObjetoCriterio> aux = searchXML.ProcessoTecnico();
+		ArrayList<Tipo4> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo4) objetoCriterio);
+		}
 		assertEquals("Pedido de Patente F2", listprod.get(0).getTitulo());
 		assertEquals(2011, listprod.get(0).getAno());
 		assertEquals("INSTRUMENTAL", listprod.get(0).getNatureza());
@@ -267,7 +328,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo5> listprod = searchXML.ProdutoTecnologico();
+		ArrayList<ObjetoCriterio> aux = searchXML.ProdutoTecnologico();
+		ArrayList<Tipo5> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo5) objetoCriterio);
+		}
 		assertEquals("titulo produto", listprod.get(0).getTitulo());
 		assertEquals(2001, listprod.get(0).getAno());
 		assertEquals("NAO_INFORMADO", listprod.get(0).getNatureza());
@@ -283,7 +348,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.ProgramaRadioTVComentario();
+		ArrayList<ObjetoCriterio> aux = searchXML.ProgramaRadioTVComentario();
+		ArrayList<Tipo6> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo6) objetoCriterio);
+		}
 		assertEquals("programa titulo", listprod.get(0).getTitulo());
 		assertEquals(2014, listprod.get(0).getAno());
 		assertEquals("ENTREVISTA", listprod.get(0).getNatureza());
@@ -298,7 +367,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Producao> listprod = searchXML.RelatorioPesquisa();
+		ArrayList<ObjetoCriterio> aux = searchXML.RelatorioPesquisa();
+		ArrayList<Producao> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Producao) objetoCriterio);
+		}
 		assertEquals("relatorio titulo", listprod.get(0).getTitulo());
 		assertEquals(2016, listprod.get(0).getAno());
 		assertEquals("nome relatorio", listprod.get(0).getAutores().get(0).getNome());
@@ -312,7 +385,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo4> listprod = searchXML.Software();
+		ArrayList<ObjetoCriterio> aux = searchXML.Software();
+		ArrayList<Tipo4> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo4) objetoCriterio);
+		}
 		assertEquals("GNoSIS: Algoritmo para cálculo de similaridade semântica entre conceitos de ontologias",
 				listprod.get(0).getTitulo());
 		assertEquals(2006, listprod.get(0).getAno());
@@ -328,7 +405,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo3> listprod = searchXML.TopogradiaDeCircuitoIntegrado();
+		ArrayList<ObjetoCriterio> aux = searchXML.TopogradiaDeCircuitoIntegrado();
+		ArrayList<Tipo3> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo3) objetoCriterio);
+		}
 		assertEquals("titulo topografia", listprod.get(0).getTitulo());
 		assertEquals(2012, listprod.get(0).getAno());
 		assertEquals("8889", listprod.get(0).getRegPatente().getCodigoPatente());
@@ -346,7 +427,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.TrabalhoTecnico();
+		ArrayList<ObjetoCriterio> aux = searchXML.TrabalhoTecnico();
+		ArrayList<Tipo6> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo6) objetoCriterio);
+		}
 		listprod.forEach(n -> n.imprimirTipo6());
 		assertEquals("exemplo", "exemplo");
 		assertEquals("Parecer para a Revista da Sociedade Brasileira de História da Ciência",
@@ -370,7 +455,11 @@ public class SearchXMLProdTecnicaTeste {
 		DocumentBuilder docBuilder = docBuilderFactory.newDocumentBuilder();
 		Document xmlfile = docBuilder.parse(file);
 		SearchXMLProdTecnica searchXML = new SearchXMLProdTecnica(xmlfile);
-		ArrayList<Tipo6> listprod = searchXML.Traducao();
+		ArrayList<ObjetoCriterio> aux = searchXML.Traducao();
+		ArrayList<Tipo6> listprod = new ArrayList<>();
+		for (ObjetoCriterio objetoCriterio : aux) {
+			listprod.add((Tipo6) objetoCriterio);
+		}
 		assertEquals("titulo traducao", listprod.get(0).getTitulo());
 		assertEquals(2008, listprod.get(0).getAno());
 		assertEquals("ARTIGO", listprod.get(0).getNatureza());

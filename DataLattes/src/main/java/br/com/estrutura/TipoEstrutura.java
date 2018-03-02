@@ -48,7 +48,15 @@ public class TipoEstrutura {
 	}
 
 	public int getLimite() {
+		if (this.limite == -1)
+			return Integer.MAX_VALUE;
 		return this.limite;
+	}
+
+	public String getLimiteString() {
+		if (this.limite == -1)
+			return "";
+		return "" + this.limite;
 	}
 
 	public void setLimite(int limite) {

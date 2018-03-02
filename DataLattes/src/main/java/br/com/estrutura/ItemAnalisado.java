@@ -14,6 +14,12 @@ public class ItemAnalisado {
 		this.item = item;
 	}
 
+	public ItemAnalisado(int validade, ObjetoCriterio item) {
+		super();
+		this.validade = validade;
+		this.item = item;
+	}
+
 	public ObjetoCriterio getItem() {
 		return this.item;
 	}
