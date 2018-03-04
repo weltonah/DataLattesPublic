@@ -15,6 +15,7 @@ public class Formacao extends ObjetoCriterio {
 		this.nomeOrientador = nomeOrientador;
 		this.nomeInstituicao = nomeInstituicao;
 		this.status = status;
+
 	}
 
 	public String getTituloTrabalho() {

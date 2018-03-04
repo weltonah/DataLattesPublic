@@ -58,9 +58,9 @@ public class FiltroSearchXml {
 		ArrayList<ItemAnalisado> listItem = new ArrayList<ItemAnalisado>();
 		ItemAnalisado item;
 		if (flag)
-			item = new ItemAnalisado("Producao", -1, new Producao("Possui Dedicação exclusiva", 2000));
+			item = new ItemAnalisado(-1, new Producao("Possui Dedicação exclusiva", 2000));
 		else {
-			item = new ItemAnalisado("Producao", 0, new Producao("Não possui Dedicação exclusiva", 2000));
+			item = new ItemAnalisado(0, new Producao("Não possui Dedicação exclusiva", 2000));
 		}
 		listItem.add(item);
 		return listItem;

@@ -14,7 +14,10 @@ public class Producao extends ObjetoCriterio {
 	private ArrayList<AreaConhecimento> areaConhecimento;
 	private String campAux;
 	private String campAux2;
-
+	
+	
+	
+	
 	public Producao(String titulo, int ano) {
 		super(titulo, ano);
 		this.titulo = titulo;
@@ -23,6 +26,7 @@ public class Producao extends ObjetoCriterio {
 		this.autores = new ArrayList<Autores>();
 		this.areaConhecimento = new ArrayList<AreaConhecimento>();
 	}
+
 
 	@Override
 	public String getTitulo() {

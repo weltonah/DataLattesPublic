@@ -64,7 +64,7 @@
  <i class="ion-arrow-down-b" ></i>   Mostrar Resultados Detalhados <i class="ion-arrow-down-b" ></i>
 </button>
 
-<div class="collapse show " id="collapseExample">
+<div class="collapse  " id="collapseExample">
   <div class="card card-body alert alert-dark border-primary">
 
 
@@ -106,7 +106,7 @@
       </button>
      </h5>
 </div>
-<div id="collapse${AreaEstruturastatus.index}" class="collapse  show"
+<div id="collapse${AreaEstruturastatus.index}" class="collapse  "
  aria-labelledby="heading${AreaEstruturastatus.index}" data-parent="#accordion">
       <div class="card-body">
        <div class="row col-12" style="color: #545454">
@@ -150,7 +150,7 @@
            </button>
        </div>
         <div id="collapse${AreaEstruturastatus.index}tt${CriterioEstruturastatus.index}tt${TipoEstruturastatus.index}"
-         class="collapse border border-dark bg-dark" 
+         class="collapse  border border-dark bg-dark" 
           aria-labelledby="heading${AreaEstruturastatus.index}tt${CriterioEstruturastatus.index}tt${TipoEstruturastatus.index}"
            data-parent="#accordion${AreaEstruturastatus.index}tt${CriterioEstruturastatus.index}tt${TipoEstruturastatus.index}">
           <div class="row card-body">
@@ -162,12 +162,55 @@
            <c:if test="${ItemAnalisado.getValidade() == 1}">alert-danger </c:if>"
            style="margin-top:3px;">
            
-              <div class=" col-10">
-               <label>Titulo : ${ItemAnalisado.getItem().getTitulo()}</label>
+           <div class="col-12">
+           ${ItemAnalisado.getItem().getClass().getSimpleName()}
+           ${AreaEstrutura.getAbre()}
+           ${TipoEstrutura.getAbre() }
+           ${CriterioEstrutura.getAbre()}
+           </div>
+           <c:choose>
+              <c:when test = "${AreaEstrutura.getAbre() eq 'For'}">
+              <div class="row col-12">
+               <div class="col-6">
+                <label>Titulo do Curso : ${ItemAnalisado.getItem().getTitulo()}</label>
+               </div>
+               <div class="col-6">
+                <label>Nome da Instituição : ${ItemAnalisado.getItem().getNomeInstituicao()}</label>
+               </div>
               </div>
-              <div class=" col-1">
-               <label>Ano: ${ItemAnalisado.getItem().getAno()}</label>
+              <c:if test ="${ItemAnalisado.getItem().getAno() != -1}">
+              <div class="col-12">
+               <label>Ano de Conclusão : ${ItemAnalisado.getItem().getAno()}</label>
               </div>
+              </c:if>
+              <c:if test ="${ItemAnalisado.getItem().getTituloTrabalho().isEmpty()}">
+                <div class="col-12">
+                 <label>titulo de Trabalho : ${ItemAnalisado.getItem().getTituloTrabalho()}</label>
+                </div>
+                </c:if>
+                <c:if test ="${ItemAnalisado.getItem().getNomeOrientador().isEmpty()}">
+                <div class="col-12">
+                 <label>Nome Orientador : ${ItemAnalisado.getItem().getNomeOrientador()}</label>
+                </div>
+                </c:if>
+           </c:when>
+           <c:when test = "${AreaEstrutura.getAbre() eq 'PrTec'}">
+           <div class="row col-12">
+               <div class="col-12">
+                <label>Titulo do Curso : ${ItemAnalisado.getItem().getTitulo()}</label>
+               </div>
+               <div class="col-12">
+               <label>Ano : ${ItemAnalisado.getItem().getAno()}</label>
+               </div>
+              </div>
+           </c:when>
+           
+           
+           </c:choose>
+           
+           
+           
+              
            </div>
                    
           </c:forEach>
