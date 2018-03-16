@@ -3,8 +3,6 @@ package br.com.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.DAO.OntologyDAO;
-
 @Controller
 public class IndexController{
 	
@@ -16,8 +14,6 @@ public class IndexController{
 	}
 	@RequestMapping("/teste")
 	public String teste() {
-		OntologyDAO ont = new OntologyDAO();
-		ont.imprimir();
 		return "index";
 	}
 	@RequestMapping("/index")

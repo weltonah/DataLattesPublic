@@ -37,6 +37,7 @@
                            id="myCheck${estcrit.getListEst().get(idforech).getAbre()}ItemStatus${itemstatus.index}"
                            name="myCheck${estcrit.getListEst().get(idforech).getAbre()}ItemStatus${itemstatus.index}"
                            onclick="${estcrit.getListEst().get(idforech).getAbre()}ItemStatus(${itemstatus.index})">
+                           
                            Diferenciar pontuação por status do critério
                           </label>
                          </div>

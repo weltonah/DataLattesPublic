@@ -8,4 +8,5 @@ public class DataLattesApplication  {
 	public static void main(String[] args) {
 		SpringApplication.run(DataLattesApplication.class, args);
 	}
+
 }

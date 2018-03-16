@@ -1,0 +1,3338 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.datalattes.com/ontologies/datalattes.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.datalattes.com/ontologies/datalattes.owl">
+    <Prefix name="" IRI="http://www.datalattes.com/ontologies/datalattes.owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#ArtesVisuaisPintura"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Blog"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesCenicasCoreografia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VinculoLivre"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Cultivacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Coletanea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BancaAperfeicoamento"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#FoiProduzidoPor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoMinistrado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MembroComissao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Consultoria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Anais"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Disciplina"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DirecaoAdministracao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Piloto"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Reside"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Museologia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DesenhoTecnico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sonoplastia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VinculosProfissionais"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#FoiCondecorado"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#StatusDaAtividade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Assesoria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProjetoPesquisaExtensao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ApresentacaoRadioTV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Organizacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MembroConselhoUnidade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Feira"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Jornal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeioImpresso"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#DataNascimento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SonoplastiaCinema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesVisuaisInstalacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConselhoComissaoConsultoria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProjetoPesquisaPesquisa"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ProficienciaCompreensao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Traducao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Producao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Reitor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CurriculoLattes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ApresentacaoObraArtisticaCoreografia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SonoplastiaMusica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParticipacaoProjeto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Interpretacao"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ParticipouNaEpoca"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TopograficaCircuitoIntegrado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Graduacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Patente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Editoracao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BancaAvalicaoCurso"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Computacional"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Introducao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesVisuaisFotografia"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#TituloTrabalhoFinal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElaboracaoProjeto"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#FormouPessoa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DecanoCentro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Aerofotografia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesCenicasOperistica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Instrumento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Montagem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesVisuais"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CienciasDaSaude"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Apresentacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RedeSocial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CienciasBiologicas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Livro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RelatorioTecnico"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#PossuiNaturezaBibliografica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RegistroFonografico"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#NomeInstituicao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pessoa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PremioTitulo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObraArtesVisuaisCinema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TrabalhoTecnico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Musica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TextoIntegral"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Entrevista"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PublicacaoPartitura"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesCenicasTeatral"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#NomeSubAreaConhecimento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SonoplastiaTelevisao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Simposio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Diversas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BancaQualificacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoComplementar"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#DataAtualizacao"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#CodigoInstituicao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Celetista"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#TemTipoMusical"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BancaMestrado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EditoracaoCatalogo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EditoracaoAnais"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnsinoBasico"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Orientou"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Comentario"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LivroComum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Endereco"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtigoPublicado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BancaLivreDocencia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesVisuaisVideo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AreaAtuacao"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#VinculoEmpregarticio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LivreDocencia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExtensaoUniversitaria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pedagogica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LiguisticaLetrasArtes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Projeto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CultivacaoRegistrada"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ProficienciaEscrita"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Oficina"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObraArtesVisuaisEscultura"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoCurtaDuracaoAperfeicoamento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ApresentacaoObraArtistica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoCurtaDuracaoEspecializacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MestradoAcademico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Catalogo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesVisuaisCinema"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnsinoMedio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProfessorVisitante"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoMinistradoLongaDuracao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesCenicasCircense"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoCurtaDuracao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProgramaRadioTV"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoMinistradoCurtaDuracao"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#NomeTitular"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Doutorado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ApresentacaoObraArtisticaLiteraria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LivroOrganizado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObraArtesVisuaisVideo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeioDivulgacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Parecer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RelatorioPesquisa"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Participou"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#CargaHorariaSemanal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Festival"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Engenharias"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CienciaHumanas"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#VinculadoAoCurriculo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesCenicasRadialistica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObraArtesVisuaisInstalacao"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ProficienciaFala"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#EnquadramentoFuncional"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Artigo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesVisuaisEscultura"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesCenicas"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Verbete"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EmAndamento"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ÉTipoMusicalDe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ensino"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Revista"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ParticipouBanca"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RegistroPatente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Enciclopedia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BancaConcursoPublico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Conferencia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Maquete"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObraArtesVisuaisGravura"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Treinamento"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#TemCarater"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Aparelho"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Pais"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnderecoProfissional"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#TrabalhouNaEpoca"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CoordenadorCurso"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#TipoPatente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ApresentacaoObraArtisticaTeatral"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProducaoArtistica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ApresentacaoTrabalho"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Concurso"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MesaRedonda"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#PossivelParceria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComposicaoMusical"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ApresentacaoRadioTVMusica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Posfacio"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#NomeCompleto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SonoplastiaRadio"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:gYear"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Curadoria"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#xsd:gMonth"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CartaMapa"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Éformado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NaturezaLivro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CoordenadorPrograma"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MembroColegiadoSuperior"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Titulo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProcessoTecnica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Internacional"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#TemProficienciaEm"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DiretorUnidade"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ViceReitor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#AtuaNaArea"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#TituloCurso"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EventoBanca"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesVisuaisDesenho"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SetorAtividade"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Produziu"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Exposicao"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#CodigoPatente"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#CircundaAreaDeConhecimento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ResumoExpandido"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Olimpiada"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FormacaçãoAcademica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObraArtesVisuaisFotografia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Estagio"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#MesFinal"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PesquisaDesenvolvimento"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#TrabalhouEmProjeto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FarmacoSimilar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaterialDidatico"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#FormadoNaEpoca"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AtuacaoProfissional"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#OcorreuNaEpoca"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ServidorPublico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ServicoTecnicoEspecializado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Resumo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Comunicacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtigosAceitos"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Arranjo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CienciasSociasAplicadas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Periodico"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#relacaoTrabalho"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ApresentacaoRadioTVTeatro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nacional"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Coral"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CienciasAgrarias"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Carater"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Equipamento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Programa"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#AnoInicio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Processual"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Terapeutica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Composicao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObraArtesVisuais"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ParticipouEvento"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#EpocaConclusao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Capitulo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TextoMidias"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BancaGraducao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Aperfeicoamento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Partitura"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ISBN"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#joao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Especializacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Canto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesVisuaisGravura"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MembroComissaoTemporaria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MestradoProfissional"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#TrabalhouCom"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AtividadesProfissionais"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#DedicaoExclusiva"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesCenicasPerfomatica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IniciacaoCientifica"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ISSN"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mestrado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MidiaSocial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeioMagnetico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesCenicasAudiovisiual"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Prefacio"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#maria"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoEspecializacao"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#TrabalhaEm"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Idioma"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Concluido"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProducaoTecnica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Forum"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProjetoPesquisaDesenvolvimento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoCurtaDuracaoExtensao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObraArtesVisuaisPintura"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Idioma"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StrictoSensu"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LatoSensu"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Encontro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeioFilme"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pos-doutorado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObraArtesVisuaisDesenho"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeioWeb"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MembroComissaoPermanente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnderecoResidencial"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EditoracaoPeriodico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EditoracaoColetanea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Prototipo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Colaborador"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoExtencao"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#welton"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Carta"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeioHiperTexto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BancaProfessorTitular"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ObraArtesVisuaisTelevisao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MembroConselhoCentro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Evento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ApresentacaoObra"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ResponsavelProjeto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Instrumental"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Completo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EditoracaoLivro"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#MesInicio"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoAperfeicoamento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Concerto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ApresentacaoRadioTVDanca"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BancaDoutorado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProjetoPesquisa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SonoplastiaTeatro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Multimidia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Incompleto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnsinoFundamental"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoComplementarLongaDuracao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LivroCompleto"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Estado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoTecnico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Fotografia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArranjoMusical"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CienciasExatasTerra"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ApresentacaoObraArtisticaMusical"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pedro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ServicoSaude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#IdLattes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Orquestra"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Congresso"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProducaoBibliografica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeioDigital"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#AnoDePremiacao"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ProduziuNaEpoca"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TipoTrabalhoMusical"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Ano"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CursoComplementarCurtaDuracao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesVisuaisTelevisao"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#MinistrouDisciplina"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CultivacaoProtegida"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EditoracaoEnciclopedia"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Marca"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ResidenciaMedica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Software"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Status"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ChefeDepartamento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BolsistaRecemDoutor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Pos-graduacao"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnsinoSuperior"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Seminario"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MBA"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mapa"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TrabalhosEventos"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProdutoTecnilogico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NaturezaBibliografica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Analitica"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ArtesCenicasDiversas"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OrganizacaoEvento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnsinoTecnico"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#RegistrouPatente"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#Cidade"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#Coorientou"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ProficienciaLeitura"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EventoGeral"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#NomeAreaDoconhecimento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TrilhaSonora"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Aerofotografia"/>
+        <Class IRI="#CartaMapa"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Anais"/>
+        <Class IRI="#NaturezaLivro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Analitica"/>
+        <Class IRI="#ProcessoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Aparelho"/>
+        <Class IRI="#Prototipo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Aperfeicoamento"/>
+        <Class IRI="#LatoSensu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Apresentacao"/>
+        <Class IRI="#Livro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ApresentacaoObra"/>
+        <Class IRI="#Musica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ApresentacaoObraArtistica"/>
+        <Class IRI="#ProducaoArtistica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ApresentacaoObraArtisticaCoreografia"/>
+        <Class IRI="#ApresentacaoObraArtistica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ApresentacaoObraArtisticaLiteraria"/>
+        <Class IRI="#ApresentacaoObraArtistica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ApresentacaoObraArtisticaMusical"/>
+        <Class IRI="#ApresentacaoObraArtistica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ApresentacaoObraArtisticaTeatral"/>
+        <Class IRI="#ApresentacaoObraArtistica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ApresentacaoRadioTV"/>
+        <Class IRI="#ProducaoArtistica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ApresentacaoRadioTVDanca"/>
+        <Class IRI="#ApresentacaoRadioTV"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ApresentacaoRadioTVMusica"/>
+        <Class IRI="#ApresentacaoRadioTV"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ApresentacaoRadioTVTeatro"/>
+        <Class IRI="#ApresentacaoRadioTV"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ApresentacaoTrabalho"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Arranjo"/>
+        <Class IRI="#Musica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArranjoMusical"/>
+        <Class IRI="#ProducaoArtistica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesCenicas"/>
+        <Class IRI="#ProducaoArtistica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesCenicasAudiovisiual"/>
+        <Class IRI="#ArtesCenicas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesCenicasCircense"/>
+        <Class IRI="#ArtesCenicas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesCenicasCoreografia"/>
+        <Class IRI="#ArtesCenicas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesCenicasDiversas"/>
+        <Class IRI="#ArtesCenicas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesCenicasOperistica"/>
+        <Class IRI="#ArtesCenicas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesCenicasPerfomatica"/>
+        <Class IRI="#ArtesCenicas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesCenicasRadialistica"/>
+        <Class IRI="#ArtesCenicas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesCenicasTeatral"/>
+        <Class IRI="#ArtesCenicas"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesVisuais"/>
+        <Class IRI="#ProducaoArtistica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesVisuaisCinema"/>
+        <Class IRI="#ArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesVisuaisDesenho"/>
+        <Class IRI="#ArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesVisuaisEscultura"/>
+        <Class IRI="#ArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesVisuaisFotografia"/>
+        <Class IRI="#ArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesVisuaisGravura"/>
+        <Class IRI="#ArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesVisuaisInstalacao"/>
+        <Class IRI="#ArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesVisuaisPintura"/>
+        <Class IRI="#ArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesVisuaisTelevisao"/>
+        <Class IRI="#ArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtesVisuaisVideo"/>
+        <Class IRI="#ArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Artigo"/>
+        <Class IRI="#ProducaoBibliografica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtigoPublicado"/>
+        <Class IRI="#Artigo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ArtigosAceitos"/>
+        <Class IRI="#Artigo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Assesoria"/>
+        <Class IRI="#TrabalhoTecnico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AtividadesProfissionais"/>
+        <Class IRI="#AtuacaoProfissional"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BancaAperfeicoamento"/>
+        <Class IRI="#EventoBanca"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BancaAvalicaoCurso"/>
+        <Class IRI="#EventoBanca"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BancaConcursoPublico"/>
+        <Class IRI="#EventoBanca"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BancaDoutorado"/>
+        <Class IRI="#EventoBanca"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BancaGraducao"/>
+        <Class IRI="#EventoBanca"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BancaLivreDocencia"/>
+        <Class IRI="#EventoBanca"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BancaMestrado"/>
+        <Class IRI="#EventoBanca"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BancaProfessorTitular"/>
+        <Class IRI="#EventoBanca"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BancaQualificacao"/>
+        <Class IRI="#EventoBanca"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Blog"/>
+        <Class IRI="#MidiaSocial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BolsistaRecemDoutor"/>
+        <Class IRI="#VinculosProfissionais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Canto"/>
+        <Class IRI="#TipoTrabalhoMusical"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Capitulo"/>
+        <Class IRI="#Livro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Carta"/>
+        <Class IRI="#CartaMapa"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CartaMapa"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Catalogo"/>
+        <Class IRI="#NaturezaLivro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Celetista"/>
+        <Class IRI="#VinculosProfissionais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ChefeDepartamento"/>
+        <Class IRI="#DirecaoAdministracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CienciaHumanas"/>
+        <Class IRI="#AreaAtuacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CienciasAgrarias"/>
+        <Class IRI="#AreaAtuacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CienciasBiologicas"/>
+        <Class IRI="#AreaAtuacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CienciasDaSaude"/>
+        <Class IRI="#AreaAtuacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CienciasExatasTerra"/>
+        <Class IRI="#AreaAtuacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CienciasSociasAplicadas"/>
+        <Class IRI="#AreaAtuacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Colaborador"/>
+        <Class IRI="#VinculosProfissionais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Coletanea"/>
+        <Class IRI="#NaturezaLivro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Comentario"/>
+        <Class IRI="#ProgramaRadioTV"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Completo"/>
+        <Class IRI="#NaturezaBibliografica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Composicao"/>
+        <Class IRI="#Musica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComposicaoMusical"/>
+        <Class IRI="#ProducaoArtistica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Computacional"/>
+        <Class IRI="#Software"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Comunicacao"/>
+        <Class IRI="#EventoGeral"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Concerto"/>
+        <Class IRI="#EventoGeral"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Concluido"/>
+        <Class IRI="#Status"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Concurso"/>
+        <Class IRI="#EventoGeral"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Conferencia"/>
+        <Class IRI="#EventoGeral"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Congresso"/>
+        <Class IRI="#EventoGeral"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConselhoComissaoConsultoria"/>
+        <Class IRI="#AtividadesProfissionais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Consultoria"/>
+        <Class IRI="#TrabalhoTecnico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CoordenadorCurso"/>
+        <Class IRI="#DirecaoAdministracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CoordenadorPrograma"/>
+        <Class IRI="#DirecaoAdministracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Coral"/>
+        <Class IRI="#TipoTrabalhoMusical"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Cultivacao"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CultivacaoProtegida"/>
+        <Class IRI="#Cultivacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CultivacaoRegistrada"/>
+        <Class IRI="#Cultivacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Curadoria"/>
+        <Class IRI="#OrganizacaoEvento"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CursoAperfeicoamento"/>
+        <Class IRI="#CursoMinistradoLongaDuracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CursoComplementar"/>
+        <Class IRI="#FormacaçãoAcademica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CursoComplementarCurtaDuracao"/>
+        <Class IRI="#CursoComplementar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CursoComplementarLongaDuracao"/>
+        <Class IRI="#CursoComplementar"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CursoCurtaDuracao"/>
+        <Class IRI="#ProducaoArtistica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CursoCurtaDuracaoAperfeicoamento"/>
+        <Class IRI="#CursoCurtaDuracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CursoCurtaDuracaoEspecializacao"/>
+        <Class IRI="#CursoCurtaDuracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CursoCurtaDuracaoExtensao"/>
+        <Class IRI="#CursoCurtaDuracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CursoEspecializacao"/>
+        <Class IRI="#CursoMinistradoLongaDuracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CursoExtencao"/>
+        <Class IRI="#CursoMinistradoLongaDuracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CursoMinistrado"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CursoMinistradoCurtaDuracao"/>
+        <Class IRI="#CursoMinistrado"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CursoMinistradoLongaDuracao"/>
+        <Class IRI="#CursoMinistrado"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CursoTecnico"/>
+        <Class IRI="#EnsinoTecnico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DecanoCentro"/>
+        <Class IRI="#DirecaoAdministracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DesenhoTecnico"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DirecaoAdministracao"/>
+        <Class IRI="#AtividadesProfissionais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DiretorUnidade"/>
+        <Class IRI="#DirecaoAdministracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Diversas"/>
+        <Class IRI="#Musica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Doutorado"/>
+        <Class IRI="#StrictoSensu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Editoracao"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EditoracaoAnais"/>
+        <Class IRI="#Editoracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EditoracaoCatalogo"/>
+        <Class IRI="#Editoracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EditoracaoColetanea"/>
+        <Class IRI="#Editoracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EditoracaoEnciclopedia"/>
+        <Class IRI="#Editoracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EditoracaoLivro"/>
+        <Class IRI="#Editoracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EditoracaoPeriodico"/>
+        <Class IRI="#Editoracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElaboracaoProjeto"/>
+        <Class IRI="#TrabalhoTecnico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EmAndamento"/>
+        <Class IRI="#Status"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Enciclopedia"/>
+        <Class IRI="#NaturezaLivro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Encontro"/>
+        <Class IRI="#EventoGeral"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnderecoProfissional"/>
+        <Class IRI="#Endereco"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnderecoResidencial"/>
+        <Class IRI="#Endereco"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Engenharias"/>
+        <Class IRI="#AreaAtuacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Ensino"/>
+        <Class IRI="#AtividadesProfissionais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnsinoBasico"/>
+        <Class IRI="#FormacaçãoAcademica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnsinoFundamental"/>
+        <Class IRI="#EnsinoBasico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnsinoMedio"/>
+        <Class IRI="#EnsinoBasico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnsinoSuperior"/>
+        <Class IRI="#FormacaçãoAcademica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnsinoTecnico"/>
+        <Class IRI="#FormacaçãoAcademica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Entrevista"/>
+        <Class IRI="#ProgramaRadioTV"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Equipamento"/>
+        <Class IRI="#Prototipo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Especializacao"/>
+        <Class IRI="#LatoSensu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Estagio"/>
+        <Class IRI="#AtividadesProfissionais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EventoBanca"/>
+        <Class IRI="#Evento"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EventoGeral"/>
+        <Class IRI="#Evento"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Exposicao"/>
+        <Class IRI="#EventoGeral"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExtensaoUniversitaria"/>
+        <Class IRI="#AtividadesProfissionais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FarmacoSimilar"/>
+        <Class IRI="#Prototipo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Feira"/>
+        <Class IRI="#EventoGeral"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Festival"/>
+        <Class IRI="#EventoGeral"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Forum"/>
+        <Class IRI="#MidiaSocial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Fotografia"/>
+        <Class IRI="#CartaMapa"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Graduacao"/>
+        <Class IRI="#EnsinoSuperior"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Incompleto"/>
+        <Class IRI="#Status"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IniciacaoCientifica"/>
+        <Class IRI="#EnsinoSuperior"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Instrumental"/>
+        <Class IRI="#ProcessoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Instrumento"/>
+        <Class IRI="#Prototipo"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Internacional"/>
+        <Class IRI="#Carater"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Interpretacao"/>
+        <Class IRI="#Musica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Introducao"/>
+        <Class IRI="#Livro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Jornal"/>
+        <Class IRI="#TextoMidias"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LatoSensu"/>
+        <Class IRI="#Pos-graduacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LiguisticaLetrasArtes"/>
+        <Class IRI="#AreaAtuacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LivreDocencia"/>
+        <Class IRI="#EnsinoSuperior"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Livro"/>
+        <Class IRI="#ProducaoBibliografica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LivroCompleto"/>
+        <Class IRI="#Livro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LivroComum"/>
+        <Class IRI="#NaturezaLivro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LivroOrganizado"/>
+        <Class IRI="#Livro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MBA"/>
+        <Class IRI="#LatoSensu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mapa"/>
+        <Class IRI="#CartaMapa"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Maquete"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Marca"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaterialDidatico"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeioDigital"/>
+        <Class IRI="#MeioDivulgacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeioFilme"/>
+        <Class IRI="#MeioDivulgacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeioHiperTexto"/>
+        <Class IRI="#MeioDivulgacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeioImpresso"/>
+        <Class IRI="#MeioDivulgacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeioMagnetico"/>
+        <Class IRI="#MeioDivulgacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeioWeb"/>
+        <Class IRI="#MeioDivulgacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MembroColegiadoSuperior"/>
+        <Class IRI="#DirecaoAdministracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MembroComissao"/>
+        <Class IRI="#DirecaoAdministracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MembroComissaoPermanente"/>
+        <Class IRI="#MembroComissao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MembroComissaoTemporaria"/>
+        <Class IRI="#MembroComissao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MembroConselhoCentro"/>
+        <Class IRI="#DirecaoAdministracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MembroConselhoUnidade"/>
+        <Class IRI="#DirecaoAdministracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MesaRedonda"/>
+        <Class IRI="#ProgramaRadioTV"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mestrado"/>
+        <Class IRI="#StrictoSensu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MestradoAcademico"/>
+        <Class IRI="#Mestrado"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MestradoProfissional"/>
+        <Class IRI="#Mestrado"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MidiaSocial"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Montagem"/>
+        <Class IRI="#OrganizacaoEvento"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Multimidia"/>
+        <Class IRI="#Software"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Museologia"/>
+        <Class IRI="#OrganizacaoEvento"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Musica"/>
+        <Class IRI="#ProducaoArtistica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nacional"/>
+        <Class IRI="#Carater"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObraArtesVisuais"/>
+        <Class IRI="#ProducaoArtistica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObraArtesVisuaisCinema"/>
+        <Class IRI="#ObraArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObraArtesVisuaisDesenho"/>
+        <Class IRI="#ObraArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObraArtesVisuaisEscultura"/>
+        <Class IRI="#ObraArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObraArtesVisuaisFotografia"/>
+        <Class IRI="#ObraArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObraArtesVisuaisGravura"/>
+        <Class IRI="#ObraArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObraArtesVisuaisInstalacao"/>
+        <Class IRI="#ObraArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObraArtesVisuaisPintura"/>
+        <Class IRI="#ObraArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObraArtesVisuaisTelevisao"/>
+        <Class IRI="#ObraArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ObraArtesVisuaisVideo"/>
+        <Class IRI="#ObraArtesVisuais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Oficina"/>
+        <Class IRI="#EventoGeral"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Olimpiada"/>
+        <Class IRI="#EventoGeral"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Organizacao"/>
+        <Class IRI="#OrganizacaoEvento"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OrganizacaoEvento"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Orquestra"/>
+        <Class IRI="#TipoTrabalhoMusical"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Parecer"/>
+        <Class IRI="#TrabalhoTecnico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ParticipacaoProjeto"/>
+        <Class IRI="#AtividadesProfissionais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Partitura"/>
+        <Class IRI="#ProducaoArtistica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Patente"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pedagogica"/>
+        <Class IRI="#ProcessoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Periodico"/>
+        <Class IRI="#NaturezaLivro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PesquisaDesenvolvimento"/>
+        <Class IRI="#AtividadesProfissionais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Piloto"/>
+        <Class IRI="#ProdutoTecnilogico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pos-doutorado"/>
+        <Class IRI="#StrictoSensu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Pos-graduacao"/>
+        <Class IRI="#EnsinoSuperior"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Posfacio"/>
+        <Class IRI="#Livro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Prefacio"/>
+        <Class IRI="#Livro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProcessoTecnica"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Processual"/>
+        <Class IRI="#ProcessoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProducaoArtistica"/>
+        <Class IRI="#Producao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProducaoBibliografica"/>
+        <Class IRI="#Producao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProducaoTecnica"/>
+        <Class IRI="#Producao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProdutoTecnilogico"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProfessorVisitante"/>
+        <Class IRI="#VinculosProfissionais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Programa"/>
+        <Class IRI="#ProgramaRadioTV"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProgramaRadioTV"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Projeto"/>
+        <Class IRI="#ProdutoTecnilogico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProjetoPesquisaDesenvolvimento"/>
+        <Class IRI="#ProjetoPesquisa"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProjetoPesquisaExtensao"/>
+        <Class IRI="#ProjetoPesquisa"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProjetoPesquisaPesquisa"/>
+        <Class IRI="#ProjetoPesquisa"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Prototipo"/>
+        <Class IRI="#ProdutoTecnilogico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PublicacaoPartitura"/>
+        <Class IRI="#Musica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RedeSocial"/>
+        <Class IRI="#MidiaSocial"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RegistroFonografico"/>
+        <Class IRI="#Musica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Reitor"/>
+        <Class IRI="#DirecaoAdministracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RelatorioPesquisa"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RelatorioTecnico"/>
+        <Class IRI="#TrabalhoTecnico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ResidenciaMedica"/>
+        <Class IRI="#EnsinoSuperior"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Resumo"/>
+        <Class IRI="#NaturezaBibliografica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ResumoExpandido"/>
+        <Class IRI="#NaturezaBibliografica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Revista"/>
+        <Class IRI="#TextoMidias"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Seminario"/>
+        <Class IRI="#EventoGeral"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ServicoSaude"/>
+        <Class IRI="#TrabalhoTecnico"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ServicoTecnicoEspecializado"/>
+        <Class IRI="#AtividadesProfissionais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ServidorPublico"/>
+        <Class IRI="#VinculosProfissionais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Simposio"/>
+        <Class IRI="#EventoGeral"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Software"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sonoplastia"/>
+        <Class IRI="#ProducaoArtistica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SonoplastiaCinema"/>
+        <Class IRI="#Sonoplastia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SonoplastiaMusica"/>
+        <Class IRI="#Sonoplastia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SonoplastiaRadio"/>
+        <Class IRI="#Sonoplastia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SonoplastiaTeatro"/>
+        <Class IRI="#Sonoplastia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SonoplastiaTelevisao"/>
+        <Class IRI="#Sonoplastia"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StrictoSensu"/>
+        <Class IRI="#Pos-graduacao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Terapeutica"/>
+        <Class IRI="#ProcessoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TextoIntegral"/>
+        <Class IRI="#NaturezaLivro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TextoMidias"/>
+        <Class IRI="#ProducaoBibliografica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TopograficaCircuitoIntegrado"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TrabalhoTecnico"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TrabalhosEventos"/>
+        <Class IRI="#ProducaoBibliografica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Traducao"/>
+        <Class IRI="#ProducaoBibliografica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Treinamento"/>
+        <Class IRI="#AtividadesProfissionais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TrilhaSonora"/>
+        <Class IRI="#Musica"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Verbete"/>
+        <Class IRI="#NaturezaLivro"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ViceReitor"/>
+        <Class IRI="#DirecaoAdministracao"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VinculoLivre"/>
+        <Class IRI="#VinculosProfissionais"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VinculosProfissionais"/>
+        <Class IRI="#AtuacaoProfissional"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="#ArtigoPublicado"/>
+        <Class IRI="#TrabalhosEventos"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Pessoa"/>
+        <NamedIndividual IRI="#joao"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pessoa"/>
+        <NamedIndividual IRI="#maria"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pessoa"/>
+        <NamedIndividual IRI="#pedro"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Pessoa"/>
+        <NamedIndividual IRI="#welton"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TrabalhouCom"/>
+        <NamedIndividual IRI="#joao"/>
+        <NamedIndividual IRI="#maria"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#TrabalhouCom"/>
+        <NamedIndividual IRI="#joao"/>
+        <NamedIndividual IRI="#pedro"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#NomeCompleto"/>
+        <NamedIndividual IRI="#welton"/>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Welton de Abreu Henriques</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#FormadoNaEpoca"/>
+        <ObjectProperty IRI="#EpocaConclusao"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#OcorreuNaEpoca"/>
+        <ObjectProperty IRI="#EpocaConclusao"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#ParticipouBanca"/>
+        <ObjectProperty IRI="#Participou"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#ParticipouEvento"/>
+        <ObjectProperty IRI="#Participou"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#ParticipouNaEpoca"/>
+        <ObjectProperty IRI="#EpocaConclusao"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#PossivelParceria"/>
+        <ObjectProperty IRI="#relacaoTrabalho"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#ProduziuNaEpoca"/>
+        <ObjectProperty IRI="#EpocaConclusao"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#Reside"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#TrabalhouCom"/>
+        <ObjectProperty IRI="#PossivelParceria"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#TrabalhouNaEpoca"/>
+        <ObjectProperty IRI="#EpocaConclusao"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#FoiProduzidoPor"/>
+        <ObjectProperty IRI="#Produziu"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#FormouPessoa"/>
+        <ObjectProperty IRI="#Éformado"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#TemTipoMusical"/>
+        <ObjectProperty IRI="#ÉTipoMusicalDe"/>
+    </InverseObjectProperties>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#PossivelParceria"/>
+    </SymmetricObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#TrabalhouCom"/>
+    </SymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#AtuaNaArea"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#CircundaAreaDeConhecimento"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#Coorientou"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#EpocaConclusao"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#FoiCondecorado"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#FoiProduzidoPor"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#FormadoNaEpoca"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#FormouPessoa"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#MinistrouDisciplina"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#OcorreuNaEpoca"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#Orientou"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#ParticipouBanca"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#ParticipouEvento"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#ParticipouNaEpoca"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#Produziu"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#ProduziuNaEpoca"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#RegistrouPatente"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#Reside"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#ResponsavelProjeto"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#StatusDaAtividade"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#TemCarater"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#TemProficienciaEm"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#TemTipoMusical"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#TrabalhaEm"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#TrabalhouEmProjeto"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#TrabalhouNaEpoca"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#VinculadoAoCurriculo"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#ÉTipoMusicalDe"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#Éformado"/>
+    </AsymmetricObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#PossivelParceria"/>
+    </TransitiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#AtuaNaArea"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#CircundaAreaDeConhecimento"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#Coorientou"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#EpocaConclusao"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#FoiCondecorado"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#FoiProduzidoPor"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#FormadoNaEpoca"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#FormouPessoa"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#MinistrouDisciplina"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#OcorreuNaEpoca"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#Orientou"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#ParticipouBanca"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#ParticipouEvento"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#ParticipouNaEpoca"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#Produziu"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#ProduziuNaEpoca"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#RegistrouPatente"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#Reside"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#ResponsavelProjeto"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#StatusDaAtividade"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#TemCarater"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#TemProficienciaEm"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#TemTipoMusical"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#TrabalhaEm"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#TrabalhouEmProjeto"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#TrabalhouNaEpoca"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#VinculadoAoCurriculo"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#ÉTipoMusicalDe"/>
+    </IrreflexiveObjectProperty>
+    <IrreflexiveObjectProperty>
+        <ObjectProperty IRI="#Éformado"/>
+    </IrreflexiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#AtuaNaArea"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#CircundaAreaDeConhecimento"/>
+        <Class IRI="#Doutorado"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#CircundaAreaDeConhecimento"/>
+        <Class IRI="#LivreDocencia"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#CircundaAreaDeConhecimento"/>
+        <Class IRI="#Mestrado"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#CircundaAreaDeConhecimento"/>
+        <Class IRI="#PesquisaDesenvolvimento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#CircundaAreaDeConhecimento"/>
+        <Class IRI="#Pos-doutorado"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#CircundaAreaDeConhecimento"/>
+        <Class IRI="#Producao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#CircundaAreaDeConhecimento"/>
+        <Class IRI="#ResidenciaMedica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Coorientou"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoiCondecorado"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#ApresentacaoObraArtistica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#ApresentacaoRadioTV"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#ArranjoMusical"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#ArtesCenicas"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#ArtesVisuais"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#Artigo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#CartaMapa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#ComposicaoMusical"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#CursoCurtaDuracao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#CursoMinistrado"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#Editoracao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#EventoGeral"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#Livro"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#Maquete"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#MaterialDidatico"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#Musica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#ObraArtesVisuais"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#OrganizacaoEvento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#Partitura"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#Patente"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#ProcessoTecnica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#ProdutoTecnilogico"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#ProgramaRadioTV"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#RelatorioPesquisa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#Software"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#Sonoplastia"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#TextoMidias"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#TrabalhoTecnico"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#TrabalhosEventos"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#Traducao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#FormadoNaEpoca"/>
+        <Class IRI="#FormacaçãoAcademica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#MinistrouDisciplina"/>
+        <Class IRI="#Ensino"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#OcorreuNaEpoca"/>
+        <Class IRI="#EventoGeral"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Orientou"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ParticipouBanca"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ParticipouEvento"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ParticipouNaEpoca"/>
+        <Class IRI="#EventoBanca"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#PossuiNaturezaBibliografica"/>
+        <Class IRI="#Artigo"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#PossuiNaturezaBibliografica"/>
+        <Class IRI="#TrabalhosEventos"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Produziu"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ProduziuNaEpoca"/>
+        <Class IRI="#Producao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#RegistrouPatente"/>
+        <Class IRI="#ProducaoTecnica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Reside"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ResponsavelProjeto"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#StatusDaAtividade"/>
+        <Class IRI="#FormacaçãoAcademica"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#StatusDaAtividade"/>
+        <Class IRI="#ProjetoPesquisa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#TemCarater"/>
+        <Class IRI="#Patente"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#TemCarater"/>
+        <Class IRI="#TrabalhosEventos"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#TemProficienciaEm"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#TemTipoMusical"/>
+        <Class IRI="#ArranjoMusical"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#TemTipoMusical"/>
+        <Class IRI="#ComposicaoMusical"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#TemTipoMusical"/>
+        <Class IRI="#CursoCurtaDuracao"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#TrabalhaEm"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#TrabalhouEmProjeto"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#TrabalhouNaEpoca"/>
+        <Class IRI="#AtuacaoProfissional"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#VinculadoAoCurriculo"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#Éformado"/>
+        <Class IRI="#Pessoa"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#AtuaNaArea"/>
+        <Class IRI="#AreaAtuacao"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#CircundaAreaDeConhecimento"/>
+        <Class IRI="#AreaAtuacao"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Coorientou"/>
+        <Class IRI="#Aperfeicoamento"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Coorientou"/>
+        <Class IRI="#Doutorado"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Coorientou"/>
+        <Class IRI="#Especializacao"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Coorientou"/>
+        <Class IRI="#Graduacao"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Coorientou"/>
+        <Class IRI="#IniciacaoCientifica"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Coorientou"/>
+        <Class IRI="#MestradoAcademico"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Coorientou"/>
+        <Class IRI="#MestradoProfissional"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Coorientou"/>
+        <Class IRI="#Pos-doutorado"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#FoiCondecorado"/>
+        <Class IRI="#PremioTitulo"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#MeioDigital"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#MeioFilme"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#MeioHiperTexto"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#MeioImpresso"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#MeioMagnetico"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#FoidivulgadoVia"/>
+        <Class IRI="#MeioWeb"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#FormadoNaEpoca"/>
+        <Class IRI="#Ano"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#MinistrouDisciplina"/>
+        <Class IRI="#Disciplina"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#OcorreuNaEpoca"/>
+        <Class IRI="#Ano"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Orientou"/>
+        <Class IRI="#Aperfeicoamento"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Orientou"/>
+        <Class IRI="#Doutorado"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Orientou"/>
+        <Class IRI="#Especializacao"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Orientou"/>
+        <Class IRI="#Graduacao"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Orientou"/>
+        <Class IRI="#IniciacaoCientifica"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Orientou"/>
+        <Class IRI="#MestradoAcademico"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Orientou"/>
+        <Class IRI="#MestradoProfissional"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Orientou"/>
+        <Class IRI="#Pos-doutorado"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ParticipouBanca"/>
+        <Class IRI="#EventoBanca"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ParticipouEvento"/>
+        <Class IRI="#EventoGeral"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ParticipouNaEpoca"/>
+        <Class IRI="#Ano"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#PossuiNaturezaBibliografica"/>
+        <Class IRI="#NaturezaBibliografica"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Produziu"/>
+        <Class IRI="#Producao"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ProduziuNaEpoca"/>
+        <Class IRI="#Ano"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#RegistrouPatente"/>
+        <Class IRI="#RegistroPatente"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Reside"/>
+        <Class IRI="#Endereco"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ResponsavelProjeto"/>
+        <Class IRI="#ProjetoPesquisa"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#StatusDaAtividade"/>
+        <Class IRI="#Status"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#TemCarater"/>
+        <Class IRI="#Carater"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#TemProficienciaEm"/>
+        <Class IRI="#Idioma"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#TemTipoMusical"/>
+        <Class IRI="#Canto"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#TemTipoMusical"/>
+        <Class IRI="#Coral"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#TemTipoMusical"/>
+        <Class IRI="#Orquestra"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#TrabalhaEm"/>
+        <Class IRI="#AtuacaoProfissional"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#TrabalhouEmProjeto"/>
+        <Class IRI="#ProjetoPesquisa"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#TrabalhouNaEpoca"/>
+        <Class IRI="#Ano"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#VinculadoAoCurriculo"/>
+        <Class IRI="#CurriculoLattes"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#Éformado"/>
+        <Class IRI="#FormacaçãoAcademica"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#AnoDePremiacao"/>
+        <Class IRI="#PremioTitulo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#AnoInicio"/>
+        <Class IRI="#AtuacaoProfissional"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#AnoInicio"/>
+        <Class IRI="#FormacaçãoAcademica"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#CargaHorariaSemanal"/>
+        <Class IRI="#VinculosProfissionais"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Cidade"/>
+        <Class IRI="#ApresentacaoObraArtistica"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Cidade"/>
+        <Class IRI="#Endereco"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Cidade"/>
+        <Class IRI="#TrabalhosEventos"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#CodigoInstituicao"/>
+        <Class IRI="#AtuacaoProfissional"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#CodigoInstituicao"/>
+        <Class IRI="#EnderecoProfissional"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#CodigoInstituicao"/>
+        <Class IRI="#FormacaçãoAcademica"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#CodigoPatente"/>
+        <Class IRI="#RegistroPatente"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#DataAtualizacao"/>
+        <Class IRI="#CurriculoLattes"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#DataNascimento"/>
+        <Class IRI="#Pessoa"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#DedicaoExclusiva"/>
+        <Class IRI="#VinculosProfissionais"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#EnquadramentoFuncional"/>
+        <Class IRI="#VinculosProfissionais"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Estado"/>
+        <Class IRI="#Endereco"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ISBN"/>
+        <Class IRI="#Livro"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ISBN"/>
+        <Class IRI="#TrabalhosEventos"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ISSN"/>
+        <Class IRI="#Artigo"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ISSN"/>
+        <Class IRI="#TextoMidias"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#IdLattes"/>
+        <Class IRI="#Aperfeicoamento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#IdLattes"/>
+        <Class IRI="#Doutorado"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#IdLattes"/>
+        <Class IRI="#Especializacao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#IdLattes"/>
+        <Class IRI="#Graduacao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#IdLattes"/>
+        <Class IRI="#LivreDocencia"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#IdLattes"/>
+        <Class IRI="#MBA"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#IdLattes"/>
+        <Class IRI="#Mestrado"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#IdLattes"/>
+        <Class IRI="#Pessoa"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#IdLattes"/>
+        <Class IRI="#Pos-doutorado"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Idioma"/>
+        <Class IRI="#Idioma"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#MesFinal"/>
+        <Class IRI="#AtuacaoProfissional"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#MesInicio"/>
+        <Class IRI="#AtuacaoProfissional"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#NomeAreaDoconhecimento"/>
+        <Class IRI="#AreaAtuacao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#NomeCompleto"/>
+        <Class IRI="#Pessoa"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#NomeInstituicao"/>
+        <Class IRI="#AtuacaoProfissional"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#NomeInstituicao"/>
+        <Class IRI="#EnderecoProfissional"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#NomeInstituicao"/>
+        <Class IRI="#FormacaçãoAcademica"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#NomeSubAreaConhecimento"/>
+        <Class IRI="#AreaAtuacao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#NomeTitular"/>
+        <Class IRI="#RegistroPatente"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Pais"/>
+        <Class IRI="#BancaAvalicaoCurso"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Pais"/>
+        <Class IRI="#BancaProfessorTitular"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Pais"/>
+        <Class IRI="#Endereco"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Pais"/>
+        <Class IRI="#EventoGeral"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Pais"/>
+        <Class IRI="#Producao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ProficienciaCompreensao"/>
+        <Class IRI="#Idioma"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ProficienciaEscrita"/>
+        <Class IRI="#Idioma"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ProficienciaFala"/>
+        <Class IRI="#Idioma"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ProficienciaLeitura"/>
+        <Class IRI="#Idioma"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#TipoPatente"/>
+        <Class IRI="#RegistroPatente"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Titulo"/>
+        <Class IRI="#BancaAvalicaoCurso"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Titulo"/>
+        <Class IRI="#BancaProfessorTitular"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Titulo"/>
+        <Class IRI="#ConselhoComissaoConsultoria"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Titulo"/>
+        <Class IRI="#DirecaoAdministracao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Titulo"/>
+        <Class IRI="#Disciplina"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Titulo"/>
+        <Class IRI="#Estagio"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Titulo"/>
+        <Class IRI="#EventoGeral"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Titulo"/>
+        <Class IRI="#ExtensaoUniversitaria"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Titulo"/>
+        <Class IRI="#PesquisaDesenvolvimento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Titulo"/>
+        <Class IRI="#Producao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Titulo"/>
+        <Class IRI="#ProjetoPesquisa"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Titulo"/>
+        <Class IRI="#ServicoTecnicoEspecializado"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#Titulo"/>
+        <Class IRI="#Treinamento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#TituloCurso"/>
+        <Class IRI="#CursoComplementar"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#TituloCurso"/>
+        <Class IRI="#EnsinoSuperior"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#TituloCurso"/>
+        <Class IRI="#EnsinoTecnico"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#TituloTrabalhoFinal"/>
+        <Class IRI="#Aperfeicoamento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#TituloTrabalhoFinal"/>
+        <Class IRI="#Doutorado"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#TituloTrabalhoFinal"/>
+        <Class IRI="#Especializacao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#TituloTrabalhoFinal"/>
+        <Class IRI="#Graduacao"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#TituloTrabalhoFinal"/>
+        <Class IRI="#LivreDocencia"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#TituloTrabalhoFinal"/>
+        <Class IRI="#MBA"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#TituloTrabalhoFinal"/>
+        <Class IRI="#Mestrado"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#TituloTrabalhoFinal"/>
+        <Class IRI="#Pos-doutorado"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#VinculoEmpregarticio"/>
+        <Class IRI="#VinculosProfissionais"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#AnoDePremiacao"/>
+        <Datatype abbreviatedIRI="xsd:gYear"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#AnoInicio"/>
+        <Datatype abbreviatedIRI="xsd:gYear"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#CargaHorariaSemanal"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Cidade"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#CodigoInstituicao"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#CodigoPatente"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#DataAtualizacao"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#DataNascimento"/>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#DedicaoExclusiva"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#EnquadramentoFuncional"/>
+        <DataOneOf>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Livre</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">ProfessorTitular</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Estado"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ISBN"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ISSN"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#IdLattes"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Idioma"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#MesFinal"/>
+        <Datatype IRI="#xsd:gMonth"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#MesInicio"/>
+        <Datatype IRI="#xsd:gMonth"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#NomeAreaDoconhecimento"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#NomeCompleto"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#NomeInstituicao"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#NomeSubAreaConhecimento"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#NomeTitular"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Pais"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ProficienciaCompreensao"/>
+        <DataOneOf>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Bem</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Pouco</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Razoavel</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ProficienciaEscrita"/>
+        <DataOneOf>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Bem</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Pouco</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Razoavel</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ProficienciaFala"/>
+        <DataOneOf>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Bem</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Pouco</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Razoavel</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#ProficienciaLeitura"/>
+        <DataOneOf>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Bem</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Pouco</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">Razoavel</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#TipoPatente"/>
+        <DataOneOf>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CERTIFICADO_DE_ADICAO_CA </Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">CULTIVAR_PROTEGIDA_CTV</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">DESENHO_INDUSTRIAL_DI</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">MARCA_REGISTRADA_COLETIVA_MCL</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">MARCA_REGISTRADA_DE_CERTIFICACAO_MCT</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">MARCA_REGISTRADA_DE_PRODUTO_MPD</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">MARCA_REGISTRADA_DE_SERVICO_MSV</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">MARCA_REGISTRADA_FIGURATIVA_MRF</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">MARCA_REGISTRADA_MISTA_MRM</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">MARCA_REGISTRADA_NOMINATIVA_MRN</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">MARCA_REGISTRADA_TRIDIMENSIONAL_MRT</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">MODELO_DE_UTILIDADE_MU</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">MODELO_INDUSTRIAL_MI</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">OUTRO_OU</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">OUTRO_Ou</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">PATENTE_NO_EXTERIOR_PE</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">PRIVILEGIO_DE_INOVACAO_PI</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">PROGRAMA_DE_COMPUTADOR_PC</Literal>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">TOPOGRAFIA_DE_CIRCUITO_INTEGRADO_REGISTRADA_TCI</Literal>
+        </DataOneOf>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#Titulo"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#TituloTrabalhoFinal"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#VinculoEmpregarticio"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

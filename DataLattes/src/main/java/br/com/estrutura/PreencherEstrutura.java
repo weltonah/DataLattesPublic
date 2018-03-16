@@ -118,6 +118,14 @@ public class PreencherEstrutura {
 		this.abreNome.put("TrArVi", "Trabalho em Artes Vizuais");
 		this.abreNome.put("TrEv", "Trabalho em eventos");
 		this.abreNome.put("TrTe", "Trabalho Técnico");
+		this.abreNome.put("A1", "A1");
+		this.abreNome.put("A2", "A2");
+		this.abreNome.put("B1", "B1");
+		this.abreNome.put("B2", "B2");
+		this.abreNome.put("B3", "B3");
+		this.abreNome.put("B4", "B4");
+		this.abreNome.put("B5", "B5");
+		this.abreNome.put("C", "C");
 	}
 
 	@PostConstruct
@@ -185,7 +193,7 @@ public class PreencherEstrutura {
 		// Producao Bibliografica
 		listCritFormacao = new ArrayList<CriterioEstrutura>();
 		PreencherNacInter(new CriterioEstrutura("Trabalho em eventos", "TrEv"), listCritFormacao);
-		PreencherConcluido(new CriterioEstrutura("Artigos publicados", "ArPu"), listCritFormacao);
+		PreencherConcluidoQualis(new CriterioEstrutura("Artigos publicados", "ArPu"), listCritFormacao);
 		PreencherConcluido(new CriterioEstrutura("Artigos aceitos para publicação", "ArAcPu"), listCritFormacao);
 		PreencherConcluido(new CriterioEstrutura("Textos em jornais ou revista", "TeJoRe"), listCritFormacao);
 		PreencherConcluido(new CriterioEstrutura("Capítulo de livro", "CaLi"), listCritFormacao);
@@ -470,6 +478,33 @@ public class PreencherEstrutura {
 		list.add(tipo);
 		crit.addListTipo(list);
 		listCritFormacao.add(crit);
+	}
+
+	public void PreencherConcluidoQualis(CriterioEstrutura crit, ArrayList<CriterioEstrutura> listCritFormacao) {
+		ArrayList<TipoEstrutura> list = new ArrayList<TipoEstrutura>();
+		TipoEstrutura tipo = new TipoEstrutura("Concluido", "Con");
+		list.add(tipo);
+		crit.addListTipo(list);
+		list = new ArrayList<TipoEstrutura>();
+		tipo = new TipoEstrutura("A1", "A1");
+		list.add(tipo);
+		tipo = new TipoEstrutura("A2", "A2");
+		list.add(tipo);
+		tipo = new TipoEstrutura("B1", "B1");
+		list.add(tipo);
+		tipo = new TipoEstrutura("B2", "B2");
+		list.add(tipo);
+		tipo = new TipoEstrutura("B3", "B3");
+		list.add(tipo);
+		tipo = new TipoEstrutura("B4", "B4");
+		list.add(tipo);
+		tipo = new TipoEstrutura("B5", "B5");
+		list.add(tipo);
+		tipo = new TipoEstrutura("C", "C");
+		list.add(tipo);
+		crit.addListTipo(list);
+		listCritFormacao.add(crit);
+
 	}
 
 	public void PreencherParticipou(CriterioEstrutura crit, ArrayList<CriterioEstrutura> listCritFormacao) {

@@ -3,27 +3,24 @@ package br.com.DAO;
 import java.io.File;
 import java.io.IOException;
 
-import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.model.OWLOntology;
-import org.semanticweb.owlapi.model.OWLOntologyCreationException;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
+import org.apache.commons.io.FileUtils;
 import org.springframework.core.io.ClassPathResource;
 
 public class ReadFile {
-	private OWLOntology ontology;
 	
-	public ReadFile() {
-		 OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+	public static File PegarFile() {
 		 try {
 			File file = new ClassPathResource("static/OWL/datalattes.owl").getFile();
-			ontology = manager.loadOntologyFromOntologyDocument(file);
-		} catch (IOException | OWLOntologyCreationException e) {
+			File ont = new File(System.getProperty("user.dir") + "/datalattescopy.owl");
+			System.out.println(ont.getAbsolutePath());
+			FileUtils.copyFile(file, ont);
+
+			return ont;
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return null;
 	}
 	
-	public OWLOntology getOntologyDataLattes() {
-		return ontology;
-	}
 }

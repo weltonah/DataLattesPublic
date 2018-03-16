@@ -37,7 +37,14 @@
                            id="myCheck${estcrit.getListEst().get(idforech).getAbre()}ItemStatus${itemstatus.index}"
                            name="myCheck${estcrit.getListEst().get(idforech).getAbre()}ItemStatus${itemstatus.index}"
                            onclick="${estcrit.getListEst().get(idforech).getAbre()}ItemStatus(${itemstatus.index})">
+                           <c:choose>
+                           <c:when test="${item.getAbre().contentEquals('ArPu')}">
+                           Diferenciar pontuação por Qualis
+                           </c:when>
+                           <c:otherwise>
                            Diferenciar pontuação por status do critério
+                           </c:otherwise>
+                           </c:choose>
                           </label>
                          </div>
                          </c:if>
