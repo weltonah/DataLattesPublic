@@ -357,8 +357,9 @@ Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#Ti
 Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#TituloCurso>))
 Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#TituloTrabalhoFinal>))
 Declaration(DataProperty(<http://www.datalattes.com/ontologies/datalattes.owl#VinculoEmpregarticio>))
+Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#artigoteste>))
 Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#welton>))
-Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#Jairo Francisco de Souza>))
+Declaration(NamedIndividual(<http://www.datalattes.com/ontologies/datalattes.owl#4516605108233899>))
 Declaration(Datatype(<http://www.datalattes.com/ontologies/datalattes.owl#xsd:gMonth>))
 Declaration(Datatype(xsd:date))
 Declaration(Datatype(xsd:gYear))
@@ -1922,14 +1923,20 @@ SubClassOf(<http://www.datalattes.com/ontologies/datalattes.owl#VinculosProfissi
 #   Named Individuals
 ############################
 
+# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#artigoteste> (<http://www.datalattes.com/ontologies/datalattes.owl#artigoteste>)
+
+ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#ArtigoPublicado> <http://www.datalattes.com/ontologies/datalattes.owl#artigoteste>)
+
 # Individual: <http://www.datalattes.com/ontologies/datalattes.owl#welton> (<http://www.datalattes.com/ontologies/datalattes.owl#welton>)
 
 ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#welton>)
 DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#welton> "Welton de Abreu Henriques")
 
-# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#Jairo Francisco de Souza> (<http://www.datalattes.com/ontologies/datalattes.owl#Jairo Francisco de Souza>)
+# Individual: <http://www.datalattes.com/ontologies/datalattes.owl#4516605108233899> (<http://www.datalattes.com/ontologies/datalattes.owl#4516605108233899>)
 
-ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#Jairo Francisco de Souza>)
+ClassAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Pessoa> <http://www.datalattes.com/ontologies/datalattes.owl#4516605108233899>)
+ObjectPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#Produziu> <http://www.datalattes.com/ontologies/datalattes.owl#4516605108233899> <http://www.datalattes.com/ontologies/datalattes.owl#artigoteste>)
+DataPropertyAssertion(<http://www.datalattes.com/ontologies/datalattes.owl#NomeCompleto> <http://www.datalattes.com/ontologies/datalattes.owl#4516605108233899> "Jairo Francisco de Souza")
 
 
 )
