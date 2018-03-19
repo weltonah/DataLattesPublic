@@ -7,7 +7,7 @@ function CriarFile(text) {
 	  element.style.display = 'none';
 	  document.body.appendChild(element);
 	  element.click();
-	  document.body.removeChild(element);
+	  //document.body.removeChild(element);
 	}
 function Avancar() {
 	if (cont < sizeList) {
@@ -146,7 +146,7 @@ function GerarKey() {
 			+ document.getElementById("AnoFim").value + "%";
 	// var NomeItemForAbre = [ "For", "PrTec", "PrArt", "PrBli", "Orien",
 	// "Banc", "CrGe" ];
-	for (var t = 0; t < 7; t++) {
+	for (var t = 0; t < 8; t++) {
 		var formDiv = document.querySelectorAll('.indexCont' + t);
 		if (formDiv.length > 0) {
 			// alert(formDiv[0].getAttribute("id"));
@@ -191,6 +191,6 @@ function GerarKey() {
 		}
 	}
 	//document.getElementById("keyId").value = key;
-	document.getElementById("divItemChave").classList.remove("d-none");
+	//document.getElementById("divItemChave").classList.remove("d-none");
 	CriarFile(key);
 }

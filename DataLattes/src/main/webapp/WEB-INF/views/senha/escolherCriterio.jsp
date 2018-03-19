@@ -74,6 +74,35 @@
             </div>
             </div>
            </div>
+           
+           <div class="card border-primary " id="ParEvento"
+        style="background-color: #fff">
+           <div class="card-header">
+             <label style="font-size: 20px;">Participação de Evento</label>
+            </div>
+           <div class="card-body" id="ParEventoMisto">
+            <div class="form-check">
+             <div>
+             <input type="checkbox" class="form-check-input"
+            id="checkboxParEventoMarkAll" onclick="ParEventoMarkAll(this)">
+             <label class="form-check-label"
+            for="checkboxParEventoMarkAll"> Marcar todos</label>
+             </div>
+             <hr style="border-top: 1px solid #8c8b8b;">
+             <c:forEach var="formacao" varStatus="ParEventostatus"
+           items="${estr.getListEst().get(7).getListCrit()}">
+                <input class="ParEvento  form-check-input" type="checkbox"
+            name="ParEvento" id="ParEvento${ParEventostatus.index}"
+            value="${formacao.getAbre()}"> 
+                <label class="form-check-label"
+            for="ParEvento${ParEventostatus.index}">${formacao.getCriterio() }</label>
+                <br>
+             </c:forEach>
+            </div>
+            </div>
+           </div>
+           
+           
           <div class="card border-primary " id="ProdTecni"
         style="background-color: #fff">
            <div class="card-header">

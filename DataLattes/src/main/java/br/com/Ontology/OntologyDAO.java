@@ -62,7 +62,7 @@ public class OntologyDAO {
 		this.ontology.add(da);
 	}
 
-	public void addIndividualDataProperty(String Nome, String valor, String Tipo) {
+	public void addAtribNoIndivido(String Nome, String valor, String Tipo) {
 		OWLDataFactory factory = this.manager.getOWLDataFactory();
 		OWLIndividual individual = factory.getOWLNamedIndividual(this.DATALATTESIRI + "#", Nome);
 		OWLDataProperty dataProp = factory.getOWLDataProperty(this.DATALATTESIRI + "#", "NomeCompleto");
@@ -70,7 +70,7 @@ public class OntologyDAO {
 		this.ontology.add(da);
 	}
 
-	public void addIndividualParaIndividual(String NomePrimeiro, String NomeSegundo) {
+	public void addRelacaoInd(String NomePrimeiro, String NomeSegundo) {
 		OWLDataFactory factory = this.manager.getOWLDataFactory();
 		OWLIndividual individual = factory.getOWLNamedIndividual(this.DATALATTESIRI + "#", NomePrimeiro);
 		OWLIndividual individual2 = factory.getOWLNamedIndividual(this.DATALATTESIRI + "#", NomeSegundo);

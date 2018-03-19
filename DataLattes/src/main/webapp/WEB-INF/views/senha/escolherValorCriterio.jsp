@@ -76,7 +76,6 @@ document.getElementById("AnoFim").value =theDate.getFullYear();
 <div class="row">
 <div class="rounded col-12"
      style=" margin-top: 1vh; padding-bottom: 10px;">
-<form action="escolherValorCriterio">
 
 <div class="col-12 ">
     <input type="hidden" id="sizeList" name="firstName"
@@ -115,7 +114,6 @@ document.getElementById("AnoFim").value =theDate.getFullYear();
      </div>   
       
 </div>
-</form>
  <hr style="background-color: black;">  
  <div class="col-12 row" style="padding-right: 0px; margin-right: 0px;margin-top:10px;">
 

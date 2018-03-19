@@ -45,7 +45,8 @@ public class SenhaController {
 			@RequestParam(value = "ProdBibl", required = false) List<String> ProdBibl,
 			@RequestParam(value = "Orien", required = false) List<String> Orien,
 			@RequestParam(value = "Banc", required = false) List<String> Banc,
-			@RequestParam(value = "DeEx", required = false) List<String> DeEx) {
+			@RequestParam(value = "DeEx", required = false) List<String> DeEx,
+			@RequestParam(value = "ParEvento", required = false) List<String> ParEvento) {
 		ArrayList<List<String>> conteudo = new ArrayList<List<String>>();
 		conteudo.add(formacao);
 		conteudo.add(ProdTec);
@@ -54,6 +55,7 @@ public class SenhaController {
 		conteudo.add(Orien);
 		conteudo.add(Banc);
 		conteudo.add(DeEx);
+		conteudo.add(ParEvento);
 		Estrutura estcrit = this.preencherEstrutura.InserirCriteriosCheckbox(conteudo);
 		model.addAttribute("estcrit", estcrit);
 		return "senha/escolherValorCriterio";
@@ -91,6 +93,8 @@ public class SenhaController {
 		fos.close();
 		ArrayList<List<String[]>> conteudo = (ArrayList<List<String[]>>) session.getAttribute("conteudo");
 		Estrutura SessaoCriteriosKey = this.preencherEstrutura.InserirCriteriosKey(conteudo);
+
+
 		SessaoCriteriosKey.setAnoFim((int) session.getAttribute("anoFim"));
 		SessaoCriteriosKey.setAnoInicio((int) session.getAttribute("anoInicio"));
 		new AnaliseDados().preencherEstruturaAnaliseXml(SessaoCriteriosKey,

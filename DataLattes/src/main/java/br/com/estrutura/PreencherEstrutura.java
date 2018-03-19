@@ -96,6 +96,15 @@ public class PreencherEstrutura {
 		this.abreNome.put("OrPoDo", "Orientação Pós-Doutorado");
 		this.abreNome.put("Pa", "Patente");
 		this.abreNome.put("Par", "Participou");
+		this.abreNome.put("PaCo", "Participação de Congresso");
+		this.abreNome.put("PaFe", "Participação de Feira");
+		this.abreNome.put("PaSe", "Participação de Seminario");
+		this.abreNome.put("PaSi", "Participação de Simposio");
+		this.abreNome.put("PaOf", "Participação de Oficina");
+		this.abreNome.put("PaEn", "Participação de Encontro");
+		this.abreNome.put("PaEx", "Participação de Exposição");
+		this.abreNome.put("PaOl", "Participação de Olimpiada");
+		this.abreNome.put("ParEnv", "Participaçao em Eventos");
 		this.abreNome.put("PDo", "Pós-Doutorado");
 		this.abreNome.put("PoDeEx", "Possui dedicação exclusiva");
 		this.abreNome.put("PrArt", "Produção Artística");
@@ -235,6 +244,18 @@ public class PreencherEstrutura {
 		PreencherGeral(new CriterioEstrutura("Dedicação Exclusiva", "DeEx"), "Possui dedicação exclusiva", "PoDeEx",
 				listCritFormacao);
 		areaEstruturaFormacao = new AreaEstrutura("Critérios Gerais", "CrGe");
+		areaEstruturaFormacao.setListCrit(listCritFormacao);
+		listArea.add(areaEstruturaFormacao);
+		listCritFormacao = new ArrayList<CriterioEstrutura>();
+		PreencherParticipou(new CriterioEstrutura("Participação de Congresso", "PaCo"), listCritFormacao);
+		PreencherParticipou(new CriterioEstrutura("Participação de Feira", "PaFe"), listCritFormacao);
+		PreencherParticipou(new CriterioEstrutura("Participação de Seminario", "PaSe"), listCritFormacao);
+		PreencherParticipou(new CriterioEstrutura("Participação de Simposio", "PaSi"), listCritFormacao);
+		PreencherParticipou(new CriterioEstrutura("Participação de Oficina", "PaOf"), listCritFormacao);
+		PreencherParticipou(new CriterioEstrutura("Participação de Encontro", "PaEn"), listCritFormacao);
+		PreencherParticipou(new CriterioEstrutura("Participação de Exposição", "PaEx"), listCritFormacao);
+		PreencherParticipou(new CriterioEstrutura("Participação de Olimpiada", "PaOl"), listCritFormacao);
+		areaEstruturaFormacao = new AreaEstrutura("Participaçao em Eventos", "ParEvento");
 		areaEstruturaFormacao.setListCrit(listCritFormacao);
 		listArea.add(areaEstruturaFormacao);
 		this.estr.setListEst(listArea);

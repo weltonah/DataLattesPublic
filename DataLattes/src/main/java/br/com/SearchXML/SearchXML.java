@@ -13,6 +13,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import br.com.Modelo.Autores;
+import br.com.Modelo.Evento;
 import br.com.Modelo.ObjetoCriterio;
 import br.com.Modelo.Orientacao;
 import br.com.Modelo.Producao;
@@ -62,6 +63,26 @@ public class SearchXML {
 				}
 			}
 			ListArtigoCompleto.add(prod);
+		}
+		return ListArtigoCompleto;
+	}
+
+	public ArrayList<ObjetoCriterio> BuscaEvento(String raiz) throws XPathExpressionException {
+		XPathExpression expr = this.xpath.compile(raiz);
+		NodeList livros = (NodeList) expr.evaluate(this.xmlfile, XPathConstants.NODESET);
+		ArrayList<ObjetoCriterio> ListArtigoCompleto = new ArrayList<ObjetoCriterio>();
+		for (int i = 0; i < livros.getLength(); i++) {
+			Node TipoNode = livros.item(i);
+			String titulo = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("TITULO").getTextContent();
+			int ano = Integer
+					.valueOf(TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("ANO").getTextContent());
+			String pais = TipoNode.getChildNodes().item(0).getAttributes().getNamedItem("PAIS")
+					.getTextContent();
+			String nomeEvento = TipoNode.getChildNodes().item(1).getAttributes().getNamedItem("NOME-DO-EVENTO")
+					.getTextContent();
+			Evento eve = new Evento(titulo, ano, nomeEvento, pais);
+
+			ListArtigoCompleto.add(eve);
 		}
 		return ListArtigoCompleto;
 	}

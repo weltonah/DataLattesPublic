@@ -26,6 +26,20 @@ function ProdArtMarkAll() {
 		}
 	}
 }
+function ParEventoMarkAll() {
+	var x = document.getElementById("checkboxParEventoMarkAll").checked;
+	var inputs = document.querySelectorAll('.ParEvento');
+	if (x) {
+		for (var i = 0; i < inputs.length; i++) {
+			inputs[i].checked = true;
+		}
+	} else {
+		for (var i = 0; i < inputs.length; i++) {
+			inputs[i].checked = false;
+			
+		}
+	}
+}
 function ProdTecMarkAll() {
 	var x = document.getElementById("checkboxProdTecMarkAll").checked;
 	var inputs = document.querySelectorAll('.ProdTec');

@@ -9,7 +9,6 @@ import javax.validation.constraints.NotNull;
 @Embeddable
 public class QualisEntidade implements Serializable {
 
-	private static final long serialVersionUID = 1L;
 	@NotNull
 	@Column(name = "ISSN")
 	private String issn;
@@ -17,7 +16,8 @@ public class QualisEntidade implements Serializable {
 	@Column(name = "TITULO")
 	private String titulo;
 
-	public QualisEntidade(String issn, String titulo) {
+	public QualisEntidade(@NotNull String issn, @NotNull String titulo) {
+		super();
 		this.issn = issn;
 		this.titulo = titulo;
 	}

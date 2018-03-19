@@ -65,6 +65,8 @@ public class AnaliseDados {
 				return BancSwitch(criterioEstrutura, tipoEstrutura);
 			case "CrGe":
 				return CrGeSwitch(criterioEstrutura, tipoEstrutura);
+			case "ParEvento":
+				return ParEventoSwitch(criterioEstrutura, tipoEstrutura);
 			}
 		} catch (XPathExpressionException e) {
 			// TODO Auto-generated catch block
@@ -650,26 +652,50 @@ public class AnaliseDados {
 
 	public ArrayList<ItemAnalisado> BancSwitch(String criterioEstrutura, String tipoEstrutura)
 			throws XPathExpressionException {
-		SearchXMLBanca SearchXMLBanca = new SearchXMLBanca(this.filtroSearchXml.getXmlfile());
+		SearchXMLBanca searchXMLBanca = new SearchXMLBanca(this.filtroSearchXml.getXmlfile());
 		switch (criterioEstrutura) {
 		case "BaMe":
-			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaMestrado());
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLBanca.BancaMestrado());
 		case "BaDo":
-			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaDoutorado());
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLBanca.BancaDoutorado());
 		case "BaQu":
-			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaQualificacao());
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLBanca.BancaQualificacao());
 		case "BaEsAp":
-			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaAperfeicoamentoEspecificacao());
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLBanca.BancaAperfeicoamentoEspecificacao());
 		case "BaGr":
-			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaGraduacao());
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLBanca.BancaGraduacao());
 		case "BaPrTi":
-			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaProfessorTitular());
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLBanca.BancaProfessorTitular());
 		case "BaCoPu":
-			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaConcursoPublico());
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLBanca.BancaConcursoPublico());
 		case "BaLDo":
-			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaLivreDocencia());
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLBanca.BancaLivreDocencia());
 		case "BaAvCu":
-			return this.filtroSearchXml.PreencherAnoLimite(SearchXMLBanca.BancaAvaliacaoCurso());
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLBanca.BancaAvaliacaoCurso());
+		}
+		return null;
+	}
+
+	public ArrayList<ItemAnalisado> ParEventoSwitch(String criterioEstrutura, String tipoEstrutura)
+			throws XPathExpressionException {
+		SearchXMLParEvento searchXMLParEvento = new SearchXMLParEvento(this.filtroSearchXml.getXmlfile());
+		switch (criterioEstrutura) {
+		case "PaCo":
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLParEvento.ParticipacaoCongresso());
+		case "PaFe":
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLParEvento.ParticipacaoFeira());
+		case "PaSe":
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLParEvento.ParticipacaoSeminario());
+		case "PaSi":
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLParEvento.ParticipacaoSimposio());
+		case "PaOf":
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLParEvento.ParticipacaoOficina());
+		case "PaEn":
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLParEvento.ParticipacaoEncontro());
+		case "PaEx":
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLParEvento.ParticipacaoExposicao());
+		case "PaOl":
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLParEvento.ParticipacaoOlimpiada());
 		}
 		return null;
 	}

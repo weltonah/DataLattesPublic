@@ -56,10 +56,10 @@ public class PreencherTest {
 			throws 
 			OWLOntologyCreationException, XPathExpressionException, OWLOntologyStorageException, FileNotFoundException {
 		this.ontologyDAO.addIndividual(searchXML.IDLattes(), "Pessoa");
-		this.ontologyDAO.addIndividualDataProperty(searchXML.IDLattes(), searchXML.NomeCompleto(), "NomeCompleto");
+		this.ontologyDAO.addAtribNoIndivido(searchXML.IDLattes(), searchXML.NomeCompleto(), "NomeCompleto");
 		String nome = "artigoteste";
 		this.ontologyDAO.addIndividual(nome, "ArtigoPublicado");
-		this.ontologyDAO.addIndividualParaIndividual(searchXML.IDLattes(), nome);
+		this.ontologyDAO.addRelacaoInd(searchXML.IDLattes(), nome);
 		// this.ontologyDAO.imprimir();
 		// this.ontologyDAO.saveOntologyDAO();
 		assertEquals("Jairo Francisco de Souza", searchXML.NomeCompleto());

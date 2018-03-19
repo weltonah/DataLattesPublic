@@ -14,14 +14,13 @@ public class Qualis implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1228066278910511890L;
 	@EmbeddedId
 	private QualisEntidade qualisEntidade;
 	@Column(name = "ESTRATO")
 	private String estrato;
 
+
 	public Qualis(QualisEntidade qualisEntidade, String estrato) {
-		super();
 		this.qualisEntidade = qualisEntidade;
 		this.estrato = estrato;
 	}
