@@ -1,14 +1,21 @@
 package br.com.controller;
 
+import java.io.File;
+import java.io.IOException;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import br.com.Ontology.PreencherOntologia;
 
 @Controller
 public class AnaliseController {
 	// @Autowired
 	// private QualisRepository qualisRepository;
-	// @Autowired
-	// private PreencherOntologia preencherOntologia;
+	@Autowired
+	private PreencherOntologia preencherOntologia;
 
 	@RequestMapping("/inserirChave")
 	public String inserirChave() {
@@ -35,14 +42,14 @@ public class AnaliseController {
 		return "analise/upload";
 	}
 
-	// @RequestMapping("/uploadFileToOntology")
-	// public String uploadFileToOntology(@RequestParam("file") MultipartFile file)
-	// throws IOException {
-	// File xmlfile = new File(file.getOriginalFilename());
-	// xmlfile.createNewFile();
-	// this.preencherOntologia.inserirFile(xmlfile);
-	// xmlfile.delete();
-	// return "arquivofile";
-	// }
+	@RequestMapping("/Onto")
+	public String uploadFileToOntology() throws IOException {
+		// File xmlfile = new File(file.getOriginalFilename());
+		File xmlfile = new ClassPathResource("static/testFile/Jairocurriculo.xml").getFile();
+		xmlfile.createNewFile();
+		this.preencherOntologia.inserirFile(xmlfile);
+		xmlfile.delete();
+		return "arquivofile";
+	}
 
 }

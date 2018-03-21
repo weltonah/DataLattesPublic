@@ -59,7 +59,7 @@ public class PreencherTest {
 		this.ontologyDAO.addAtribNoIndivido(searchXML.IDLattes(), searchXML.NomeCompleto(), "NomeCompleto");
 		String nome = "artigoteste";
 		this.ontologyDAO.addIndividual(nome, "ArtigoPublicado");
-		this.ontologyDAO.addRelacaoInd(searchXML.IDLattes(), nome);
+		// this.ontologyDAO.addRelacaoInd(searchXML.IDLattes(), nome);
 		// this.ontologyDAO.imprimir();
 		// this.ontologyDAO.saveOntologyDAO();
 		assertEquals("Jairo Francisco de Souza", searchXML.NomeCompleto());

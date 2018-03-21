@@ -24,6 +24,7 @@ import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 import org.springframework.stereotype.Service;
 
 import br.com.DAO.ReadFile;
+import br.com.Ontology.modelo.OntoPessoa;
 
 @Service
 public class OntologyDAO {
@@ -54,6 +55,28 @@ public class OntologyDAO {
 		// this.ontology.signature().filter(u−>!u.isBuiltIn()&&u.getIRI().getRemainder().orElse("")).forEach(System.out::println);
 	}
 
+	public void preencherOnto(OntoPessoa pessoa) throws OWLOntologyStorageException, FileNotFoundException {
+		String nome = pessoa.getNomeCompleto();
+		addIndividual(nome, "Pessoa");
+		addAtribNoIndivido(nome, pessoa.getIdLattes(), "IdLattes");
+		addAtribNoIndivido(nome, nome, "NomeCompleto");
+		addAtribNoIndivido(nome, pessoa.getData(), "DataAtualizacao");
+		pessoa.getListOntoProjetoPesquisa().forEach(u -> {
+			addIndividual(u.getTitulo(), u.getTipo());
+			addAtribNoIndivido(u.getTitulo(), u.getTitulo(), "Titulo");
+			addRelacaoInd(nome, u.getTitulo(), "TrabalhouEmProjeto");
+			u.getListAutores().forEach(t -> {
+				addIndividual(t, "Pessoa");
+				addRelacaoInd(t, u.getTitulo(), "TrabalhouEmProjeto");
+			});
+
+		});
+
+
+		saveOntologyDAO();
+		imprimir();
+	}
+
 	public void addIndividual(String Nome, String Tipo) {
 		OWLDataFactory factory = this.manager.getOWLDataFactory();
 		OWLIndividual nome = factory.getOWLNamedIndividual(this.DATALATTESIRI + "#", Nome);
@@ -70,11 +93,11 @@ public class OntologyDAO {
 		this.ontology.add(da);
 	}
 
-	public void addRelacaoInd(String NomePrimeiro, String NomeSegundo) {
+	public void addRelacaoInd(String NomePrimeiro, String NomeSegundo, String Relacao) {
 		OWLDataFactory factory = this.manager.getOWLDataFactory();
 		OWLIndividual individual = factory.getOWLNamedIndividual(this.DATALATTESIRI + "#", NomePrimeiro);
 		OWLIndividual individual2 = factory.getOWLNamedIndividual(this.DATALATTESIRI + "#", NomeSegundo);
-		OWLObjectProperty obj = factory.getOWLObjectProperty(this.DATALATTESIRI + "#", "Produziu");
+		OWLObjectProperty obj = factory.getOWLObjectProperty(this.DATALATTESIRI + "#", Relacao);
 		OWLObjectPropertyAssertionAxiom da = factory.getOWLObjectPropertyAssertionAxiom(obj, individual,
 				individual2);
 		this.ontology.add(da);

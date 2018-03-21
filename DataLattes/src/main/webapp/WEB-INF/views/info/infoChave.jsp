@@ -9,8 +9,7 @@
 </jsp:attribute>
  <jsp:body>
 	<div class="col-12 align-middle"
-   style="height: 70vh; padding-top: 30vh;">
-   
+   style="height: 70vh; padding-top: 2vh;">
    
       	
   	</div>
