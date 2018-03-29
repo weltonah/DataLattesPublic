@@ -56,10 +56,11 @@ public class OntologyDAO {
 	}
 
 	public void preencherOnto(OntoPessoa pessoa) throws OWLOntologyStorageException, FileNotFoundException {
-		String nome = pessoa.getNomeCompleto();
+		String nome = pessoa.getIdLattes();
+
 		addIndividual(nome, "Pessoa");
 		addAtribNoIndivido(nome, pessoa.getIdLattes(), "IdLattes");
-		addAtribNoIndivido(nome, nome, "NomeCompleto");
+		addAtribNoIndivido(nome, pessoa.getNomeCompleto(), "NomeCompleto");
 		addAtribNoIndivido(nome, pessoa.getData(), "DataAtualizacao");
 		pessoa.getListOntoProjetoPesquisa().forEach(u -> {
 			addIndividual(u.getTitulo(), u.getTipo());
@@ -71,10 +72,24 @@ public class OntologyDAO {
 			});
 
 		});
+		pessoa.getListOntoEvento().forEach(u -> {
+			addIndividual(u.getTitulo(), u.getTipo());
+			addAtribNoIndivido(u.getTitulo(), u.getTitulo(), "Titulo");
+			addRelacaoInd(nome, u.getTitulo(), "Participou");
 
+		});
+		pessoa.getListOntoFormacao().forEach(u -> {
+			addIndividual(u.getTitulo(), u.getTipo());
+			addAtribNoIndivido(u.getTitulo(), u.getTitulo(), "TituloTrabalhoFinal");
+			addRelacaoInd(nome, u.getTitulo(), "Éformado");
+			u.getListAutores().forEach(t -> {
+				addIndividual(t, "Pessoa");
+				addRelacaoInd(t, nome, "Orientou");
+			});
+		});
 
 		saveOntologyDAO();
-		imprimir();
+		// imprimir();
 	}
 
 	public void addIndividual(String Nome, String Tipo) {
@@ -88,7 +103,7 @@ public class OntologyDAO {
 	public void addAtribNoIndivido(String Nome, String valor, String Tipo) {
 		OWLDataFactory factory = this.manager.getOWLDataFactory();
 		OWLIndividual individual = factory.getOWLNamedIndividual(this.DATALATTESIRI + "#", Nome);
-		OWLDataProperty dataProp = factory.getOWLDataProperty(this.DATALATTESIRI + "#", "NomeCompleto");
+		OWLDataProperty dataProp = factory.getOWLDataProperty(this.DATALATTESIRI + "#", Tipo);
 		OWLDataPropertyAssertionAxiom da = factory.getOWLDataPropertyAssertionAxiom(dataProp, individual, valor);
 		this.ontology.add(da);
 	}

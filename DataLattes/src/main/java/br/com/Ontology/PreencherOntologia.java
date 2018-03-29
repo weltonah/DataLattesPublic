@@ -38,9 +38,10 @@ public class PreencherOntologia {
 				searchXML.IDLattes(), searchXML.UltimaAtualizacao());
 		PreencherXMLtoOnto preencherXMLtoOnto = new PreencherXMLtoOnto(this.xmlfile);
 		preencherXMLtoOnto.buscarXML(pessoa);
-		System.out.println(pessoa.toString());
+		// System.out.println(pessoa.toString());
 		this.ontologyDAO.preencherOnto(pessoa);
-		
+
+
 		// this.ontologyDAO.addIndividual("WWW", "Pessoa");
 		// this.ontologyDAO.addAtribNoIndivido(this.NomeCurriculo, searchXML.IDLattes(),
 		// "IdLattes");
@@ -48,7 +49,10 @@ public class PreencherOntologia {
 		// searchXML.NomeCompleto(), "NomeCompleto");
 		// this.ontologyDAO.imprimir();
 		// this.ontologyDAO.saveOntologyDAO();
-		System.out.println("teste");
+	}
+
+	public void imprimir() {
+		this.ontologyDAO.imprimir();
 	}
 
 }

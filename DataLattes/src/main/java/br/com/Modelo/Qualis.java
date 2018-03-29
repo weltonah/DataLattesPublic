@@ -16,6 +16,9 @@ public class Qualis implements Serializable {
 	 */
 	@EmbeddedId
 	private QualisEntidade qualisEntidade;
+	
+
+	
 	@Column(name = "ESTRATO")
 	private String estrato;
 
@@ -23,6 +26,9 @@ public class Qualis implements Serializable {
 	public Qualis(QualisEntidade qualisEntidade, String estrato) {
 		this.qualisEntidade = qualisEntidade;
 		this.estrato = estrato;
+	}
+
+	public Qualis() {
 	}
 
 	public QualisEntidade getQualisEntidade() {
@@ -39,5 +45,10 @@ public class Qualis implements Serializable {
 
 	public void setEstrato(String estrato) {
 		this.estrato = estrato;
+	}
+
+	@Override
+	public String toString() {
+		return "Qualis [qualisEntidade=" + this.qualisEntidade + ", estrato=" + this.estrato + "]";
 	}
 }

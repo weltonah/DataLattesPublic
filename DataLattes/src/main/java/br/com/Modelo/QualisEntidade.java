@@ -22,4 +22,7 @@ public class QualisEntidade implements Serializable {
 		this.titulo = titulo;
 	}
 
+	public QualisEntidade() {
+	}
+
 }

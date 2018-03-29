@@ -9,7 +9,7 @@ public class OntoClass {
 
 	public OntoClass(String titulo, String tipo, ArrayList<String> listAutores) {
 		super();
-		this.Titulo = titulo;
+		this.Titulo = titulo.replaceAll(" ", "_");
 		this.Tipo = tipo;
 		this.ListAutores = listAutores;
 	}
@@ -19,10 +19,15 @@ public class OntoClass {
 	}
 
 	public void setTitulo(String titulo) {
-		this.Titulo = titulo;
+		this.Titulo = titulo.replaceAll(" ", "_");
+	}
+
+	public void ifem() {
+		this.ListAutores.forEach(u -> u.replaceAll(" ", "_"));
 	}
 
 	public ArrayList<String> getListAutores() {
+		ifem();
 		return this.ListAutores;
 	}
 

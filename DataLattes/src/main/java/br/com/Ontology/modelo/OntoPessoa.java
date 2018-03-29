@@ -24,7 +24,7 @@ public class OntoPessoa {
 	}
 
 	public void setNomeCompleto(String nomeCompleto) {
-		this.NomeCompleto = nomeCompleto;
+		this.NomeCompleto = nomeCompleto.replaceAll(" ", "_");
 	}
 
 	public String getIdLattes() {
