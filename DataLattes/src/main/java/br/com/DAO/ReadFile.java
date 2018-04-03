@@ -7,12 +7,11 @@ import org.apache.commons.io.FileUtils;
 import org.springframework.core.io.ClassPathResource;
 
 public class ReadFile {
-	
+
 	public static File PegarFile() {
-		 try {
+		try {
 			File file = new ClassPathResource("static/OWL/datalattes.owl").getFile();
 			File ont = new File(System.getProperty("user.dir") + "/datalattescopy.owl");
-			System.out.println(ont.getAbsolutePath());
 			FileUtils.copyFile(file, ont);
 
 			return ont;
@@ -22,5 +21,5 @@ public class ReadFile {
 		}
 		return null;
 	}
-	
+
 }
