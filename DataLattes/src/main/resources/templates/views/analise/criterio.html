@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+ layout:decorate="layout">
+<head>
+</head>
+<div layout:fragment="page_content" class="col-12">
+ <div class="col-12 ">
+  <div class="row">
+   <div class=" col-12"
+    style="background-color:; margin-top: 1vh; margin-bottom: 1vh; padding-bottom: 10px; padding-top: 10px;">
+    <div class="col-12 row">
+     <div class="col-12">
+      <h2 style="color: #545454">Descrição da Chave:</h2>
+     </div>
+    </div>
+    <div class=" col-12">
+     <div style="padding-left: 15px; padding-right: 15px;">
+      <div class="col-12 border border-secondary"
+       style="color: #545454; background-color: white; padding-left: 15px; padding-right: 15px;">
+       <div class="row col-12">
+        <div class="col-4">
+         <label></label>
+        </div>
+        <div class="col-4">
+         <label>Ano inicio</label>
+        </div>
+        <div class=" col-4">
+         <label>Ano fim</label>
+        </div>
+       </div>
+       <div class="row col-12">
+        <div class="col-4">
+         <label>Ano de analise</label>
+        </div>
+        <div class="col-4">
+         <label th:text="${SessaoCriteriosKey.getAnoInicio()}"></label>
+        </div>
+        <div class="col-4">
+         <label th:text="${SessaoCriteriosKey.getAnoFim()}"></label>
+        </div>
+       </div>
+      </div>
+     </div>
+     
+     <div class="col-12" id="accordion">
+ 
+      
+      <th:block
+       th:each="AreaEstrutura,AreaEstruturastatus : ${SessaoCriteriosKey.getListEst()}">
+       <div class="card" style="margin-top: 10px; border: 0px;">
+        <div class="card-header"
+         th:id="${'heading'+AreaEstruturastatus.index}"
+         style="border: 0px; padding: 0px;">
+         <h5 class="mb-0">
+          <button class="btn btn-outline-primary w-100"
+           data-toggle="collapse" style="margin: 0px;"
+           th:attr="data-target=${'#collapse' + AreaEstruturastatus.index},
+            aria-controls=${'collapse'+AreaEstruturastatus.index}"
+           aria-expanded="true">
+           <span th:text="${AreaEstrutura.getNome()}"></span>
+          </button>
+         </h5>
+        </div>
+        <div th:id="${'collapse' + AreaEstruturastatus.index}"
+         class="collapse"
+         th:attr="aria-labelledby=${'heading'+AreaEstruturastatus.index}"
+         data-parent="#accordion">
+         <div class="card-body">
+          <div class="card-columns">
+           <th:block
+            th:each="CriterioEstrutura,CriterioEstruturastatus : ${AreaEstrutura.getListCrit()}">
+            <div class="card border-success">
+             <div class="card-body row">
+              <div class="col-12">
+               <h5 class="card-title"
+                th:text="${CriterioEstrutura.getCriterio() }"></h5>
+               <hr>
+              </div>
+              <div class="col-12" style="margin-top: 10px;">
+                <span style="font-size: 1vw;">  
+               <th:block
+                 th:each="listTipo,listTipostatus : ${CriterioEstrutura.getListTipo()}">
+                 <table class="table table-striped table-dark">
+                  <thead>
+                   <tr>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Valor</th>
+                    <th
+                     th:if="${!listTipo.get(0).getLimiteString().isEmpty()}"
+                     scope="col">Limite</th>
+                   </tr>
+                  </thead>
+                  <tbody>
+                   <th:block
+                    th:each="TipoEstrutura,TipoEstruturastatus : ${listTipo}">
+                    <tr>
+                     <th scope="row"
+                      th:text="${TipoEstrutura.getNomeTipo()}"></th>
+                     <td th:text="${TipoEstrutura.getValor()}"></td>
+                     <td
+                      th:if="${!TipoEstrutura.getLimiteString().isEmpty()}"
+                      th:value="${TipoEstrutura.getLimiteString()}">
+                     </td>
+                    </tr>
+                   </th:block>
+                  </tbody>
+                 </table>
+                </th:block>
+                </span> 
+              </div>
+             </div>
+            </div>
+           </th:block>
+          </div>
+         </div>
+        </div>
+       </div>
+      </th:block>
+     
+     </div>
+    </div>
+    <hr style="background-color: black;">
+    <div class="col-12 row"
+     style="padding-right: 0px; margin-right: 0px; margin-top: 10px;">
+     <div class="col-3 offset-9" style="padding-right: 0px;">
+      <a class="btn btn-outline-dark"
+       href="javascript: window.history.go(-1)" role="button">Voltar</a>
+      <a th:href="@{upload}" role="button" class="btn btn-primary ">Avançar
+      </a>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+</html>

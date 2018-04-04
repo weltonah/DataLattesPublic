@@ -13,7 +13,13 @@ public class AnaliseController {
 
 	@RequestMapping("/inserirChave")
 	public String inserirChave() {
-		return "analise/inserirChave";
+		return this.path + "analise/inserirChave";
+	}
+
+	@RequestMapping("/upload")
+	public String upload() {
+
+		return this.path + "analise/upload";
 	}
 
 	// @RequestMapping("/teste")
@@ -26,11 +32,7 @@ public class AnaliseController {
 	// return "analise/upload";
 	// }
 
-	@RequestMapping("/upload")
-	public String upload() {
 
-		return "analise/upload";
-	}
 
 	// @RequestMapping("/Onto")
 	// public String onto() {

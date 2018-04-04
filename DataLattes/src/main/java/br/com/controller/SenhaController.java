@@ -37,7 +37,7 @@ public class SenhaController {
 		return this.path + "senha/escolherCriterio";
 	}
 
-	@RequestMapping("/escolherValorCriterio")
+	@RequestMapping(value = "/escolherValorCriterio", method = RequestMethod.POST)
 	public String escolherValorCriterio(Model model,
 			@RequestParam(value = "formacao", required = false) List<String> formacao,
 			@RequestParam(value = "ProdTec", required = false) List<String> ProdTec,
