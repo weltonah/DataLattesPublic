@@ -27,14 +27,14 @@ import br.com.estrutura.PreencherEstrutura;
 
 @Controller
 public class SenhaController {
-
+	private String path = "views/";
 	@Autowired
 	private PreencherEstrutura preencherEstrutura;
 
 	@RequestMapping("/escolherCriterio")
 	public String escolherCriterio(Model model) {
 		model.addAttribute("estr", this.preencherEstrutura.getEstr());
-		return "senha/escolherCriterio";
+		return this.path + "senha/escolherCriterio";
 	}
 
 	@RequestMapping("/escolherValorCriterio")
@@ -58,7 +58,7 @@ public class SenhaController {
 		conteudo.add(ParEvento);
 		Estrutura estcrit = this.preencherEstrutura.InserirCriteriosCheckbox(conteudo);
 		model.addAttribute("estcrit", estcrit);
-		return "senha/escolherValorCriterio";
+		return this.path + "senha/escolherValorCriterio";
 	}
 
 	@RequestMapping(value = "/criterio", method = RequestMethod.POST)
@@ -80,7 +80,7 @@ public class SenhaController {
 		session.setAttribute("conteudo", conteudo);
 		session.setAttribute("anoFim", anoFim);
 		session.setAttribute("anoInicio", anoInicio);
-		return "analise/criterio";
+		return this.path + "analise/criterio";
 	}
 
 	@RequestMapping("/analise")
@@ -101,7 +101,7 @@ public class SenhaController {
 				ConverterFile.ConverterFileToDocument(xmlfile));
 		model.addAttribute("SessaoCriteriosKey", SessaoCriteriosKey);
 		session.setAttribute("SessaoCriteriosKey", SessaoCriteriosKey);
-		return "analise/analise";
+		return this.path + "analise/analise";
 	}
 
 	@RequestMapping("/DownloadCSV")
@@ -113,12 +113,12 @@ public class SenhaController {
 	@RequestMapping("/criterioChave")
 	public String criterioChave() {
 
-		return "senha/criterioChave";
+		return this.path + "senha/criterioChave";
 	}
 
 	@RequestMapping("/chaveGerada")
 	public String chaveGerada() {
-		return "senha/chaveGerada";
+		return this.path + "senha/chaveGerada";
 	}
 
 }

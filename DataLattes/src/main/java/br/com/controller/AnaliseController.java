@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class AnaliseController {
+	private String path = "views/";
 	// @Autowired
 	// private QualisRepository qualisRepository;
 	// @Autowired

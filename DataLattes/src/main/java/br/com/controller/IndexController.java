@@ -4,36 +4,37 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+
 public class IndexController{
-	
+	private String path = "views/";
 	
 	
 	@RequestMapping("/")
 	public String home() {
-		return "index";
+		return this.path + "index";
 	}
 	@RequestMapping("/index")
 	public String index() {
-		return "index";
+		return this.path + "index";
 	}
 	@RequestMapping("/infoAjuda")
 	public String infoAjuda() {
-		return "info/infoAjuda";
+		return this.path + "info/infoAjuda";
 	}
 	@RequestMapping("/infoChave")
 	public String infoChave() {
-		return "info/infoChave";
+		return this.path + "info/infoChave";
 	}
 	@RequestMapping("/infoSobre")
 	public String infoSobre() {
-		return "info/infoSobre";
+		return this.path + "info/infoSobre";
 	}
 	@RequestMapping("/infoFI")
 	public String infoFI() {
-		return "info/infoFI";
+		return this.path + "info/infoFI";
 	}
 	@RequestMapping("/infoXML")
     public String infoXML() {
-		return "info/infoXML";
+		return this.path + "info/infoXML";
     }
 }

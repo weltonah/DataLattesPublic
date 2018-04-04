@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+ layout:decorate="layout">
+<head>
+</head>
+<div layout:fragment="page_content" class="col-12">
+ <div class="col-12 ">
+  <div class="row">
+   <form th:action="@{escolherValorCriterio}">
+    <div class="rounded col-12"
+     style="margin-top: 1vh; margin-bottom: 1vh; padding-bottom: 10px;">
+     <div class="col-12 ">
+      <h2 style="color: #545454">Selecione os critérios:</h2>
+     </div>
+     <div class="card-columns col-xl-12 ">
+      <div class="card border-primary " id="formacao"
+       style="background-color: #fff">
+       <div class="card-header">
+        <label style="font-size: 20px;">Formação</label>
+       </div>
+       <div class="card-body" id="formacaoMisto">
+        <div class="form-check">
+         <div>
+          <input type="checkbox" class="form-check-input"
+           id="checkboxformacaoMarkAll" onclick="formacaoMarkAll(this)">
+          <label class="form-check-label" for="checkboxformacaoMarkAll">
+           Marcar todos </label>
+         </div>
+         <hr style="border-top: 1.5px solid #8c8b8b;">
+         <th:block
+          th:each="formacao,formacaostatus : ${estr.getListEst().get(0).getListCrit()}">
+          <input class="formacao form-check-input" type="checkbox"
+           id="formacao" name="formacao"
+           th:value="${formacaostatus.index}">
+          <label class="form-check-label"
+           th:for="${'formacao'+formacaostatus.index}"
+           th:text="${formacao.getCriterio()}"> </label>
+          <br>
+         </th:block>
+        </div>
+       </div>
+      </div>
+      <div class="card border-primary " id="ProdArt"
+       style="background-color: #fff">
+       <div class="card-header">
+        <label style="font-size: 20px;">Produção Artistica</label>
+       </div>
+       <div class="card-body" id="ProdArtMisto">
+        <div class="form-check">
+         <div>
+          <input type="checkbox" class="form-check-input"
+           id="checkboxProdArtMarkAll" onclick="ProdArtMarkAll(this)">
+          <label class="form-check-label" for="checkboxProdArtMarkAll">
+           Marcar todos </label>
+         </div>
+         <hr style="border-top: 1.5px solid #8c8b8b;">
+         <th:block
+          th:each="formacao,ProdArtstatus : ${estr.getListEst().get(2).getListCrit()}">
+          <input class="ProdArt form-check-input" type="checkbox"
+           id="ProdArt" name="ProdArt" th:value="${ProdArtstatus.index}">
+          <label class="form-check-label"
+           th:for="${'ProdArt'+ProdArtstatus.index}"
+           th:text="${formacao.getCriterio()}"> </label>
+          <br>
+         </th:block>
+        </div>
+       </div>
+      </div>
+      <div class="card border-primary " id="ParEvento"
+       style="background-color: #fff">
+       <div class="card-header">
+        <label style="font-size: 20px;">Participação de Evento</label>
+       </div>
+       <div class="card-body" id="ParEventoMisto">
+        <div class="form-check">
+         <div>
+          <input type="checkbox" class="form-check-input"
+           id="checkboxParEventoMarkAll"
+           onclick="ParEventoMarkAll(this)"> <label
+           class="form-check-label" for="checkboxParEventoMarkAll">
+           Marcar todos </label>
+         </div>
+         <hr style="border-top: 1.5px solid #8c8b8b;">
+         <th:block
+          th:each="formacao,ParEventostatus : ${estr.getListEst().get(7).getListCrit()}">
+          <input class="ParEvento form-check-input" type="checkbox"
+           id="ParEvento" name="ParEvento"
+           th:value="${ParEventostatus.index}">
+          <label class="form-check-label"
+           th:for="${'ParEvento'+ParEventostatus.index}"
+           th:text="${formacao.getCriterio()}"> </label>
+          <br>
+         </th:block>
+        </div>
+       </div>
+      </div>
+      <div class="card border-primary " id="ProdTec"
+       style="background-color: #fff">
+       <div class="card-header">
+        <label style="font-size: 20px;">Produção Técnica</label>
+       </div>
+       <div class="card-body" id="ProdTecMisto">
+        <div class="form-check">
+         <div>
+          <input type="checkbox" class="form-check-input"
+           id="checkboxProdTecMarkAll" onclick="ProdTecMarkAll(this)">
+          <label class="form-check-label" for="checkboxProdTecMarkAll">
+           Marcar todos </label>
+         </div>
+         <hr style="border-top: 1.5px solid #8c8b8b;">
+         <th:block
+          th:each="formacao,ProdTecstatus : ${estr.getListEst().get(1).getListCrit()}">
+          <input class="ProdTec form-check-input" type="checkbox"
+           id="ProdTec" name="ProdTec" th:value="${ProdTecstatus.index}">
+          <label class="form-check-label"
+           th:for="${'ProdTec'+ProdTecstatus.index}"
+           th:text="${formacao.getCriterio()}"> </label>
+          <br>
+         </th:block>
+        </div>
+       </div>
+      </div>
+      <div class="card border-primary " id="DadosGerais"
+       style="background-color: #fff">
+       <div class="card-header">
+        <label style="font-size: 20px;">Dados Gerais</label>
+       </div>
+       <div class="card-body" id="DadosGeraisMisto">
+        <div class="form-check">
+         <div>
+          <input type="checkbox" class="form-check-input"
+           id="checkboxDadosGeraisMarkAll"
+           onclick="DadosGeraisMarkAll(this)"> <label
+           class="form-check-label" for="checkboxDadosGeraisMarkAll">
+           Marcar todos </label>
+         </div>
+         <hr style="border-top: 1.5px solid #8c8b8b;">
+         <th:block
+          th:each="formacao,DadosGeraisstatus : ${estr.getListEst().get(6).getListCrit()}">
+          <input class="DadosGerais form-check-input" type="checkbox"
+           id="DadosGerais" name="DadosGerais"
+           th:value="${DadosGeraisstatus.index}">
+          <label class="form-check-label"
+           th:for="${'DadosGerais'+DadosGeraisstatus.index}"
+           th:text="${formacao.getCriterio()}"> </label>
+          <br>
+         </th:block>
+        </div>
+       </div>
+      </div>
+      <div class="card border-primary " id="Orien"
+       style="background-color: #fff">
+       <div class="card-header">
+        <label style="font-size: 20px;">Orientações</label>
+       </div>
+       <div class="card-body" id="OrienMisto">
+        <div class="form-check">
+         <div>
+          <input type="checkbox" class="form-check-input"
+           id="checkboxOrienMarkAll" onclick="OrienMarkAll(this)">
+          <label class="form-check-label" for="checkboxOrienMarkAll">
+           Marcar todos </label>
+         </div>
+         <hr style="border-top: 1.5px solid #8c8b8b;">
+         <th:block
+          th:each="formacao,Orienstatus : ${estr.getListEst().get(4).getListCrit()}">
+          <input class="Orien form-check-input" type="checkbox"
+           id="Orien" name="Orien" th:value="${Orienstatus.index}">
+          <label class="form-check-label"
+           th:for="${'Orien'+Orienstatus.index}"
+           th:text="${formacao.getCriterio()}"> </label>
+          <br>
+         </th:block>
+        </div>
+       </div>
+      </div>
+      <div class="card border-primary " id="Banc"
+       style="background-color: #fff">
+       <div class="card-header">
+        <label style="font-size: 20px;">Bancas</label>
+       </div>
+       <div class="card-body" id="BancMisto">
+        <div class="form-check">
+         <div>
+          <input type="checkbox" class="form-check-input"
+           id="checkboxBancMarkAll" onclick="BancMarkAll(this)">
+          <label class="form-check-label" for="checkboxBancMarkAll">
+           Marcar todos </label>
+         </div>
+         <hr style="border-top: 1.5px solid #8c8b8b;">
+         <th:block
+          th:each="formacao,Bancstatus : ${estr.getListEst().get(5).getListCrit()}">
+          <input class="Banc form-check-input" type="checkbox" id="Banc"
+           name="Banc" th:value="${Bancstatus.index}">
+          <label class="form-check-label"
+           th:for="${'Banc'+Bancstatus.index}"
+           th:text="${formacao.getCriterio()}"> </label>
+          <br>
+         </th:block>
+        </div>
+       </div>
+      </div>
+      <div class="card border-primary " id="ProdBibli"
+       style="background-color: #fff">
+       <div class="card-header">
+        <label style="font-size: 20px;">Produção Bibliografica</label>
+       </div>
+       <div class="card-body" id="ProdBibliMisto">
+        <div class="form-check">
+         <div>
+          <input type="checkbox" class="form-check-input"
+           id="checkboxProdBiblMarkAll" onclick="ProdBiblMarkAll(this)">
+          <label class="form-check-label" for="checkboxProdBiblMarkAll">
+           Marcar todos </label>
+         </div>
+         <hr style="border-top: 1.5px solid #8c8b8b;">
+         <th:block
+          th:each="formacao,ProdBiblistatus : ${estr.getListEst().get(3).getListCrit()}">
+          <input class="ProdBibl form-check-input" type="checkbox"
+           id="ProdBibl" name="ProdBibl"
+           th:value="${ProdBiblistatus.index}">
+          <label class="form-check-label"
+           th:for="${'ProdBibl'+ProdBiblistatus.index}"
+           th:text="${formacao.getCriterio()}"></label>
+          <br>
+         </th:block>
+        </div>
+       </div>
+      </div>
+     </div>
+     <hr style="background-color: black;">
+     <div class="col-12 row"
+      style="padding-right: 0px; margin-right: 0px;">
+      <div class="col-2 offset-10" style="padding-right: 0px;">
+       <a class="btn btn-outline-dark" href="index" role="button">Voltar</a>
+       <button type="submit" id="submitForm" class="btn btn-primary">Success</button>
+      </div>
+     </div>
+    </div>
+   </form>
+  </div>
+ </div>
+</div>
+<th:block layout:fragment="scripts">
+ <script th:src="@{/js/escolherCriterio.js}"></script>
+</th:block>
+</html>
