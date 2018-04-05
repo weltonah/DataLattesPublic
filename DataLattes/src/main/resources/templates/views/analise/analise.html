@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org"
+ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+ layout:decorate="layout">
+<head>
+</head>
+<div layout:fragment="page_content" class="col-12">
+
+
+<div class="col-12 ">
+<div class=" col-12" style="background-color: ; margin-top: 1vh;margin-bottom: 1vh; padding-bottom: 10px; padding-top: 10px;">
+<div class="row col-12" >
+<div class="row col-12" >
+<div class="row col-9"  >
+   <div class="col-12" style="white-space: normal;" >
+      <strong style="font-size:4vw;" th:text="${SessaoCriteriosKey.getDadosCurricular().getNome()}"> </strong>
+   </div>
+   <div class="row col-12" >
+     <div class=" col-6" >
+        Link Lattes :
+        <a class=" ion-link btn btn-link" role="button"
+         href="http://lattes.cnpq.br/${SessaoCriteriosKey.getDadosCurricular().getIdLattes()}" target="_blank"
+         th:text="${SessaoCriteriosKey.getDadosCurricular().getIdLattes()}">
+          </a>
+     </div>
+     <div class="col-6" >
+     <strong>Ultima atualização:</strong><br>
+       <span th:text="${SessaoCriteriosKey.getDadosCurricular().getUltAtualizacao()}"></span>
+     </div>
+   </div>
+   
+   <div class=" col-12" >
+   
+   <div class="alert alert-dark" role="alert">
+  <h4 class="alert-heading">Resumo:</h4>
+  <hr>
+  <p class="mb-0" th:text="${SessaoCriteriosKey.getDadosCurricular().getResumo()}"></p>
+</div>
+   
+   
+      
+   </div>
+ </div>
+ <div class="col-3" >
+   <div class=" col-12" >
+   <div class="card text-center ">
+  <div class="card-header bg-success">
+      <span class="text-white"> Nota Total</span> 
+      </div>
+      <div class="card-body" style="padding:0px;">
+      <span style="font-size:4vw;" th:text="${SessaoCriteriosKey.getNotatotal()}">
+        
+        </span>
+      </div>
+    </div>
+   </div>
+   <div class="col-12" style="margin-top:10px;">
+   <a class="btn btn-warning w-100" href="DownloadCSV" style="white-space: normal;" role="button">
+    <i class="ion-document" ></i> Baixar relatorio excel</a>
+   </div>
+ </div>
+
+
+</div>
+<div class="col-12  ">
+<button class="btn btn-primary w-100" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+ <i class="ion-arrow-down-b" ></i>   Mostrar Resultados Detalhados <i class="ion-arrow-down-b" ></i>
+</button>
+
+<div class="collapse  " id="collapseExample">
+  <div class="card card-body alert alert-dark border-primary">
+
+
+
+<div class=" row col-12" >
+<div class="row col-12" >
+<div class="row  col-8"  >
+ <div class="col-12 text-black">
+  <h5 >Legenda</h5>
+ </div>
+ <div class="col-12  alert-success" style="margin:0px;padding:5px;" role="alert">
+   <i class="ion-checkmark" ></i> Item analisado foi contabilizado
+ </div>
+ <div class="col-12  alert-warning text-black" style="margin:0px;padding:5px;" role="alert">
+   <i class="ion-close" ></i> Item analisado ultrapassou o limite maximo de item
+ </div>
+ <div class="col-12  alert-danger" style="margin-bottom:5px;padding:5px;" role="alert">
+   <i class="ion-close" ></i> Item analisado está fora do limite de tempo estabelecido
+ </div>
+</div>
+</div>
+
+
+<div id="accordion" class="w-100  " >
+<th:block th:each="AreaEstrutura,AreaEstruturastatus : ${SessaoCriteriosKey.getListEst()}">
+
+<div class="card border border-success" style="margin-top: 10px;border-width: 0px;">
+<div class="card-header" th:id="${'heading'+AreaEstruturastatus.index}" style="padding: 0px;border-width: 0px;" >
+     <h5 class="mb-0">
+      <button class="btn btn-outline-success w-100 text-left" data-toggle="collapse" style="border: 0px"
+         aria-expanded="true"
+         th:attr="data-target=${'#collapse' + AreaEstruturastatus.index},
+            aria-controls=${'collapse'+AreaEstruturastatus.index}"
+         >
+        <div class="row">
+       <div class="col-5" >
+       <span  style="font-size: 2vw;" th:text="${AreaEstrutura.getNome()}"></span>
+       </div>
+       </div>
+        
+      </button>
+     </h5>
+</div>
+<div 
+th:id="${'collapse'+AreaEstruturastatus.index}"
+ class="collapse   "
+ th:attr="aria-labelledby=${'heading'+AreaEstruturastatus.index}" data-parent="#accordion">
+      <div class="card-body">
+       <div class="row col-12" style="color: #545454">
+       <div class=" col-5">
+       Tipo
+       </div>
+       <div class=" col-3">
+       Quantidade (Válidos/Total)
+       </div>
+       <div class=" col-2">
+       Pontos por item
+       </div>
+       <div class=" col-2">
+       Pontuação total
+       </div>
+       </div>
+<th:block th:each="CriterioEstrutura,CriterioEstruturastatus : ${AreaEstrutura.getListCrit()}">
+<th:block th:each="listTipo,listTipostatus : ${CriterioEstrutura.getListTipo()}">
+<th:block th:each="TipoEstrutura,TipoEstruturastatus : ${listTipo}">
+
+       <div th:id="${'accordion'+AreaEstruturastatus.index+'tt'+CriterioEstruturastatus.index+'tt'+TipoEstruturastatus.index}">
+       <div class="card">
+       <div class="card-header" style="margin:0px;padding:0px; "
+       th:id="${'heading'+AreaEstruturastatus.index+'tt'+CriterioEstruturastatus.index+'tt'+TipoEstruturastatus.index}">
+           <button class="rounded-0 btn btn-light w-100 text-left border border-dark"
+            style="white-space: normal;margin:0px;padding:0px; " 
+           data-toggle="collapse" 
+           aria-expanded="true" 
+            th:attr="data-target=${'#collapse'+AreaEstruturastatus.index+'tt'+CriterioEstruturastatus.index+'tt'+TipoEstruturastatus.index},
+            aria-controls=${'collapse'+AreaEstruturastatus.index+'tt'+CriterioEstruturastatus.index+'tt'+TipoEstruturastatus.index}"
+            >
+             
+             <div class="row" style="margin:0px;padding:0px; ">
+               <div class="col-5" th:text="${CriterioEstrutura.getCriterio() + ' ' +  TipoEstrutura.getNomeTipo()}">
+               
+               </div>
+               <div class=" col-3" th:text="${TipoEstrutura.ItemValidos()+ '/'+TipoEstrutura.getItemAnalisados().size()}">
+               
+               </div>
+               <div class=" col-2" th:text="${TipoEstrutura.getValor()}">
+               </div>
+               <div class=" col-2" th:text="${TipoEstrutura.getValorTotalContabilizado()}">
+               </div>
+             </div>
+           </button>
+       </div>
+        <div
+         th:id="${'collapse'+AreaEstruturastatus.index+'tt'+CriterioEstruturastatus.index+'tt'+TipoEstruturastatus.index}"
+         class="collapse  border border-dark bg-dark" 
+           th:attr="
+           aria-labelledby=${'heading'+AreaEstruturastatus.index+'tt'+CriterioEstruturastatus.index+'tt'+TipoEstruturastatus.index},
+           data-parent=${'#accordion'+AreaEstruturastatus.index+'tt'+CriterioEstruturastatus.index+'tt'+TipoEstruturastatus.index}">
+          <div class="row card-body">
+            <th:block th:each="ItemAnalisado,ItemAnalisadostatus : ${TipoEstrutura.getItemAnalisados()}">
+
+             
+           <div th:class="'col-12 ' + ( (${ItemAnalisado.getValidade()} == '1') ? 'alert-danger' : 
+            ((${ItemAnalisado.getValidade()} == '2') ? 'alert-warning' : 'alert-success'))"
+             style="margin-top:3px;">  
+            
+           <div class="row col-12 d-none" th:text="${
+           ItemAnalisado.getItem().getClass().getSimpleName() + 
+           AreaEstrutura.getAbre() +
+           TipoEstrutura.getAbre() +
+           CriterioEstrutura.getAbre()}">
+           </div>
+           <div class="row col-12">
+               <div class="col-1 my-auto " >
+               <div th:with="booleanItem = ${ItemAnalisado.getValidade() == 0 || ItemAnalisado.getValidade() == -1}">
+                  <div th:if="${booleanItem}">
+                    <i class="ion-checkmark" ></i>
+                  </div>
+                  <div th:unless="${booleanItem}" >
+                    <i class="ion-close" ></i>
+                  </div>
+               </div>
+               </div>
+               
+               <div  th:if="${AreaEstrutura.getAbre() eq 'For'}" class="col-11" style="border-left:solid 1px;">
+                  <div class="row col-12">
+                   <span><strong>Titulo:</strong></span><br>
+                   <span th:text="${'&nbsp' +ItemAnalisado.getItem().getTitulo()}">  </span>
+                  </div>
+                  <div class="row col-12">
+                   <span><strong>Nome da Instituição:</strong></span><br>
+                   <span th:text="${'&nbsp' +ItemAnalisado.getItem().getNomeInstituicao()}">  </span>
+                  </div>
+                  <div th:if="${ItemAnalisado.getItem().getAno() != -1}">
+                   <div class="row col-12">
+                    <span><strong>Ano:</strong></span><br>
+                    <span th:text="${'&nbsp' +ItemAnalisado.getItem().getAno()}">  </span>
+                   </div>
+                  </div>
+                  <div th:if="${ItemAnalisado.getItem().getTituloTrabalho()!= null}">
+                   <div class="row col-12">
+                     <span><strong>Titulo de Trabalho:</strong></span><br>
+                     <span th:text="${'&nbsp' +ItemAnalisado.getItem().getTituloTrabalho()}">  </span>
+                   </div>
+                  </div>
+                  <div th:if="${ItemAnalisado.getItem().getNomeOrientador()!= null}">
+                   <div class="row col-12">
+                     <span><strong>Nome do(a) Orientador(a):</strong></span><br>
+                      <span th:text="${'&nbsp' +ItemAnalisado.getItem().getNomeOrientador()}">  </span>
+                   </div>
+                  </div>
+                </div>
+
+              <div  th:if="${AreaEstrutura.getAbre() eq 'PrTec'}" class="col-11" style="border-left:solid 1px;">
+                <div class="row col-12">
+                     <span><strong>Titulo do Trabalho:</strong></span><br>
+                     <span th:text="${'&nbsp' +ItemAnalisado.getItem().getTitulo()}">  </span>
+                </div>
+                <div class="row col-12">
+                    <span><strong>Ano:</strong></span><br>
+                    <span th:text="${'&nbsp' +ItemAnalisado.getItem().getAno()}">  </span>
+                </div>
+              </div>
+           
+              <div th:if="${AreaEstrutura.getAbre() eq 'CrGe'}" class="col-11" style="border-left:solid 1px;">
+                   <div class="row col-12">
+                        <span th:text="${ItemAnalisado.getItem().getTitulo()}"></span><br>
+                   </div>
+              </div>
+              
+              <div th:if="${AreaEstrutura.getAbre() eq ''}" class="col-11" style="border-left:solid 1px;">
+                   <div class="row col-12">
+                        <span><strong>Titulo do Trabalho:</strong></span><br>
+                        <span th:text="${'&nbsp' +ItemAnalisado.getItem().getTitulo()}">  </span>
+                   </div>
+                   <div class="row col-12">
+                       <span><strong>Ano:</strong></span><br>
+                      <span th:text="${'&nbsp' +ItemAnalisado.getItem().getAno()}">  </span>
+                   </div>
+              </div>
+           
+              <div th:if="${AreaEstrutura.getAbre() eq 'ParEvento'}" class="col-11" style="border-left:solid 1px;">
+                <div class="row col-12">
+                     <span><strong>Titulo do Evento:</strong></span><br>
+                    <span th:text="${'&nbsp' +ItemAnalisado.getItem().getNomeEvento()}">  </span>
+                     
+                </div>
+                <div th:if="${!ItemAnalisado.getItem().getTitulo().isEmpty()}">
+                <div class="row col-12">
+                     <span><strong>Titulo da Apresentação/Trabalho:</strong></span><br>
+                     <span th:text="${'&nbsp' +ItemAnalisado.getItem().getTitulo()}">  </span>
+                </div>
+                </div>
+                <div class="row col-12">
+                    <span><strong>Ano:</strong></span><br>
+                    <span th:text="${'&nbsp' +ItemAnalisado.getItem().getAno()}">  </span>
+                </div>
+              </div>
+           
+              <div th:if="${AreaEstrutura.getAbre() eq 'Banc'}" class="col-11" style="border-left:solid 1px;">
+                <div class="row col-12">
+                     <span><strong>Titulo do Trabalho:</strong></span><br>
+                     <span th:text="${'&nbsp' +ItemAnalisado.getItem().getTitulo()}">  </span>
+                </div>
+                <div class="row col-12">
+                    <span><strong>Ano:</strong></span><br>
+                    <span th:text="${'&nbsp' +ItemAnalisado.getItem().getAno()}">  </span>
+                </div>
+              </div>
+           
+              <div th:if="${AreaEstrutura.getAbre() eq 'Orien'}" class="col-11" style="border-left:solid 1px;">
+                <div class="row col-12">
+                     <span><strong>Titulo do Trabalho:</strong></span><br>
+                     <span th:text="${'&nbsp' +ItemAnalisado.getItem().getTitulo()}">  </span>
+                </div>
+                <div class="row col-12">
+                    <span><strong>Ano:</strong></span><br>
+                    <span th:text="${'&nbsp' +ItemAnalisado.getItem().getAno()}">  </span>
+                </div>
+              </div>
+           
+              <div th:if="${AreaEstrutura.getAbre() eq 'PrBli'}" class="col-11" style="border-left:solid 1px;">
+                <div class="row col-12">
+                     <span><strong>Titulo do Trabalho:</strong></span><br>
+                     <span th:text="${'&nbsp' +ItemAnalisado.getItem().getTitulo()}">  </span>
+                </div>
+                <div class="row col-12">
+                    <span><strong>Ano:</strong></span><br>
+                    <span th:text="${'&nbsp' +ItemAnalisado.getItem().getAno()}">  </span>
+                </div>
+                <div th:if="${!ItemAnalisado.getItem().getCodigo().isEmpty()}">
+                   <div class="row col-12">
+                        <span><strong>ISSN/ISBN:</strong></span><br>
+                        <span th:text="${'&nbsp' +ItemAnalisado.getItem().getCodigo()}"></span>
+                   </div>
+                </div>
+              </div>
+
+           </div>
+           
+              
+            </div>
+            
+                   
+          </th:block>
+          
+          </div>
+       </div>
+       </div>
+       </div>
+</th:block>
+
+</th:block>
+
+</th:block>
+
+</div>
+
+</div>
+<div class="card-footer text-muted">
+ <div class="row col-12">
+<div class="col-2 offset-10 ">
+ <span  style="font-size: 1.5vw;" >Total: <span th:text="${AreaEstrutura.getValorTotalArea()}"></span> </span>
+</div>
+</div>
+  </div>
+</div>
+</th:block>
+</div>
+</div>
+
+  </div>
+</div>
+
+</div>
+
+
+<!-- <div class="row col-12" style="margin-top: 10px;"> -->
+<!--  <div class=" col-12" > -->
+<!--    <div class="alert alert-success" role="alert"> -->
+<!--   <h4 class="alert-heading">Well done!</h4> -->
+<!--   <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p> -->
+<!--   <hr> -->
+<!--   <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p> -->
+<!-- </div> -->
+<!--  </div> -->
+<!-- </div> -->
+
+</div>
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
+</html>
