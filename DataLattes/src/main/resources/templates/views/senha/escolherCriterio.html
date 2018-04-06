@@ -33,7 +33,7 @@
           th:each="formacao,formacaostatus : ${estr.getListEst().get(0).getListCrit()}">
           <input class="formacao form-check-input" type="checkbox"
            id="formacao" name="formacao"
-           th:value="${formacaostatus.index}">
+           th:value="${formacao.getAbre()}">
           <label class="form-check-label"
            th:for="${'formacao'+formacaostatus.index}"
            th:text="${formacao.getCriterio()}"> </label>
@@ -59,7 +59,7 @@
          <th:block
           th:each="formacao,ProdArtstatus : ${estr.getListEst().get(2).getListCrit()}">
           <input class="ProdArt form-check-input" type="checkbox"
-           id="ProdArt" name="ProdArt" th:value="${ProdArtstatus.index}">
+           id="ProdArt" name="ProdArt" th:value="${formacao.getAbre()}">
           <label class="form-check-label"
            th:for="${'ProdArt'+ProdArtstatus.index}"
            th:text="${formacao.getCriterio()}"> </label>
@@ -87,7 +87,7 @@
           th:each="formacao,ParEventostatus : ${estr.getListEst().get(7).getListCrit()}">
           <input class="ParEvento form-check-input" type="checkbox"
            id="ParEvento" name="ParEvento"
-           th:value="${ParEventostatus.index}">
+           th:value="${formacao.getAbre()}">
           <label class="form-check-label"
            th:for="${'ParEvento'+ParEventostatus.index}"
            th:text="${formacao.getCriterio()}"> </label>
@@ -113,7 +113,7 @@
          <th:block
           th:each="formacao,ProdTecstatus : ${estr.getListEst().get(1).getListCrit()}">
           <input class="ProdTec form-check-input" type="checkbox"
-           id="ProdTec" name="ProdTec" th:value="${ProdTecstatus.index}">
+           id="ProdTec" name="ProdTec" th:value="${formacao.getAbre()}">
           <label class="form-check-label"
            th:for="${'ProdTec'+ProdTecstatus.index}"
            th:text="${formacao.getCriterio()}"> </label>
@@ -141,7 +141,7 @@
           th:each="formacao,DadosGeraisstatus : ${estr.getListEst().get(6).getListCrit()}">
           <input class="DadosGerais form-check-input" type="checkbox"
            id="DadosGerais" name="DadosGerais"
-           th:value="${DadosGeraisstatus.index}">
+           th:value="${formacao.getAbre()}">
           <label class="form-check-label"
            th:for="${'DadosGerais'+DadosGeraisstatus.index}"
            th:text="${formacao.getCriterio()}"> </label>
@@ -167,7 +167,7 @@
          <th:block
           th:each="formacao,Orienstatus : ${estr.getListEst().get(4).getListCrit()}">
           <input class="Orien form-check-input" type="checkbox"
-           id="Orien" name="Orien" th:value="${Orienstatus.index}">
+           id="Orien" name="Orien" th:value="${formacao.getAbre()}">
           <label class="form-check-label"
            th:for="${'Orien'+Orienstatus.index}"
            th:text="${formacao.getCriterio()}"> </label>
@@ -193,7 +193,7 @@
          <th:block
           th:each="formacao,Bancstatus : ${estr.getListEst().get(5).getListCrit()}">
           <input class="Banc form-check-input" type="checkbox" id="Banc"
-           name="Banc" th:value="${Bancstatus.index}">
+           name="Banc" th:value="${formacao.getAbre()}">
           <label class="form-check-label"
            th:for="${'Banc'+Bancstatus.index}"
            th:text="${formacao.getCriterio()}"> </label>
@@ -220,7 +220,7 @@
           th:each="formacao,ProdBiblistatus : ${estr.getListEst().get(3).getListCrit()}">
           <input class="ProdBibl form-check-input" type="checkbox"
            id="ProdBibl" name="ProdBibl"
-           th:value="${ProdBiblistatus.index}">
+           th:value="${formacao.getAbre()}">
           <label class="form-check-label"
            th:for="${'ProdBibl'+ProdBiblistatus.index}"
            th:text="${formacao.getCriterio()}"></label>

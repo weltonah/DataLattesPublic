@@ -27,14 +27,13 @@
      </div>
      
     <th:block th:each="estrutura,estruturaStatus : ${estcrit.getListEst()}">
-         <div class="d-none"
-         th:with="idforech=${estruturaStatus.index }"  ></div>
           <div class="col-12 " 
          th:id="${'divItem'+estruturaStatus.index}"
           th:src="@{js/escolherValorCriterio.js}">
           
+          
           <div th:insert="${'views/senha/senhaCriterio/criterio'+ estrutura.getAbre()}
-           :: ${'criterio'+ estrutura.getAbre()}" ></div>
+           :: ${'criterio'+ estrutura.getAbre()}(idforech=${estruturaStatus.index })" ></div>
          </div> 
       </th:block>
         
@@ -72,7 +71,7 @@
    </div> 
   <th:block layout:fragment="scripts">
    <script th:src="@{js/escolherValorCriterio.js}"></script>
-  
+  <!-- 
 <th:block 
 th:each="idforechlist : ${#numbers.sequence( 0, estcrit.getListEst().size()-1}">
 
@@ -136,7 +135,7 @@ document.getElementById("AnoFim").value =theDate.getFullYear();
 
 
 
-
+-->
 
 </th:block> 
 </body>
