@@ -27,13 +27,15 @@
      </div>
      
     <th:block th:each="estrutura,estruturaStatus : ${estcrit.getListEst()}">
-          <div class="col-12 " 
+          <div class="col-12 d-none" 
          th:id="${'divItem'+estruturaStatus.index}"
           th:src="@{js/escolherValorCriterio.js}">
           
-          
-          <div th:insert="${'views/senha/senhaCriterio/criterio'+ estrutura.getAbre()}
-           :: ${'criterio'+ estrutura.getAbre()}(idforech=${estruturaStatus.index })" ></div>
+              <div  th:insert="${'views/senha/senhaCriterio/criterio'+ estrutura.getAbre()}
+               :: ${'criterio'+ estrutura.getAbre()}(idforech=${estruturaStatus.index })" >
+               
+               </div>
+           
          </div> 
       </th:block>
         
