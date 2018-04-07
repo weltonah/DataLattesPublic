@@ -1,9 +1,145 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.thymeleaf.org ">
+<html xmlns:th="http://www.thymeleaf.org"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.thymeleaf.org ">
 <body>
-<div th:fragment="criterioParEvento">
-teste
-</div>
+ <div th:fragment="criterioParEvento(idforech)">
+  <div class="col-12">
+   <div th:id="${'accordion'+idforech}">
+    <p
+     th:with="sizeFor=${estcrit.getListEst().get(idforech).getListCrit().size()}">
+    <h2 th:text="${estcrit.getListEst().get(idforech).getNome()}"></h2>
+    <th:block
+     th:each="item,itemstatus : ${estcrit.getListEst().get(idforech).getListCrit()}">
+     <div class="card" style="margin-bottom: 10px; border-width: 0px;">
+      <div class="card-header"
+       th:id="${'heading'+ itemstatus.index + 'tt' +idforech }"
+       style="padding: 0px; border-width: 0px;">
+       <h5 class="mb-0">
+        <button type="button" style="width: 100%;"
+         th:id="${'button'+ itemstatus.index + 'tt' +idforech }"
+         th:class="'btn btn-outline-secondary '+ ( (${itemstatus.index} != 0) ? collapsed)"
+         th:attr="
+        aria-expanded=${ (itemstatus.index == 0) ? 'true' : 'false'},
+        data-target=${'#collapse' + itemstatus.index + 'tt' + idforech },
+        aria-controls=${'collapse'+ itemstatus.index +'tt' + idforech} "
+         data-toggle="collapse">
+         <div class="row">
+          <div class="col-2">
+           <span th:class="${'indexCont'+idforech}"
+            th:id="${estcrit.getListEst().get(idforech).getAbre()}"
+            th:name="${item.getAbre()}" th:text="${item.getCriterio()}"></span>
+          </div>
+          <div class="col-1 offset-9 ">
+           <i class="" th:id="${'icon'+itemstatus.index+'tt'+idforech}"></i>
+          </div>
+         </div>
+        </button>
+       </h5>
+      </div>
+      <div th:id="${'collapse'+itemstatus.index+'tt'+ idforech}"
+       th:class="'collapse  '+
+     ((${itemstatus.index} == 0) ? 'show')"
+       th:attr="
+           aria-labelledby=${'heading'+itemstatus.index+'tt'+idforech},
+           data-parent=${'#accordion'+idforech}">
+       <div class="card-body">
+        <div class="col-12">
+         <div th:if="${item.getListTipo().size() > 1}" class="checkbox">
+          <label> <input type="checkbox"
+           th:id="${'myCheck'+estcrit.getListEst().get(idforech).getAbre()+'ItemStatus'+itemstatus.index}"
+           th:name="${'myCheck'+estcrit.getListEst().get(idforech).getAbre()+ItemStatus+itemstatus.index}"
+           th:onclick="${estcrit.getListEst().get(idforech).getAbre()}+'ItemStatus('+ ${itemstatus.index}+')'">
+           Diferenciar pontuação por status do critério
+          </label>
+         </div>
+         <div class="checkbox">
+          <label> <input type="checkbox"
+           th:id="${'myCheck'+estcrit.getListEst().get(idforech).getAbre()+'ItemLimite'+itemstatus.index}"
+           th:name="${'myCheck'+estcrit.getListEst().get(idforech).getAbre()+ItemLimite+itemstatus.index}"
+           th:onclick="${estcrit.getListEst().get(idforech).getAbre()}+'ItemLimite('+ ${itemstatus.index}+')'">
+           Colocar limite maximo de itens contabilizados por critério
+          </label>
+         </div>
+         <div class="col-12">
+          <span
+           th:class="${'NomeItem'+itemstatus.index}+'&'+${idforech}"
+           th:name="${item.getAbre()}"></span>
+         </div>
+         <th:block th:each="list,liststatus : ${item.getListTipo()}">
+          <div
+           th:class="'col-12 '
+                          +${estcrit.getListEst().get(idforech).getAbre()}+'Tipo'+${liststatus.index}+'tt'+${itemstatus.index}
+                          + ' ' +
+                          ${estcrit.getListEst().get(idforech).getAbre()}+'ItemIndex'+${itemstatus.index}
+                          + ' ' +
+                          ${estcrit.getListEst().get(idforech).getAbre()}+'TipoIndex'+${liststatus.index}
+                          + ' ' +
+                           ((${liststatus.index} != 0) ? 'd-none' : '')"
+           th:name="${liststatus.index}" th:id="${itemstatus.index}">
+           
+           <th:block th:each="tipo,tipostatus : ${list}">
+            <div class="col-12 row">
+             <div class="col-4">
+              <label th:text="${tipo.getNomeTipo()}"></label>
+             </div>
+             <div class="col-4">
+              <div class="row input-group mb-2">
+               <div class=" input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">valor:</span>
+               </div>
+               <input type="number" min="0"
+                th:class="' col-5 form-control ' +  ${estcrit.getListEst().get(idforech).getAbre()}+'valor'+${liststatus.index}
+                               + ' ' +
+                               ${estcrit.getListEst().get(idforech).getAbre()}+'item'+${itemstatus.index}+'tt'+${idforech}+'Input'
+                               + ' ' +
+                               ${estcrit.getListEst().get(idforech).getAbre()}+'Tipo'+${liststatus.index}+'tt'+${itemstatus.index}
+                               + ' ' + 
+                               ${estcrit.getListEst().get(idforech).getAbre()}+'Tipo'+${liststatus.index}+'valor'+${itemstatus.index} 
+                               + ' ' +
+                               ${estcrit.getListEst().get(idforech).getAbre()}+'TipoIndex'+${liststatus.index}
+                               + ' ' +
+                               ${estcrit.getListEst().get(idforech).getAbre()}+'Geral' 
+                                + ' ' +
+                                ((${liststatus.index} != 0) ? 'd-none' : '')"
+                th:id="${'item'+itemstatus.index+'list'+liststatus.index+'tipo'+tipostatus.index}"
+                th:name="${tipo.getAbre()}" placeholder="pts" required>
+              </div>
+             </div>
+             <div class="col-4">
+              <div
+               th:class="'col-9 input-group mb-2 '+
+                              ${estcrit.getListEst().get(idforech).getAbre()}+'limite'+${itemstatus.index} +' d-none'">
+               <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">n°
+                 max:</span>
+               </div>
+               <input type="number"
+                th:class="'form-control '+
+                                ${estcrit.getListEst().get(idforech).getAbre()}+'Tipo'+${liststatus.index}+'limite'+${itemstatus.index}
+                                 + ' ' +
+                                 ${estcrit.getListEst().get(idforech).getAbre()}+'limite'+${itemstatus.index}
+                                  + ' ' +
+                                  ${estcrit.getListEst().get(idforech).getAbre()}+'item'+${itemstatus.index}+'tt'+${idforech}+'InputLimite' 
+                                   + ' ' +
+                                 ${estcrit.getListEst().get(idforech).getAbre()}+'valorlimite'+${liststatus.index}
+                                  + ' ' +
+                                  ${estcrit.getListEst().get(idforech).getAbre()}+'limiteGeral' + ' d-none'"
+                th:id="${'item'+itemstatus.index+'list'+liststatus.index+'tipo'+tipostatus.index+'limite'}"
+                th:name="${tipo.getAbre()}" placeholder="itens">
+              </div>
+             </div>
+            </div>
+           </th:block>
+          </div>
+         </th:block>
+        </div>
+       </div>
+      </div>
+     </div>
+    </th:block>
+   </div>
+  </div>
+ </div>
 </body>
 </html>

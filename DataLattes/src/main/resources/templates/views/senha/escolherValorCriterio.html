@@ -71,40 +71,41 @@
    </div> 
   <th:block layout:fragment="scripts">
    <script th:src="@{js/escolherValorCriterio.js}"></script>
-  <!-- 
+  
 <th:block 
-th:each="idforechlist : ${#numbers.sequence( 0, estcrit.getListEst().size()-1}">
+th:each="idforechlist : ${#numbers.sequence( 0, estcrit.getListEst().size() - 1)}">
 
 <script th:if="${!estcrit.getListEst().get(idforechlist).getAbre().contentEquals('Orien')}" >
 
-function ${estcrit.getListEst().get(idforechlist).getAbre()}ItemStatus(item) {
- ItemStatus("${estcrit.getListEst().get(idforechlist).getAbre()}", item);
+function [[${estcrit.getListEst().get(idforechlist).getAbre()}+'ItemStatus(item)']] {
+ ItemStatus("[[${estcrit.getListEst().get(idforechlist).getAbre()}]]", item);
 }
-function ${estcrit.getListEst().get(idforechlist).getAbre()}ItemLimite(item) {
- ItemLimite("${estcrit.getListEst().get(idforechlist).getAbre()}", item)
+function [[${estcrit.getListEst().get(idforechlist).getAbre()}+'ItemLimite(item)']] {
+ ItemLimite("[[${estcrit.getListEst().get(idforechlist).getAbre()}]]", item)
 }
 
 </script>
 
 <th:block 
-th:each="indice : ${#numbers.sequence( 0, estcrit.getListEst().get(idforechlist).getListCrit().size()-1)}">
+th:each="indice : ${#numbers.sequence( 0, estcrit.getListEst().get(idforechlist).getListCrit().size() - 1)}">
 <script>
- $("#collapse${indice}tt${idforechlist}")
+ $("[['#collapse'+${indice}+'tt'+${idforechlist}]]")
    .on('hidden.bs.collapse', function() {
   var input = document
-    .querySelectorAll('.${estcrit.getListEst().get(idforechlist).getAbre()}item${indice}tt${idforechlist}Input:not(.d-none)');
+    .querySelectorAll("[['.'+${estcrit.getListEst().get(idforechlist).getAbre()}+'item'+${indice}+'tt'+${idforechlist}+'Input:not(.d-none)']]");
+  
   for (var i = 0; i < input.length; i++) {
    if (input[i].value == '') {
-    $("#icon${indice}tt${idforechlist}").attr('class',
+    $("[['#icon'+${indice}+'tt'+${idforechlist}]]").attr('class',
       'ion-close');
-    $("#button${indice}tt${idforechlist}").attr(
+    $("[['#button'+${indice}+'tt'+${idforechlist}]]").attr(
       'class', 'btn btn-danger');
     return null;
    }
   }
-  $("#icon${indice}tt${idforechlist}").attr('class',
+  $("[['#icon'+${indice}+'tt'+${idforechlist}]]").attr('class',
     'ion-checkmark');
-  $("#button${indice}tt${idforechlist}").attr('class',
+  $("[['#button'+${indice}+'tt'+${idforechlist}]]").attr('class',
     'btn btn-success');
  });
 </script>
@@ -135,7 +136,7 @@ document.getElementById("AnoFim").value =theDate.getFullYear();
 
 
 
--->
+
 
 </th:block> 
 </body>

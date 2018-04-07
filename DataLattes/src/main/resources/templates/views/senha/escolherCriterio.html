@@ -140,7 +140,7 @@
          <th:block
           th:each="formacao,DadosGeraisstatus : ${estr.getListEst().get(6).getListCrit()}">
           <input class="DadosGerais form-check-input" type="checkbox"
-           id="DadosGerais" name="DadosGerais"
+           id="DadosGerais" name="DeEx"
            th:value="${formacao.getAbre()}">
           <label class="form-check-label"
            th:for="${'DadosGerais'+DadosGeraisstatus.index}"
