@@ -196,6 +196,7 @@ public class SearchXML {
 
 			ListArtigoCompleto.add(prod);
 		}
+
 		return ListArtigoCompleto;
 	}
 

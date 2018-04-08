@@ -25,8 +25,12 @@ public class AnaliseDados {
 			for (CriterioEstrutura criterioEstrutura : areaEstrutura.getListCrit()) {
 				for (ArrayList<TipoEstrutura> listTipo : criterioEstrutura.getListTipo()) {
 					for (TipoEstrutura tipoEstrutura : listTipo) {
+						System.out.println(criterioEstrutura.getCriterio() + " " + criterioEstrutura.getAbre() + " "
+								+ tipoEstrutura.getNomeTipo() + " "
+								+ tipoEstrutura.getAbre());
 						tipoEstrutura.setItemAnalisados(switchBuscaXml(areaEstrutura.getAbre(),
 								criterioEstrutura.getAbre(), tipoEstrutura.getAbre(), xmlfile, tipoEstrutura));
+
 						for (ItemAnalisado itemAnalisado : tipoEstrutura.getItemAnalisados()) {
 							if (itemAnalisado.getValidade() == 0) {
 								tipoEstrutura.setValorTotalContabilizado(
@@ -505,6 +509,7 @@ public class AnaliseDados {
 				listArray = searchXMLOrientacoes.OrientacaoPosDouAnd();
 				listArray2 = searchXMLOrientacoes.OrientacaoPosDouCon();
 				listArray.addAll(listArray2);
+				return this.filtroSearchXml.PreencherItemOrientacaoOri(listArray);
 			case "Coo":
 				listArray = searchXMLOrientacoes.OrientacaoPosDouAnd();
 				listArray2 = searchXMLOrientacoes.OrientacaoPosDouCon();
@@ -555,16 +560,20 @@ public class AnaliseDados {
 				resultado2.addAll(resultado2);
 				return resultado2;
 			case "OriAnd":
-				listArray = searchXMLOrientacoes.OrientacaoDouAnd();
+				listArray = searchXMLOrientacoes.OrientacaoAperfEspecAnd();
+
 				return this.filtroSearchXml.PreencherAnoLimite(listArray );
 			case "OriCon":
 				listArray = searchXMLOrientacoes.OutrasOrientacaoCon();
-				resultado = this.filtroSearchXml.PreencherItemOrientacaoTipo(listArray, 
+				System.out.println(listArray.size());
+				resultado = this.filtroSearchXml.PreencherItemOrientacaoTipo(listArray,
 						"MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO");
+				return resultado;
 			case "CooCon":
 				listArray = searchXMLOrientacoes.OutrasOrientacaoCon();
-				resultado = this.filtroSearchXml.PreencherAnoLimiteCooTipo(listArray, 
+				resultado = this.filtroSearchXml.PreencherAnoLimiteCooTipo(listArray,
 						"MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO");
+				return resultado;
 			}
 		case "OrGr":
 			switch (tipoEstrutura) {
@@ -595,16 +604,18 @@ public class AnaliseDados {
 				resultado2.addAll(resultado2);
 				return resultado2;
 			case "OriAnd":
-				listArray = searchXMLOrientacoes.OrientacaoDouAnd();
+				listArray = searchXMLOrientacoes.OrientacaoGraduacaoAnd();
 				return this.filtroSearchXml.PreencherAnoLimite(listArray );
 			case "OriCon":
 				listArray = searchXMLOrientacoes.OutrasOrientacaoCon();
 				resultado = this.filtroSearchXml.PreencherItemOrientacaoTipo(listArray ,
 						"TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO");
+				return resultado;
 			case "CooCon":
 				listArray = searchXMLOrientacoes.OutrasOrientacaoCon();
 				resultado = this.filtroSearchXml.PreencherAnoLimiteCooTipo(listArray ,
 						"TRABALHO_DE_CONCLUSAO_DE_CURSO_GRADUACAO");
+				return resultado;
 			}
 		case "OrInCi":
 			switch (tipoEstrutura) {
@@ -635,16 +646,18 @@ public class AnaliseDados {
 				resultado2.addAll(resultado2);
 				return resultado2;
 			case "OriAnd":
-				listArray = searchXMLOrientacoes.OrientacaoDouAnd();
+				listArray = searchXMLOrientacoes.OrientacaoICAnd();
 				return this.filtroSearchXml.PreencherAnoLimite(listArray );
 			case "OriCon":
 				listArray = searchXMLOrientacoes.OutrasOrientacaoCon();
 				resultado = this.filtroSearchXml.PreencherItemOrientacaoTipo(listArray,
 						"INICIACAO_CIENTIFICA");
+				return resultado;
 			case "CooCon":
 				listArray = searchXMLOrientacoes.OutrasOrientacaoCon();
 				resultado = this.filtroSearchXml.PreencherAnoLimiteCooTipo(listArray,
 						"INICIACAO_CIENTIFICA");
+				return resultado;
 			}
 		}
 		return null;

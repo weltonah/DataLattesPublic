@@ -74,6 +74,8 @@ public class FiltroSearchXml {
 				.forEach(u -> listItem.add(new ItemAnalisado(0, u)));
 		listArray.stream().filter(u -> (u.getAno() >= this.anoinicio && u.getAno() <= this.anofim)).skip(this.limite)
 				.forEach(u -> listItem.add(new ItemAnalisado(2, u)));
+		System.out.println(listItem.size());
+		System.out.println("asdasdasdasd");
 		return listItem;
 	}
 
