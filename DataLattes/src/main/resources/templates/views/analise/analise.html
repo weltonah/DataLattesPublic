@@ -20,7 +20,7 @@
      <div class=" col-6" >
         Link Lattes :
         <a class=" ion-link btn btn-link" role="button"
-         href="http://lattes.cnpq.br/${SessaoCriteriosKey.getDadosCurricular().getIdLattes()}" target="_blank"
+         th:href="${'http://lattes.cnpq.br/'+SessaoCriteriosKey.getDadosCurricular().getIdLattes()}" target="_blank"
          th:text="${SessaoCriteriosKey.getDadosCurricular().getIdLattes()}">
           </a>
      </div>
