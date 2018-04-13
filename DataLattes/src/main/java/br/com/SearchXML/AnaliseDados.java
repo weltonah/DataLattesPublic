@@ -25,9 +25,7 @@ public class AnaliseDados {
 			for (CriterioEstrutura criterioEstrutura : areaEstrutura.getListCrit()) {
 				for (ArrayList<TipoEstrutura> listTipo : criterioEstrutura.getListTipo()) {
 					for (TipoEstrutura tipoEstrutura : listTipo) {
-						System.out.println(criterioEstrutura.getCriterio() + " " + criterioEstrutura.getAbre() + " "
-								+ tipoEstrutura.getNomeTipo() + " "
-								+ tipoEstrutura.getAbre());
+
 						tipoEstrutura.setItemAnalisados(switchBuscaXml(areaEstrutura.getAbre(),
 								criterioEstrutura.getAbre(), tipoEstrutura.getAbre(), xmlfile, tipoEstrutura));
 
@@ -565,7 +563,6 @@ public class AnaliseDados {
 				return this.filtroSearchXml.PreencherAnoLimite(listArray );
 			case "OriCon":
 				listArray = searchXMLOrientacoes.OutrasOrientacaoCon();
-				System.out.println(listArray.size());
 				resultado = this.filtroSearchXml.PreencherItemOrientacaoTipo(listArray,
 						"MONOGRAFIA_DE_CONCLUSAO_DE_CURSO_APERFEICOAMENTO_E_ESPECIALIZACAO");
 				return resultado;
