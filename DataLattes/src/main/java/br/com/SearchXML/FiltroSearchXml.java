@@ -11,8 +11,9 @@ import br.com.Modelo.Formacao;
 import br.com.Modelo.ObjetoCriterio;
 import br.com.Modelo.Orientacao;
 import br.com.Modelo.Producao;
+import br.com.Modelo.Tipo0;
+import br.com.Modelo.Tipo2;
 import br.com.Modelo.Tipo3;
-import br.com.Modelo.Tipo6;
 import br.com.estrutura.DadosCurricular;
 import br.com.estrutura.ItemAnalisado;
 
@@ -21,7 +22,6 @@ public class FiltroSearchXml {
 	private int anoinicio;
 	private Document xmlfile;
 	private int limite;
-
 
 	public FiltroSearchXml(int anofim, int anoinicio) {
 		super();
@@ -33,7 +33,6 @@ public class FiltroSearchXml {
 		this.xmlfile = xmlfile;
 		this.limite = limite;
 	}
-
 
 	public DadosCurricular PreencherDadosCurricular(Document xmlfile) {
 		SearchXMLDadosGerais searchXMLDadosGerais = new SearchXMLDadosGerais(this.xmlfile);
@@ -58,9 +57,9 @@ public class FiltroSearchXml {
 		ArrayList<ItemAnalisado> listItem = new ArrayList<ItemAnalisado>();
 		ItemAnalisado item;
 		if (flag)
-			item = new ItemAnalisado(-1, new Producao("Possui Dedicação exclusiva", 2000));
+			item = new ItemAnalisado(0, new Producao("Possui Dedicação exclusiva", 2000));
 		else {
-			item = new ItemAnalisado(0, new Producao("Não possui Dedicação exclusiva", 2000));
+			item = new ItemAnalisado(1, new Producao("Não possui Dedicação exclusiva", 2000));
 		}
 		listItem.add(item);
 		return listItem;
@@ -93,7 +92,7 @@ public class FiltroSearchXml {
 	public ArrayList<ItemAnalisado> PreencherItemOrientacaoTipo(ArrayList<ObjetoCriterio> listArray,
 			String tipoString) {
 		ArrayList<ObjetoCriterio> listArrayFiltrado = (ArrayList<ObjetoCriterio>) listArray.stream()
-				.filter(u -> ((Orientacao) u).getCampAux2().contentEquals(tipoString)).collect(Collectors.toList());
+				.filter(u -> ((Orientacao) u).getNatureza().contentEquals(tipoString)).collect(Collectors.toList());
 		return PreencherAnoLimite(listArrayFiltrado);
 	}
 
@@ -147,27 +146,34 @@ public class FiltroSearchXml {
 
 	public ArrayList<ItemAnalisado> PreencherAnoLimiteTrabNac(ArrayList<ObjetoCriterio> listArray) {
 		ArrayList<ObjetoCriterio> listArrayFiltrado = (ArrayList<ObjetoCriterio>) listArray.stream()
-				.filter(u -> ((Producao) u).getCampAux2().contentEquals("INTERNACIONAL"))
-				.collect(Collectors.toList());
+				.filter(u -> !((Producao) u).getCampAux().contentEquals("INTERNACIONAL"))
+				.filter(u -> ((Tipo0) u).getNatureza().contentEquals("COMPLETO")).collect(Collectors.toList());
 		return PreencherAnoLimite(listArrayFiltrado);
 	}
 
 	public ArrayList<ItemAnalisado> PreencherAnoLimiteTrabInt(ArrayList<ObjetoCriterio> listArray) {
 		ArrayList<ObjetoCriterio> listArrayFiltrado = (ArrayList<ObjetoCriterio>) listArray.stream()
-				.filter(u -> ((Producao) u).getCampAux2().contentEquals("INTERNACIONAL")).collect(Collectors.toList());
+				.filter(u -> ((Producao) u).getCampAux().contentEquals("INTERNACIONAL"))
+				.filter(u -> ((Tipo0) u).getNatureza().contentEquals("COMPLETO")).collect(Collectors.toList());
+		return PreencherAnoLimite(listArrayFiltrado);
+	}
+
+	public ArrayList<ItemAnalisado> PreencherAnoLimiteTrabCompleto(ArrayList<ObjetoCriterio> listArray) {
+		ArrayList<ObjetoCriterio> listArrayFiltrado = (ArrayList<ObjetoCriterio>) listArray.stream()
+				.filter(u -> ((Tipo0) u).getNatureza().contentEquals("COMPLETO")).collect(Collectors.toList());
 		return PreencherAnoLimite(listArrayFiltrado);
 	}
 
 	public ArrayList<ItemAnalisado> PreencherAnoLimiteOr(ArrayList<ObjetoCriterio> listArray) {
 		ArrayList<ObjetoCriterio> listArrayFiltrado = (ArrayList<ObjetoCriterio>) listArray.stream()
-				.filter(u -> ((Tipo6) u).getNatureza().contentEquals("LIVRO_ORGANIZADO_OU_EDICAO"))
+				.filter(u -> ((Tipo2) u).getTipo().contentEquals("LIVRO_ORGANIZADO_OU_EDICAO"))
 				.collect(Collectors.toList());
 		return PreencherAnoLimite(listArrayFiltrado);
 	}
 
 	public ArrayList<ItemAnalisado> PreencherAnoLimitePu(ArrayList<ObjetoCriterio> listArray) {
 		ArrayList<ObjetoCriterio> listArrayFiltrado = (ArrayList<ObjetoCriterio>) listArray.stream()
-				.filter(u -> ((Tipo6) u).getNatureza().contentEquals("LIVRO_PUBLICADO")).collect(Collectors.toList());
+				.filter(u -> ((Tipo2) u).getTipo().contentEquals("LIVRO_PUBLICADO")).collect(Collectors.toList());
 		return PreencherAnoLimite(listArrayFiltrado);
 	}
 

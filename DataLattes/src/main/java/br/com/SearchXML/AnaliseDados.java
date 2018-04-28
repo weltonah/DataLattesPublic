@@ -49,7 +49,6 @@ public class AnaliseDados {
 
 	public ArrayList<ItemAnalisado> switchBuscaXml(String areaEstrutura, String criterioEstrutura, String tipoEstrutura,
 			Document xmlfile, TipoEstrutura ObjecttipoEstrutura) {
-
 		try {
 			this.filtroSearchXml.setlimiteFile(xmlfile, ObjecttipoEstrutura.getLimite());
 			switch (areaEstrutura) {
@@ -347,7 +346,9 @@ public class AnaliseDados {
 		case "TrEv":
 			switch (tipoEstrutura) {
 			case "NaIn":
-				return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdBibliografica.TrabalhoCompletoEvento());
+
+				return this.filtroSearchXml
+						.PreencherAnoLimiteTrabCompleto(searchXMLProdBibliografica.TrabalhoCompletoEvento());
 			case "Nac":
 				return this.filtroSearchXml
 						.PreencherAnoLimiteTrabNac(searchXMLProdBibliografica.TrabalhoCompletoEvento());
@@ -358,35 +359,34 @@ public class AnaliseDados {
 		case "ArPu":
 			switch (tipoEstrutura) {
 			case "Con":
-				return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdBibliografica.TrabalhoCompletoEvento());
+				return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdBibliografica.ArtigoCompletoPublicado());
 			case "A1":
 				return this.filtroSearchXml
-						.PreencherAnoLimiteTrabNac(searchXMLProdBibliografica.TrabalhoCompletoEvento());
+						.PreencherAnoLimiteTrabNac(searchXMLProdBibliografica.ArtigoCompletoPublicado());
 			case "A2":
 				return this.filtroSearchXml
-						.PreencherAnoLimiteTrabInt(searchXMLProdBibliografica.TrabalhoCompletoEvento());
+						.PreencherAnoLimiteTrabInt(searchXMLProdBibliografica.ArtigoCompletoPublicado());
 			case "B1":
 				return this.filtroSearchXml
-						.PreencherAnoLimiteTrabInt(searchXMLProdBibliografica.TrabalhoCompletoEvento());
+						.PreencherAnoLimiteTrabInt(searchXMLProdBibliografica.ArtigoCompletoPublicado());
 			case "B2":
 				return this.filtroSearchXml
-						.PreencherAnoLimiteTrabInt(searchXMLProdBibliografica.TrabalhoCompletoEvento());
+						.PreencherAnoLimiteTrabInt(searchXMLProdBibliografica.ArtigoCompletoPublicado());
 			case "B3":
 				return this.filtroSearchXml
-						.PreencherAnoLimiteTrabInt(searchXMLProdBibliografica.TrabalhoCompletoEvento());
+						.PreencherAnoLimiteTrabInt(searchXMLProdBibliografica.ArtigoCompletoPublicado());
 			case "B4":
 				return this.filtroSearchXml
-						.PreencherAnoLimiteTrabInt(searchXMLProdBibliografica.TrabalhoCompletoEvento());
+						.PreencherAnoLimiteTrabInt(searchXMLProdBibliografica.ArtigoCompletoPublicado());
 			case "B5":
 				return this.filtroSearchXml
-						.PreencherAnoLimiteTrabInt(searchXMLProdBibliografica.TrabalhoCompletoEvento());
+						.PreencherAnoLimiteTrabInt(searchXMLProdBibliografica.ArtigoCompletoPublicado());
 			case "C":
 				return this.filtroSearchXml
-						.PreencherAnoLimiteTrabInt(searchXMLProdBibliografica.TrabalhoCompletoEvento());
+						.PreencherAnoLimiteTrabInt(searchXMLProdBibliografica.ArtigoCompletoPublicado());
 			}
-			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdBibliografica.ArtigoCompletoAceito());
 		case "ArAcPu":
-			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdBibliografica.ArtigoCompletoPublicado());
+			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdBibliografica.ArtigoCompletoAceito());
 		case "TeJoRe":
 			return this.filtroSearchXml.PreencherAnoLimite(searchXMLProdBibliografica.TextoJornalRevista());
 		case "CaLi":
