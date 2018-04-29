@@ -53,7 +53,6 @@ public class SenhaController {
 		conteudo.add(ProdArt);
 		conteudo.add(ProdBibl);
 		conteudo.add(Orien);
-
 		conteudo.add(Banc);
 		conteudo.add(DeEx);
 		conteudo.add(ParEvento);
@@ -100,6 +99,7 @@ public class SenhaController {
 		SessaoCriteriosKey.setAnoInicio((int) session.getAttribute("anoInicio"));
 		new AnaliseDados().preencherEstruturaAnaliseXml(SessaoCriteriosKey,
 				ConverterFile.ConverterFileToDocument(xmlfile));
+		xmlfile.delete();
 		model.addAttribute("SessaoCriteriosKey", SessaoCriteriosKey);
 		session.setAttribute("SessaoCriteriosKey", SessaoCriteriosKey);
 		return this.path + "analise/analise";

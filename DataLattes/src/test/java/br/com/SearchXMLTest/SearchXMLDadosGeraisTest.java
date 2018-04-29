@@ -48,7 +48,7 @@ public class SearchXMLDadosGeraisTest {
 				+ "PUC-RJ, ambos na linha de Banco de Dados. " + "É professor do Departamento de Ciência da "
 				+ "Computação da Universidade Federal de Juiz de" + " Fora e participa de pesquisas sobre Recuperação "
 				+ "de Informação, Resolução de Identidade e " + "Representação do Conhecimento.", searchXML.ResumoCV());
-		assertEquals("18/05/2017", searchXML.UltimaAtualizacao());
+		assertEquals("18/05/2017 ", searchXML.UltimaAtualizacao());
 		assertTrue(searchXML.DedicaoExclusiva());
 
 	}

@@ -432,7 +432,7 @@ public class SearchXMLProdTecnicaTeste {
 		for (ObjetoCriterio objetoCriterio : aux) {
 			listprod.add((Tipo6) objetoCriterio);
 		}
-		listprod.forEach(n -> n.imprimirTipo6());
+		// listprod.forEach(n -> n.imprimirTipo6());
 		assertEquals("exemplo", "exemplo");
 		assertEquals("Parecer para a Revista da Sociedade Brasileira de História da Ciência",
 				listprod.get(0).getTitulo());

@@ -23,7 +23,7 @@ public class DownloadCsv {
 
 	public static void criarArquivo(HttpServletRequest request, HttpSession session, HttpServletResponse response,
 			Estrutura sessaoCriteriosKey) {
-		File file = new File(System.getProperty("user.dir") + "relatorio.csv");
+		File file = new File(System.getProperty("user.dir") + "relatorioDT.csv");
 		try {
 
 			PrintWriter pw = new PrintWriter(new OutputStreamWriter(new FileOutputStream(file), "CP1252"));
@@ -81,7 +81,7 @@ public class DownloadCsv {
 
 			if (file != null) {
 				response.setContentType("text/csv");
-				response.setHeader("Content-Disposition", "attachment; filename=Relatorio.csv");
+				response.setHeader("Content-Disposition", "attachment; filename=RelatorioDt.csv");
 				FileCopyUtils.copy(new FileInputStream(file), response.getOutputStream());
 				file.delete();
 			}

@@ -24,19 +24,26 @@
          <div>
           <input type="checkbox" class="form-check-input"
            id="checkboxformacaoMarkAll" onclick="formacaoMarkAll(this)">
-          <label class="form-check-label" for="checkboxformacaoMarkAll">
+          <label class="form-check-label" for="checkboxformacaoMarkAll" style="font-size: 20px;">
            Marcar todos </label>
          </div>
          <hr style="border-top: 1.5px solid #8c8b8b;">
          <th:block
           th:each="formacao,formacaostatus : ${estr.getListEst().get(0).getListCrit()}">
-          <input class="formacao form-check-input" type="checkbox"
-           id="formacao" name="formacao"
-           th:value="${formacao.getAbre()}">
-          <label class="form-check-label"
-           th:for="${'formacao'+formacaostatus.index}"
-           th:text="${formacao.getCriterio()}"> </label>
+          <div class="col form-check">
+            <div class="my-auto" >
+            <input class="formacao form-check-input" type="checkbox"
+             th:id="${'formacao'+formacaostatus.index}" name="formacao"  
+             th:value="${formacao.getAbre()}">
+            </div>
+            <div class=" my-auto" >
+          <label class="form-check-label" style="font-size: 20px;"
+           th:for="${'formacao'+formacaostatus.index}" 
+           th:text="${formacao.getCriterio()}" >
+            </label>
           <br>
+          </div>
+          </div>
          </th:block>
         </div>
        </div>
@@ -51,18 +58,24 @@
          <div>
           <input type="checkbox" class="form-check-input"
            id="checkboxProdArtMarkAll" onclick="ProdArtMarkAll(this)">
-          <label class="form-check-label" for="checkboxProdArtMarkAll">
+          <label class="form-check-label" for="checkboxProdArtMarkAll" style="font-size: 20px;">
            Marcar todos </label>
          </div>
          <hr style="border-top: 1.5px solid #8c8b8b;">
          <th:block
           th:each="formacao,ProdArtstatus : ${estr.getListEst().get(2).getListCrit()}">
+          <div class="col form-check">
+            <div class="my-auto" >
           <input class="ProdArt form-check-input" type="checkbox"
-           id="ProdArt" name="ProdArt" th:value="${formacao.getAbre()}">
+           th:id="${'ProdArt'+ProdArtstatus.index}" name="ProdArt" th:value="${formacao.getAbre()}">
+           </div>
+            <div class=" my-auto" >
           <label class="form-check-label"
-           th:for="${'ProdArt'+ProdArtstatus.index}"
+           th:for="${'ProdArt'+ProdArtstatus.index}" style="font-size: 20px;"
            th:text="${formacao.getCriterio()}"> </label>
           <br>
+          </div>
+          </div>
          </th:block>
         </div>
        </div>
@@ -78,19 +91,25 @@
           <input type="checkbox" class="form-check-input"
            id="checkboxParEventoMarkAll"
            onclick="ParEventoMarkAll(this)"> <label
-           class="form-check-label" for="checkboxParEventoMarkAll">
+           class="form-check-label" for="checkboxParEventoMarkAll" style="font-size: 20px;">
            Marcar todos </label>
          </div>
          <hr style="border-top: 1.5px solid #8c8b8b;">
          <th:block
           th:each="formacao,ParEventostatus : ${estr.getListEst().get(7).getListCrit()}">
+          <div class="col form-check">
+            <div class="my-auto" >
           <input class="ParEvento form-check-input" type="checkbox"
-           id="ParEvento" name="ParEvento"
+           th:id="${'ParEvento'+ParEventostatus.index}" name="ParEvento"
            th:value="${formacao.getAbre()}">
+           </div>
+            <div class=" my-auto" >
           <label class="form-check-label"
-           th:for="${'ParEvento'+ParEventostatus.index}"
+           th:for="${'ParEvento'+ParEventostatus.index}" style="font-size: 20px;"
            th:text="${formacao.getCriterio()}"> </label>
           <br>
+          </div>
+          </div>
          </th:block>
         </div>
        </div>
@@ -105,18 +124,25 @@
          <div>
           <input type="checkbox" class="form-check-input"
            id="checkboxProdTecMarkAll" onclick="ProdTecMarkAll(this)">
-          <label class="form-check-label" for="checkboxProdTecMarkAll">
+          <label class="form-check-label" for="checkboxProdTecMarkAll" style="font-size: 20px;"> 
            Marcar todos </label>
          </div>
          <hr style="border-top: 1.5px solid #8c8b8b;">
          <th:block
           th:each="formacao,ProdTecstatus : ${estr.getListEst().get(1).getListCrit()}">
+          <div class="col form-check">
+            <div class="my-auto" >
           <input class="ProdTec form-check-input" type="checkbox"
-           id="ProdTec" name="ProdTec" th:value="${formacao.getAbre()}">
+            th:id="${'ProdTec'+ProdTecstatus.index}" name="ProdTec" th:value="${formacao.getAbre()}">
+            
+            </div>
+            <div class=" my-auto" >
           <label class="form-check-label"
-           th:for="${'ProdTec'+ProdTecstatus.index}"
+           th:for="${'ProdTec'+ProdTecstatus.index}" style="font-size: 20px;"
            th:text="${formacao.getCriterio()}"> </label>
           <br>
+          </div>
+          </div>
          </th:block>
         </div>
        </div>
@@ -132,19 +158,25 @@
           <input type="checkbox" class="form-check-input"
            id="checkboxDadosGeraisMarkAll"
            onclick="DadosGeraisMarkAll(this)"> <label
-           class="form-check-label" for="checkboxDadosGeraisMarkAll">
+           class="form-check-label" for="checkboxDadosGeraisMarkAll" style="font-size: 20px;">
            Marcar todos </label>
          </div>
          <hr style="border-top: 1.5px solid #8c8b8b;">
          <th:block
-          th:each="formacao,DadosGeraisstatus : ${estr.getListEst().get(6).getListCrit()}">
+          th:each="DadosGerais,DadosGeraisstatus : ${estr.getListEst().get(6).getListCrit()}">
+          <div class="col form-check">
+            <div class="my-auto" >
           <input class="DadosGerais form-check-input" type="checkbox"
-           id="DadosGerais" name="DeEx"
-           th:value="${formacao.getAbre()}">
+           th:id="${'DadosGerais'+DadosGeraisstatus.index}"  name="DeEx"
+           th:value="${DadosGerais.getAbre()}">
+           </div>
+            <div class=" my-auto" >
           <label class="form-check-label"
-           th:for="${'DadosGerais'+DadosGeraisstatus.index}"
-           th:text="${formacao.getCriterio()}"> </label>
+           th:for="${'DadosGerais'+DadosGeraisstatus.index}" style="font-size: 20px;"
+           th:text="${DadosGerais.getCriterio()}"> </label>
           <br>
+          </div>
+          </div>
          </th:block>
         </div>
        </div>
@@ -159,18 +191,24 @@
          <div>
           <input type="checkbox" class="form-check-input"
            id="checkboxOrienMarkAll" onclick="OrienMarkAll(this)">
-          <label class="form-check-label" for="checkboxOrienMarkAll">
+          <label class="form-check-label" for="checkboxOrienMarkAll" style="font-size: 20px;">
            Marcar todos </label>
          </div>
          <hr style="border-top: 1.5px solid #8c8b8b;">
          <th:block
-          th:each="formacao,Orienstatus : ${estr.getListEst().get(4).getListCrit()}">
+          th:each="Orien,Orienstatus : ${estr.getListEst().get(4).getListCrit()}">
+          <div class="col form-check">
+            <div class="my-auto" >
           <input class="Orien form-check-input" type="checkbox"
-           id="Orien" name="Orien" th:value="${formacao.getAbre()}">
+          th:id="${'Orien'+Orienstatus.index}"  name="Orien" th:value="${Orien.getAbre()}">
+          </div>
+            <div class=" my-auto" >
           <label class="form-check-label"
-           th:for="${'Orien'+Orienstatus.index}"
-           th:text="${formacao.getCriterio()}"> </label>
+           th:for="${'Orien'+Orienstatus.index}" style="font-size: 20px;"
+           th:text="${Orien.getCriterio()}"> </label>
           <br>
+          </div>
+          </div>
          </th:block>
         </div>
        </div>
@@ -185,18 +223,24 @@
          <div>
           <input type="checkbox" class="form-check-input"
            id="checkboxBancMarkAll" onclick="BancMarkAll(this)">
-          <label class="form-check-label" for="checkboxBancMarkAll">
+          <label class="form-check-label" for="checkboxBancMarkAll" style="font-size: 20px;">
            Marcar todos </label>
          </div>
          <hr style="border-top: 1.5px solid #8c8b8b;">
          <th:block
-          th:each="formacao,Bancstatus : ${estr.getListEst().get(5).getListCrit()}">
-          <input class="Banc form-check-input" type="checkbox" id="Banc"
-           name="Banc" th:value="${formacao.getAbre()}">
+          th:each="Banc,Bancstatus : ${estr.getListEst().get(5).getListCrit()}">
+          <div class="col form-check">
+            <div class="my-auto" >
+          <input class="Banc form-check-input" type="checkbox" id="Banc" name="Banc"
+          th:id="${'Banc'+Bancstatus.index}"  th:value="${Banc.getAbre()}">
+          </div>
+            <div class=" my-auto" >
           <label class="form-check-label"
-           th:for="${'Banc'+Bancstatus.index}"
-           th:text="${formacao.getCriterio()}"> </label>
+           th:for="${'Banc'+Bancstatus.index}" style="font-size: 20px;"
+           th:text="${Banc.getCriterio()}"> </label>
           <br>
+          </div>
+          </div>
          </th:block>
         </div>
        </div>
@@ -211,19 +255,25 @@
          <div>
           <input type="checkbox" class="form-check-input"
            id="checkboxProdBiblMarkAll" onclick="ProdBiblMarkAll(this)">
-          <label class="form-check-label" for="checkboxProdBiblMarkAll">
+          <label class="form-check-label" for="checkboxProdBiblMarkAll" style="font-size: 20px;">
            Marcar todos </label>
          </div>
          <hr style="border-top: 1.5px solid #8c8b8b;">
          <th:block
-          th:each="formacao,ProdBiblistatus : ${estr.getListEst().get(3).getListCrit()}">
+          th:each="ProdBibl,ProdBiblistatus : ${estr.getListEst().get(3).getListCrit()}">
+          <div class="col form-check">
+            <div class="my-auto" >
           <input class="ProdBibl form-check-input" type="checkbox"
-           id="ProdBibl" name="ProdBibl"
-           th:value="${formacao.getAbre()}">
+           th:id="${'ProdBibl'+ProdBiblistatus.index}" name="ProdBibl"
+           th:value="${ProdBibl.getAbre()}">
+           </div>
+            <div class=" my-auto" >
           <label class="form-check-label"
-           th:for="${'ProdBibl'+ProdBiblistatus.index}"
-           th:text="${formacao.getCriterio()}"></label>
+           th:for="${'ProdBibl'+ProdBiblistatus.index}" style="font-size: 20px;"
+           th:text="${ProdBibl.getCriterio()}"></label>
           <br>
+          </div>
+          </div>
          </th:block>
         </div>
        </div>
