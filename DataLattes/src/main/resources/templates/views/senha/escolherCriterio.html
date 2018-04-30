@@ -24,7 +24,7 @@
          <div>
           <input type="checkbox" class="form-check-input"
            id="checkboxformacaoMarkAll" onclick="formacaoMarkAll(this)">
-          <label class="form-check-label" for="checkboxformacaoMarkAll" style="font-size: 20px;">
+          <label class="form-check-label" for="checkboxformacaoMarkAll" >
            Marcar todos </label>
          </div>
          <hr style="border-top: 1.5px solid #8c8b8b;">
@@ -37,7 +37,7 @@
              th:value="${formacao.getAbre()}">
             </div>
             <div class=" my-auto" >
-          <label class="form-check-label" style="font-size: 20px;"
+          <label class="form-check-label" 
            th:for="${'formacao'+formacaostatus.index}" 
            th:text="${formacao.getCriterio()}" >
             </label>
@@ -58,7 +58,7 @@
          <div>
           <input type="checkbox" class="form-check-input"
            id="checkboxProdArtMarkAll" onclick="ProdArtMarkAll(this)">
-          <label class="form-check-label" for="checkboxProdArtMarkAll" style="font-size: 20px;">
+          <label class="form-check-label" for="checkboxProdArtMarkAll" >
            Marcar todos </label>
          </div>
          <hr style="border-top: 1.5px solid #8c8b8b;">
@@ -71,7 +71,7 @@
            </div>
             <div class=" my-auto" >
           <label class="form-check-label"
-           th:for="${'ProdArt'+ProdArtstatus.index}" style="font-size: 20px;"
+           th:for="${'ProdArt'+ProdArtstatus.index}" 
            th:text="${formacao.getCriterio()}"> </label>
           <br>
           </div>
@@ -91,7 +91,7 @@
           <input type="checkbox" class="form-check-input"
            id="checkboxParEventoMarkAll"
            onclick="ParEventoMarkAll(this)"> <label
-           class="form-check-label" for="checkboxParEventoMarkAll" style="font-size: 20px;">
+           class="form-check-label" for="checkboxParEventoMarkAll" >
            Marcar todos </label>
          </div>
          <hr style="border-top: 1.5px solid #8c8b8b;">
@@ -105,7 +105,7 @@
            </div>
             <div class=" my-auto" >
           <label class="form-check-label"
-           th:for="${'ParEvento'+ParEventostatus.index}" style="font-size: 20px;"
+           th:for="${'ParEvento'+ParEventostatus.index}" 
            th:text="${formacao.getCriterio()}"> </label>
           <br>
           </div>
@@ -124,7 +124,7 @@
          <div>
           <input type="checkbox" class="form-check-input"
            id="checkboxProdTecMarkAll" onclick="ProdTecMarkAll(this)">
-          <label class="form-check-label" for="checkboxProdTecMarkAll" style="font-size: 20px;"> 
+          <label class="form-check-label" for="checkboxProdTecMarkAll"> 
            Marcar todos </label>
          </div>
          <hr style="border-top: 1.5px solid #8c8b8b;">
@@ -138,7 +138,7 @@
             </div>
             <div class=" my-auto" >
           <label class="form-check-label"
-           th:for="${'ProdTec'+ProdTecstatus.index}" style="font-size: 20px;"
+           th:for="${'ProdTec'+ProdTecstatus.index}" 
            th:text="${formacao.getCriterio()}"> </label>
           <br>
           </div>
@@ -158,7 +158,7 @@
           <input type="checkbox" class="form-check-input"
            id="checkboxDadosGeraisMarkAll"
            onclick="DadosGeraisMarkAll(this)"> <label
-           class="form-check-label" for="checkboxDadosGeraisMarkAll" style="font-size: 20px;">
+           class="form-check-label" for="checkboxDadosGeraisMarkAll">
            Marcar todos </label>
          </div>
          <hr style="border-top: 1.5px solid #8c8b8b;">
@@ -172,7 +172,7 @@
            </div>
             <div class=" my-auto" >
           <label class="form-check-label"
-           th:for="${'DadosGerais'+DadosGeraisstatus.index}" style="font-size: 20px;"
+           th:for="${'DadosGerais'+DadosGeraisstatus.index}" 
            th:text="${DadosGerais.getCriterio()}"> </label>
           <br>
           </div>
@@ -191,7 +191,7 @@
          <div>
           <input type="checkbox" class="form-check-input"
            id="checkboxOrienMarkAll" onclick="OrienMarkAll(this)">
-          <label class="form-check-label" for="checkboxOrienMarkAll" style="font-size: 20px;">
+          <label class="form-check-label" for="checkboxOrienMarkAll" >
            Marcar todos </label>
          </div>
          <hr style="border-top: 1.5px solid #8c8b8b;">
@@ -204,7 +204,7 @@
           </div>
             <div class=" my-auto" >
           <label class="form-check-label"
-           th:for="${'Orien'+Orienstatus.index}" style="font-size: 20px;"
+           th:for="${'Orien'+Orienstatus.index}" 
            th:text="${Orien.getCriterio()}"> </label>
           <br>
           </div>
@@ -223,7 +223,7 @@
          <div>
           <input type="checkbox" class="form-check-input"
            id="checkboxBancMarkAll" onclick="BancMarkAll(this)">
-          <label class="form-check-label" for="checkboxBancMarkAll" style="font-size: 20px;">
+          <label class="form-check-label" for="checkboxBancMarkAll" >
            Marcar todos </label>
          </div>
          <hr style="border-top: 1.5px solid #8c8b8b;">
@@ -236,7 +236,7 @@
           </div>
             <div class=" my-auto" >
           <label class="form-check-label"
-           th:for="${'Banc'+Bancstatus.index}" style="font-size: 20px;"
+           th:for="${'Banc'+Bancstatus.index}" 
            th:text="${Banc.getCriterio()}"> </label>
           <br>
           </div>
@@ -255,7 +255,7 @@
          <div>
           <input type="checkbox" class="form-check-input"
            id="checkboxProdBiblMarkAll" onclick="ProdBiblMarkAll(this)">
-          <label class="form-check-label" for="checkboxProdBiblMarkAll" style="font-size: 20px;">
+          <label class="form-check-label" for="checkboxProdBiblMarkAll" >
            Marcar todos </label>
          </div>
          <hr style="border-top: 1.5px solid #8c8b8b;">
@@ -269,7 +269,7 @@
            </div>
             <div class=" my-auto" >
           <label class="form-check-label"
-           th:for="${'ProdBibl'+ProdBiblistatus.index}" style="font-size: 20px;"
+           th:for="${'ProdBibl'+ProdBiblistatus.index}" 
            th:text="${ProdBibl.getCriterio()}"></label>
           <br>
           </div>

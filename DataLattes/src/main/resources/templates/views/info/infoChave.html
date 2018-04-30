@@ -6,7 +6,59 @@
 <div layout:fragment="page_content" class="col-12">
  <div class="col-12"></div>
  <div class="col-12 align-middle"
-  style="height: 50vh; padding-top: 20vh;"></div>
-  Chave
+  style=" padding-top: 2vh;">
+  <strong style="font-size:4vw;"> Informações sobre a Chave DataLattes </strong>
+  <div class="col-12">
+   <div class="accordion" id="accordion">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <span style="font-size:1.5vw;"> O que é a chave ?</span>  
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body" style="font-size:1.1vw;">
+     A Chave DataLattes é um arquivo(.Dtkey) gerado pelo sistema de forma a armazenar a descrição de 
+     critérios selecionados. Essa chave é utilizada para carregar os critérios de análise e suas pontuações
+      antes de submeter o currículo Lattes no sistema.
+     </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <span style="font-size:1.5vw;">  Como gerar a chave ? </span>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body" style="font-size:1.1vw;">
+     A Chave é gerado ao finalizar o processo de especificação dos critérios. Para especificar os critérios selecione
+      a opção “Criar Chave” na página inicial. Ou se preferir <a target="_blank" th:href="@{/escolherCriterio}">clique aqui<a>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+       <span style="font-size:1.5vw;">   Minha chave apresenta erros, o que posso fazer ? </span>
+        </button>
+      </h5>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+      <div class="card-body" style="font-size:1.1vw;">
+      Durante alguma atualização do sistema Datalattes a Chave criada anteriormente pode apresentar
+       defasagem de versão, ou seja, ela foi criada para uma versão anterior do sistema. Para solucionar
+       esse problema é necessário especificar uma nova Chave, <a target="_blank" th:href="@{/escolherCriterio}">clique aqui<a> para criar uma nova </div>
+    </div>
+  </div>
+</div>
+  </div>
+  </div>
 </div>
 </html>

@@ -25,9 +25,9 @@ public class IndexController{
 	public String infoChave() {
 		return this.path + "info/infoChave";
 	}
-	@RequestMapping("/infoSobre")
+	@RequestMapping("/info")
 	public String infoSobre() {
-		return this.path + "info/infoSobre";
+		return this.path + "info/info";
 	}
 	@RequestMapping("/infoFI")
 	public String infoFI() {
